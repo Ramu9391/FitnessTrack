@@ -1,0 +1,2485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FitTrack - Track Today. Stronger Tomorrow.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    font-family:"Inter",Arial,sans-serif;
+    background:#f4fffd;
+    color:#082b42;
+    overflow:hidden;
+}
+
+
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+.page{
+    position:relative;
+
+    width:100%;
+
+    height:calc(100vh - 100px);
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 82% 12%,
+            rgba(25,231,190,.23),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 58% 95%,
+            rgba(25,220,182,.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            110deg,
+            #ffffff 0%,
+            #fbffff 50%,
+            #edfffb 100%
+        );
+}
+
+
+/* RIGHT DECORATION */
+
+.page::before{
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+    height:650px;
+
+    right:-180px;
+    top:-300px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(10,211,174,.20);
+
+    box-shadow:
+        0 0 0 75px rgba(10,211,174,.035),
+        0 0 0 150px rgba(10,211,174,.025);
+}
+
+
+/* LEFT DECORATION */
+
+.page::after{
+    content:"";
+
+    position:absolute;
+
+    width:430px;
+    height:900px;
+
+    left:-300px;
+    top:-180px;
+
+    border:40px solid rgba(9,218,181,.08);
+
+    border-radius:50%;
+
+    transform:rotate(-18deg);
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    position:relative;
+
+    z-index:5;
+
+    width:94%;
+
+    max-width:1540px;
+
+    height:100%;
+
+    margin:auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.topbar{
+    height:82px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    position:relative;
+
+    z-index:30;
+}
+
+
+/* LOGO */
+
+.logo{
+    position:relative;
+
+    z-index:40;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+}
+
+.logo-icon{
+    width:58px;
+    height:58px;
+
+    border-radius:15px;
+
+    background:#08d7ad;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:27px;
+
+    box-shadow:
+        0 8px 18px rgba(0,190,150,.18);
+}
+
+.logo-name{
+    font-size:42px;
+
+    line-height:.95;
+
+    font-weight:800;
+
+    letter-spacing:-2.5px;
+
+    color:#0b3047;
+}
+
+.logo-name span{
+    color:#13cda8;
+}
+
+.tagline{
+    margin-top:6px;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    color:#54738b;
+
+    font-weight:700;
+}
+
+
+/* LOGIN */
+
+.auth{
+    display:flex;
+
+    gap:13px;
+}
+
+.auth button{
+    height:60px;
+
+    padding:0 25px;
+
+    border:none;
+
+    border-radius:16px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:13px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s ease;
+
+    box-shadow:
+        0 8px 18px rgba(0,50,70,.08);
+}
+
+.auth button:hover{
+    transform:translateY(-2px);
+}
+
+.user-login{
+    background:#0bd8ae;
+
+    color:#062d43;
+}
+
+.admin-login{
+    background:#062b42;
+
+    color:white;
+}
+
+.auth .ico{
+    font-size:22px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    height:calc(100% - 82px);
+
+    display:grid;
+
+    grid-template-columns:
+        400px
+        370px
+        minmax(560px,1fr);
+
+    gap:25px;
+
+    align-items:center;
+}
+
+
+/* =====================================================
+   PERSON
+===================================================== */
+
+.person{
+    position:relative;
+
+    z-index:2;
+
+    height:100%;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:center;
+
+    overflow:visible;
+}
+
+.person img{
+    position:absolute;
+
+    height:min(675px,calc(100vh - 155px));
+
+    width:auto;
+
+    max-width:none;
+
+    object-fit:contain;
+
+    object-position:center bottom;
+
+    left:-55px;
+
+    /* MOVE BOY DOWN */
+    bottom:-52px;
+
+    display:block;
+
+    z-index:4;
+
+    filter:
+        drop-shadow(
+            0 20px 18px rgba(0,60,70,.10)
+        );
+}
+
+
+/* SLOGAN */
+
+.slogan-side {
+    position: absolute;
+
+    z-index: 10;
+
+    /* Move into the empty space on the left */
+    left: -28px;
+
+    /* Move upward so it is beside the body */
+    bottom: 145px;
+
+    width: 125px;
+
+    font-family: cursive;
+
+    font-weight: 800;
+
+    font-size: 25px;
+
+    line-height: 1.02;
+
+    transform: rotate(-7deg);
+
+    color: #07344a;
+
+    text-align: left;
+}
+
+.slogan-side .green {
+    color: #08cda7;
+}
+
+.slogan-side .green{
+    color:#08cda7;
+}
+
+
+/* =====================================================
+   CENTER
+===================================================== */
+
+.copy{
+    position:relative;
+
+    z-index:8;
+
+    align-self:center;
+
+    padding-top:0;
+}
+
+
+/* PILL */
+
+.pill{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:9px 18px;
+
+    border:1px solid #bcefe3;
+
+    background:rgba(235,255,250,.78);
+
+    border-radius:30px;
+
+    color:#13bd9b;
+
+    font-weight:700;
+
+    font-size:13px;
+}
+
+
+/* HEADING */
+
+h1{
+    font-size:56px;
+
+    line-height:.98;
+
+    letter-spacing:-3.4px;
+
+    margin:22px 0 21px;
+
+    font-weight:900;
+
+    color:#092c43;
+}
+
+h1 .green{
+    color:#0bd3aa;
+}
+
+
+/* DESCRIPTION */
+
+.desc{
+    font-size:16px;
+
+    line-height:1.48;
+
+    color:#68829a;
+
+    max-width:380px;
+}
+
+
+/* GET STARTED */
+
+.start{
+    margin-top:23px;
+
+    width:300px;
+
+    height:59px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0bd4ab,
+            #11cfa9
+        );
+
+    color:#07304a;
+
+    font-size:17px;
+
+    font-weight:800;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 24px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 25px rgba(0,203,163,.22);
+
+    transition:.2s ease;
+}
+
+.start:hover{
+    transform:translateY(-2px);
+}
+
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+.features{
+    display:flex;
+
+    gap:18px;
+
+    margin-top:24px;
+}
+
+.feature{
+    width:78px;
+
+    text-align:center;
+}
+
+.ficon{
+    width:57px;
+    height:57px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#e4fbf6;
+
+    border:1px solid #c9f4ea;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:24px;
+
+    color:#0acbaa;
+}
+
+.feature b{
+    display:block;
+
+    font-size:13px;
+
+    margin-top:7px;
+}
+
+.feature span{
+    display:block;
+
+    font-size:10px;
+
+    color:#6d879b;
+
+    margin-top:3px;
+}
+
+
+/* =====================================================
+   DASHBOARD
+===================================================== */
+
+.dashboard{
+    position:relative;
+
+    z-index:7;
+
+    height:578px;
+
+    max-height:calc(100vh - 210px);
+
+    border-radius:27px;
+
+    background:white;
+
+    box-shadow:
+        0 22px 50px rgba(7,51,68,.13);
+
+    display:grid;
+
+    grid-template-columns:155px 1fr;
+
+    overflow:hidden;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar{
+    background:
+        linear-gradient(
+            180deg,
+            #062b42,
+            #07364e
+        );
+
+    color:white;
+
+    padding:23px 11px;
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.dlogo{
+    font-size:19px;
+
+    font-weight:800;
+
+    margin:4px 12px 21px;
+}
+
+.dlogo span{
+    color:#0be0b3;
+}
+
+
+/* NAV */
+
+.nav{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+}
+
+.nav a{
+    height:42px;
+
+    border-radius:22px;
+
+    padding:0 11px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    color:#c2d4df;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    transition:.2s ease;
+}
+
+.nav a:hover{
+    background:rgba(255,255,255,.08);
+
+    color:white;
+}
+
+.nav a.active{
+    background:#09d7ae;
+
+    color:#052e44;
+
+    font-weight:800;
+}
+
+.nav .ni{
+    width:20px;
+
+    text-align:center;
+
+    font-size:16px;
+}
+
+
+/* QUOTE */
+
+.quote{
+    margin-top:auto;
+
+    color:#c0d2dd;
+
+    font-size:11px;
+
+    line-height:1.45;
+
+    padding:10px;
+}
+
+.quote::after{
+    content:"";
+
+    display:block;
+
+    width:37px;
+
+    height:4px;
+
+    border-radius:4px;
+
+    background:#0bd8ae;
+
+    margin-top:7px;
+}
+
+
+/* =====================================================
+   DASHBOARD MAIN
+===================================================== */
+
+.dmain{
+    padding:23px 19px 15px;
+
+    background:#fff;
+
+    min-width:0;
+
+    overflow:hidden;
+}
+
+
+/* HEADER */
+
+.dhead{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    padding-bottom:14px;
+
+    border-bottom:1px solid #e4edf1;
+}
+
+.greeting h2{
+    font-size:19px;
+
+    margin-bottom:4px;
+}
+
+.greeting p{
+    font-size:10px;
+
+    color:#8195a6;
+}
+
+.date{
+    font-size:10px;
+
+    color:#8195a6;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.active{
+    margin-left:10px;
+
+    background:#e1faf4;
+
+    color:#10b995;
+
+    border-radius:18px;
+
+    padding:8px 12px;
+
+    font-weight:700;
+}
+
+
+/* =====================================================
+   OVERVIEW
+===================================================== */
+
+.overview{
+    margin-top:15px;
+}
+
+.overview h3{
+    font-size:20px;
+
+    margin-bottom:2px;
+}
+
+.overview > p{
+    font-size:10px;
+
+    color:#8195a6;
+
+    margin-bottom:11px;
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats{
+    display:grid;
+
+    grid-template-columns:
+        1.45fr
+        1fr
+        1fr;
+
+    grid-template-rows:
+        102px
+        102px;
+
+    gap:11px;
+}
+
+
+/* GOAL */
+
+.goal{
+    grid-row:span 2;
+
+    border-radius:17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #063b56,
+            #0a4b65
+        );
+
+    color:white;
+
+    padding:19px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+.goal small{
+    font-size:9px;
+
+    letter-spacing:.5px;
+}
+
+.goal strong{
+    font-size:50px;
+
+    color:#0be0b2;
+
+    line-height:1;
+
+    margin:8px 0;
+}
+
+.goal p{
+    font-size:9px;
+
+    color:#b9d2dd;
+
+    line-height:1.35;
+}
+
+.progress{
+    height:7px;
+
+    border-radius:8px;
+
+    background:#466779;
+
+    margin-top:13px;
+
+    overflow:hidden;
+}
+
+.progress i{
+    display:block;
+
+    width:78%;
+
+    height:100%;
+
+    background:#0be0b2;
+
+    border-radius:8px;
+}
+
+
+/* NORMAL CARDS */
+
+.stat{
+    border:1px solid #e0eaf0;
+
+    border-radius:16px;
+
+    padding:12px 14px;
+
+    background:#fff;
+
+    transition:.2s ease;
+}
+
+.stat:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0,50,70,.08);
+}
+
+.stat .si{
+    width:37px;
+    height:37px;
+
+    background:#e3faf5;
+
+    border-radius:11px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#08cda7;
+
+    font-size:18px;
+}
+
+.stat strong{
+    display:block;
+
+    font-size:21px;
+
+    margin-top:5px;
+}
+
+.stat span{
+    font-size:9px;
+
+    color:#8195a6;
+}
+
+
+/* =====================================================
+   BOTTOM
+===================================================== */
+
+.bottom{
+    display:grid;
+
+    grid-template-columns:
+        1.45fr
+        1fr;
+
+    gap:11px;
+
+    margin-top:11px;
+}
+
+
+/* CHART */
+
+.chart,
+.streak{
+    height:138px;
+
+    border:1px solid #e0eaf0;
+
+    border-radius:16px;
+
+    padding:12px 13px;
+
+    background:#fff;
+}
+
+.chart-title{
+    font-size:10px;
+
+    font-weight:700;
+
+    display:flex;
+
+    justify-content:space-between;
+}
+
+.arrows{
+    color:#7891a2;
+
+    font-size:17px;
+}
+
+.bars{
+    height:94px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:space-around;
+
+    padding-top:7px;
+}
+
+.bar-wrap{
+    text-align:center;
+
+    width:26px;
+}
+
+.bar{
+    width:19px;
+
+    margin:auto;
+
+    background:#8ce9d5;
+
+    border-radius:
+        7px 7px 3px 3px;
+}
+
+.bar.tall{
+    background:#08cfa8;
+}
+
+.bar-label{
+    font-size:8px;
+
+    color:#71899a;
+
+    margin-top:5px;
+}
+
+
+/* STREAK */
+
+.streak{
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            150deg,
+            #fff,
+            #f5fffd
+        );
+}
+
+.trophy{
+    width:40px;
+    height:40px;
+
+    background:#fff4d7;
+
+    border-radius:11px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#f3b62d;
+
+    font-size:20px;
+}
+
+.streak strong{
+    display:block;
+
+    font-size:20px;
+
+    margin-top:7px;
+}
+
+.streak strong small{
+    font-size:9px;
+
+    color:#7d93a3;
+
+    font-weight:400;
+}
+
+.streak > small{
+    font-size:9px;
+
+    color:#7d93a3;
+}
+
+.wave{
+    position:absolute;
+
+    left:-10%;
+    right:-10%;
+
+    bottom:-43px;
+
+    height:78px;
+
+    background:#d8faf3;
+
+    border-radius:
+        50% 50% 0 0 /
+        55% 55% 0 0;
+
+    transform:rotate(-3deg);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer-strip{
+    position:relative;
+
+    z-index:20;
+
+    width:100%;
+
+    height:100px;
+
+    background:#062b42;
+
+    color:white;
+
+    overflow:hidden;
+}
+
+.footer-inner{
+    height:100px;
+
+    width:94%;
+
+    max-width:1540px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1fr
+        1fr
+        220px;
+
+    align-items:center;
+}
+
+.metric{
+    height:62px;
+
+    border-right:
+        1px solid rgba(255,255,255,.16);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding-left:18px;
+}
+
+.metric:first-child{
+    padding-left:0;
+}
+
+.metric .mi{
+    font-size:30px;
+
+    color:#08d8b1;
+}
+
+.metric strong{
+    font-size:25px;
+}
+
+.metric span{
+    display:block;
+
+    color:#9eb4c0;
+
+    font-size:11px;
+
+    margin-top:3px;
+}
+
+.foot-msg{
+    padding-left:30px;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    line-height:1.35;
+
+    color:#d7e4e9;
+}
+
+.foot-msg i{
+    display:block;
+
+    width:50px;
+
+    height:3px;
+
+    background:#0bd9b0;
+
+    margin-top:8px;
+}
+
+
+/* =====================================================
+   SCREEN SIZE FIXES
+===================================================== */
+
+/* 1920 / large */
+
+@media (min-width:1600px){
+
+    .hero{
+        grid-template-columns:
+            420px
+            390px
+            minmax(600px,1fr);
+
+        gap:28px;
+    }
+
+    .person img{
+        height:min(690px,calc(100vh - 145px));
+
+        left:-55px;
+    }
+
+    h1{
+        font-size:59px;
+    }
+}
+
+
+/* normal laptop / your screen */
+
+@media (max-width:1599px) and (min-width:1200px){
+
+    .page{
+        height:calc(100vh - 100px);
+    }
+
+    .topbar{
+        height:76px;
+    }
+
+    .hero{
+        height:calc(100% - 76px);
+
+        grid-template-columns:
+            390px
+            370px
+            minmax(550px,1fr);
+
+        gap:20px;
+    }
+
+    .person img{
+        height:650px;
+
+        left:-62px;
+    }
+
+    h1{
+        font-size:54px;
+
+        margin-top:21px;
+        margin-bottom:19px;
+    }
+
+    .desc{
+        font-size:16px;
+    }
+
+    .start{
+        height:58px;
+
+        margin-top:21px;
+    }
+
+    .features{
+        margin-top:21px;
+    }
+
+    .dashboard{
+        height:570px;
+    }
+}
+
+
+/* smaller desktop */
+
+@media (max-width:1199px) and (min-width:851px){
+
+    .page{
+        height:calc(100vh - 80px);
+    }
+
+    .topbar{
+        height:70px;
+    }
+
+    .hero{
+        height:calc(100% - 70px);
+
+        grid-template-columns:
+            300px
+            320px
+            minmax(420px,1fr);
+
+        gap:14px;
+    }
+
+    .logo-name{
+        font-size:34px;
+    }
+
+    .logo-icon{
+        width:50px;
+        height:50px;
+    }
+
+    .person img{
+        height:570px;
+
+        left:-75px;
+    }
+
+    h1{
+        font-size:45px;
+    }
+
+    .desc{
+        font-size:14px;
+    }
+
+    .dashboard{
+        height:520px;
+
+        grid-template-columns:125px 1fr;
+    }
+
+    .sidebar{
+        padding-left:7px;
+        padding-right:7px;
+    }
+
+    .nav a{
+        font-size:11px;
+    }
+
+    .stats{
+        grid-template-rows:92px 92px;
+    }
+
+    .chart,
+    .streak{
+        height:120px;
+    }
+
+    .footer-strip,
+    .footer-inner{
+        height:80px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:850px){
+
+    body{
+        overflow:auto;
+    }
+
+    .page{
+        height:auto;
+
+        min-height:100vh;
+
+        overflow:visible;
+    }
+
+    .topbar{
+        height:auto;
+
+        padding:18px 0;
+
+        gap:15px;
+    }
+
+    .hero{
+        height:auto;
+
+        display:flex;
+
+        flex-direction:column;
+
+        padding-bottom:30px;
+    }
+
+    .person{
+        width:100%;
+
+        height:420px;
+
+        order:2;
+    }
+
+    .person img{
+        height:450px;
+
+        left:50%;
+
+        transform:translateX(-50%);
+
+        bottom:0;
+    }
+
+    .copy{
+        order:1;
+
+        text-align:center;
+
+        padding:30px 0;
+    }
+
+    .desc{
+        margin:auto;
+    }
+
+    .start{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .features{
+        justify-content:center;
+    }
+
+    .dashboard{
+        order:3;
+
+        width:100%;
+
+        height:auto;
+
+        min-height:600px;
+    }
+
+    .footer-strip{
+        height:auto;
+    }
+
+    .footer-inner{
+        height:auto;
+
+        padding:20px 0;
+
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+
+@media(max-width:600px){
+
+    .logo-name{
+        font-size:29px;
+    }
+
+    .tagline{
+        font-size:7px;
+
+        letter-spacing:2px;
+    }
+
+    .logo-icon{
+        width:48px;
+        height:48px;
+
+        font-size:22px;
+    }
+
+    .auth button{
+        height:48px;
+
+        padding:0 12px;
+
+        font-size:13px;
+    }
+
+    h1{
+        font-size:42px;
+    }
+
+    .dashboard{
+        grid-template-columns:1fr;
+    }
+
+    .sidebar{
+        display:none;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+
+        grid-template-rows:
+            175px
+            100px
+            100px;
+    }
+
+    .goal{
+        grid-column:1/-1;
+
+        grid-row:auto;
+    }
+
+    .bottom{
+        grid-template-columns:1fr;
+    }
+
+    .footer-inner{
+        grid-template-columns:1fr;
+    }
+
+    .metric{
+        border-right:none;
+
+        border-bottom:
+            1px solid rgba(255,255,255,.12);
+
+        padding:12px 0;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<div class="page">
+
+<div class="container">
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="topbar">
+
+
+<div class="logo">
+
+    <div class="logo-icon">
+        🏋
+    </div>
+
+
+    <div>
+
+        <div class="logo-name">
+            Fit<span>Track</span>
+        </div>
+
+        <div class="tagline">
+            TRACK TODAY · STRONGER TOMORROW
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div class="auth">
+
+
+<button
+class="user-login"
+onclick="userLogin()"
+>
+
+    <span class="ico">
+        ♟
+    </span>
+
+    <span>
+        User Login
+    </span>
+
+    <b>
+        →
+    </b>
+
+</button>
+
+
+
+<button
+class="admin-login"
+onclick="adminLogin()"
+>
+
+    <span class="ico">
+        🛡
+    </span>
+
+    <span>
+        Admin Login
+    </span>
+
+    <b>
+        →
+    </b>
+
+</button>
+
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<main class="hero">
+
+
+<!-- =====================================================
+     IMAGE
+===================================================== -->
+
+<section class="person">
+
+
+<img
+src="assets/boy.png"
+alt="FitTrack fitness athlete"
+>
+
+
+<div class="slogan-side">
+
+    Stronger
+    <br>
+
+    Than
+    <br>
+
+    <span class="green">
+        Yesterday
+    </span>
+
+</div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     CENTER
+===================================================== -->
+
+<section class="copy">
+
+
+<div class="pill">
+
+    ❤ &nbsp; A HEALTHIER YOU
+
+</div>
+
+
+
+<h1>
+
+    Track Today.
+    <br>
+
+    <span class="green">
+        Stronger
+    </span>
+
+    <br>
+
+    Tomorrow.
+
+</h1>
+
+
+
+<p class="desc">
+
+    Monitor your workouts, nutrition,
+    steps, sleep, heart rate and overall
+    progress in one simple fitness platform.
+
+</p>
+
+
+
+<button
+class="start"
+onclick="getStarted()"
+>
+
+    <span>→</span>
+
+    <span>
+        Get Started
+    </span>
+
+    <span>→</span>
+
+</button>
+
+
+
+<div class="features">
+
+
+<div class="feature">
+
+    <div class="ficon">
+        🏋
+    </div>
+
+    <b>
+        Workouts
+    </b>
+
+    <span>
+        Stay Active
+    </span>
+
+</div>
+
+
+
+<div class="feature">
+
+    <div class="ficon">
+        🍴
+    </div>
+
+    <b>
+        Nutrition
+    </b>
+
+    <span>
+        Eat Better
+    </span>
+
+</div>
+
+
+
+<div class="feature">
+
+    <div class="ficon">
+        👣
+    </div>
+
+    <b>
+        Steps
+    </b>
+
+    <span>
+        Move More
+    </span>
+
+</div>
+
+
+
+<div class="feature">
+
+    <div class="ficon">
+        ❤
+    </div>
+
+    <b>
+        Health
+    </b>
+
+    <span>
+        Live Longer
+    </span>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DASHBOARD
+===================================================== -->
+
+<section class="dashboard">
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+
+<div class="dlogo">
+
+    ╋ Fit<span>Track</span>
+
+</div>
+
+
+
+<nav class="nav">
+
+
+<a
+href="#"
+class="active"
+onclick="return false"
+>
+
+    <span class="ni">
+        ▦
+    </span>
+
+    Dashboard
+
+</a>
+
+
+
+<a
+href="#"
+onclick="showPage('workouts.html')"
+>
+
+    <span class="ni">
+        ⚊
+    </span>
+
+    Workouts
+
+</a>
+
+
+
+<a
+href="#"
+onclick="showPage('nutrition.html')"
+>
+
+    <span class="ni">
+        ♜
+    </span>
+
+    Nutrition
+
+</a>
+
+
+
+<a
+href="#"
+onclick="showPage('steps.html')"
+>
+
+    <span class="ni">
+        ♟
+    </span>
+
+    Steps
+
+</a>
+
+
+
+<a
+href="#"
+onclick="showPage('sleep.html')"
+>
+
+    <span class="ni">
+        ◔
+    </span>
+
+    Sleep
+
+</a>
+
+
+
+<a
+href="#"
+onclick="showPage('heart-rate.html')"
+>
+
+    <span class="ni">
+        ♥
+    </span>
+
+    Heart Rate
+
+</a>
+
+
+
+<a
+href="#"
+onclick="showPage('goals.html')"
+>
+
+    <span class="ni">
+        ◎
+    </span>
+
+    Goals
+
+</a>
+
+
+</nav>
+
+
+
+<div class="quote">
+
+    “Consistency
+    <br>
+
+    Creates
+    <br>
+
+    Change.”
+
+</div>
+
+
+</aside>
+
+
+
+<!-- DASHBOARD MAIN -->
+
+<div class="dmain">
+
+
+<div class="dhead">
+
+
+<div class="greeting">
+
+    <h2>
+        Good Morning! 👋
+    </h2>
+
+    <p>
+        Keep going. You're doing great!
+    </p>
+
+</div>
+
+
+
+<div class="date">
+
+    ▣ &nbsp;
+    Thu, 24 Apr 2025
+
+    <span class="active">
+        • Active
+    </span>
+
+</div>
+
+
+</div>
+
+
+
+<div class="overview">
+
+
+<h3>
+    Today’s Overview
+</h3>
+
+
+<p>
+    Your daily fitness summary
+</p>
+
+
+
+<div class="stats">
+
+
+<!-- GOAL -->
+
+<div class="goal">
+
+    <small>
+        DAILY FITNESS GOAL
+    </small>
+
+    <strong>
+        78%
+    </strong>
+
+    <p>
+        You're making steady progress
+        toward today's goals.
+    </p>
+
+    <div class="progress">
+        <i></i>
+    </div>
+
+</div>
+
+
+
+<!-- STEPS -->
+
+<div class="stat">
+
+    <div class="si">
+        👣
+    </div>
+
+    <strong>
+        7,842
+    </strong>
+
+    <span>
+        Steps Today
+    </span>
+
+</div>
+
+
+
+<!-- CALORIES -->
+
+<div class="stat">
+
+    <div class="si">
+        ♨
+    </div>
+
+    <strong>
+        1,650
+    </strong>
+
+    <span>
+        Calories
+    </span>
+
+</div>
+
+
+
+<!-- WORKOUT -->
+
+<div class="stat">
+
+    <div class="si">
+        🏋
+    </div>
+
+    <strong>
+        45 min
+    </strong>
+
+    <span>
+        Workout Time
+    </span>
+
+</div>
+
+
+
+<!-- HEART -->
+
+<div class="stat">
+
+    <div class="si">
+        ❤
+    </div>
+
+    <strong>
+        72 BPM
+    </strong>
+
+    <span>
+        Heart Rate
+    </span>
+
+</div>
+
+
+</div>
+
+
+
+<!-- BOTTOM -->
+
+<div class="bottom">
+
+
+<!-- WEEKLY -->
+
+<div class="chart">
+
+
+<div class="chart-title">
+
+    <span>
+        Weekly Activity
+    </span>
+
+    <span class="arrows">
+        ‹ &nbsp; ›
+    </span>
+
+</div>
+
+
+
+<div class="bars">
+
+
+<div class="bar-wrap">
+
+    <div
+    class="bar"
+    style="height:25px"
+    ></div>
+
+    <div class="bar-label">
+        Mon
+    </div>
+
+</div>
+
+
+
+<div class="bar-wrap">
+
+    <div
+    class="bar tall"
+    style="height:55px"
+    ></div>
+
+    <div class="bar-label">
+        Tue
+    </div>
+
+</div>
+
+
+
+<div class="bar-wrap">
+
+    <div
+    class="bar"
+    style="height:38px"
+    ></div>
+
+    <div class="bar-label">
+        Wed
+    </div>
+
+</div>
+
+
+
+<div class="bar-wrap">
+
+    <div
+    class="bar tall"
+    style="height:68px"
+    ></div>
+
+    <div class="bar-label">
+        Thu
+    </div>
+
+</div>
+
+
+
+<div class="bar-wrap">
+
+    <div
+    class="bar"
+    style="height:34px"
+    ></div>
+
+    <div class="bar-label">
+        Fri
+    </div>
+
+</div>
+
+
+
+<div class="bar-wrap">
+
+    <div
+    class="bar tall"
+    style="height:59px"
+    ></div>
+
+    <div class="bar-label">
+        Sat
+    </div>
+
+</div>
+
+
+
+<div class="bar-wrap">
+
+    <div
+    class="bar tall"
+    style="height:70px"
+    ></div>
+
+    <div class="bar-label">
+        Sun
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- STREAK -->
+
+<div class="streak">
+
+
+<div class="trophy">
+    🏆
+</div>
+
+
+<strong>
+
+    12 Days
+
+    <small>
+        Current Streak
+    </small>
+
+</strong>
+
+
+<small>
+    Keep it up!
+</small>
+
+
+<div class="wave"></div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer-strip">
+
+
+<div class="footer-inner">
+
+
+<div class="metric">
+
+    <div class="mi">
+        ♟♟
+    </div>
+
+    <div>
+
+        <strong>
+            10K+
+        </strong>
+
+        <span>
+            Active Users
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<div class="metric">
+
+    <div class="mi">
+        ▥
+    </div>
+
+    <div>
+
+        <strong>
+            50K+
+        </strong>
+
+        <span>
+            Workouts Logged
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<div class="metric">
+
+    <div class="mi">
+        ●
+    </div>
+
+    <div>
+
+        <strong>
+            95%
+        </strong>
+
+        <span>
+            User Satisfaction
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<div class="metric">
+
+    <div class="mi">
+        ♢
+    </div>
+
+    <div>
+
+        <strong>
+            24/7
+        </strong>
+
+        <span>
+            Health Tracking
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<div class="foot-msg">
+
+    A HEALTHIER
+    <br>
+
+    TOMORROW
+    <br>
+
+    STARTS TODAY
+
+    <i></i>
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+function userLogin(){
+
+    window.location.href="login.html";
+
+}
+
+
+function adminLogin(){
+
+    window.location.href="admin-login.html";
+
+}
+
+
+function getStarted(){
+
+    window.location.href="register.html";
+
+}
+
+
+function showPage(page){
+
+    window.location.href=page;
+
+}
+
+</script>
+
+
+</body>
+</html>

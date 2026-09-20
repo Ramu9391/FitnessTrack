@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitTrack - Admin Login</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+
+            font-family: Arial, sans-serif;
+
+            background: #f4f8fb;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #07183b;
+        }
+
+        .admin-container {
+            width: 900px;
+            max-width: 92%;
+            min-height: 540px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            background: #ffffff;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 50px rgba(7, 24, 59, 0.12);
+        }
+
+
+        /* =========================
+           LEFT SIDE
+        ========================= */
+
+        .admin-left {
+            position: relative;
+
+            padding: 45px;
+
+            background:
+                linear-gradient(
+                    rgba(3, 27, 43, 0.82),
+                    rgba(3, 27, 43, 0.88)
+                ),
+                url("assets/hero.png");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .admin-logo {
+            position: absolute;
+
+            top: 30px;
+            left: 35px;
+        }
+
+        .admin-logo img {
+            width: 170px;
+            max-height: 75px;
+
+            object-fit: contain;
+        }
+
+        .admin-left h1 {
+            font-size: 38px;
+            line-height: 1.15;
+
+            margin-bottom: 18px;
+        }
+
+        .admin-left h1 span {
+            color: #20e69b;
+        }
+
+        .admin-left p {
+            max-width: 350px;
+
+            color: #dce7ee;
+
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .admin-features {
+            margin-top: 30px;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 14px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            font-size: 14px;
+        }
+
+        .feature i {
+            width: 30px;
+            height: 30px;
+
+            border-radius: 50%;
+
+            background: #20e69b;
+
+            color: #05291e;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        /* =========================
+           RIGHT SIDE
+        ========================= */
+
+        .admin-right {
+            padding: 55px 48px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .admin-icon {
+            width: 55px;
+            height: 55px;
+
+            border-radius: 14px;
+
+            background: rgba(32, 230, 155, 0.12);
+
+            color: #20c98c;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 24px;
+
+            margin-bottom: 18px;
+        }
+
+        .admin-right h2 {
+            font-size: 30px;
+
+            margin-bottom: 8px;
+        }
+
+        .admin-subtitle {
+            color: #718096;
+
+            font-size: 14px;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           FORM
+        ========================= */
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            margin-bottom: 8px;
+        }
+
+        .input-box {
+            position: relative;
+        }
+
+        .input-box > i:first-child {
+            position: absolute;
+
+            left: 15px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #718096;
+
+            pointer-events: none;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 48px;
+
+            border: 1px solid #dfe7ee;
+
+            border-radius: 10px;
+
+            padding: 0 45px;
+
+            outline: none;
+
+            font-size: 14px;
+
+            color: #07183b;
+
+            background: #f8fafc;
+
+            transition: .2s;
+        }
+
+        .input-box input:focus {
+            border-color: #20d997;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 0 0 3px rgba(32, 217, 151, 0.10);
+        }
+
+        .password-toggle {
+            position: absolute !important;
+
+            left: auto !important;
+            right: 15px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            cursor: pointer;
+
+            color: #718096;
+
+            z-index: 2;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .admin-btn {
+            width: 100%;
+            height: 49px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #20e69b,
+                    #2ee8a1
+                );
+
+            color: #03251a;
+
+            font-size: 15px;
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: .2s;
+
+            margin-top: 5px;
+        }
+
+        .admin-btn:hover {
+            transform: translateY(-1px);
+
+            box-shadow:
+                0 8px 20px rgba(32, 230, 155, 0.25);
+        }
+
+
+        /* =========================
+           MESSAGE
+        ========================= */
+
+        .admin-message {
+            min-height: 20px;
+
+            margin-top: 12px;
+
+            text-align: center;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           USER LOGIN
+        ========================= */
+
+        .user-login {
+            text-align: center;
+
+            margin-top: 24px;
+
+            color: #718096;
+
+            font-size: 13px;
+        }
+
+        .user-login a {
+            color: #0787d9;
+
+            text-decoration: none;
+
+            font-weight: 700;
+        }
+
+        .user-login a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            .admin-container {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-left {
+                min-height: 250px;
+
+                padding: 35px;
+            }
+
+            .admin-left h1 {
+                font-size: 28px;
+            }
+
+            .admin-features {
+                display: none;
+            }
+
+            .admin-right {
+                padding: 40px 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="admin-container">
+
+
+        <!-- =========================
+             LEFT SIDE
+        ========================= -->
+
+        <div class="admin-left">
+
+            <div class="admin-logo">
+
+                <img
+                    src="assets/logo.png"
+                    alt="FitTrack"
+                >
+
+            </div>
+
+
+            <h1>
+
+                FitTrack<br>
+
+                <span>Administration.</span>
+
+            </h1>
+
+
+            <p>
+
+                Manage users, monitor the fitness platform
+                and control FitTrack from the administrator
+                dashboard.
+
+            </p>
+
+
+            <div class="admin-features">
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <span>
+                        Manage registered users
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <span>
+                        Monitor platform activity
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <span>
+                        Manage system settings
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             RIGHT SIDE
+        ========================= -->
+
+        <div class="admin-right">
+
+
+            <div class="admin-icon">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+            </div>
+
+
+            <h2>
+                Admin Login
+            </h2>
+
+
+            <p class="admin-subtitle">
+
+                Sign in to access the FitTrack administration panel.
+
+            </p>
+
+
+            <form id="adminLoginForm">
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="adminEmail">
+                        Admin Email
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="adminEmail"
+                            placeholder="Enter admin email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="adminPassword">
+                        Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="adminPassword"
+                            placeholder="Enter admin password"
+                            required
+                        >
+
+                        <i
+                            class="fa-solid fa-eye password-toggle"
+                            id="toggleAdminPassword"
+                        ></i>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="admin-btn"
+                >
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    Admin Sign In
+
+                </button>
+
+
+                <div
+                    class="admin-message"
+                    id="adminMessage"
+                ></div>
+
+
+            </form>
+
+
+            <div class="user-login">
+
+                <a href="login.html">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back to User Login
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        /* ==========================================
+           ADMIN PASSWORD SHOW / HIDE
+        ========================================== */
+
+        const adminPassword =
+            document.getElementById(
+                "adminPassword"
+            );
+
+
+        const adminPasswordToggle =
+            document.getElementById(
+                "toggleAdminPassword"
+            );
+
+
+        adminPasswordToggle.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    adminPassword.type ===
+                    "password"
+                ) {
+
+                    adminPassword.type =
+                        "text";
+
+                    adminPasswordToggle.classList.remove(
+                        "fa-eye"
+                    );
+
+                    adminPasswordToggle.classList.add(
+                        "fa-eye-slash"
+                    );
+
+                } else {
+
+                    adminPassword.type =
+                        "password";
+
+                    adminPasswordToggle.classList.remove(
+                        "fa-eye-slash"
+                    );
+
+                    adminPasswordToggle.classList.add(
+                        "fa-eye"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* ==========================================
+           ADMIN LOGIN
+        ========================================== */
+
+        document
+            .getElementById("adminLoginForm")
+            .addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    const email =
+                        document
+                            .getElementById(
+                                "adminEmail"
+                            )
+                            .value
+                            .trim()
+                            .toLowerCase();
+
+
+                    const password =
+                        document
+                            .getElementById(
+                                "adminPassword"
+                            )
+                            .value;
+
+
+                    const message =
+                        document.getElementById(
+                            "adminMessage"
+                        );
+
+
+                    /* DEMO ADMIN CREDENTIALS */
+
+                    const adminEmail =
+                        "chippadaramu19@gmail.com";
+
+                    const adminPasswordValue =
+                        "Ramu@9391";
+
+
+                    /* CHECK LOGIN */
+
+                    if (
+                        email !== adminEmail ||
+                        password !== adminPasswordValue
+                    ) {
+
+                        message.textContent =
+                            "Invalid admin email or password.";
+
+                        message.style.color =
+                            "#ef3155";
+
+                        return;
+
+                    }
+
+
+                    /* LOGIN SUCCESS */
+
+                    localStorage.setItem(
+                        "fittrackAdminLoggedIn",
+                        "true"
+                    );
+
+
+                    localStorage.setItem(
+                        "fittrackAdmin",
+                        JSON.stringify({
+
+                            email: adminEmail,
+
+                            role: "Administrator"
+
+                        })
+                    );
+
+
+                    message.textContent =
+                        "Admin login successful...";
+
+                    message.style.color =
+                        "#0bad68";
+
+
+                    /* OPEN ADMIN DASHBOARD */
+
+                    setTimeout(
+                        function () {
+
+                            window.location.href =
+                                "admin-dashboard.html";
+
+                        },
+                        500
+                    );
+
+                }
+            );
+
+    </script>
+
+</body>
+
+</html>

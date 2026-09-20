@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitTrack - Login</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+
+            font-family: Arial, sans-serif;
+
+            background: #f4f8fb;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #07183b;
+        }
+
+        .login-container {
+            width: 900px;
+            max-width: 92%;
+            min-height: 540px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            background: #ffffff;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 50px rgba(7, 24, 59, 0.12);
+        }
+
+
+        /* =========================
+           LEFT SIDE
+        ========================= */
+
+        .login-left {
+            position: relative;
+
+            padding: 45px;
+
+            background:
+                linear-gradient(
+                    rgba(3, 27, 43, 0.78),
+                    rgba(3, 27, 43, 0.82)
+                ),
+                url("assets/hero.png");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-logo {
+            position: absolute;
+
+            top: 30px;
+            left: 35px;
+        }
+
+        .login-logo img {
+            width: 170px;
+            max-height: 75px;
+
+            object-fit: contain;
+        }
+
+        .login-left h1 {
+            font-size: 38px;
+            line-height: 1.15;
+
+            margin-bottom: 18px;
+        }
+
+        .login-left p {
+            max-width: 350px;
+
+            color: #dce7ee;
+
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .login-feature {
+            margin-top: 30px;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 14px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            font-size: 14px;
+        }
+
+        .feature i {
+            width: 30px;
+            height: 30px;
+
+            border-radius: 50%;
+
+            background: #20e69b;
+            color: #05291e;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        /* =========================
+           RIGHT SIDE
+        ========================= */
+
+        .login-right {
+            padding: 55px 48px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-right h2 {
+            font-size: 30px;
+
+            margin-bottom: 8px;
+        }
+
+        .login-subtitle {
+            color: #718096;
+
+            font-size: 14px;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           FORM
+        ========================= */
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            margin-bottom: 8px;
+        }
+
+        .input-box {
+            position: relative;
+        }
+
+        .input-box i {
+            position: absolute;
+
+            left: 15px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #718096;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 48px;
+
+            border: 1px solid #dfe7ee;
+
+            border-radius: 10px;
+
+            padding: 0 45px;
+
+            outline: none;
+
+            font-size: 14px;
+
+            color: #07183b;
+
+            background: #f8fafc;
+
+            transition: .2s;
+        }
+
+        .input-box input:focus {
+            border-color: #20d997;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 0 0 3px rgba(32, 217, 151, 0.10);
+        }
+
+        .password-toggle {
+            position: absolute !important;
+
+            left: auto !important;
+            right: 15px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            cursor: pointer;
+
+            color: #718096;
+
+            z-index: 2;
+        }
+
+
+        /* =========================
+           OPTIONS
+        ========================= */
+
+        .login-options {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            margin: 5px 0 23px;
+
+            font-size: 12px;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+
+            gap: 7px;
+
+            color: #53627e;
+        }
+
+        .remember input {
+            accent-color: #20d997;
+        }
+
+        .forgot {
+            color: #0787d9;
+
+            text-decoration: none;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           LOGIN BUTTON
+        ========================= */
+
+        .login-btn {
+            width: 100%;
+            height: 49px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #20e69b,
+                    #2ee8a1
+                );
+
+            color: #03251a;
+
+            font-size: 15px;
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: .2s;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-1px);
+
+            box-shadow:
+                0 8px 20px rgba(32, 230, 155, 0.25);
+        }
+
+
+        /* =========================
+           MESSAGE
+        ========================= */
+
+        .login-message {
+            min-height: 20px;
+
+            margin-top: 12px;
+
+            text-align: center;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           CREATE ACCOUNT
+        ========================= */
+
+        .signup {
+            text-align: center;
+
+            margin-top: 24px;
+
+            color: #718096;
+
+            font-size: 13px;
+        }
+
+        .signup a {
+            color: #0787d9;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+        .signup a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           ADMIN LOGIN
+        ========================= */
+
+        .admin-login {
+            text-align: center;
+
+            margin-top: 14px;
+        }
+
+        .admin-login a {
+            color: #718096;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+        .admin-login a:hover {
+            color: #0787d9;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            .login-container {
+                grid-template-columns: 1fr;
+            }
+
+            .login-left {
+                min-height: 250px;
+
+                padding: 35px;
+            }
+
+            .login-left h1 {
+                font-size: 28px;
+            }
+
+            .login-feature {
+                display: none;
+            }
+
+            .login-right {
+                padding: 40px 30px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="login-container">
+
+
+        <!-- =========================
+             LEFT SIDE
+        ========================= -->
+
+        <div class="login-left">
+
+            <div class="login-logo">
+
+                <img
+                    src="assets/logo.png"
+                    alt="FitTrack"
+                >
+
+            </div>
+
+
+            <h1>
+
+                A Healthier You.<br>
+
+                A Stronger Tomorrow.
+
+            </h1>
+
+
+            <p>
+
+                Track your workouts, meals, steps and progress
+                all in one place with FitTrack.
+
+            </p>
+
+
+            <div class="login-feature">
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-dumbbell"></i>
+
+                    <span>
+                        Track your workouts
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-utensils"></i>
+
+                    <span>
+                        Manage your daily meals
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <span>
+                        Monitor your progress
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             RIGHT SIDE
+        ========================= -->
+
+        <div class="login-right">
+
+            <h2>
+                Welcome Back!
+            </h2>
+
+
+            <p class="login-subtitle">
+
+                Sign in to continue to your FitTrack dashboard.
+
+            </p>
+
+
+            <form id="loginForm">
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <i
+                            class="fa-solid fa-eye password-toggle"
+                            id="togglePassword"
+                        ></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OPTIONS -->
+
+                <div class="login-options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="remember"
+                        >
+
+                        Remember me
+
+                    </label>
+
+
+                    <a
+                        href="#"
+                        class="forgot"
+                        id="forgotPassword"
+                    >
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+                <!-- SIGN IN -->
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                >
+
+                    Sign In
+
+                </button>
+
+
+                <div
+                    class="login-message"
+                    id="loginMessage"
+                ></div>
+
+            </form>
+
+
+            <!-- CREATE ACCOUNT -->
+
+            <div class="signup">
+
+                Don't have an account?
+
+                <a href="register.html">
+                    Create Account
+                </a>
+
+            </div>
+
+
+            <!-- ADMIN -->
+
+            <div class="admin-login">
+
+                <a href="admin-login.html">
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                    Admin Login
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // ==========================================
+        // PASSWORD SHOW / HIDE
+        // ==========================================
+
+        const passwordInput =
+            document.getElementById("password");
+
+
+        const passwordToggle =
+            document.getElementById("togglePassword");
+
+
+        passwordToggle.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    passwordInput.type ===
+                    "password"
+                ) {
+
+                    passwordInput.type =
+                        "text";
+
+
+                    passwordToggle.classList.remove(
+                        "fa-eye"
+                    );
+
+
+                    passwordToggle.classList.add(
+                        "fa-eye-slash"
+                    );
+
+                } else {
+
+                    passwordInput.type =
+                        "password";
+
+
+                    passwordToggle.classList.remove(
+                        "fa-eye-slash"
+                    );
+
+
+                    passwordToggle.classList.add(
+                        "fa-eye"
+                    );
+
+                }
+
+            }
+        );
+
+
+        // ==========================================
+        // LOGIN USING LOCAL STORAGE
+        // ==========================================
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+
+        loginForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const email =
+                    document
+                        .getElementById("email")
+                        .value
+                        .trim()
+                        .toLowerCase();
+
+
+                const password =
+                    document
+                        .getElementById("password")
+                        .value;
+
+
+                const remember =
+                    document
+                        .getElementById("remember")
+                        .checked;
+
+
+                const message =
+                    document
+                        .getElementById("loginMessage");
+
+
+                // GET REGISTERED USERS
+
+                const users =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "fittrackUsers"
+                        )
+                    ) || [];
+
+
+                // FIND MATCHING USER
+
+                const user =
+                    users.find(
+                        function (account) {
+
+                            return (
+                                account.email ===
+                                email &&
+                                account.password ===
+                                password
+                            );
+
+                        }
+                    );
+
+
+                // INVALID LOGIN
+
+                if (!user) {
+
+                    message.textContent =
+                        "Invalid email or password.";
+
+                    message.style.color =
+                        "#ef3155";
+
+                    return;
+
+                }
+
+
+                // ==========================================
+                // LOGIN SUCCESS
+                // ==========================================
+
+                localStorage.setItem(
+                    "fittrackLoggedIn",
+                    "true"
+                );
+
+
+                localStorage.setItem(
+                    "fittrackCurrentUser",
+                    JSON.stringify({
+
+                        name: user.name,
+
+                        email: user.email
+
+                    })
+                );
+
+
+                // REMEMBER ME
+
+                if (remember) {
+
+                    localStorage.setItem(
+                        "fittrackRememberMe",
+                        "true"
+                    );
+
+                } else {
+
+                    localStorage.removeItem(
+                        "fittrackRememberMe"
+                    );
+
+                }
+
+
+                // SUCCESS MESSAGE
+
+                message.textContent =
+                    "Login successful...";
+
+                message.style.color =
+                    "#0bad68";
+
+
+                // OPEN DASHBOARD
+
+                setTimeout(
+                    function () {
+
+                        window.location.href =
+                            "index.html";
+
+                    },
+                    500
+                );
+
+            }
+        );
+
+
+        // ==========================================
+        // FORGOT PASSWORD
+        // ==========================================
+
+        document
+            .getElementById("forgotPassword")
+            .addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    const message =
+                        document.getElementById(
+                            "loginMessage"
+                        );
+
+                    message.textContent =
+                        "Password reset will be available soon.";
+
+                    message.style.color =
+                        "#0787d9";
+
+                }
+            );
+
+    </script>
+
+</body>
+
+</html>

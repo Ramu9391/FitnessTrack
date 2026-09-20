@@ -1,0 +1,2398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitTrack - Nutrition</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8fb;
+            color: #07183b;
+        }
+
+        .app {
+            min-height: 100vh;
+            display: flex;
+        }
+
+
+        /* =========================
+           SIDEBAR
+        ========================= */
+
+        .sidebar {
+            width: 263px;
+            min-height: 100vh;
+
+            background: linear-gradient(
+                180deg,
+                #061d2d,
+                #071f31
+            );
+
+            color: white;
+
+            padding: 25px 10px;
+
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .brand {
+            height: 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 25px;
+        }
+
+        .brand img {
+            width: 190px;
+            max-height: 75px;
+            object-fit: contain;
+        }
+
+        .nav {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .nav a {
+            height: 49px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 25px;
+
+            padding: 0 30px;
+
+            color: white;
+            text-decoration: none;
+
+            border-radius: 10px;
+
+            font-size: 15px;
+            font-weight: 600;
+
+            transition: .2s;
+        }
+
+        .nav a i {
+            width: 22px;
+            text-align: center;
+            font-size: 19px;
+        }
+
+        .nav a:hover {
+            background: #12344a;
+        }
+
+        .nav a.active {
+            background: #123b52;
+        }
+
+        .nav a.active i {
+            color: #20e69b;
+        }
+
+
+        /* =========================
+   PREMIUM
+========================= */
+
+.premium {
+    margin: auto 15px 0;
+    border: 1px solid #1d4158;
+    background: rgba(10, 40, 57, .7);
+    border-radius: 12px;
+    padding: 14px 16px 13px;
+}
+
+.premium-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffd21f;
+    font-weight: 800;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.premium-feature {
+    font-size: 12px;
+    margin: 8px 0;
+    color: #dce8ee;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.premium-feature i {
+    width: 15px;
+    color: #24e8a0;
+}
+
+.premium button {
+    width: 100%;
+    height: 43px;
+    margin-top: 8px;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #1ce79a, #2ce9a0);
+    color: #03251a;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .main {
+    margin-left: 263px;
+    width: calc(100% - 263px);
+    min-width: 0;
+    min-height: 100vh;
+    padding: 25px 30px 35px;
+}
+
+        /* =========================
+           TOP
+        ========================= */
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 22px;
+        }
+
+        .page-title h1 {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+
+        .page-title p {
+            color: #718096;
+            font-size: 13px;
+        }
+
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .notification {
+            width: 42px;
+            height: 42px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            box-shadow: 0 3px 12px rgba(7, 24, 59, .08);
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .profile-circle {
+            width: 42px;
+            height: 42px;
+
+            border-radius: 50%;
+
+            background: #263c4a;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-weight: bold;
+        }
+
+        .profile-text strong {
+            display: block;
+            font-size: 14px;
+        }
+
+        .profile-text span {
+            color: #718096;
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+
+            margin-bottom: 20px;
+        }
+
+        .stat {
+            background: white;
+
+            border: 1px solid #e4ebf0;
+
+            border-radius: 14px;
+
+            padding: 18px;
+
+            box-shadow:
+                0 3px 12px rgba(7, 24, 59, .05);
+        }
+
+        .stat-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin-bottom: 12px;
+        }
+
+        .stat-icon {
+            width: 43px;
+            height: 43px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 18px;
+        }
+
+        .green {
+            background: #dff8ed;
+            color: #0bb77b;
+        }
+
+        .purple {
+            background: #eee2ff;
+            color: #7c4ce5;
+        }
+
+        .pink {
+            background: #ffe0e8;
+            color: #ef4565;
+        }
+
+        .blue {
+            background: #dff1ff;
+            color: #179fe4;
+        }
+
+        .orange {
+            background: #fff0d8;
+            color: #f5a623;
+        }
+
+        .stat h3 {
+            font-size: 22px;
+            margin-bottom: 3px;
+        }
+
+        .stat p {
+            color: #718096;
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .content-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.45fr
+                1fr;
+
+            gap: 18px;
+        }
+
+        .panel {
+            background: white;
+
+            border: 1px solid #e4ebf0;
+
+            border-radius: 15px;
+
+            padding: 20px;
+
+            box-shadow:
+                0 3px 12px rgba(7, 24, 59, .05);
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 18px;
+        }
+
+        .panel-header h2 {
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           ADD MEAL BUTTON
+        ========================= */
+
+        .add-meal {
+            border: none;
+
+            background: #20e69b;
+
+            color: #05291e;
+
+            font-weight: 800;
+
+            padding: 11px 18px;
+
+            border-radius: 9px;
+
+            cursor: pointer;
+
+            font-size: 12px;
+
+            transition: .2s;
+        }
+
+        .add-meal:hover {
+            background: #19d88f;
+            transform: translateY(-1px);
+        }
+
+
+        /* =========================
+           MEAL ROW
+        ========================= */
+
+        .meal-row {
+            display: flex;
+            align-items: center;
+
+            padding: 14px 0;
+
+            border-bottom: 1px solid #edf1f4;
+        }
+
+        .meal-row:last-child {
+            border-bottom: none;
+        }
+
+        .meal-icon {
+            width: 46px;
+            height: 46px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-right: 13px;
+
+            font-size: 18px;
+        }
+
+        .meal-info {
+            flex: 1;
+        }
+
+        .meal-info strong {
+            display: block;
+
+            font-size: 14px;
+
+            margin-bottom: 4px;
+        }
+
+        .meal-info span {
+            color: #718096;
+            font-size: 12px;
+        }
+
+        .meal-calories {
+            text-align: right;
+        }
+
+        .meal-calories strong {
+            display: block;
+            font-size: 13px;
+        }
+
+        .meal-calories span {
+            color: #718096;
+            font-size: 11px;
+        }
+
+        .meal-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 12px;
+}
+
+.meal-edit,
+.meal-delete {
+    width: 32px;
+    height: 32px;
+
+    border: none;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    transition: .2s;
+}
+
+.meal-edit {
+    background: #eef5ff;
+    color: #2196f3;
+}
+
+.meal-edit:hover {
+    background: #dcecff;
+    transform: scale(1.05);
+}
+
+.meal-delete {
+    background: #fff0f2;
+    color: #ef4565;
+}
+
+.meal-delete:hover {
+    background: #ffe0e5;
+    transform: scale(1.05);
+}
+
+
+
+        /* =========================
+           NUTRITION BREAKDOWN
+        ========================= */
+
+        .nutrition-item {
+            margin-bottom: 22px;
+        }
+
+        .nutrition-head {
+            display: flex;
+            justify-content: space-between;
+
+            margin-bottom: 8px;
+        }
+
+        .nutrition-head strong {
+            font-size: 13px;
+        }
+
+        .nutrition-head span {
+            color: #718096;
+            font-size: 12px;
+        }
+
+        .progress {
+            width: 100%;
+            height: 8px;
+
+            background: #edf2f5;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+
+            border-radius: 20px;
+        }
+
+        .protein-fill {
+            width: 65%;
+            background: #20d997;
+        }
+
+        .carbs-fill {
+            width: 72%;
+            background: #4f7ff0;
+        }
+
+        .fat-fill {
+            width: 45%;
+            background: #ffad32;
+        }
+
+        .fiber-fill {
+            width: 55%;
+            background: #9b68ee;
+        }
+
+
+        /* =========================
+           MODAL
+        ========================= */
+
+        .modal {
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(3, 20, 32, .55);
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            z-index: 1000;
+
+            padding: 20px;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-box {
+            width: 450px;
+            max-width: 100%;
+
+            background: white;
+
+            border-radius: 18px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, .22);
+
+            animation: popup .2s ease;
+        }
+
+        @keyframes popup {
+
+            from {
+                opacity: 0;
+                transform: translateY(15px) scale(.97);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+
+        }
+
+        .modal-header {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 22px;
+        }
+
+        .modal-header h2 {
+            font-size: 21px;
+        }
+
+        .close-btn {
+            width: 34px;
+            height: 34px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #f1f5f8;
+
+            color: #526174;
+
+            cursor: pointer;
+
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        .form-group label {
+            display: block;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+
+            height: 46px;
+
+            border: 1px solid #dfe7ee;
+
+            border-radius: 9px;
+
+            background: #f8fafc;
+
+            padding: 0 13px;
+
+            outline: none;
+
+            color: #07183b;
+
+            font-size: 14px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #20d997;
+
+            background: white;
+
+            box-shadow:
+                0 0 0 3px rgba(32, 217, 151, .10);
+        }
+
+        .form-row {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 13px;
+        }
+
+        .modal-buttons {
+            display: flex;
+
+            justify-content: flex-end;
+
+            gap: 10px;
+
+            margin-top: 23px;
+        }
+
+        .cancel-btn,
+        .save-btn {
+            height: 43px;
+
+            padding: 0 18px;
+
+            border-radius: 9px;
+
+            cursor: pointer;
+
+            font-size: 13px;
+
+            font-weight: 700;
+        }
+
+        .cancel-btn {
+            border: 1px solid #dfe7ee;
+
+            background: white;
+
+            color: #526174;
+        }
+
+        .save-btn {
+            border: none;
+
+            background: #20e69b;
+
+            color: #05291e;
+        }
+
+
+        @media (max-width: 900px) {
+
+            .sidebar {
+                width: 190px;
+            }
+
+            .main {
+                margin-left: 190px;
+                width: calc(100% - 190px);
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* =====================================================
+   SAME SIDEBAR AS DASHBOARD
+===================================================== */
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.sidebar {
+    width: 263px !important;
+    height: 100vh !important;
+    flex: 0 0 263px !important;
+    padding: 18px 9px 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+}
+
+.brand {
+    height: 100px !important;
+    flex: 0 0 100px !important;
+    padding-left: 20px !important;
+    margin-bottom: 8px !important;
+    justify-content: flex-start !important;
+}
+
+.brand img {
+    width: 196px !important;
+    max-height: 88px !important;
+}
+
+.nav {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+}
+
+.nav a {
+    height: 49px !important;
+    flex: 0 0 49px !important;
+    border-radius: 11px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 28px !important;
+    padding: 0 28px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+}
+
+.nav a i {
+    width: 25px !important;
+    flex: 0 0 25px !important;
+    font-size: 22px !important;
+}
+
+/* Laptop height - SAME AS DASHBOARD */
+@media (max-height: 850px) {
+
+    .sidebar {
+        padding-top: 10px !important;
+    }
+
+    .brand {
+        height: 82px !important;
+        flex-basis: 82px !important;
+        margin-bottom: 2px !important;
+    }
+
+    .brand img {
+        width: 184px !important;
+    }
+
+    .nav a {
+        height: 43px !important;
+        flex-basis: 43px !important;
+        font-size: 14px !important;
+    }
+
+    .nav a i {
+        font-size: 19px !important;
+    }
+
+    .premium {
+        padding: 10px 13px !important;
+    }
+
+    .premium-feature {
+        margin: 5px 0 !important;
+        font-size: 11px !important;
+    }
+
+    .premium button {
+        height: 37px !important;
+    }
+}
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <img
+                src="assets/logo.png"
+                alt="FitTrack"
+            >
+
+        </div>
+
+
+        <nav class="nav">
+
+            <a href="index.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="workouts.html">
+
+                <i class="fa-solid fa-dumbbell"></i>
+
+                <span>Workouts</span>
+
+            </a>
+
+
+            <a
+                href="nutrition.html"
+                class="active"
+            >
+
+                <i class="fa-solid fa-apple-whole"></i>
+
+                <span>Nutrition</span>
+
+            </a>
+
+
+            <a href="steps.html">
+<i class="fa-solid fa-person-walking"></i>
+<span>Steps</span>
+</a>
+
+
+           <a href="sleep.html">
+    <i class="fa-solid fa-moon"></i>
+    <span>Sleep</span>
+</a>
+
+
+            <a href="heart-rate.html">
+
+                <i class="fa-regular fa-heart"></i>
+
+                <span>Heart Rate</span>
+
+            </a>
+
+
+            <a href="goals.html">
+
+                <i class="fa-solid fa-bullseye"></i>
+
+                <span>Goals</span>
+
+            </a>
+
+
+            <a href="progress.html">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                <span>Progress</span>
+
+            </a>
+
+
+            <a href="reports.html">
+
+                <i class="fa-regular fa-file-lines"></i>
+
+                <span>Reports</span>
+
+            </a>
+
+
+            <a href="profile.html">
+
+                <i class="fa-regular fa-user"></i>
+
+                <span>Profile</span>
+
+            </a>
+
+
+            <a href="settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>Settings</span>
+
+            </a>
+
+        </nav>
+
+        <!-- Premium -->
+<div class="premium">
+
+    <div class="premium-title">
+        <i class="fa-solid fa-crown"></i>
+        <span>Go Premium</span>
+    </div>
+
+    <div class="premium-feature">
+        <i class="fa-solid fa-chart-line"></i>
+        Advanced Insights
+    </div>
+
+    <div class="premium-feature">
+        <i class="fa-solid fa-plus"></i>
+        Personalized Plans
+    </div>
+
+    <div class="premium-feature">
+        <i class="fa-solid fa-shield-heart"></i>
+        Ad-Free Experience
+    </div>
+
+    <button>Upgrade Now</button>
+
+</div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN
+    ========================= -->
+
+    <main class="main">
+
+
+        <div class="topbar">
+
+            <div class="page-title">
+
+                <h1>Nutrition</h1>
+
+                <p>
+                    Track your meals and daily nutrition.
+                </p>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <div class="notification">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </div>
+
+
+                <div class="profile">
+
+                    <div class="profile-circle">
+                        R
+                    </div>
+
+                    <div class="profile-text">
+
+                        <strong>Ramu</strong>
+
+                        <span>
+                            Stay Consistent!
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             STATS
+        ========================= -->
+
+        <section class="stats">
+
+
+            <div class="stat">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon pink">
+
+                        <i class="fa-solid fa-fire"></i>
+
+                    </div>
+
+                    <div>
+
+                        <p>Calories</p>
+
+                        <h3 id="totalCalories">
+                            1650
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                <p>Today's intake</p>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon green">
+
+                        <i class="fa-solid fa-dumbbell"></i>
+
+                    </div>
+
+                    <div>
+
+                        <p>Protein</p>
+
+                        <h3 id="totalProtein">
+                            95 g
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                <p>Today's intake</p>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon blue">
+
+                        <i class="fa-solid fa-bowl-food"></i>
+
+                    </div>
+
+                    <div>
+
+                        <p>Meals</p>
+
+                        <h3 id="totalMeals">
+                            4
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                <p>Today</p>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon orange">
+
+                        <i class="fa-solid fa-bullseye"></i>
+
+                    </div>
+
+                    <div>
+
+                        <p>Daily Goal</p>
+
+                        <h3>
+                            1800
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                <p>Calories</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTENT
+        ========================= -->
+
+        <div class="content-grid">
+
+
+            <!-- TODAY'S MEALS -->
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <h2>
+                        Today's Meals
+                    </h2>
+
+
+                    <button
+                        class="add-meal"
+                        id="openMeal"
+                    >
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add Meal
+
+                    </button>
+
+                </div>
+
+
+                <div id="mealList">
+
+
+                    <div class="meal-row">
+
+                        <div class="meal-icon purple">
+
+                            <i class="fa-solid fa-mug-hot"></i>
+
+                        </div>
+
+                        <div class="meal-info">
+
+                            <strong>
+                                Breakfast
+                            </strong>
+
+                            <span>
+                                Oats, Banana, Egg Whites
+                            </span>
+
+                        </div>
+
+                        <div class="meal-calories">
+
+                            <strong>
+                                420 kcal
+                            </strong>
+
+                            <span>
+                                25 g protein
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="meal-row">
+
+                        <div class="meal-icon green">
+
+                            <i class="fa-solid fa-bowl-food"></i>
+
+                        </div>
+
+                        <div class="meal-info">
+
+                            <strong>
+                                Lunch
+                            </strong>
+
+                            <span>
+                                Rice, Dal, Vegetables
+                            </span>
+
+                        </div>
+
+                        <div class="meal-calories">
+
+                            <strong>
+                                580 kcal
+                            </strong>
+
+                            <span>
+                                28 g protein
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="meal-row">
+
+                        <div class="meal-icon orange">
+
+                            <i class="fa-solid fa-utensils"></i>
+
+                        </div>
+
+                        <div class="meal-info">
+
+                            <strong>
+                                Dinner
+                            </strong>
+
+                            <span>
+                                Roti, Paneer Curry
+                            </span>
+
+                        </div>
+
+                        <div class="meal-calories">
+
+                            <strong>
+                                450 kcal
+                            </strong>
+
+                            <span>
+                                30 g protein
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="meal-row">
+
+                        <div class="meal-icon pink">
+
+                            <i class="fa-solid fa-bottle-water"></i>
+
+                        </div>
+
+                        <div class="meal-info">
+
+                            <strong>
+                                Snacks
+                            </strong>
+
+                            <span>
+                                Nuts, Green Tea
+                            </span>
+
+                        </div>
+
+                        <div class="meal-calories">
+
+                            <strong>
+                                200 kcal
+                            </strong>
+
+                            <span>
+                                12 g protein
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- NUTRITION BREAKDOWN -->
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <h2>
+                        Nutrition Breakdown
+                    </h2>
+
+                </div>
+
+
+                <div class="nutrition-item">
+
+                    <div class="nutrition-head">
+
+                        <strong>
+                            Protein
+                        </strong>
+
+                        <span>
+                            95 g
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div class="progress-fill protein-fill"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nutrition-item">
+
+                    <div class="nutrition-head">
+
+                        <strong>
+                            Carbohydrates
+                        </strong>
+
+                        <span>
+                            180 g
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div class="progress-fill carbs-fill"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nutrition-item">
+
+                    <div class="nutrition-head">
+
+                        <strong>
+                            Fats
+                        </strong>
+
+                        <span>
+                            52 g
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div class="progress-fill fat-fill"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nutrition-item">
+
+                    <div class="nutrition-head">
+
+                        <strong>
+                            Fiber
+                        </strong>
+
+                        <span>
+                            21 g
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div class="progress-fill fiber-fill"></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================
+     ADD MEAL MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="mealModal"
+>
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <h2>
+                Add Meal
+            </h2>
+
+
+            <button
+                class="close-btn"
+                id="closeMeal"
+                type="button"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="mealForm">
+
+
+            <div class="form-group">
+
+                <label for="mealType">
+                    Meal Type
+                </label>
+
+                <select
+                    id="mealType"
+                    required
+                >
+
+                    <option value="">
+                        Select meal
+                    </option>
+
+                    <option value="Breakfast">
+                        Breakfast
+                    </option>
+
+                    <option value="Lunch">
+                        Lunch
+                    </option>
+
+                    <option value="Dinner">
+                        Dinner
+                    </option>
+
+                    <option value="Snacks">
+                        Snacks
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="foodName">
+                    Food Name
+                </label>
+
+                <input
+                    type="text"
+                    id="foodName"
+                    placeholder="Example: Oats and Eggs"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-row">
+
+
+                <div class="form-group">
+
+                    <label for="mealCalories">
+                        Calories
+                    </label>
+
+                    <input
+                        type="number"
+                        id="mealCalories"
+                        placeholder="400"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="mealProtein">
+                        Protein
+                    </label>
+
+                    <input
+                        type="number"
+                        id="mealProtein"
+                        placeholder="25"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelMeal"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="save-btn"
+                >
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Add Meal
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ==========================================
+   ELEMENTS
+========================================== */
+
+const mealModal =
+    document.getElementById("mealModal");
+
+const openMeal =
+    document.getElementById("openMeal");
+
+const closeMeal =
+    document.getElementById("closeMeal");
+
+const cancelMeal =
+    document.getElementById("cancelMeal");
+
+const mealForm =
+    document.getElementById("mealForm");
+
+const mealList =
+    document.getElementById("mealList");
+
+const mealType =
+    document.getElementById("mealType");
+
+const foodName =
+    document.getElementById("foodName");
+
+const mealCalories =
+    document.getElementById("mealCalories");
+
+const mealProtein =
+    document.getElementById("mealProtein");
+
+
+/* ==========================================
+   EDIT MODE
+========================================== */
+
+let editingMeal = null;
+
+
+/* ==========================================
+   LOAD SAVED MEALS
+========================================== */
+
+let savedMeals =
+    JSON.parse(
+        localStorage.getItem("fittrackMeals")
+    );
+
+
+/* ==========================================
+   FIRST TIME DEFAULT MEALS
+========================================== */
+
+if (!savedMeals) {
+
+    savedMeals = [
+
+        {
+            type: "Breakfast",
+            food: "Oats, Banana, Egg Whites",
+            calories: 420,
+            protein: 25
+        },
+
+        {
+            type: "Lunch",
+            food: "Rice, Dal, Vegetables",
+            calories: 580,
+            protein: 28
+        },
+
+        {
+            type: "Dinner",
+            food: "Roti, Paneer Curry",
+            calories: 450,
+            protein: 30
+        },
+
+        {
+            type: "Snacks",
+            food: "Nuts, Green Tea",
+            calories: 200,
+            protein: 12
+        }
+
+    ];
+
+    localStorage.setItem(
+        "fittrackMeals",
+        JSON.stringify(savedMeals)
+    );
+}
+
+
+/* ==========================================
+   GET MEAL ICON
+========================================== */
+
+function getMealIcon(type) {
+
+    if (type === "Breakfast") {
+
+        return {
+            icon: "fa-mug-hot",
+            color: "purple"
+        };
+
+    }
+
+    if (type === "Lunch") {
+
+        return {
+            icon: "fa-bowl-food",
+            color: "green"
+        };
+
+    }
+
+    if (type === "Dinner") {
+
+        return {
+            icon: "fa-utensils",
+            color: "orange"
+        };
+
+    }
+
+    return {
+        icon: "fa-bottle-water",
+        color: "pink"
+    };
+
+}
+
+
+/* ==========================================
+   CREATE MEAL ROW
+========================================== */
+
+function createMealRow(meal) {
+
+    const row =
+        document.createElement("div");
+
+    row.className =
+        "meal-row";
+
+
+    const mealIcon =
+        getMealIcon(meal.type);
+
+
+    /* ICON */
+
+    const icon =
+        document.createElement("div");
+
+    icon.className =
+        "meal-icon " +
+        mealIcon.color;
+
+    icon.innerHTML =
+        '<i class="fa-solid ' +
+        mealIcon.icon +
+        '"></i>';
+
+
+    /* INFO */
+
+    const info =
+        document.createElement("div");
+
+    info.className =
+        "meal-info";
+
+
+    const title =
+        document.createElement("strong");
+
+    title.textContent =
+        meal.type;
+
+
+    const food =
+        document.createElement("span");
+
+    food.textContent =
+        meal.food;
+
+
+    info.appendChild(title);
+
+    info.appendChild(food);
+
+
+    /* CALORIES */
+
+    const caloriesBox =
+        document.createElement("div");
+
+    caloriesBox.className =
+        "meal-calories";
+
+
+    const calories =
+        document.createElement("strong");
+
+    calories.textContent =
+        meal.calories + " kcal";
+
+
+    const protein =
+        document.createElement("span");
+
+    protein.textContent =
+        meal.protein + " g protein";
+
+
+    caloriesBox.appendChild(
+        calories
+    );
+
+    caloriesBox.appendChild(
+        protein
+    );
+
+
+    /* ACTIONS */
+
+    const actions =
+        document.createElement("div");
+
+    actions.className =
+        "meal-actions";
+
+
+    /* EDIT */
+
+    const editButton =
+        document.createElement("button");
+
+    editButton.className =
+        "meal-edit";
+
+    editButton.innerHTML =
+        '<i class="fa-solid fa-pen"></i>';
+
+    editButton.title =
+        "Edit meal";
+
+
+    editButton.addEventListener(
+        "click",
+        function () {
+
+            editingMeal =
+                meal;
+
+
+            mealModal.classList.add(
+                "show"
+            );
+
+
+            document.querySelector(
+                ".modal-header h2"
+            ).textContent =
+                "Edit Meal";
+
+
+            document.querySelector(
+                ".save-btn"
+            ).innerHTML =
+                '<i class="fa-solid fa-check"></i> Save Changes';
+
+
+            mealType.value =
+                meal.type;
+
+            foodName.value =
+                meal.food;
+
+            mealCalories.value =
+                meal.calories;
+
+            mealProtein.value =
+                meal.protein;
+
+        }
+    );
+
+
+    /* DELETE */
+
+    const deleteButton =
+        document.createElement("button");
+
+    deleteButton.className =
+        "meal-delete";
+
+    deleteButton.innerHTML =
+        '<i class="fa-solid fa-trash"></i>';
+
+    deleteButton.title =
+        "Delete meal";
+
+
+    deleteButton.addEventListener(
+        "click",
+        function () {
+
+            savedMeals =
+                savedMeals.filter(
+                    function (item) {
+
+                        return item !== meal;
+
+                    }
+                );
+
+
+            localStorage.setItem(
+                "fittrackMeals",
+                JSON.stringify(savedMeals)
+            );
+
+
+            renderMeals();
+
+        }
+    );
+
+
+    actions.appendChild(
+        editButton
+    );
+
+    actions.appendChild(
+        deleteButton
+    );
+
+
+    /* ROW */
+
+    row.appendChild(icon);
+
+    row.appendChild(info);
+
+    row.appendChild(caloriesBox);
+
+    row.appendChild(actions);
+
+
+    return row;
+
+}
+
+
+/* ==========================================
+   RENDER MEALS
+========================================== */
+
+function renderMeals() {
+
+    mealList.innerHTML = "";
+
+
+    savedMeals.forEach(
+        function (meal) {
+
+            mealList.appendChild(
+                createMealRow(meal)
+            );
+
+        }
+    );
+
+
+    updateTotals();
+
+}
+
+
+/* ==========================================
+   UPDATE TOTALS
+========================================== */
+
+function updateTotals() {
+
+    const totalCalories =
+        document.getElementById(
+            "totalCalories"
+        );
+
+
+    const totalProtein =
+        document.getElementById(
+            "totalProtein"
+        );
+
+
+    const totalMeals =
+        document.getElementById(
+            "totalMeals"
+        );
+
+
+    const calories =
+        savedMeals.reduce(
+            function (sum, meal) {
+
+                return sum +
+                    Number(meal.calories);
+
+            },
+            0
+        );
+
+
+    const protein =
+        savedMeals.reduce(
+            function (sum, meal) {
+
+                return sum +
+                    Number(meal.protein);
+
+            },
+            0
+        );
+
+
+    totalCalories.textContent =
+        calories;
+
+
+    totalProtein.textContent =
+        protein + " g";
+
+
+    totalMeals.textContent =
+        savedMeals.length;
+
+
+    /* UPDATE PROTEIN BREAKDOWN */
+
+    const proteinValue =
+        document.querySelector(
+            ".nutrition-item:first-child .nutrition-head span"
+        );
+
+    if (proteinValue) {
+
+        proteinValue.textContent =
+            protein + " g";
+
+    }
+
+
+    const proteinFill =
+        document.querySelector(
+            ".protein-fill"
+        );
+
+    if (proteinFill) {
+
+        const proteinPercent =
+            Math.min(
+                (protein / 150) * 100,
+                100
+            );
+
+        proteinFill.style.width =
+            proteinPercent + "%";
+
+    }
+
+}
+
+
+/* ==========================================
+   OPEN ADD MEAL
+========================================== */
+
+openMeal.addEventListener(
+    "click",
+    function () {
+
+        editingMeal = null;
+
+
+        document.querySelector(
+            ".modal-header h2"
+        ).textContent =
+            "Add Meal";
+
+
+        document.querySelector(
+            ".save-btn"
+        ).innerHTML =
+            '<i class="fa-solid fa-check"></i> Add Meal';
+
+
+        mealForm.reset();
+
+
+        mealModal.classList.add(
+            "show"
+        );
+
+
+        mealType.focus();
+
+    }
+);
+
+
+/* ==========================================
+   CLOSE MODAL
+========================================== */
+
+function closeMealModal() {
+
+    mealModal.classList.remove(
+        "show"
+    );
+
+
+    mealForm.reset();
+
+
+    editingMeal = null;
+
+
+    document.querySelector(
+        ".modal-header h2"
+    ).textContent =
+        "Add Meal";
+
+
+    document.querySelector(
+        ".save-btn"
+    ).innerHTML =
+        '<i class="fa-solid fa-check"></i> Add Meal';
+
+}
+
+
+closeMeal.addEventListener(
+    "click",
+    closeMealModal
+);
+
+
+cancelMeal.addEventListener(
+    "click",
+    closeMealModal
+);
+
+
+/* ==========================================
+   ADD / EDIT MEAL
+========================================== */
+
+mealForm.addEventListener(
+    "submit",
+    function (event) {
+
+        event.preventDefault();
+
+
+        const type =
+            mealType.value;
+
+
+        const food =
+            foodName.value.trim();
+
+
+        const calories =
+            Number(
+                mealCalories.value
+            );
+
+
+        const protein =
+            Number(
+                mealProtein.value
+            );
+
+
+        if (
+            type === "" ||
+            food === "" ||
+            calories < 0 ||
+            protein < 0
+        ) {
+
+            return;
+
+        }
+
+
+        /* ==================================
+           EDIT EXISTING MEAL
+        ================================== */
+
+        if (editingMeal) {
+
+            editingMeal.type =
+                type;
+
+            editingMeal.food =
+                food;
+
+            editingMeal.calories =
+                calories;
+
+            editingMeal.protein =
+                protein;
+
+        }
+
+
+        /* ==================================
+           ADD NEW MEAL
+        ================================== */
+
+        else {
+
+            const newMeal = {
+
+                type: type,
+
+                food: food,
+
+                calories: calories,
+
+                protein: protein
+
+            };
+
+
+            savedMeals.unshift(
+                newMeal
+            );
+
+        }
+
+
+        /* ==================================
+           SAVE
+        ================================== */
+
+        localStorage.setItem(
+            "fittrackMeals",
+            JSON.stringify(savedMeals)
+        );
+
+
+        /* ==================================
+           REFRESH DISPLAY
+        ================================== */
+
+        renderMeals();
+
+
+        /* ==================================
+           CLOSE
+        ================================== */
+
+        closeMealModal();
+
+    }
+);
+
+
+/* ==========================================
+   CLICK OUTSIDE
+========================================== */
+
+mealModal.addEventListener(
+    "click",
+    function (event) {
+
+        if (
+            event.target === mealModal
+        ) {
+
+            closeMealModal();
+
+        }
+
+    }
+);
+
+
+/* ==========================================
+   ESC KEY
+========================================== */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key === "Escape" &&
+            mealModal.classList.contains("show")
+        ) {
+
+            closeMealModal();
+
+        }
+
+    }
+);
+
+
+/* ==========================================
+   LOAD MEALS
+========================================== */
+
+renderMeals();
+
+</script>
+
+<script>
+    if (localStorage.getItem("fittrackLoggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
+
+</body>
+</html>

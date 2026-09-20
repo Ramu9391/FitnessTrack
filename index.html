@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <img src="assets/logo.png" alt="FitTrack">
+        </div>
+
+        <nav class="navigation">
+
+            <a class="nav-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="workouts.html" class="nav-item">
+    <i class="fa-solid fa-dumbbell"></i>
+    <span>Workouts</span>
+</a>
+
+
+<a href="nutrition.html" class="nav-item">
+    <i class="fa-solid fa-apple-whole"></i>
+    <span>Nutrition</span>
+</a>
+
+           <a href="steps.html" class="nav-item">
+    <i class="fa-solid fa-person-walking"></i>
+    <span>Steps</span>
+</a>
+
+            <a href="sleep.html" class="nav-item">
+    <i class="fa-solid fa-moon"></i>
+    <span>Sleep</span>
+</a>
+
+            <a href="heart-rate.html" class="nav-item">
+    <i class="fa-regular fa-heart"></i>
+    <span>Heart Rate</span>
+</a>
+
+            <a href="goals.html" class="nav-item">
+                <i class="fa-solid fa-bullseye"></i>
+                <span>Goals</span>
+            </a>
+
+            <a href="progress.html" class="nav-item">
+    <i class="fa-solid fa-chart-column"></i>
+    <span>Progress</span>
+</a>
+
+            <a href="reports.html" class="nav-item">
+                <i class="fa-regular fa-file-lines"></i>
+                <span>Reports</span>
+            </a>
+
+            <a href="profile.html" class="nav-item">
+                <i class="fa-regular fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="settings.html" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <!-- Premium -->
+        <div class="premium">
+
+            <div class="premium-title">
+                <i class="fa-solid fa-crown"></i>
+                <span>Go Premium</span>
+            </div>
+
+            <div class="premium-feature">
+                <i class="fa-solid fa-chart-line"></i>
+                Advanced Insights
+            </div>
+
+            <div class="premium-feature">
+                <i class="fa-solid fa-plus"></i>
+                Personalized Plans
+            </div>
+
+            <div class="premium-feature">
+                <i class="fa-solid fa-shield-heart"></i>
+                Ad-Free Experience
+            </div>
+
+            <button>Upgrade Now</button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+    <main class="main">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search anything...">
+            </div>
+
+            <div class="top-right">
+
+                <div class="notification">
+                    <i class="fa-regular fa-bell"></i>
+                    <span></span>
+                </div>
+
+                <div class="profile-mini">
+                    <div class="avatar">R</div>
+
+                    <div class="profile-name">
+                        <strong>Ramu</strong>
+                        <small>Stay Consistent!</small>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <img src="assets/hero.png" alt="FitTrack Hero">
+
+        </section>
+
+
+        <!-- ================= STATS ================= -->
+        <section class="stats-row">
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    <i class="fa-solid fa-person-running"></i>
+                </div>
+
+                <div class="stat-content">
+                    <span>Steps</span>
+                    <strong>7,842</strong>
+                    <small>/ 10,000</small>
+
+                    <div class="progress-line">
+                        <div class="progress green-bar" style="width:78%"></div>
+                    </div>
+                </div>
+
+                <b class="percentage">78%</b>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon red">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+
+                <div class="stat-content">
+                    <span>Calories</span>
+                    <strong>1,650</strong>
+                    <small>kcal</small>
+
+                    <div class="progress-line">
+                        <div class="progress red-bar" style="width:66%"></div>
+                    </div>
+                </div>
+
+                <b class="percentage">66%</b>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+
+                <div class="stat-content">
+                    <span>Workout</span>
+                    <strong>45</strong>
+                    <small>min</small>
+
+                    <div class="progress-line">
+                        <div class="progress purple-bar" style="width:75%"></div>
+                    </div>
+                </div>
+
+                <b class="percentage">75%</b>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    <i class="fa-solid fa-droplet"></i>
+                </div>
+
+                <div class="stat-content">
+                    <span>Water</span>
+                    <strong>2.1</strong>
+                    <small>L</small>
+
+                    <div class="progress-line">
+                        <div class="progress blue-bar" style="width:70%"></div>
+                    </div>
+                </div>
+
+                <b class="percentage">70%</b>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon violet">
+                    <i class="fa-solid fa-moon"></i>
+                </div>
+
+                <div class="stat-content">
+                    <span>Sleep</span>
+                    <strong>7h 20m</strong>
+
+                    <div class="progress-line">
+                        <div class="progress violet-bar" style="width:80%"></div>
+                    </div>
+                </div>
+
+                <b class="percentage">80%</b>
+
+            </div>
+
+
+            <div class="today-card">
+
+                <div class="today-header">
+                    <strong>Today</strong>
+
+                    <div>
+                        <i class="fa-solid fa-chevron-left"></i>
+                        <span>17 Sep 2026</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <p>“Small steps<br>lead to big results.”</p>
+
+                <div class="tiny-line"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MIDDLE ================= -->
+        <section class="middle-row">
+
+            <!-- WEEKLY ACTIVITY -->
+            <div class="panel weekly">
+
+                <div class="panel-header">
+                    <h3>Weekly Activity</h3>
+
+                    <div class="legend">
+                        <span>
+                            <i class="dot green-dot"></i>
+                            Steps
+                        </span>
+
+                        <span>
+                            <i class="dot red-dot"></i>
+                            Calories Burned
+                        </span>
+                    </div>
+                </div>
+
+                <div class="chart">
+
+                    <div class="y-axis">
+                        <span>20K</span>
+                        <span>15K</span>
+                        <span>10K</span>
+                        <span>5K</span>
+                        <span>0</span>
+                    </div>
+
+                    <div class="chart-area">
+
+                        <div class="grid-line g1"></div>
+                        <div class="grid-line g2"></div>
+                        <div class="grid-line g3"></div>
+                        <div class="grid-line g4"></div>
+                        <div class="grid-line g5"></div>
+
+                        <div class="bars">
+
+                            <div class="day">
+                                <div class="bar-group">
+                                    <div class="bar steps" style="height:76px"></div>
+                                    <div class="bar calories" style="height:37px"></div>
+                                </div>
+                                <span>Mon</span>
+                            </div>
+
+                            <div class="day">
+                                <div class="bar-group">
+                                    <div class="bar steps" style="height:96px"></div>
+                                    <div class="bar calories" style="height:52px"></div>
+                                </div>
+                                <span>Tue</span>
+                            </div>
+
+                            <div class="day">
+                                <div class="bar-group">
+                                    <div class="bar steps" style="height:75px"></div>
+                                    <div class="bar calories" style="height:48px"></div>
+                                </div>
+                                <span>Wed</span>
+                            </div>
+
+                            <div class="day">
+                                <div class="bar-group">
+                                    <div class="bar steps" style="height:118px"></div>
+                                    <div class="bar calories" style="height:67px"></div>
+                                </div>
+                                <span>Thu</span>
+                            </div>
+
+                            <div class="day">
+                                <div class="bar-group">
+                                    <div class="bar steps" style="height:96px"></div>
+                                    <div class="bar calories" style="height:57px"></div>
+                                </div>
+                                <span>Fri</span>
+                            </div>
+
+                            <div class="day">
+                                <div class="bar-group">
+                                    <div class="bar steps" style="height:111px"></div>
+                                    <div class="bar calories" style="height:68px"></div>
+                                </div>
+                                <span>Sat</span>
+                            </div>
+
+                            <div class="day">
+                                <div class="bar-group">
+                                    <div class="bar steps" style="height:97px"></div>
+                                    <div class="bar calories" style="height:56px"></div>
+                                </div>
+                                <span>Sun</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CALORIE INTAKE -->
+            <div class="panel calorie-panel">
+
+                <h3>Calorie Intake</h3>
+
+                <div class="calorie-content">
+
+                    <div class="donut">
+
+                        <div class="donut-inner">
+                            <strong>1,650</strong>
+                            <span>kcal</span>
+                        </div>
+
+                    </div>
+
+                    <div class="calorie-list">
+
+                        <div>
+                            <span class="legend-color carbs"></span>
+                            <strong>Carbs</strong>
+                            <b>55%</b>
+                            <small>910 kcal</small>
+                        </div>
+
+                        <div>
+                            <span class="legend-color protein"></span>
+                            <strong>Protein</strong>
+                            <b>25%</b>
+                            <small>412 kcal</small>
+                        </div>
+
+                        <div>
+                            <span class="legend-color fats"></span>
+                            <strong>Fats</strong>
+                            <b>20%</b>
+                            <small>330 kcal</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- GOALS -->
+            <div class="panel goals-panel">
+
+                <div class="panel-header">
+                    <h3>Your Goals</h3>
+                    <a>Edit</a>
+                </div>
+
+
+                <div class="goal">
+
+                    <div class="goal-icon green">
+                        <i class="fa-solid fa-weight-scale"></i>
+                    </div>
+
+                    <div class="goal-text">
+                        <strong>Weight</strong>
+                        <small>Lose to 90 kg</small>
+                    </div>
+
+                    <div class="goal-progress">
+                        <div style="width:62%"></div>
+                    </div>
+
+                    <span>62%</span>
+
+                </div>
+
+
+                <div class="goal">
+
+                    <div class="goal-icon green">
+                        <i class="fa-solid fa-person-walking"></i>
+                    </div>
+
+                    <div class="goal-text">
+                        <strong>Steps</strong>
+                        <small>10,000 steps</small>
+                    </div>
+
+                    <div class="goal-progress">
+                        <div style="width:78%"></div>
+                    </div>
+
+                    <span>78%</span>
+
+                </div>
+
+
+                <div class="goal">
+
+                    <div class="goal-icon red">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+
+                    <div class="goal-text">
+                        <strong>Calories</strong>
+                        <small>1,800 kcal</small>
+                    </div>
+
+                    <div class="goal-progress red-progress">
+                        <div style="width:66%"></div>
+                    </div>
+
+                    <span>66%</span>
+
+                </div>
+
+
+                <div class="goal">
+
+                    <div class="goal-icon purple">
+                        <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+
+                    <div class="goal-text">
+                        <strong>Workout</strong>
+                        <small>60 min</small>
+                    </div>
+
+                    <div class="goal-progress purple-progress">
+                        <div style="width:75%"></div>
+                    </div>
+
+                    <span>75%</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= BOTTOM ================= -->
+        <section class="bottom-row">
+
+
+            <!-- RECENT WORKOUTS -->
+            <div class="panel bottom-panel">
+
+                <div class="panel-header">
+                    <h3>Recent Workouts</h3>
+                    <a>View All</a>
+                </div>
+
+
+                <div class="workout-row">
+
+                    <div class="round-icon green">
+                        <i class="fa-solid fa-person-running"></i>
+                    </div>
+
+                    <div class="workout-info">
+                        <strong>Running</strong>
+                        <small>30 min&nbsp; • &nbsp;280 kcal</small>
+                    </div>
+
+                    <span>16 Sep</span>
+
+                </div>
+
+
+                <div class="workout-row">
+
+                    <div class="round-icon blue">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+
+                    <div class="workout-info">
+                        <strong>Chest Workout</strong>
+                        <small>45 min&nbsp; • &nbsp;220 kcal</small>
+                    </div>
+
+                    <span>15 Sep</span>
+
+                </div>
+
+
+                <div class="workout-row">
+
+                    <div class="round-icon blue">
+                        <i class="fa-solid fa-person-swimming"></i>
+                    </div>
+
+                    <div class="workout-info">
+                        <strong>Swimming</strong>
+                        <small>40 min&nbsp; • &nbsp;310 kcal</small>
+                    </div>
+
+                    <span>14 Sep</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- TODAY'S MEALS -->
+            <div class="panel bottom-panel meals-panel">
+
+                <div class="panel-header">
+                    <h3>Today's Meals</h3>
+                    <a>Add Meal</a>
+                </div>
+
+
+                <div class="meal-row">
+
+                    <div class="meal-icon">🍳</div>
+
+                    <div class="meal-info">
+                        <strong>Breakfast</strong>
+                        <small>Oats, Banana, Egg Whites</small>
+                    </div>
+
+                    <span>420 kcal</span>
+
+                </div>
+
+
+                <div class="meal-row">
+
+                    <div class="meal-icon">🥗</div>
+
+                    <div class="meal-info">
+                        <strong>Lunch</strong>
+                        <small>Rice, Dal, Vegetables</small>
+                    </div>
+
+                    <span>580 kcal</span>
+
+                </div>
+
+
+                <div class="meal-row">
+
+                    <div class="meal-icon">🍛</div>
+
+                    <div class="meal-info">
+                        <strong>Dinner</strong>
+                        <small>Roti, Paneer Curry</small>
+                    </div>
+
+                    <span>450 kcal</span>
+
+                </div>
+
+
+                <div class="meal-row">
+
+                    <div class="meal-icon">🥤</div>
+
+                    <div class="meal-info">
+                        <strong>Snacks</strong>
+                        <small>Nuts, Green Tea</small>
+                    </div>
+
+                    <span>200 kcal</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK ACTIONS -->
+            <div class="right-bottom">
+
+                <div class="panel quick-panel">
+
+                    <h3>Quick Actions</h3>
+
+                    <div class="quick-grid">
+
+                        <button class="quick green-btn">
+                            <i class="fa-solid fa-plus"></i>
+                            Log Workout
+                        </button>
+
+                        <button class="quick pink-btn">
+                            <i class="fa-solid fa-plus"></i>
+                            Add Meal
+                        </button>
+
+                        <button class="quick blue-btn">
+                            <i class="fa-solid fa-plus"></i>
+                            Add Steps
+                        </button>
+
+                        <button class="quick purple-btn">
+                            <i class="fa-solid fa-moon"></i>
+                            Log Sleep
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="consistency">
+
+                    <i class="fa-solid fa-person-running"></i>
+
+                    <div>
+                        <strong>Consistency<br>builds progress.</strong>
+                        <span>You're doing great!</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script>
+    // USER LOGIN PROTECTION
+    if (localStorage.getItem("fittrackLoggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
+
+</body>
+</html>

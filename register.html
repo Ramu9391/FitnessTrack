@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitTrack - Create Account</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8fb;
+            color: #07183b;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 25px;
+        }
+
+        /* ==============================
+           MAIN CARD
+        ============================== */
+
+        .register-container {
+            width: 900px;
+            max-width: 94vw;
+            min-height: 600px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            background: #ffffff;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 55px rgba(7, 24, 59, 0.12);
+        }
+
+        /* ==============================
+           LEFT SIDE
+        ============================== */
+
+        .register-left {
+            position: relative;
+
+            padding: 45px;
+
+            background:
+                linear-gradient(
+                    rgba(3, 27, 43, 0.78),
+                    rgba(3, 27, 43, 0.86)
+                ),
+                url("assets/hero.png");
+
+            background-size: cover;
+            background-position: center;
+
+            color: #ffffff;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .register-logo {
+            position: absolute;
+
+            top: 30px;
+            left: 35px;
+        }
+
+        .register-logo img {
+            width: 170px;
+            max-height: 75px;
+
+            object-fit: contain;
+        }
+
+        .register-left h1 {
+            font-size: 37px;
+            line-height: 1.15;
+
+            margin-bottom: 18px;
+        }
+
+        .register-left h1 span {
+            color: #20e69b;
+        }
+
+        .register-left p {
+            max-width: 350px;
+
+            color: #dce7ee;
+
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .register-features {
+            margin-top: 28px;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 13px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            font-size: 13px;
+        }
+
+        .feature-icon {
+            width: 31px;
+            height: 31px;
+
+            flex: 0 0 31px;
+
+            border-radius: 50%;
+
+            background: #20e69b;
+
+            color: #05291e;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ==============================
+           RIGHT SIDE
+        ============================== */
+
+        .register-right {
+            padding: 45px 48px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .register-right h2 {
+            font-size: 30px;
+
+            margin-bottom: 8px;
+        }
+
+        .register-subtitle {
+            color: #718096;
+
+            font-size: 13px;
+
+            margin-bottom: 25px;
+        }
+
+        /* ==============================
+           FORM
+        ============================== */
+
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        .form-group label {
+            display: block;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            margin-bottom: 7px;
+        }
+
+        .input-box {
+            position: relative;
+        }
+
+        .input-box > i:first-child {
+            position: absolute;
+
+            left: 15px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #718096;
+
+            pointer-events: none;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 44px;
+
+            border: 1px solid #dfe7ee;
+
+            border-radius: 10px;
+
+            padding: 0 42px;
+
+            outline: none;
+
+            font-size: 13px;
+
+            background: #f8fafc;
+
+            color: #07183b;
+
+            transition: .2s;
+        }
+
+        .input-box input:focus {
+            border-color: #20d997;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 0 0 3px rgba(32, 217, 151, 0.10);
+        }
+
+        .input-box input::placeholder {
+            color: #9aa7b7;
+        }
+
+        .password-toggle {
+            position: absolute;
+
+            right: 15px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #718096;
+
+            cursor: pointer;
+        }
+
+        /* ==============================
+           TERMS
+        ============================== */
+
+        .terms {
+            display: flex;
+            align-items: flex-start;
+
+            gap: 8px;
+
+            margin: 7px 0 18px;
+
+            color: #718096;
+
+            font-size: 11px;
+
+            line-height: 1.5;
+        }
+
+        .terms input {
+            margin-top: 2px;
+
+            accent-color: #20d997;
+        }
+
+        .terms a {
+            color: #0787d9;
+
+            text-decoration: none;
+
+            font-weight: 600;
+        }
+
+        /* ==============================
+           BUTTON
+        ============================== */
+
+        .register-btn {
+            width: 100%;
+            height: 47px;
+
+            border: 0;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #20e69b,
+                    #2ee8a1
+                );
+
+            color: #03251a;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: .2s;
+        }
+
+        .register-btn:hover {
+            transform: translateY(-1px);
+
+            box-shadow:
+                0 8px 20px rgba(32, 230, 155, 0.20);
+        }
+
+        .register-btn i {
+            margin-left: 7px;
+        }
+
+        /* ==============================
+           MESSAGE
+        ============================== */
+
+        .register-message {
+            min-height: 18px;
+
+            margin-top: 8px;
+
+            text-align: center;
+
+            font-size: 11px;
+        }
+
+        /* ==============================
+           LOGIN LINK
+        ============================== */
+
+        .login-link {
+            text-align: center;
+
+            margin-top: 18px;
+
+            color: #718096;
+
+            font-size: 12px;
+        }
+
+        .login-link a {
+            color: #0787d9;
+
+            text-decoration: none;
+
+            font-weight: 700;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* ==============================
+           MOBILE
+        ============================== */
+
+        @media (max-width: 750px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .register-container {
+                grid-template-columns: 1fr;
+            }
+
+            .register-left {
+                min-height: 270px;
+
+                padding: 35px;
+            }
+
+            .register-left h1 {
+                font-size: 29px;
+            }
+
+            .register-features {
+                display: none;
+            }
+
+            .register-right {
+                padding: 35px 30px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="register-container">
+
+        <!-- ==========================================
+             LEFT SIDE
+        =========================================== -->
+
+        <div class="register-left">
+
+            <div class="register-logo">
+
+                <img
+                    src="assets/logo.png"
+                    alt="FitTrack"
+                >
+
+            </div>
+
+
+            <h1>
+                Start Your<br>
+                <span>Fitness Journey.</span>
+            </h1>
+
+
+            <p>
+                Create your FitTrack account and keep your
+                workouts, meals and progress organized in
+                one place.
+            </p>
+
+
+            <div class="register-features">
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+
+                        <i class="fa-solid fa-dumbbell"></i>
+
+                    </div>
+
+                    <span>
+                        Track your workouts
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+
+                        <i class="fa-solid fa-utensils"></i>
+
+                    </div>
+
+                    <span>
+                        Manage your daily meals
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+                    <span>
+                        Monitor your progress
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             RIGHT SIDE
+        =========================================== -->
+
+        <div class="register-right">
+
+            <h2>Create Account</h2>
+
+            <p class="register-subtitle">
+                Join FitTrack and start tracking your progress.
+            </p>
+
+
+            <form id="registerForm">
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <i
+                            class="fa-regular fa-eye password-toggle"
+                            id="togglePassword"
+                        ></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm your password"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <i
+                            class="fa-regular fa-eye password-toggle"
+                            id="toggleConfirmPassword"
+                        ></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TERMS -->
+
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required
+                    >
+
+                    <span>
+
+                        I agree to the
+
+                        <a href="#">
+                            Terms & Conditions
+                        </a>
+
+                        and
+
+                        <a href="#">
+                            Privacy Policy
+                        </a>.
+
+                    </span>
+
+                </label>
+
+
+                <!-- CREATE ACCOUNT -->
+
+                <button
+                    type="submit"
+                    class="register-btn"
+                >
+
+                    Create Account
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <div
+                    class="register-message"
+                    id="registerMessage"
+                ></div>
+
+            </form>
+
+
+            <div class="login-link">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Sign In
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        /* ==========================================
+           PASSWORD SHOW / HIDE
+        =========================================== */
+
+        function setupPasswordToggle(
+            inputId,
+            toggleId
+        ) {
+
+            const input =
+                document.getElementById(inputId);
+
+            const toggle =
+                document.getElementById(toggleId);
+
+
+            toggle.addEventListener(
+                "click",
+                function () {
+
+                    const hidden =
+                        input.type === "password";
+
+
+                    input.type =
+                        hidden
+                            ? "text"
+                            : "password";
+
+
+                    this.classList.toggle(
+                        "fa-eye",
+                        !hidden
+                    );
+
+
+                    this.classList.toggle(
+                        "fa-eye-slash",
+                        hidden
+                    );
+
+                }
+            );
+
+        }
+
+
+        setupPasswordToggle(
+            "password",
+            "togglePassword"
+        );
+
+
+        setupPasswordToggle(
+            "confirmPassword",
+            "toggleConfirmPassword"
+        );
+
+
+        /* ==========================================
+           REGISTER WITH LOCAL STORAGE
+        =========================================== */
+
+        document
+            .getElementById("registerForm")
+            .addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    const name =
+                        document
+                            .getElementById("name")
+                            .value
+                            .trim();
+
+
+                    const email =
+                        document
+                            .getElementById("email")
+                            .value
+                            .trim()
+                            .toLowerCase();
+
+
+                    const password =
+                        document
+                            .getElementById("password")
+                            .value;
+
+
+                    const confirmPassword =
+                        document
+                            .getElementById(
+                                "confirmPassword"
+                            )
+                            .value;
+
+
+                    const terms =
+                        document
+                            .getElementById("terms")
+                            .checked;
+
+
+                    const message =
+                        document
+                            .getElementById(
+                                "registerMessage"
+                            );
+
+
+                    /* PASSWORD CHECK */
+
+                    if (
+                        password !==
+                        confirmPassword
+                    ) {
+
+                        message.textContent =
+                            "Passwords do not match.";
+
+                        message.style.color =
+                            "#ef3155";
+
+                        return;
+
+                    }
+
+
+                    /* PASSWORD LENGTH */
+
+                    if (password.length < 6) {
+
+                        message.textContent =
+                            "Password must contain at least 6 characters.";
+
+                        message.style.color =
+                            "#ef3155";
+
+                        return;
+
+                    }
+
+
+                    /* TERMS CHECK */
+
+                    if (!terms) {
+
+                        message.textContent =
+                            "Please accept the Terms & Conditions.";
+
+                        message.style.color =
+                            "#ef3155";
+
+                        return;
+
+                    }
+
+
+                    /* GET USERS FROM LOCAL STORAGE */
+
+                    let users =
+                        JSON.parse(
+                            localStorage.getItem(
+                                "fittrackUsers"
+                            )
+                        ) || [];
+
+
+                    /* CHECK EXISTING EMAIL */
+
+                    const existingUser =
+                        users.find(
+                            function (user) {
+
+                                return (
+                                    user.email ===
+                                    email
+                                );
+
+                            }
+                        );
+
+
+                    if (existingUser) {
+
+                        message.textContent =
+                            "An account with this email already exists.";
+
+                        message.style.color =
+                            "#ef3155";
+
+                        return;
+
+                    }
+
+
+                    /* CREATE NEW USER */
+
+                    const newUser = {
+
+                        name: name,
+
+                        email: email,
+
+                        password: password
+
+                    };
+
+
+                    users.push(newUser);
+
+
+                    /* SAVE USER */
+
+                    localStorage.setItem(
+                        "fittrackUsers",
+                        JSON.stringify(users)
+                    );
+
+
+                    /* CREATE DEFAULT PROFILE */
+
+                    const profile = {
+
+                        name: name,
+
+                        email: email,
+
+                        height: 175,
+
+                        weight: 104,
+
+                        goal: "Weight Loss",
+
+                        activity: "Moderate"
+
+                    };
+
+
+                    localStorage.setItem(
+                        "fittrackProfile",
+                        JSON.stringify(profile)
+                    );
+
+
+                    /* SUCCESS MESSAGE */
+
+                    message.textContent =
+                        "Account created successfully!";
+
+                    message.style.color =
+                        "#0bad68";
+
+
+                    /* REDIRECT TO LOGIN */
+
+                    setTimeout(
+                        function () {
+
+                            window.location.href =
+                                "login.html";
+
+                        },
+                        1000
+                    );
+
+                }
+            );
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1587 @@
+/* =========================================================
+   FITTRACK DASHBOARD
+   Clean, professional, scrollable dashboard
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #f4f8fb;
+    color: #07183b;
+    overflow: hidden;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+/* =========================================================
+   APP
+========================================================= */
+
+.app {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    overflow: hidden;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    width: 263px;
+    height: 100vh;
+    flex: 0 0 263px;
+    background: linear-gradient(180deg, #061c2c 0%, #071c2b 100%);
+    color: #fff;
+    padding: 18px 9px 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.brand {
+    height: 100px;
+    flex: 0 0 100px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    margin-bottom: 8px;
+}
+
+.brand img {
+    width: 196px;
+    max-height: 88px;
+    object-fit: contain;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.nav-item {
+    height: 49px;
+    flex: 0 0 49px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 0 28px;
+    color: #e8f0f7;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    transition: background .18s ease, color .18s ease;
+}
+
+
+.nav-item i {
+    width: 25px;
+    flex: 0 0 25px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.nav-item.active {
+    background: #12344a;
+    font-weight: 700;
+}
+
+.nav-item.active::before {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    border-radius: 0 6px 6px 0;
+    background: #20e69b;
+}
+
+.nav-item.active i {
+    color: #29e9a0;
+}
+
+/* =========================================================
+   PREMIUM
+========================================================= */
+
+.premium {
+    margin: auto 15px 0;
+    border: 1px solid #1d4158;
+    background: rgba(10, 40, 57, .7);
+    border-radius: 12px;
+    padding: 14px 16px 13px;
+}
+
+.premium-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffd21f;
+    font-weight: 800;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.premium-feature {
+    font-size: 12px;
+    margin: 8px 0;
+    color: #dce8ee;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.premium-feature i {
+    width: 15px;
+    color: #24e8a0;
+}
+
+.premium button {
+    width: 100%;
+    height: 43px;
+    margin-top: 8px;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #1ce79a, #2ce9a0);
+    color: #03251a;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main {
+    min-width: 0;
+    flex: 1;
+    width: calc(100vw - 263px);
+
+    min-height: 100vh;
+    height: auto;
+
+    padding: 16px 18px 24px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+
+    /*
+       Topbar
+       Hero
+       Stats
+       Middle
+       Bottom
+    */
+    grid-template-rows:
+        44px
+        240px
+        122px
+        auto
+        auto;
+
+    gap: 14px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    align-content: start;
+
+    background: #f5f9fc;
+
+    scrollbar-width: thin;
+    scrollbar-color: #c8d5df transparent;
+}
+
+.main::-webkit-scrollbar {
+    width: 8px;
+}
+
+.main::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.main::-webkit-scrollbar-thumb {
+    background: #c8d5df;
+    border-radius: 10px;
+}
+
+.main::-webkit-scrollbar-thumb:hover {
+    background: #aebfcb;
+}
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar {
+    min-width: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search {
+    width: 370px;
+    height: 43px;
+    flex: 0 1 370px;
+    border-radius: 11px;
+    background: #edf3f8;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 14px;
+}
+
+.search i {
+    font-size: 20px;
+    color: #06143c;
+}
+
+.search input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #07183b;
+    font-size: 14px;
+}
+
+.search input::placeholder {
+    color: #718096;
+}
+
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.notification {
+    position: relative;
+    font-size: 22px;
+    color: #07183b;
+}
+
+.notification span {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: #ed1b24;
+    border-radius: 50%;
+    right: -2px;
+    top: -3px;
+    border: 1px solid #fff;
+}
+
+.profile-mini {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    flex: 0 0 45px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #6d7880, #17202a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 800;
+    font-size: 19px;
+}
+
+.profile-name {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.profile-name strong {
+    font-size: 15px;
+}
+
+.profile-name small {
+    color: #718096;
+    font-size: 13px;
+}
+
+.profile-mini > i {
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    width: 100%;
+    height: 240px;
+    min-height: 240px;
+    overflow: hidden;
+    border-radius: 13px;
+    box-shadow: 0 2px 7px rgba(10, 40, 60, .08);
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: fill;
+}
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats-row {
+    width: 100%;
+    min-height: 122px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr))
+        minmax(190px, 1.27fr);
+
+    gap: 13px;
+}
+
+.stat-card,
+.today-card,
+.panel {
+    background: #fff;
+    border: 1px solid #e7edf2;
+    border-radius: 12px;
+    box-shadow: 0 2px 7px rgba(30, 65, 90, .035);
+}
+
+.stat-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 122px;
+
+    padding: 13px 12px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+.stat-icon {
+    flex: 0 0 53px;
+    width: 53px;
+    height: 53px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+}
+
+.green {
+    background: #dcfaed;
+    color: #0bad68;
+}
+
+.red {
+    background: #ffe3e9;
+    color: #ff3152;
+}
+
+.purple {
+    background: #eee3ff;
+    color: #7040e9;
+}
+
+.blue {
+    background: #e1f3ff;
+    color: #0b9bea;
+}
+
+.violet {
+    background: #eee3ff;
+    color: #7040e9;
+}
+
+.stat-content {
+    min-width: 0;
+    margin-left: 13px;
+}
+
+.stat-content span {
+    display: block;
+    font-size: 12px;
+    color: #243250;
+    margin-bottom: 2px;
+}
+
+.stat-content strong {
+    font-size: 21px;
+    line-height: 22px;
+    display: inline-block;
+}
+
+.stat-content small {
+    font-size: 12px;
+    color: #25355a;
+}
+
+.progress-line {
+    width: 95px;
+    height: 11px;
+
+    border-radius: 8px;
+    background: #edf2f5;
+
+    margin-top: 9px;
+
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 8px;
+}
+
+.green-bar {
+    background: #35d99b;
+}
+
+.red-bar {
+    background: #ff3e64;
+}
+
+.purple-bar {
+    background: #8250eb;
+}
+
+.blue-bar {
+    background: #27a9ed;
+}
+
+.violet-bar {
+    background: #8c51ed;
+}
+
+.percentage {
+    font-size: 11px;
+    color: #4d6090;
+
+    position: absolute;
+    bottom: 17px;
+    right: 10px;
+}
+
+/* =========================================================
+   TODAY
+========================================================= */
+
+.today-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 122px;
+
+    padding: 13px 15px;
+}
+
+.today-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.today-header > strong {
+    font-size: 17px;
+}
+
+.today-header div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 11px;
+    color: #586786;
+
+    white-space: nowrap;
+}
+
+.today-header i {
+    color: #07183b;
+    font-size: 11px;
+}
+
+.today-card p {
+    font-size: 15px;
+    line-height: 21px;
+
+    margin-top: 13px;
+
+    font-style: italic;
+}
+
+.tiny-line {
+    width: 27px;
+    height: 2px;
+
+    background: #2ee29a;
+
+    margin: 8px auto 0;
+}
+
+/* =========================================================
+   MIDDLE ROW
+========================================================= */
+
+.middle-row {
+    width: 100%;
+    min-width: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1.25fr
+        .95fr;
+
+    gap: 13px;
+
+    align-items: stretch;
+}
+
+.panel {
+    min-width: 0;
+
+    padding: 15px 18px;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.panel-header h3,
+.panel h3 {
+    font-size: 16px;
+    color: #07183b;
+}
+
+.panel-header a {
+    color: #0867d7;
+    font-size: 12px;
+
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* =========================================================
+   WEEKLY ACTIVITY
+========================================================= */
+
+.weekly {
+    min-height: 245px;
+    padding-bottom: 8px;
+}
+
+.legend {
+    display: flex;
+    gap: 18px;
+
+    font-size: 11px;
+    color: #596987;
+}
+
+.legend span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.green-dot {
+    background: #35d99b;
+}
+
+.red-dot {
+    background: #f84f71;
+}
+
+.chart {
+    height: calc(100% - 27px);
+    min-height: 190px;
+
+    display: flex;
+
+    margin-top: 5px;
+}
+
+.y-axis {
+    width: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 8px 0 19px;
+
+    font-size: 10px;
+    color: #526485;
+}
+
+.chart-area {
+    flex: 1;
+    min-width: 0;
+
+    position: relative;
+
+    margin-left: 4px;
+
+    border-bottom: 1px solid #dfe8ef;
+}
+
+.grid-line {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    border-top: 1px solid #edf1f4;
+}
+
+.g1 {
+    top: 4%;
+}
+
+.g2 {
+    top: 27%;
+}
+
+.g3 {
+    top: 50%;
+}
+
+.g4 {
+    top: 73%;
+}
+
+.g5 {
+    bottom: 0;
+}
+
+.bars {
+    position: absolute;
+    inset: 5px 5px 0;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.day {
+    height: 100%;
+    width: 11%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.bar-group {
+    height: calc(100% - 20px);
+
+    display: flex;
+    align-items: flex-end;
+
+    gap: 5px;
+}
+
+.bar {
+    width: 13px;
+    border-radius: 3px 3px 0 0;
+}
+
+.bar.steps {
+    background: #35d99b;
+}
+
+.bar.calories {
+    background: #f74f70;
+}
+
+.day > span {
+    height: 18px;
+
+    font-size: 10px;
+    color: #536483;
+}
+
+/* =========================================================
+   CALORIE INTAKE
+========================================================= */
+
+.calorie-panel h3 {
+    margin-bottom: 5px;
+}
+
+.calorie-content {
+    height: calc(100% - 25px);
+    min-height: 190px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    gap: 20px;
+}
+
+.donut {
+    width: 128px;
+    height: 128px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            #4d7ff0 0 55%,
+            #34d99b 55% 80%,
+            #ffad34 80% 100%
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.donut-inner {
+    width: 78px;
+    height: 78px;
+
+    background: #fff;
+
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.donut-inner strong {
+    font-size: 20px;
+}
+
+.donut-inner span {
+    font-size: 13px;
+}
+
+.calorie-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 17px;
+
+    min-width: 180px;
+}
+
+.calorie-list div {
+    display: grid;
+
+    grid-template-columns:
+        11px
+        1fr
+        35px
+        60px;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 11px;
+}
+
+.legend-color {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.carbs {
+    background: #4d7ff0;
+}
+
+.protein {
+    background: #34d99b;
+}
+
+.fats {
+    background: #ffad34;
+}
+
+.calorie-list b {
+    font-weight: 500;
+}
+
+.calorie-list small {
+    white-space: nowrap;
+}
+
+/* =========================================================
+   GOALS
+========================================================= */
+
+.goals-panel {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.goal {
+    display: grid;
+
+    grid-template-columns:
+        39px
+        minmax(0, 1fr)
+        100px
+        27px;
+
+    gap: 9px;
+
+    align-items: center;
+
+    margin-top: 9px;
+}
+
+.goal-icon {
+    width: 39px;
+    height: 39px;
+
+    border-radius: 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.goal-text {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.goal-text strong {
+    font-size: 12px;
+}
+
+.goal-text small {
+    font-size: 10px;
+    color: #60708e;
+
+    margin-top: 2px;
+}
+
+.goal-progress {
+    height: 11px;
+
+    background: #edf2f5;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+.goal-progress div {
+    height: 100%;
+
+    background: #40dca2;
+
+    border-radius: 8px;
+}
+
+.red-progress div {
+    background: #ff4666;
+}
+
+.purple-progress div {
+    background: #8753eb;
+}
+
+.goal > span {
+    font-size: 10px;
+    color: #536488;
+
+    text-align: right;
+}
+
+/* =========================================================
+   BOTTOM ROW
+========================================================= */
+
+.bottom-row {
+    width: 100%;
+    min-width: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        1.08fr
+        1.08fr
+        .8fr;
+
+    gap: 13px;
+
+    align-items: stretch;
+}
+
+.bottom-panel {
+    width: 100%;
+    min-width: 0;
+
+    padding: 14px 18px;
+
+    overflow: visible;
+}
+
+/* =========================================================
+   WORKOUTS
+========================================================= */
+
+.workout-row {
+    width: 100%;
+
+    min-height: 52px;
+    height: auto;
+
+    padding: 6px 0;
+
+    border-bottom: 1px solid #edf1f4;
+
+    display: flex;
+    align-items: center;
+}
+
+.workout-row:last-child {
+    border-bottom: 0;
+}
+
+.round-icon {
+    width: 39px;
+    height: 39px;
+
+    flex: 0 0 39px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+}
+
+.workout-info {
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 12px;
+
+    min-width: 0;
+}
+
+.workout-info strong {
+    font-size: 12px;
+}
+
+.workout-info small {
+    color: #58698a;
+    font-size: 10px;
+
+    margin-top: 2px;
+}
+
+.workout-row > span {
+    margin-left: auto;
+    padding-left: 8px;
+
+    font-size: 10px;
+    color: #506286;
+
+    white-space: nowrap;
+}
+
+/* =========================================================
+   MEALS
+========================================================= */
+
+.meal-row {
+    width: 100%;
+
+    min-height: 50px;
+    height: auto;
+
+    padding: 5px 0;
+
+    border-bottom: 1px solid #edf1f4;
+
+    display: flex;
+    align-items: center;
+}
+
+.meal-row:last-child {
+    border-bottom: 0;
+}
+
+.meal-icon {
+    width: 39px;
+    height: 39px;
+
+    flex: 0 0 39px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+
+    background: #f2f4f7;
+}
+
+.meal-info {
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 10px;
+
+    min-width: 0;
+}
+
+.meal-info strong {
+    font-size: 12px;
+}
+
+.meal-info small {
+    color: #58698a;
+    font-size: 10px;
+
+    margin-top: 2px;
+}
+
+.meal-row > span {
+    margin-left: auto;
+    padding-left: 8px;
+
+    font-size: 10px;
+    color: #506286;
+
+    white-space: nowrap;
+}
+
+/* =========================================================
+   RIGHT BOTTOM
+========================================================= */
+
+.right-bottom {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    align-items: stretch;
+}
+
+.quick-panel {
+    width: 100%;
+    height: 146px;
+    min-height: 146px;
+    flex: 0 0 146px;
+    padding: 13px 15px 14px;
+    overflow: hidden;
+}
+
+.quick-panel h3 {
+    margin-bottom: 9px;
+}
+
+.quick-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 7px;
+}
+
+.quick {
+    width: 100%;
+    height: 36px;
+    min-height: 36px;
+
+    border: 0;
+    border-radius: 9px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform .15s ease,
+        filter .15s ease;
+}
+
+.quick:hover {
+    transform: translateY(-1px);
+    filter: brightness(.98);
+}
+
+.quick i {
+    margin-right: 7px;
+}
+
+.green-btn {
+    background: #d4f9e8;
+    color: #089d61;
+}
+
+.pink-btn {
+    background: #ffe0e8;
+    color: #ef3155;
+}
+
+.blue-btn {
+    background: #dceeff;
+    color: #0875dd;
+}
+
+.purple-btn {
+    background: #e9ddff;
+    color: #7040d8;
+}
+
+/* =========================================================
+   CONSISTENCY
+========================================================= */
+
+.consistency {
+    min-height: 104px;
+
+    flex: 1;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #d6fbea,
+        #b8f4d8
+    );
+
+    display: flex;
+    align-items: center;
+
+    padding: 12px 22px;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.consistency::after {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 90px;
+
+    right: -35px;
+    bottom: -25px;
+
+    background: rgba(255,255,255,.22);
+
+    transform: rotate(-18deg);
+
+    border-radius: 50%;
+}
+
+.consistency > i {
+    color: #07975d;
+
+    font-size: 43px;
+
+    margin-right: 20px;
+
+    flex-shrink: 0;
+}
+
+.consistency div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    position: relative;
+    z-index: 1;
+}
+
+.consistency strong {
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.consistency span {
+    font-size: 11px;
+}
+
+/* =========================================================
+   SHORT LAPTOP HEIGHT
+========================================================= */
+
+@media (max-height: 850px) {
+
+    .sidebar {
+        padding-top: 10px;
+    }
+
+    .brand {
+        height: 82px;
+        flex-basis: 82px;
+        margin-bottom: 2px;
+    }
+
+    .brand img {
+        width: 184px;
+    }
+
+    .nav-item {
+        height: 43px;
+        flex-basis: 43px;
+        font-size: 14px;
+    }
+
+    .nav-item i {
+        font-size: 19px;
+    }
+
+    .premium {
+        padding: 10px 13px;
+    }
+
+    .premium-feature {
+        margin: 5px 0;
+        font-size: 11px;
+    }
+
+    .premium button {
+        height: 37px;
+        font-size: 16px;
+        font-weight: 800;
+    }
+
+    .main {
+        padding: 12px 18px 22px;
+
+        grid-template-rows:
+            44px
+            220px
+            116px
+            auto
+            auto;
+
+        gap: 12px;
+    }
+
+    .hero {
+        height: 220px;
+        min-height: 220px;
+
+        border-radius: 11px;
+    }
+
+    .stats-row {
+        min-height: 116px;
+        gap: 11px;
+    }
+
+    .stat-card,
+    .today-card {
+        min-height: 116px;
+    }
+
+    .stat-card {
+        padding: 9px 9px;
+    }
+
+    .stat-icon {
+        width: 45px;
+        height: 45px;
+        flex-basis: 45px;
+
+        font-size: 20px;
+    }
+
+    .stat-content {
+        margin-left: 9px;
+    }
+
+    .stat-content strong {
+        font-size: 18px;
+    }
+
+    .progress-line {
+        width: 78px;
+        height: 9px;
+
+        margin-top: 6px;
+    }
+
+    .percentage {
+        bottom: 11px;
+    }
+
+    .panel {
+        padding-top: 11px;
+        padding-bottom: 10px;
+    }
+
+    .middle-row {
+        min-height: 225px;
+    }
+
+    .weekly {
+        min-height: 225px;
+    }
+
+    .chart {
+        min-height: 175px;
+    }
+
+    .calorie-content {
+        min-height: 175px;
+    }
+
+    .bottom-row,
+.bottom-panel,
+.right-bottom {
+    min-height: 260px;
+}
+
+    .goal {
+        margin-top: 5px;
+    }
+
+    .goal-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .workout-row {
+        min-height: 47px;
+    }
+
+    .meal-row {
+        min-height: 44px;
+    }
+
+    .round-icon,
+    .meal-icon {
+        width: 34px;
+        height: 34px;
+        flex-basis: 34px;
+    }
+
+    .consistency {
+        min-height: 96px;
+        padding: 8px 17px;
+    }
+
+    .consistency > i {
+        font-size: 36px;
+        margin-right: 15px;
+    }
+}
+
+/* =========================================================
+   WIDTH CONTROL
+========================================================= */
+
+@media (max-width: 1250px) {
+
+    .sidebar {
+        width: 220px;
+        flex-basis: 220px;
+    }
+
+    .brand {
+        padding-left: 10px;
+    }
+
+    .brand img {
+        width: 170px;
+    }
+
+    .nav-item {
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .main {
+        width: calc(100vw - 220px);
+
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .stats-row {
+        gap: 8px;
+    }
+
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+
+        font-size: 17px;
+    }
+
+    .stat-content {
+        margin-left: 7px;
+    }
+
+    .stat-content strong {
+        font-size: 16px;
+    }
+
+    .progress-line {
+        width: 65px;
+    }
+
+    .calorie-list {
+        min-width: 145px;
+    }
+
+    .calorie-list div {
+        grid-template-columns:
+            9px
+            1fr
+            28px
+            50px;
+
+        gap: 5px;
+
+        font-size: 9px;
+    }
+
+    .goal {
+        grid-template-columns:
+            32px
+            minmax(0, 1fr)
+            65px
+            23px;
+    }
+
+    .middle-row,
+    .bottom-row {
+        gap: 10px;
+    }
+}
+
+/* =========================================================
+   SMALL WIDTH
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .sidebar {
+        width: 190px;
+        flex-basis: 190px;
+    }
+
+    .brand img {
+        width: 145px;
+    }
+
+    .nav-item {
+        padding: 0 15px;
+        gap: 15px;
+        font-size: 12px;
+    }
+
+    .premium {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .profile-name {
+        display: none;
+    }
+
+    .search {
+        width: 280px;
+        flex-basis: 280px;
+    }
+
+    .main {
+        width: calc(100vw - 190px);
+    }
+
+    .stats-row {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .today-card {
+        grid-column: span 1;
+    }
+
+    .middle-row,
+    .bottom-row {
+        grid-template-columns: 1fr;
+    }
+
+    .right-bottom {
+        min-height: 260px;
+    }
+}
