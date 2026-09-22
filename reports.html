@@ -1,29 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
 <title>FitTrack - Reports</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com"
+>
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin
+>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet"
+>
+
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
 
 <style>
+
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-html,body{
+
+html,
+body{
     width:100%;
     height:100%;
 }
+
 
 body{
     font-family:"Inter",sans-serif;
@@ -32,40 +60,60 @@ body{
     overflow:hidden;
 }
 
+
 .app{
     width:100%;
     height:100vh;
     display:flex;
 }
 
-/* SIDEBAR */
+
+/* =========================
+SIDEBAR
+========================= */
 
 .sidebar{
     width:263px;
     height:100vh;
     flex:0 0 263px;
-    background:linear-gradient(180deg,#061c2c 0%,#071c2b 100%);
+
+    background:linear-gradient(
+        180deg,
+        #061c2c 0%,
+        #071c2b 100%
+    );
+
     color:white;
+
     padding:18px 9px 16px;
+
     display:flex;
     flex-direction:column;
+
     overflow:hidden;
 }
+
 
 .brand{
     height:100px;
     flex:0 0 100px;
+
     display:flex;
     align-items:center;
+
     padding-left:20px;
+
     margin-bottom:8px;
 }
+
 
 .brand img{
     width:196px;
     max-height:88px;
+
     object-fit:contain;
 }
+
 
 .nav{
     display:flex;
@@ -73,417 +121,667 @@ body{
     gap:2px;
 }
 
+
 .nav a{
     height:49px;
     flex:0 0 49px;
+
     border-radius:11px;
+
     display:flex;
     align-items:center;
+
     gap:28px;
+
     padding:0 28px;
+
     color:#e8f0f7;
+
     text-decoration:none;
+
     font-size:16px;
     font-weight:500;
+
     position:relative;
 }
+
 
 .nav a i{
     width:25px;
     flex:0 0 25px;
+
     text-align:center;
+
     font-size:22px;
 }
+
 
 .nav a:hover{
     background:#12344a;
 }
+
 
 .nav a.active{
     background:#12344a;
     font-weight:700;
 }
 
+
 .nav a.active::before{
     content:"";
+
     position:absolute;
+
     left:-9px;
     top:0;
     bottom:0;
+
     width:8px;
+
     border-radius:0 6px 6px 0;
+
     background:#20e69b;
 }
+
 
 .nav a.active i{
     color:#29e9a0;
 }
 
-/* PREMIUM */
+
+/* =========================
+PREMIUM
+========================= */
 
 .premium{
     margin:auto 15px 0;
+
     border:1px solid #1d4158;
-    background:rgba(10,40,57,.7);
+
+    background:rgba(
+        10,
+        40,
+        57,
+        .7
+    );
+
     border-radius:12px;
+
     padding:14px 16px 13px;
 }
+
 
 .premium-title{
     display:flex;
     align-items:center;
+
     gap:10px;
+
     color:#ffd21f;
+
     font-weight:800;
     font-size:15px;
+
     margin-bottom:12px;
 }
 
+
 .premium-feature{
     font-size:12px;
+
     margin:8px 0;
+
     color:#dce8ee;
+
     display:flex;
+
     gap:10px;
+
     align-items:center;
 }
 
+
 .premium-feature i{
     width:15px;
+
     color:#24e8a0;
 }
 
+
 .premium button{
     width:100%;
+
     height:43px;
+
     margin-top:8px;
+
     border:0;
+
     border-radius:12px;
-    background:linear-gradient(90deg,#1ce79a,#2ce9a0);
+
+    background:linear-gradient(
+        90deg,
+        #1ce79a,
+        #2ce9a0
+    );
+
     color:#03251a;
+
     font-size:16px;
+
     font-weight:800;
+
     cursor:pointer;
 }
 
-/* MAIN */
+
+/* =========================
+MAIN
+========================= */
 
 .main{
     flex:1;
+
     min-width:0;
+
     height:100vh;
-    padding:25px 30px 30px;
+
+    padding:
+        25px
+        30px
+        30px;
+
     overflow-y:auto;
     overflow-x:hidden;
 }
 
+
+/* =========================
+TOPBAR
+========================= */
+
 .topbar{
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     margin-bottom:20px;
 }
 
+
 .page-title h1{
     font-size:28px;
+
     margin-bottom:6px;
 }
 
+
 .page-title p{
     color:#718096;
+
     font-size:13px;
 }
 
+
 .top-actions{
     display:flex;
+
     align-items:center;
+
     gap:20px;
 }
+
 
 .notification{
     width:42px;
     height:42px;
+
     border-radius:50%;
+
     background:white;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
-    box-shadow:0 3px 12px rgba(7,24,59,.08);
+
+    box-shadow:
+        0 3px 12px
+        rgba(
+            7,
+            24,
+            59,
+            .08
+        );
+
     font-size:18px;
 }
 
+
 .profile{
     display:flex;
+
     align-items:center;
+
     gap:10px;
 }
+
 
 .profile-circle{
     width:42px;
     height:42px;
+
     border-radius:50%;
+
     background:#263c4a;
+
     color:white;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     font-weight:800;
 }
 
+
 .profile-text strong{
     display:block;
+
     font-size:14px;
 }
 
+
 .profile-text span{
     color:#718096;
+
     font-size:12px;
 }
 
-/* SUMMARY CARDS */
+
+/* =========================
+SUMMARY CARDS
+========================= */
 
 .stats{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:15px;
+
     margin-bottom:18px;
 }
 
+
 .stat{
     background:white;
+
     border:1px solid #e4ebf0;
+
     border-radius:14px;
+
     padding:17px;
-    box-shadow:0 3px 12px rgba(7,24,59,.05);
+
+    box-shadow:
+        0 3px 12px
+        rgba(
+            7,
+            24,
+            59,
+            .05
+        );
 }
+
 
 .stat-top{
     display:flex;
+
     align-items:center;
+
     gap:12px;
 }
+
 
 .stat-icon{
     width:43px;
     height:43px;
+
     border-radius:50%;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     font-size:18px;
 }
+
 
 .green{
     background:#dff8ed;
     color:#0bb77b;
 }
 
+
 .blue{
     background:#dff1ff;
     color:#179fe4;
 }
+
 
 .red{
     background:#ffe1e7;
     color:#ef4565;
 }
 
+
 .purple{
     background:#eee2ff;
     color:#7c4ce5;
 }
+
 
 .orange{
     background:#fff0d9;
     color:#f59e0b;
 }
 
+
 .stat p{
     color:#718096;
+
     font-size:12px;
 }
 
+
 .stat h3{
     font-size:21px;
+
     margin-top:3px;
 }
 
-/* CONTENT */
+
+/* =========================
+CONTENT
+========================= */
 
 .content-grid{
     display:grid;
-    grid-template-columns:1.45fr 1fr;
+
+    grid-template-columns:
+        1.45fr 1fr;
+
     gap:18px;
 }
 
+
 .panel{
     background:white;
+
     border:1px solid #e4ebf0;
+
     border-radius:15px;
+
     padding:20px;
-    box-shadow:0 3px 12px rgba(7,24,59,.05);
+
+    box-shadow:
+        0 3px 12px
+        rgba(
+            7,
+            24,
+            59,
+            .05
+        );
 }
+
 
 .panel-header{
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     margin-bottom:16px;
 }
+
 
 .panel-header h2{
     font-size:18px;
 }
 
-/* REPORT ROWS */
+
+/* =========================
+REPORT ROWS
+========================= */
 
 .report-row{
     display:flex;
+
     align-items:center;
+
     padding:15px 0;
-    border-bottom:1px solid #edf1f4;
+
+    border-bottom:
+        1px solid #edf1f4;
 }
+
 
 .report-row:last-child{
     border-bottom:none;
 }
 
+
 .report-icon{
     width:44px;
     height:44px;
+
     border-radius:50%;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     margin-right:13px;
+
     flex-shrink:0;
 }
+
 
 .report-info{
     flex:1;
 }
 
+
 .report-info strong{
     display:block;
+
     font-size:14px;
+
     margin-bottom:4px;
 }
 
+
 .report-info span{
     color:#718096;
+
     font-size:12px;
 }
+
 
 .report-value{
     text-align:right;
 }
 
+
 .report-value strong{
     display:block;
+
     font-size:14px;
 }
 
+
 .report-value span{
     color:#718096;
+
     font-size:11px;
 }
 
-/* WEEKLY */
+
+/* =========================
+WEEKLY
+========================= */
 
 .week-row{
     display:flex;
+
     align-items:center;
+
     gap:12px;
+
     margin:16px 0;
 }
 
+
 .week-day{
     width:32px;
+
     font-size:11px;
+
     color:#718096;
 }
+
 
 .week-bars{
     flex:1;
 }
 
+
 .week-bar{
     height:8px;
+
     background:#e8eef2;
+
     border-radius:10px;
+
     overflow:hidden;
+
     margin:4px 0;
 }
 
+
 .week-fill{
     height:100%;
+
     border-radius:10px;
 }
+
 
 .steps-fill{
     background:#20d99a;
 }
 
+
 .calorie-fill{
     background:#f54867;
 }
 
+
 .week-value{
     width:55px;
+
     text-align:right;
+
     font-size:10px;
+
     color:#718096;
 }
 
-/* BUTTONS */
+
+/* =========================
+BUTTONS
+========================= */
 
 .report-actions{
     display:flex;
+
     gap:10px;
+
     margin-top:18px;
 }
 
+
 .action-btn{
     flex:1;
+
     height:43px;
+
     border:0;
+
     border-radius:9px;
+
     font-weight:700;
+
     cursor:pointer;
+
     font-size:13px;
 }
 
+
 .print-btn{
     background:#20e69b;
+
     color:#05291e;
 }
 
+
 .refresh-btn{
     background:#edf4f8;
+
     color:#17324a;
 }
 
-/* MESSAGE */
+
+/* =========================
+MESSAGE
+========================= */
 
 .message{
     margin-top:17px;
+
     padding:17px;
+
     background:#f5faf8;
+
     border-radius:12px;
 }
 
+
 .message h3{
     font-size:15px;
+
     margin-bottom:6px;
 }
 
+
 .message p{
     color:#718096;
+
     font-size:12px;
+
     line-height:1.6;
 }
 
-/* LAPTOP */
+
+/* =========================
+LAPTOP
+========================= */
 
 @media(max-height:850px){
 
@@ -491,60 +789,81 @@ body{
         padding-top:10px;
     }
 
+
     .brand{
         height:82px;
+
         flex-basis:82px;
+
         margin-bottom:2px;
     }
+
 
     .brand img{
         width:184px;
     }
 
+
     .nav a{
         height:43px;
+
         flex-basis:43px;
+
         font-size:14px;
     }
+
 
     .nav a i{
         font-size:19px;
     }
 
+
     .premium{
         padding:10px 13px;
     }
 
+
     .premium-feature{
         margin:5px 0;
+
         font-size:11px;
     }
+
 
     .premium button{
         height:37px;
     }
 
+
     .main{
         padding-top:15px;
     }
+
 
     .panel{
         padding:16px;
     }
 
+
     .report-row{
         padding:11px 0;
     }
+
 }
 
-/* PRINT */
+
+/* =========================
+PRINT
+========================= */
 
 @media print{
 
     body{
         overflow:visible;
+
         background:white;
     }
+
 
     .sidebar,
     .top-actions,
@@ -552,558 +871,1885 @@ body{
         display:none !important;
     }
 
+
     .main{
         width:100%;
+
         height:auto;
+
         overflow:visible;
+
         padding:20px;
     }
+
 
     .panel,
     .stat{
         box-shadow:none;
     }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="app">
 
-<!-- SIDEBAR -->
+
+<!-- =========================
+SIDEBAR
+========================= -->
 
 <aside class="sidebar">
 
+
 <div class="brand">
-<img src="assets/logo.png" alt="FitTrack">
+
+<img
+src="assets/logo.png"
+alt="FitTrack"
+>
+
 </div>
+
 
 <nav class="nav">
 
+
 <a href="index.html">
+
 <i class="fa-solid fa-house"></i>
-<span>Dashboard</span>
+
+<span>
+Dashboard
+</span>
+
 </a>
+
 
 <a href="workouts.html">
+
 <i class="fa-solid fa-dumbbell"></i>
-<span>Workouts</span>
+
+<span>
+Workouts
+</span>
+
 </a>
+
 
 <a href="nutrition.html">
+
 <i class="fa-solid fa-apple-whole"></i>
-<span>Nutrition</span>
+
+<span>
+Nutrition
+</span>
+
 </a>
+
 
 <a href="steps.html">
+
 <i class="fa-solid fa-person-walking"></i>
-<span>Steps</span>
+
+<span>
+Steps
+</span>
+
 </a>
+
 
 <a href="sleep.html">
+
 <i class="fa-solid fa-moon"></i>
-<span>Sleep</span>
+
+<span>
+Sleep
+</span>
+
 </a>
+
 
 <a href="heart-rate.html">
+
 <i class="fa-regular fa-heart"></i>
-<span>Heart Rate</span>
+
+<span>
+Heart Rate
+</span>
+
 </a>
+
 
 <a href="goals.html">
+
 <i class="fa-solid fa-bullseye"></i>
-<span>Goals</span>
+
+<span>
+Goals
+</span>
+
 </a>
+
 
 <a href="progress.html">
+
 <i class="fa-solid fa-chart-column"></i>
-<span>Progress</span>
+
+<span>
+Progress
+</span>
+
 </a>
 
-<a href="reports.html" class="active">
+
+<a
+href="reports.html"
+class="active"
+>
+
 <i class="fa-regular fa-file-lines"></i>
-<span>Reports</span>
+
+<span>
+Reports
+</span>
+
 </a>
+
 
 <a href="profile.html">
+
 <i class="fa-regular fa-user"></i>
-<span>Profile</span>
+
+<span>
+Profile
+</span>
+
 </a>
 
+
 <a href="settings.html">
+
 <i class="fa-solid fa-gear"></i>
-<span>Settings</span>
+
+<span>
+Settings
+</span>
+
 </a>
+
 
 </nav>
 
+
 <div class="premium">
 
+
 <div class="premium-title">
+
 <i class="fa-solid fa-crown"></i>
-<span>Go Premium</span>
+
+<span>
+Go Premium
+</span>
+
 </div>
 
+
 <div class="premium-feature">
+
 <i class="fa-solid fa-chart-line"></i>
+
 Advanced Insights
+
 </div>
 
+
 <div class="premium-feature">
+
 <i class="fa-solid fa-plus"></i>
+
 Personalized Plans
+
 </div>
+
 
 <div class="premium-feature">
+
 <i class="fa-solid fa-shield-heart"></i>
+
 Ad-Free Experience
-</div>
-
-<button>Upgrade Now</button>
 
 </div>
+
+
+<button>
+Upgrade Now
+</button>
+
+
+</div>
+
 
 </aside>
 
 
-<!-- MAIN -->
+<!-- =========================
+MAIN
+========================= -->
 
 <main class="main">
 
+
 <div class="topbar">
+
 
 <div class="page-title">
 
-<h1>Reports</h1>
+<h1>
+Reports
+</h1>
 
-<p>Review your fitness activity and daily progress.</p>
+<p>
+Review your fitness activity and daily progress.
+</p>
 
 </div>
+
 
 <div class="top-actions">
 
+
 <div class="notification">
+
 <i class="fa-regular fa-bell"></i>
+
 </div>
+
 
 <div class="profile">
 
-<div class="profile-circle">R</div>
+
+<div
+class="profile-circle"
+id="profileCircle"
+>
+U
+</div>
+
 
 <div class="profile-text">
-<strong>Ramu</strong>
-<span>Stay Consistent!</span>
-</div>
+
+<strong id="profileName">
+User
+</strong>
+
+<span>
+Stay Consistent!
+</span>
 
 </div>
 
-</div>
 
 </div>
 
 
-<!-- STATS -->
+</div>
+
+
+</div>
+
+
+<!-- =========================
+STATS
+========================= -->
 
 <section class="stats">
 
+
 <div class="stat">
 
+
 <div class="stat-top">
+
 
 <div class="stat-icon green">
+
 <i class="fa-solid fa-person-walking"></i>
+
 </div>
+
 
 <div>
-<p>Steps</p>
-<h3>7,842</h3>
-</div>
+
+<p>
+Steps
+</p>
+
+<h3 id="stepsStat">
+--
+</h3>
 
 </div>
+
+
+</div>
+
 
 </div>
 
 
 <div class="stat">
 
+
 <div class="stat-top">
+
 
 <div class="stat-icon red">
+
 <i class="fa-solid fa-fire"></i>
+
 </div>
+
 
 <div>
-<p>Calories</p>
-<h3>1,650</h3>
-</div>
+
+<p>
+Calories
+</p>
+
+<h3 id="caloriesStat">
+--
+</h3>
 
 </div>
+
+
+</div>
+
 
 </div>
 
 
 <div class="stat">
 
+
 <div class="stat-top">
+
 
 <div class="stat-icon purple">
+
 <i class="fa-solid fa-dumbbell"></i>
+
 </div>
+
 
 <div>
-<p>Workout</p>
-<h3>45 min</h3>
-</div>
+
+<p>
+Workout
+</p>
+
+<h3 id="workoutStat">
+--
+</h3>
 
 </div>
+
+
+</div>
+
 
 </div>
 
 
 <div class="stat">
 
+
 <div class="stat-top">
 
+
 <div class="stat-icon blue">
+
 <i class="fa-solid fa-moon"></i>
+
 </div>
+
 
 <div>
-<p>Sleep</p>
-<h3>7h 20m</h3>
-</div>
+
+<p>
+Sleep
+</p>
+
+<h3 id="sleepStat">
+--
+</h3>
 
 </div>
 
+
 </div>
+
+
+</div>
+
 
 </section>
 
 
-<!-- CONTENT -->
+<!-- =========================
+CONTENT
+========================= -->
 
 <div class="content-grid">
 
 
-<!-- WEEKLY REPORT -->
+<!-- =========================
+WEEKLY REPORT
+========================= -->
 
 <section class="panel">
 
+
 <div class="panel-header">
-<h2>Weekly Activity</h2>
-</div>
 
-
-<div class="week-row">
-
-<div class="week-day">Mon</div>
-
-<div class="week-bars">
-
-<div class="week-bar">
-<div class="week-fill steps-fill" style="width:53%"></div>
-</div>
-
-<div class="week-bar">
-<div class="week-fill calorie-fill" style="width:68%"></div>
-</div>
-
-</div>
-
-<div class="week-value">
-10.5k
-</div>
+<h2>
+Weekly Activity
+</h2>
 
 </div>
 
 
-<div class="week-row">
-
-<div class="week-day">Tue</div>
-
-<div class="week-bars">
-
-<div class="week-bar">
-<div class="week-fill steps-fill" style="width:66%"></div>
-</div>
-
-<div class="week-bar">
-<div class="week-fill calorie-fill" style="width:77%"></div>
-</div>
-
-</div>
-
-<div class="week-value">
-13.2k
-</div>
-
-</div>
-
-
-<div class="week-row">
-
-<div class="week-day">Wed</div>
-
-<div class="week-bars">
-
-<div class="week-bar">
-<div class="week-fill steps-fill" style="width:52%"></div>
-</div>
-
-<div class="week-bar">
-<div class="week-fill calorie-fill" style="width:73%"></div>
-</div>
-
-</div>
-
-<div class="week-value">
-10.4k
-</div>
-
-</div>
-
-
-<div class="week-row">
-
-<div class="week-day">Thu</div>
-
-<div class="week-bars">
-
-<div class="week-bar">
-<div class="week-fill steps-fill" style="width:83%"></div>
-</div>
-
-<div class="week-bar">
-<div class="week-fill calorie-fill" style="width:84%"></div>
-</div>
-
-</div>
-
-<div class="week-value">
-16.5k
-</div>
-
-</div>
-
-
-<div class="week-row">
-
-<div class="week-day">Fri</div>
-
-<div class="week-bars">
-
-<div class="week-bar">
-<div class="week-fill steps-fill" style="width:66%"></div>
-</div>
-
-<div class="week-bar">
-<div class="week-fill calorie-fill" style="width:80%"></div>
-</div>
-
-</div>
-
-<div class="week-value">
-13.2k
-</div>
-
-</div>
-
-
-<div class="week-row">
-
-<div class="week-day">Sat</div>
-
-<div class="week-bars">
-
-<div class="week-bar">
-<div class="week-fill steps-fill" style="width:76%"></div>
-</div>
-
-<div class="week-bar">
-<div class="week-fill calorie-fill" style="width:82%"></div>
-</div>
-
-</div>
-
-<div class="week-value">
-15.2k
-</div>
-
-</div>
-
-
-<div class="week-row">
-
-<div class="week-day">Sun</div>
-
-<div class="week-bars">
-
-<div class="week-bar">
-<div class="week-fill steps-fill" style="width:64%"></div>
-</div>
-
-<div class="week-bar">
-<div class="week-fill calorie-fill" style="width:75%"></div>
-</div>
-
-</div>
-
-<div class="week-value">
-12.8k
-</div>
-
+<div
+id="weeklyActivity"
+>
 </div>
 
 
 <div class="report-actions">
 
+
 <button
 class="action-btn print-btn"
 onclick="window.print()"
 >
+
 <i class="fa-solid fa-print"></i>
+
 Print Report
+
 </button>
+
 
 <button
 class="action-btn refresh-btn"
 onclick="location.reload()"
 >
+
 <i class="fa-solid fa-rotate"></i>
+
 Refresh
+
 </button>
 
+
 </div>
+
 
 </section>
 
 
-<!-- DAILY REPORT -->
+<!-- =========================
+DAILY REPORT
+========================= -->
 
 <section class="panel">
 
+
 <div class="panel-header">
-<h2>Today's Report</h2>
+
+<h2>
+Today's Report
+</h2>
+
 </div>
 
 
+<!-- STEPS -->
+
 <div class="report-row">
+
 
 <div class="report-icon green">
+
 <i class="fa-solid fa-person-walking"></i>
+
 </div>
+
 
 <div class="report-info">
-<strong>Steps</strong>
-<span>Daily movement</span>
+
+<strong>
+Steps
+</strong>
+
+<span>
+Daily movement
+</span>
+
 </div>
+
 
 <div class="report-value">
-<strong>7,842</strong>
-<span>of 10,000</span>
-</div>
+
+<strong id="todaySteps">
+--
+</strong>
+
+<span id="stepsGoalText">
+Goal: --
+</span>
 
 </div>
 
+
+</div>
+
+
+<!-- CALORIES -->
 
 <div class="report-row">
+
 
 <div class="report-icon red">
+
 <i class="fa-solid fa-fire"></i>
+
 </div>
+
 
 <div class="report-info">
-<strong>Calories</strong>
-<span>Today's intake</span>
+
+<strong>
+Calories
+</strong>
+
+<span>
+Today's intake
+</span>
+
 </div>
+
 
 <div class="report-value">
-<strong>1,650</strong>
-<span>of 1,800 kcal</span>
-</div>
+
+<strong id="todayCalories">
+--
+</strong>
+
+<span id="caloriesGoalText">
+Goal: --
+</span>
 
 </div>
 
+
+</div>
+
+
+<!-- WORKOUT -->
 
 <div class="report-row">
+
 
 <div class="report-icon purple">
+
 <i class="fa-solid fa-dumbbell"></i>
+
 </div>
+
 
 <div class="report-info">
-<strong>Workout</strong>
-<span>Exercise completed</span>
+
+<strong>
+Workout
+</strong>
+
+<span>
+Exercise completed
+</span>
+
 </div>
+
 
 <div class="report-value">
-<strong>45 min</strong>
-<span>of 60 min</span>
-</div>
+
+<strong id="todayWorkout">
+--
+</strong>
+
+<span id="workoutGoalText">
+Goal: --
+</span>
 
 </div>
 
+
+</div>
+
+
+<!-- SLEEP -->
 
 <div class="report-row">
+
 
 <div class="report-icon blue">
+
 <i class="fa-solid fa-moon"></i>
+
 </div>
+
 
 <div class="report-info">
-<strong>Sleep</strong>
-<span>Last night</span>
+
+<strong>
+Sleep
+</strong>
+
+<span>
+Last night
+</span>
+
 </div>
+
 
 <div class="report-value">
-<strong>7h 20m</strong>
-<span>of 8h</span>
-</div>
+
+<strong id="todaySleep">
+--
+</strong>
+
+<span id="sleepGoalText">
+Goal: --
+</span>
 
 </div>
 
+
+</div>
+
+
+<!-- MEALS -->
 
 <div class="report-row">
 
+
 <div class="report-icon orange">
+
 <i class="fa-solid fa-utensils"></i>
+
 </div>
+
 
 <div class="report-info">
-<strong>Meals</strong>
-<span>Meals recorded</span>
+
+<strong>
+Meals
+</strong>
+
+<span>
+Meals recorded
+</span>
+
 </div>
+
 
 <div class="report-value">
-<strong>5</strong>
-<span>today</span>
-</div>
+
+<strong id="todayMeals">
+--
+</strong>
+
+<span>
+today
+</span>
 
 </div>
 
+
+</div>
+
+
+<!-- MESSAGE -->
 
 <div class="message">
 
-<h3>💪 Keep Going</h3>
 
-<p>
-Your report shows consistent activity. Keep tracking your meals, movement, workouts and sleep.
+<h3>
+💪 Keep Going
+</h3>
+
+
+<p id="reportMessage">
+Start adding your fitness data to see your report here.
 </p>
 
+
 </div>
+
 
 </section>
 
+
 </div>
+
 
 </main>
 
+
 </div>
 
+
 <script>
-    if (localStorage.getItem("fittrackLoggedIn") !== "true") {
-        window.location.href = "login.html";
+
+
+/* ==========================================
+LOGIN PROTECTION
+========================================== */
+
+if(
+    localStorage.getItem(
+        "fittrackLoggedIn"
+    ) !== "true"
+){
+
+    window.location.href =
+        "login.html";
+
+}
+
+
+/* ==========================================
+CURRENT USER
+========================================== */
+
+const currentUser =
+
+    JSON.parse(
+        localStorage.getItem(
+            "fittrackCurrentUser"
+        )
+    );
+
+
+if(
+    !currentUser ||
+    !currentUser.email
+){
+
+    window.location.href =
+        "login.html";
+
+}
+
+
+/* ==========================================
+USER DATA
+========================================== */
+
+const allUserData =
+
+    JSON.parse(
+        localStorage.getItem(
+            "fittrackUserData"
+        )
+    ) || {};
+
+
+const userData =
+
+    allUserData[
+        currentUser.email
+    ] || {
+
+        workouts: [],
+
+        meals: [],
+
+        steps: [],
+
+        sleep: [],
+
+        heartRate: [],
+
+        goals: {},
+
+        profile: {},
+
+        settings: {}
+
+    };
+
+
+const goals =
+    userData.goals || {};
+
+
+const profile =
+    userData.profile || {};
+
+
+/* ==========================================
+PROFILE
+========================================== */
+
+const userName =
+
+    profile.name ||
+
+    currentUser.name ||
+
+    "User";
+
+
+document.getElementById(
+    "profileName"
+).textContent =
+    userName;
+
+
+document.getElementById(
+    "profileCircle"
+).textContent =
+
+    userName
+        .charAt(0)
+        .toUpperCase();
+
+
+/* ==========================================
+DATE HELPERS
+========================================== */
+
+function formatDate(
+    date
+){
+
+    const d =
+        new Date(date);
+
+
+    return (
+
+        d.getFullYear() +
+
+        "-" +
+
+        String(
+            d.getMonth() + 1
+        ).padStart(2,"0") +
+
+        "-" +
+
+        String(
+            d.getDate()
+        ).padStart(2,"0")
+
+    );
+
+}
+
+
+function getToday(){
+
+    return formatDate(
+        new Date()
+    );
+
+}
+
+
+const today =
+    getToday();
+
+
+/* ==========================================
+STEPS
+========================================== */
+
+function getStepsForDate(
+    date
+){
+
+    if(
+        !Array.isArray(
+            userData.steps
+        )
+    ){
+
+        return 0;
+
     }
+
+
+    return userData.steps.reduce(
+
+        function(
+            total,
+            item
+        ){
+
+            if(
+                item.date !== date
+            ){
+
+                return total;
+
+            }
+
+
+            return (
+
+                total +
+
+                Number(
+                    item.steps || 0
+                )
+
+            );
+
+        },
+
+        0
+
+    );
+
+}
+
+
+/* ==========================================
+CALORIES
+========================================== */
+
+function getCaloriesForDate(
+    date
+){
+
+    if(
+        !Array.isArray(
+            userData.meals
+        )
+    ){
+
+        return 0;
+
+    }
+
+
+    return userData.meals.reduce(
+
+        function(
+            total,
+            meal
+        ){
+
+            if(
+                meal.date !== date
+            ){
+
+                return total;
+
+            }
+
+
+            return (
+
+                total +
+
+                Number(
+                    meal.calories || 0
+                )
+
+            );
+
+        },
+
+        0
+
+    );
+
+}
+
+
+/* ==========================================
+MEALS
+========================================== */
+
+function getMealsForDate(
+    date
+){
+
+    if(
+        !Array.isArray(
+            userData.meals
+        )
+    ){
+
+        return 0;
+
+    }
+
+
+    return userData.meals.filter(
+
+        function(
+            meal
+        ){
+
+            return (
+                meal.date === date
+            );
+
+        }
+
+    ).length;
+
+}
+
+
+/* ==========================================
+WORKOUT DATE
+========================================== */
+
+function getWorkoutDate(
+    workout
+){
+
+    if(
+        workout.dateISO
+    ){
+
+        return workout.dateISO;
+
+    }
+
+
+    if(
+        workout.date
+    ){
+
+        if(
+            /^\d{4}-\d{2}-\d{2}$/.test(
+                workout.date
+            )
+        ){
+
+            return workout.date;
+
+        }
+
+
+        const parts =
+            workout.date.split(
+                " "
+            );
+
+
+        if(
+            parts.length === 2
+        ){
+
+            const d =
+
+                new Date(
+
+                    parts[1] +
+
+                    " " +
+
+                    parts[0] +
+
+                    ", " +
+
+                    new Date()
+                        .getFullYear()
+
+                );
+
+
+            if(
+                !isNaN(
+                    d.getTime()
+                )
+            ){
+
+                return formatDate(d);
+
+            }
+
+        }
+
+    }
+
+
+    return null;
+
+}
+
+
+/* ==========================================
+WORKOUT
+========================================== */
+
+function getWorkoutForDate(
+    date
+){
+
+    if(
+        !Array.isArray(
+            userData.workouts
+        )
+    ){
+
+        return 0;
+
+    }
+
+
+    return userData.workouts.reduce(
+
+        function(
+            total,
+            workout
+        ){
+
+            if(
+                getWorkoutDate(
+                    workout
+                ) !== date
+            ){
+
+                return total;
+
+            }
+
+
+            return (
+
+                total +
+
+                Number(
+                    workout.duration || 0
+                )
+
+            );
+
+        },
+
+        0
+
+    );
+
+}
+
+
+/* ==========================================
+SLEEP
+========================================== */
+
+function getSleepForDate(
+    date
+){
+
+    if(
+        !Array.isArray(
+            userData.sleep
+        )
+    ){
+
+        return 0;
+
+    }
+
+
+    const records =
+
+        userData.sleep.filter(
+
+            function(
+                sleep
+            ){
+
+                return (
+
+                    sleep.date === date &&
+
+                    Number(
+                        sleep.duration || 0
+                    ) > 0
+
+                );
+
+            }
+
+        );
+
+
+    if(
+        records.length === 0
+    ){
+
+        return 0;
+
+    }
+
+
+    /*
+    Use the latest sleep record
+    for the selected day.
+    */
+
+    const latestSleep =
+
+        records[
+            records.length - 1
+        ];
+
+
+    return Number(
+        latestSleep.duration || 0
+    );
+
+}
+
+
+/* ==========================================
+LAST 7 DAYS
+========================================== */
+
+function getLast7Days(){
+
+    const result = [];
+
+    const now =
+        new Date();
+
+
+    for(
+        let i = 6;
+        i >= 0;
+        i--
+    ){
+
+        const date =
+            new Date(now);
+
+
+        date.setDate(
+            now.getDate() - i
+        );
+
+
+        result.push({
+
+            date:
+                formatDate(
+                    date
+                ),
+
+            day:
+                date.toLocaleDateString(
+                    "en-US",
+                    {
+                        weekday:"short"
+                    }
+                )
+
+        });
+
+    }
+
+
+    return result;
+
+}
+
+
+const weekly =
+    getLast7Days();
+
+
+/* ==========================================
+WEEKLY DATA
+========================================== */
+
+weekly.forEach(
+
+    function(
+        day
+    ){
+
+        day.steps =
+            getStepsForDate(
+                day.date
+            );
+
+
+        day.calories =
+            getCaloriesForDate(
+                day.date
+            );
+
+
+        day.workout =
+            getWorkoutForDate(
+                day.date
+            );
+
+
+        day.sleep =
+            getSleepForDate(
+                day.date
+            );
+
+    }
+
+);
+
+
+/* ==========================================
+TODAY'S DATA
+========================================== */
+
+const todaySteps =
+    getStepsForDate(
+        today
+    );
+
+
+const todayCalories =
+    getCaloriesForDate(
+        today
+    );
+
+
+const todayWorkout =
+    getWorkoutForDate(
+        today
+    );
+
+
+const todaySleep =
+    getSleepForDate(
+        today
+    );
+
+
+const todayMeals =
+    getMealsForDate(
+        today
+    );
+
+
+/* ==========================================
+GOALS
+========================================== */
+
+const stepsGoal =
+
+    Number(
+        goals.steps || 0
+    );
+
+
+const caloriesGoal =
+
+    Number(
+        goals.calories || 0
+    );
+
+
+const workoutGoal =
+
+    Number(
+        goals.workout || 0
+    );
+
+
+const sleepGoal =
+
+    Number(
+        goals.sleep || 0
+    );
+
+
+/* ==========================================
+TOP STATS
+========================================== */
+
+document.getElementById(
+    "stepsStat"
+).textContent =
+
+    todaySteps
+
+        ? todaySteps.toLocaleString()
+
+        : "--";
+
+
+document.getElementById(
+    "caloriesStat"
+).textContent =
+
+    todayCalories
+
+        ? todayCalories.toLocaleString()
+
+        : "--";
+
+
+document.getElementById(
+    "workoutStat"
+).textContent =
+
+    todayWorkout
+
+        ? todayWorkout +
+          " min"
+
+        : "--";
+
+
+document.getElementById(
+    "sleepStat"
+).textContent =
+
+    todaySleep
+
+        ? todaySleep.toFixed(1) +
+          " h"
+
+        : "--";
+
+
+/* ==========================================
+WEEKLY ACTIVITY
+========================================== */
+
+const weeklyActivity =
+
+    document.getElementById(
+        "weeklyActivity"
+    );
+
+
+const maxSteps =
+
+    Math.max(
+
+        stepsGoal || 10000,
+
+        ...weekly.map(
+
+            function(
+                day
+            ){
+
+                return day.steps;
+
+            }
+
+        ),
+
+        1
+
+    );
+
+
+const maxCalories =
+
+    Math.max(
+
+        caloriesGoal || 2000,
+
+        ...weekly.map(
+
+            function(
+                day
+            ){
+
+                return day.calories;
+
+            }
+
+        ),
+
+        1
+
+    );
+
+
+weekly.forEach(
+
+    function(
+        day
+    ){
+
+        const row =
+
+            document.createElement(
+                "div"
+            );
+
+
+        row.className =
+            "week-row";
+
+
+        const dayLabel =
+
+            document.createElement(
+                "div"
+            );
+
+
+        dayLabel.className =
+            "week-day";
+
+
+        dayLabel.textContent =
+            day.day;
+
+
+        const bars =
+
+            document.createElement(
+                "div"
+            );
+
+
+        bars.className =
+            "week-bars";
+
+
+        /* STEPS BAR */
+
+        const stepsBar =
+
+            document.createElement(
+                "div"
+            );
+
+
+        stepsBar.className =
+            "week-bar";
+
+
+        const stepsFill =
+
+            document.createElement(
+                "div"
+            );
+
+
+        stepsFill.className =
+            "week-fill steps-fill";
+
+
+        stepsFill.style.width =
+
+            Math.min(
+
+                100,
+
+                (
+                    day.steps /
+                    maxSteps
+                ) * 100
+
+            ) +
+
+            "%";
+
+
+        stepsBar.appendChild(
+            stepsFill
+        );
+
+
+        /* CALORIES BAR */
+
+        const calorieBar =
+
+            document.createElement(
+                "div"
+            );
+
+
+        calorieBar.className =
+            "week-bar";
+
+
+        const calorieFill =
+
+            document.createElement(
+                "div"
+            );
+
+
+        calorieFill.className =
+            "week-fill calorie-fill";
+
+
+        calorieFill.style.width =
+
+            Math.min(
+
+                100,
+
+                (
+                    day.calories /
+                    maxCalories
+                ) * 100
+
+            ) +
+
+            "%";
+
+
+        calorieBar.appendChild(
+            calorieFill
+        );
+
+
+        bars.appendChild(
+            stepsBar
+        );
+
+
+        bars.appendChild(
+            calorieBar
+        );
+
+
+        const value =
+
+            document.createElement(
+                "div"
+            );
+
+
+        value.className =
+            "week-value";
+
+
+        value.textContent =
+
+            day.steps
+
+                ? day.steps.toLocaleString()
+
+                : "--";
+
+
+        row.appendChild(
+            dayLabel
+        );
+
+
+        row.appendChild(
+            bars
+        );
+
+
+        row.appendChild(
+            value
+        );
+
+
+        weeklyActivity.appendChild(
+            row
+        );
+
+    }
+
+);
+
+
+/* ==========================================
+TODAY'S REPORT
+========================================== */
+
+
+/* STEPS */
+
+document.getElementById(
+    "todaySteps"
+).textContent =
+
+    todaySteps
+
+        ? todaySteps.toLocaleString()
+
+        : "--";
+
+
+document.getElementById(
+    "stepsGoalText"
+).textContent =
+
+    stepsGoal
+
+        ? "Goal: " +
+          stepsGoal.toLocaleString()
+
+        : "Goal: --";
+
+
+/* CALORIES */
+
+document.getElementById(
+    "todayCalories"
+).textContent =
+
+    todayCalories
+
+        ? todayCalories.toLocaleString()
+
+        : "--";
+
+
+document.getElementById(
+    "caloriesGoalText"
+).textContent =
+
+    caloriesGoal
+
+        ? "Goal: " +
+          caloriesGoal.toLocaleString() +
+          " kcal"
+
+        : "Goal: --";
+
+
+/* WORKOUT */
+
+document.getElementById(
+    "todayWorkout"
+).textContent =
+
+    todayWorkout
+
+        ? todayWorkout +
+          " min"
+
+        : "--";
+
+
+document.getElementById(
+    "workoutGoalText"
+).textContent =
+
+    workoutGoal
+
+        ? "Goal: " +
+          workoutGoal +
+          " min"
+
+        : "Goal: --";
+
+
+/* SLEEP */
+
+document.getElementById(
+    "todaySleep"
+).textContent =
+
+    todaySleep
+
+        ? todaySleep.toFixed(1) +
+          " h"
+
+        : "--";
+
+
+document.getElementById(
+    "sleepGoalText"
+).textContent =
+
+    sleepGoal
+
+        ? "Goal: " +
+          sleepGoal.toFixed(1) +
+          " h"
+
+        : "Goal: --";
+
+
+/* MEALS */
+
+document.getElementById(
+    "todayMeals"
+).textContent =
+
+    todayMeals
+
+        ? todayMeals
+
+        : "--";
+
+
+/* ==========================================
+MESSAGE
+========================================== */
+
+const reportMessage =
+
+    document.getElementById(
+        "reportMessage"
+    );
+
+
+if(
+
+    todaySteps === 0 &&
+
+    todayCalories === 0 &&
+
+    todayWorkout === 0 &&
+
+    todaySleep === 0 &&
+
+    todayMeals === 0
+
+){
+
+    reportMessage.textContent =
+
+        "Start adding your fitness data to see your report here.";
+
+}
+
+else{
+
+    reportMessage.textContent =
+
+        "Your report is calculated from your personal activity and goals.";
+
+}
+
+
 </script>
+
+
+</body>
+
+</html>

@@ -1,48 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>FitTrack - Heart Rate</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* =========================
+RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html,
-body {
-    width: 100%;
-    height: 100%;
+body{
+    width:100%;
+    height:100%;
 }
 
-body {
-    font-family: "Inter", sans-serif;
-    background: #f4f8fb;
-    color: #07183b;
-    overflow: hidden;
+body{
+    font-family:"Inter",sans-serif;
+    background:#f4f8fb;
+    color:#07183b;
+    overflow:hidden;
 }
 
 button,
-input {
-    font-family: inherit;
+input,
+select{
+    font-family:inherit;
 }
 
-.app {
-    width: 100%;
-    height: 100vh;
-    display: flex;
+.app{
+    width:100%;
+    height:100vh;
+    display:flex;
 }
 
 
@@ -50,107 +69,115 @@ input {
 SIDEBAR
 ========================= */
 
-.sidebar {
-    width: 263px;
-    height: 100vh;
-    flex: 0 0 263px;
+.sidebar{
+    width:263px;
+    height:100vh;
+    flex:0 0 263px;
 
-    background: linear-gradient(
+    background:linear-gradient(
         180deg,
         #061c2c 0%,
         #071c2b 100%
     );
 
-    color: white;
+    color:white;
 
-    padding: 18px 9px 16px;
+    padding:18px 9px 16px;
 
-    display: flex;
-    flex-direction: column;
+    display:flex;
+    flex-direction:column;
 
-    overflow: hidden;
+    overflow:hidden;
+
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
 }
 
-.brand {
-    height: 100px;
-    flex: 0 0 100px;
+.brand{
+    height:100px;
+    flex:0 0 100px;
 
-    display: flex;
-    align-items: center;
+    display:flex;
+    align-items:center;
 
-    padding-left: 20px;
-    margin-bottom: 8px;
+    padding-left:20px;
+    margin-bottom:8px;
 }
 
-.brand img {
-    width: 196px;
-    max-height: 88px;
-    object-fit: contain;
+.brand img{
+    width:196px;
+    max-height:88px;
+    object-fit:contain;
 }
 
-.nav {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+.nav{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
 }
 
-.nav a {
-    height: 49px;
-    flex: 0 0 49px;
+.nav a{
+    height:49px;
+    flex:0 0 49px;
 
-    border-radius: 11px;
+    border-radius:11px;
 
-    display: flex;
-    align-items: center;
+    display:flex;
+    align-items:center;
 
-    gap: 28px;
-    padding: 0 28px;
+    gap:28px;
+    padding:0 28px;
 
-    color: #e8f0f7;
-    text-decoration: none;
+    color:#e8f0f7;
 
-    font-size: 16px;
-    font-weight: 500;
+    text-decoration:none;
 
-    position: relative;
+    font-size:16px;
+    font-weight:500;
 
-    transition: .18s;
+    position:relative;
+
+    transition:.18s;
 }
 
-.nav a i {
-    width: 25px;
-    flex: 0 0 25px;
-    text-align: center;
-    font-size: 22px;
+.nav a i{
+    width:25px;
+    flex:0 0 25px;
+
+    text-align:center;
+
+    font-size:22px;
 }
 
-.nav a:hover {
-    background: #12344a;
+.nav a:hover{
+    background:#12344a;
 }
 
-.nav a.active {
-    background: #12344a;
-    font-weight: 700;
+.nav a.active{
+    background:#12344a;
+    font-weight:700;
 }
 
-.nav a.active::before {
-    content: "";
+.nav a.active::before{
+    content:"";
 
-    position: absolute;
+    position:absolute;
 
-    left: -9px;
-    top: 0;
-    bottom: 0;
+    left:-9px;
+    top:0;
+    bottom:0;
 
-    width: 8px;
+    width:8px;
 
-    border-radius: 0 6px 6px 0;
+    border-radius:0 6px 6px 0;
 
-    background: #20e69b;
+    background:#20e69b;
 }
 
-.nav a.active i {
-    color: #29e9a0;
+.nav a.active i{
+    color:#29e9a0;
 }
 
 
@@ -158,69 +185,74 @@ SIDEBAR
 PREMIUM
 ========================= */
 
-.premium {
-    margin: auto 15px 0;
+.premium{
+    margin:auto 15px 0;
 
-    border: 1px solid #1d4158;
+    border:1px solid #1d4158;
 
-    background: rgba(10,40,57,.7);
+    background:rgba(10,40,57,.7);
 
-    border-radius: 12px;
+    border-radius:12px;
 
-    padding: 14px 16px 13px;
+    padding:14px 16px 13px;
 }
 
-.premium-title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.premium-title{
+    display:flex;
+    align-items:center;
 
-    color: #ffd21f;
+    gap:10px;
 
-    font-weight: 800;
-    font-size: 15px;
+    color:#ffd21f;
 
-    margin-bottom: 12px;
+    font-weight:800;
+    font-size:15px;
+
+    margin-bottom:12px;
 }
 
-.premium-feature {
-    font-size: 12px;
+.premium-feature{
+    font-size:12px;
 
-    margin: 8px 0;
+    margin:8px 0;
 
-    color: #dce8ee;
+    color:#dce8ee;
 
-    display: flex;
-    gap: 10px;
-    align-items: center;
+    display:flex;
+
+    gap:10px;
+
+    align-items:center;
 }
 
-.premium-feature i {
-    width: 15px;
-    color: #24e8a0;
+.premium-feature i{
+    width:15px;
+
+    color:#24e8a0;
 }
 
-.premium button {
-    width: 100%;
-    height: 43px;
+.premium button{
+    width:100%;
+    height:43px;
 
-    margin-top: 8px;
+    margin-top:8px;
 
-    border: 0;
-    border-radius: 12px;
+    border:0;
 
-    background: linear-gradient(
+    border-radius:12px;
+
+    background:linear-gradient(
         90deg,
         #1ce79a,
         #2ce9a0
     );
 
-    color: #03251a;
+    color:#03251a;
 
-    font-size: 16px;
-    font-weight: 800;
+    font-size:16px;
+    font-weight:800;
 
-    cursor: pointer;
+    cursor:pointer;
 }
 
 
@@ -228,97 +260,109 @@ PREMIUM
 MAIN
 ========================= */
 
-.main {
-    flex: 1;
-    min-width: 0;
+.main{
+    margin-left:263px;
 
-    height: 100vh;
+    flex:1;
+    min-width:0;
 
-    padding: 25px 30px 30px;
+    height:100vh;
 
-    overflow-y: auto;
-    overflow-x: hidden;
+    padding:25px 30px 30px;
+
+    overflow-y:auto;
+    overflow-x:hidden;
 }
 
 
 /* =========================
-TOP
+TOP BAR
 ========================= */
 
-.topbar {
-    display: flex;
+.topbar{
+    display:flex;
 
-    align-items: center;
-    justify-content: space-between;
+    align-items:center;
+    justify-content:space-between;
 
-    margin-bottom: 22px;
+    margin-bottom:22px;
 }
 
-.page-title h1 {
-    font-size: 28px;
-    margin-bottom: 6px;
+.page-title h1{
+    font-size:28px;
+
+    margin-bottom:6px;
 }
 
-.page-title p {
-    color: #718096;
-    font-size: 13px;
+.page-title p{
+    color:#718096;
+
+    font-size:13px;
 }
 
-.top-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.top-actions{
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
 }
 
-.notification {
-    width: 42px;
-    height: 42px;
+.notification{
+    width:42px;
+    height:42px;
 
-    border-radius: 50%;
+    border-radius:50%;
 
-    background: white;
+    background:white;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
     box-shadow:
-        0 3px 12px rgba(7,24,59,.08);
+        0 3px 12px
+        rgba(7,24,59,.08);
 
-    font-size: 18px;
+    font-size:18px;
 }
 
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.profile{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
 }
 
-.profile-circle {
-    width: 42px;
-    height: 42px;
+.profile-circle{
+    width:42px;
+    height:42px;
 
-    border-radius: 50%;
+    border-radius:50%;
 
-    background: #263c4a;
+    background:#263c4a;
 
-    color: white;
+    color:white;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display:flex;
 
-    font-weight: 800;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:800;
 }
 
-.profile-text strong {
-    display: block;
-    font-size: 14px;
+.profile-text strong{
+    display:block;
+
+    font-size:14px;
 }
 
-.profile-text span {
-    color: #718096;
-    font-size: 12px;
+.profile-text span{
+    color:#718096;
+
+    font-size:12px;
 }
 
 
@@ -326,79 +370,85 @@ TOP
 STATS
 ========================= */
 
-.stats {
-    display: grid;
+.stats{
+    display:grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(4,1fr);
 
-    gap: 15px;
+    gap:15px;
 
-    margin-bottom: 20px;
+    margin-bottom:20px;
 }
 
-.stat {
-    background: white;
+.stat{
+    background:white;
 
-    border: 1px solid #e4ebf0;
+    border:1px solid #e4ebf0;
 
-    border-radius: 14px;
+    border-radius:14px;
 
-    padding: 18px;
+    padding:18px;
 
     box-shadow:
-        0 3px 12px rgba(7,24,59,.05);
+        0 3px 12px
+        rgba(7,24,59,.05);
 }
 
-.stat-top {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.stat-top{
+    display:flex;
 
-    margin-bottom: 12px;
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:12px;
 }
 
-.stat-icon {
-    width: 43px;
-    height: 43px;
+.stat-icon{
+    width:43px;
+    height:43px;
 
-    border-radius: 50%;
+    border-radius:50%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display:flex;
 
-    font-size: 18px;
+    align-items:center;
+    justify-content:center;
+
+    font-size:18px;
 }
 
-.red {
-    background: #ffe1e7;
-    color: #ef4565;
+.red{
+    background:#ffe1e7;
+    color:#ef4565;
 }
 
-.green {
-    background: #dff8ed;
-    color: #0bb77b;
+.green{
+    background:#dff8ed;
+    color:#0bb77b;
 }
 
-.blue {
-    background: #dff1ff;
-    color: #179fe4;
+.blue{
+    background:#dff1ff;
+    color:#179fe4;
 }
 
-.orange {
-    background: #fff0d9;
-    color: #f59e0b;
+.orange{
+    background:#fff0d9;
+    color:#f59e0b;
 }
 
-.stat h3 {
-    font-size: 22px;
-    margin-bottom: 3px;
+.stat h3{
+    font-size:22px;
+
+    margin-bottom:3px;
 }
 
-.stat p {
-    color: #718096;
-    font-size: 12px;
+.stat p{
+    color:#718096;
+
+    font-size:12px;
 }
 
 
@@ -406,40 +456,42 @@ STATS
 CONTENT
 ========================= */
 
-.content-grid {
-    display: grid;
+.content-grid{
+    display:grid;
 
     grid-template-columns:
         1.45fr
         1fr;
 
-    gap: 18px;
+    gap:18px;
 }
 
-.panel {
-    background: white;
+.panel{
+    background:white;
 
-    border: 1px solid #e4ebf0;
+    border:1px solid #e4ebf0;
 
-    border-radius: 15px;
+    border-radius:15px;
 
-    padding: 20px;
+    padding:20px;
 
     box-shadow:
-        0 3px 12px rgba(7,24,59,.05);
+        0 3px 12px
+        rgba(7,24,59,.05);
 }
 
-.panel-header {
-    display: flex;
+.panel-header{
+    display:flex;
 
-    align-items: center;
-    justify-content: space-between;
+    align-items:center;
 
-    margin-bottom: 18px;
+    justify-content:space-between;
+
+    margin-bottom:18px;
 }
 
-.panel-header h2 {
-    font-size: 18px;
+.panel-header h2{
+    font-size:18px;
 }
 
 
@@ -447,276 +499,116 @@ CONTENT
 ADD BUTTON
 ========================= */
 
-.add-rate {
-    border: none;
+.add-rate{
+    border:none;
 
-    background: #20e69b;
+    background:#20e69b;
 
-    color: #05291e;
+    color:#05291e;
 
-    font-weight: 800;
+    font-weight:800;
 
-    padding: 11px 18px;
+    padding:11px 18px;
 
-    border-radius: 9px;
+    border-radius:9px;
 
-    cursor: pointer;
+    cursor:pointer;
 
-    font-size: 12px;
+    font-size:12px;
 }
 
 
 /* =========================
-HEART RATE MAIN
+CURRENT HEART RATE
 ========================= */
 
-.current-rate {
-    display: flex;
+.current-rate{
+    display:flex;
 
-    align-items: center;
+    align-items:center;
 
-    gap: 25px;
+    gap:25px;
 
-    padding: 5px 0 22px;
+    padding:5px 0 22px;
 }
 
-.heart-circle {
-    width: 145px;
-    height: 145px;
+.heart-circle{
+    width:145px;
+    height:145px;
 
-    border-radius: 50%;
+    border-radius:50%;
 
     background:
         conic-gradient(
-            #ef4565 0deg,
-            #ef4565 270deg,
-            #edf1f4 270deg,
+            #edf1f4 0deg,
             #edf1f4 360deg
         );
 
-    display: flex;
+    display:flex;
 
-    align-items: center;
-    justify-content: center;
+    align-items:center;
+    justify-content:center;
 
-    position: relative;
+    position:relative;
 
-    flex-shrink: 0;
+    flex-shrink:0;
 }
 
-.heart-circle::before {
-    content: "";
+.heart-circle::before{
+    content:"";
 
-    position: absolute;
+    position:absolute;
 
-    width: 112px;
-    height: 112px;
+    width:112px;
+    height:112px;
 
-    background: white;
+    background:white;
 
-    border-radius: 50%;
+    border-radius:50%;
 }
 
-.heart-content {
-    position: relative;
+.heart-content{
+    position:relative;
 
-    text-align: center;
+    text-align:center;
 }
 
-.heart-content i {
-    color: #ef4565;
-    font-size: 20px;
+.heart-content i{
+    color:#ef4565;
 
-    margin-bottom: 3px;
+    font-size:20px;
+
+    margin-bottom:3px;
 }
 
-.heart-content strong {
-    display: block;
+.heart-content strong{
+    display:block;
 
-    font-size: 27px;
+    font-size:27px;
 }
 
-.heart-content span {
-    color: #718096;
-    font-size: 11px;
+.heart-content span{
+    color:#718096;
+
+    font-size:11px;
 }
 
-.rate-message {
-    flex: 1;
+.rate-message{
+    flex:1;
 }
 
-.rate-message h3 {
-    font-size: 18px;
-    margin-bottom: 7px;
+.rate-message h3{
+    font-size:18px;
+
+    margin-bottom:7px;
 }
 
-.rate-message p {
-    color: #718096;
+.rate-message p{
+    color:#718096;
 
-    font-size: 12px;
+    font-size:12px;
 
-    line-height: 1.6;
-}
-
-
-/* =========================
-HEART RATE ROW
-========================= */
-
-.rate-row {
-    display: flex;
-
-    align-items: center;
-
-    padding: 14px 0;
-
-    border-bottom: 1px solid #edf1f4;
-}
-
-.rate-row:last-child {
-    border-bottom: none;
-}
-
-.rate-icon {
-    width: 44px;
-    height: 44px;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin-right: 13px;
-
-    flex-shrink: 0;
-}
-
-.rate-info {
-    flex: 1;
-}
-
-.rate-info strong {
-    display: block;
-
-    font-size: 14px;
-
-    margin-bottom: 4px;
-}
-
-.rate-info span {
-    color: #718096;
-    font-size: 12px;
-}
-
-.rate-value {
-    text-align: right;
-}
-
-.rate-value strong {
-    display: block;
-    font-size: 15px;
-}
-
-.rate-value span {
-    color: #718096;
-    font-size: 11px;
-}
-
-
-/* =========================
-ACTIONS
-========================= */
-
-.rate-actions {
-    display: flex;
-    gap: 6px;
-    margin-left: 12px;
-}
-
-.edit-rate,
-.delete-rate {
-    width: 32px;
-    height: 32px;
-
-    border: none;
-    border-radius: 8px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-}
-
-.edit-rate {
-    background: #eef5ff;
-    color: #2196f3;
-}
-
-.delete-rate {
-    background: #fff0f2;
-    color: #ef4565;
-}
-
-
-/* =========================
-CHART
-========================= */
-
-.chart {
-    height: 220px;
-
-    display: flex;
-
-    align-items: flex-end;
-
-    gap: 16px;
-
-    padding: 20px 8px 5px;
-
-    border-bottom: 1px solid #edf1f4;
-}
-
-.chart-column {
-    flex: 1;
-
-    height: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: flex-end;
-
-    align-items: center;
-
-    gap: 8px;
-}
-
-.chart-bar {
-    width: 30px;
-
-    max-height: 160px;
-
-    min-height: 10px;
-
-    border-radius: 8px 8px 3px 3px;
-
-    background: #ef4565;
-
-    transition: height .3s;
-}
-
-.chart-label {
-    font-size: 10px;
-    color: #718096;
-}
-
-.chart-value {
-    font-size: 10px;
-    font-weight: 700;
+    line-height:1.6;
 }
 
 
@@ -724,53 +616,288 @@ CHART
 STATUS
 ========================= */
 
-.status-box {
-    background: #f7fafc;
+.status-box{
+    background:#f7fafc;
 
-    border-radius: 12px;
+    border-radius:12px;
 
-    padding: 17px;
+    padding:17px;
 
-    margin-top: 20px;
+    margin-top:20px;
 }
 
-.status-header {
-    display: flex;
+.status-header{
+    display:flex;
 
-    align-items: center;
-    justify-content: space-between;
+    align-items:center;
 
-    margin-bottom: 10px;
+    justify-content:space-between;
+
+    margin-bottom:10px;
 }
 
-.status-header strong {
-    font-size: 14px;
+.status-header strong{
+    font-size:14px;
 }
 
-.status-header span {
-    font-size: 12px;
-    color: #718096;
+.status-header span{
+    font-size:12px;
+
+    color:#718096;
 }
 
-.status-bar {
-    width: 100%;
-    height: 9px;
+.status-bar{
+    width:100%;
+    height:9px;
 
-    background: #e7eef2;
+    background:#e7eef2;
 
-    border-radius: 10px;
+    border-radius:10px;
 
-    overflow: hidden;
+    overflow:hidden;
 }
 
-.status-fill {
-    height: 100%;
+.status-fill{
+    height:100%;
 
-    width: 70%;
+    width:0%;
 
-    background: #ef4565;
+    background:#ef4565;
 
-    border-radius: 10px;
+    border-radius:10px;
+}
+
+
+/* =========================
+RATE ROW
+========================= */
+
+.rate-row{
+    display:flex;
+
+    align-items:center;
+
+    padding:14px 0;
+
+    border-bottom:1px solid #edf1f4;
+}
+
+.rate-row:last-child{
+    border-bottom:none;
+}
+
+.rate-icon{
+    width:44px;
+    height:44px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-right:13px;
+
+    flex-shrink:0;
+}
+
+.rate-info{
+    flex:1;
+}
+
+.rate-info strong{
+    display:block;
+
+    font-size:14px;
+
+    margin-bottom:4px;
+}
+
+.rate-info span{
+    color:#718096;
+
+    font-size:12px;
+}
+
+.rate-value{
+    text-align:right;
+}
+
+.rate-value strong{
+    display:block;
+
+    font-size:15px;
+}
+
+.rate-value span{
+    color:#718096;
+
+    font-size:11px;
+}
+
+.rate-actions{
+    display:flex;
+
+    gap:6px;
+
+    margin-left:12px;
+}
+
+.edit-rate,
+.delete-rate{
+    width:32px;
+    height:32px;
+
+    border:none;
+
+    border-radius:8px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+}
+
+.edit-rate{
+    background:#eef5ff;
+
+    color:#2196f3;
+}
+
+.delete-rate{
+    background:#fff0f2;
+
+    color:#ef4565;
+}
+
+
+/* =========================
+EMPTY
+========================= */
+
+.empty-state{
+    min-height:220px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    color:#8b96a3;
+}
+
+.empty-state i{
+    font-size:36px;
+
+    color:#d0d7de;
+
+    margin-bottom:13px;
+}
+
+.empty-state h3{
+    font-size:16px;
+
+    color:#39465d;
+
+    margin-bottom:6px;
+}
+
+.empty-state p{
+    font-size:12px;
+}
+
+
+/* =========================
+CHART
+========================= */
+
+.chart{
+    height:220px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:16px;
+
+    padding:20px 8px 5px;
+
+    border-bottom:1px solid #edf1f4;
+}
+
+.chart-empty{
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+
+    color:#9aa5b1;
+
+    text-align:center;
+}
+
+.chart-empty i{
+    font-size:30px;
+
+    color:#d2d9df;
+
+    margin-bottom:10px;
+}
+
+.chart-empty span{
+    font-size:12px;
+}
+
+.chart-column{
+    flex:1;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.chart-bar{
+    width:30px;
+
+    max-height:160px;
+
+    min-height:10px;
+
+    border-radius:8px 8px 3px 3px;
+
+    background:#ef4565;
+}
+
+.chart-label{
+    font-size:10px;
+
+    color:#718096;
+}
+
+.chart-value{
+    font-size:10px;
+
+    font-weight:700;
 }
 
 
@@ -778,193 +905,210 @@ STATUS
 MODAL
 ========================= */
 
-.modal {
-    position: fixed;
+.modal{
+    position:fixed;
 
-    inset: 0;
+    inset:0;
 
-    background: rgba(3,20,32,.55);
+    background:rgba(
+        3,
+        20,
+        32,
+        .55
+    );
 
-    display: none;
+    display:none;
 
-    align-items: center;
-    justify-content: center;
+    align-items:center;
+    justify-content:center;
 
-    z-index: 1000;
+    z-index:1000;
 }
 
-.modal.show {
-    display: flex;
+.modal.show{
+    display:flex;
 }
 
-.modal-box {
-    width: 430px;
-    max-width: 92%;
+.modal-box{
+    width:430px;
 
-    background: white;
+    max-width:92%;
 
-    border-radius: 18px;
+    background:white;
 
-    padding: 25px;
+    border-radius:18px;
+
+    padding:25px;
 
     box-shadow:
-        0 25px 70px rgba(0,0,0,.22);
+        0 25px 70px
+        rgba(0,0,0,.22);
 }
 
-.modal-header {
-    display: flex;
+.modal-header{
+    display:flex;
 
-    align-items: center;
-    justify-content: space-between;
+    align-items:center;
 
-    margin-bottom: 22px;
+    justify-content:space-between;
+
+    margin-bottom:22px;
 }
 
-.modal-header h2 {
-    font-size: 21px;
+.modal-header h2{
+    font-size:21px;
 }
 
-.close-btn {
-    width: 34px;
-    height: 34px;
+.close-btn{
+    width:34px;
+    height:34px;
 
-    border: none;
+    border:none;
 
-    border-radius: 50%;
+    border-radius:50%;
 
-    background: #f1f5f8;
+    background:#f1f5f8;
 
-    cursor: pointer;
+    cursor:pointer;
 }
 
-.form-group {
-    margin-bottom: 17px;
+.form-group{
+    margin-bottom:17px;
 }
 
-.form-group label {
-    display: block;
+.form-group label{
+    display:block;
 
-    font-size: 13px;
+    font-size:13px;
 
-    font-weight: 700;
+    font-weight:700;
 
-    margin-bottom: 7px;
+    margin-bottom:7px;
 }
 
 .form-group input,
-.form-group select {
-    width: 100%;
+.form-group select{
+    width:100%;
 
-    height: 46px;
+    height:46px;
 
-    border: 1px solid #dfe7ee;
+    border:1px solid #dfe7ee;
 
-    border-radius: 9px;
+    border-radius:9px;
 
-    background: #f8fafc;
+    background:#f8fafc;
 
-    padding: 0 13px;
+    padding:0 13px;
 
-    outline: none;
+    outline:none;
 
-    font-size: 14px;
+    font-size:14px;
 }
 
 .form-group input:focus,
-.form-group select:focus {
-    border-color: #ef4565;
+.form-group select:focus{
+    border-color:#ef4565;
 
-    background: white;
+    background:white;
 }
 
-.modal-buttons {
-    display: flex;
+.modal-buttons{
+    display:flex;
 
-    justify-content: flex-end;
+    justify-content:flex-end;
 
-    gap: 10px;
+    gap:10px;
 
-    margin-top: 23px;
+    margin-top:23px;
 }
 
 .cancel-btn,
-.save-btn {
-    height: 43px;
+.save-btn{
+    height:43px;
 
-    padding: 0 18px;
+    padding:0 18px;
 
-    border-radius: 9px;
+    border-radius:9px;
 
-    cursor: pointer;
+    cursor:pointer;
 
-    font-size: 13px;
+    font-size:13px;
 
-    font-weight: 700;
+    font-weight:700;
 }
 
-.cancel-btn {
-    border: 1px solid #dfe7ee;
+.cancel-btn{
+    border:1px solid #dfe7ee;
 
-    background: white;
+    background:white;
 }
 
-.save-btn {
-    border: none;
+.save-btn{
+    border:none;
 
-    background: #20e69b;
+    background:#20e69b;
 
-    color: #05291e;
+    color:#05291e;
 }
 
 
 /* =========================
-LAPTOP
+RESPONSIVE
 ========================= */
 
-@media (max-height: 850px) {
+@media(max-height:850px){
 
-    .sidebar {
-        padding-top: 10px;
+    .sidebar{
+        padding-top:10px;
     }
 
-    .brand {
-        height: 82px;
-        flex-basis: 82px;
-        margin-bottom: 2px;
+    .brand{
+        height:82px;
+
+        flex-basis:82px;
+
+        margin-bottom:2px;
     }
 
-    .brand img {
-        width: 184px;
+    .brand img{
+        width:184px;
     }
 
-    .nav a {
-        height: 43px;
-        flex-basis: 43px;
-        font-size: 14px;
+    .nav a{
+        height:43px;
+
+        flex-basis:43px;
+
+        font-size:14px;
     }
 
-    .nav a i {
-        font-size: 19px;
+    .nav a i{
+        font-size:19px;
     }
 
-    .premium {
-        padding: 10px 13px;
+    .premium{
+        padding:10px 13px;
     }
 
-    .premium-feature {
-        margin: 5px 0;
-        font-size: 11px;
+    .premium-feature{
+        margin:5px 0;
+
+        font-size:11px;
     }
 
-    .premium button {
-        height: 37px;
+    .premium button{
+        height:37px;
     }
+
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <div class="app">
 
@@ -975,96 +1119,196 @@ SIDEBAR
 
 <aside class="sidebar">
 
+
 <div class="brand">
-<img src="assets/logo.png" alt="FitTrack">
+
+<img
+    src="assets/logo.png"
+    alt="FitTrack"
+>
+
 </div>
+
 
 <nav class="nav">
 
+
 <a href="index.html">
+
 <i class="fa-solid fa-house"></i>
-<span>Dashboard</span>
+
+<span>
+Dashboard
+</span>
+
 </a>
+
 
 <a href="workouts.html">
+
 <i class="fa-solid fa-dumbbell"></i>
-<span>Workouts</span>
+
+<span>
+Workouts
+</span>
+
 </a>
+
 
 <a href="nutrition.html">
+
 <i class="fa-solid fa-apple-whole"></i>
-<span>Nutrition</span>
+
+<span>
+Nutrition
+</span>
+
 </a>
+
 
 <a href="steps.html">
+
 <i class="fa-solid fa-person-walking"></i>
-<span>Steps</span>
+
+<span>
+Steps
+</span>
+
 </a>
+
 
 <a href="sleep.html">
+
 <i class="fa-solid fa-moon"></i>
-<span>Sleep</span>
+
+<span>
+Sleep
+</span>
+
 </a>
 
-<a href="heart-rate.html" class="active">
+
+<a
+    href="heart-rate.html"
+    class="active"
+>
+
 <i class="fa-regular fa-heart"></i>
-<span>Heart Rate</span>
+
+<span>
+Heart Rate
+</span>
+
 </a>
+
 
 <a href="goals.html">
+
 <i class="fa-solid fa-bullseye"></i>
-<span>Goals</span>
+
+<span>
+Goals
+</span>
+
 </a>
+
 
 <a href="progress.html">
+
 <i class="fa-solid fa-chart-column"></i>
-<span>Progress</span>
+
+<span>
+Progress
+</span>
+
 </a>
+
 
 <a href="reports.html">
+
 <i class="fa-regular fa-file-lines"></i>
-<span>Reports</span>
+
+<span>
+Reports
+</span>
+
 </a>
+
 
 <a href="profile.html">
+
 <i class="fa-regular fa-user"></i>
-<span>Profile</span>
+
+<span>
+Profile
+</span>
+
 </a>
+
 
 <a href="settings.html">
+
 <i class="fa-solid fa-gear"></i>
-<span>Settings</span>
+
+<span>
+Settings
+</span>
+
 </a>
 
+
 </nav>
+
 
 <div class="premium">
 
 <div class="premium-title">
+
 <i class="fa-solid fa-crown"></i>
-<span>Go Premium</span>
+
+<span>
+Go Premium
+</span>
+
 </div>
 
+
 <div class="premium-feature">
+
 <i class="fa-solid fa-chart-line"></i>
+
 Advanced Insights
+
 </div>
 
+
 <div class="premium-feature">
+
 <i class="fa-solid fa-plus"></i>
+
 Personalized Plans
+
 </div>
+
 
 <div class="premium-feature">
+
 <i class="fa-solid fa-shield-heart"></i>
+
 Ad-Free Experience
+
 </div>
 
-<button>
+
+<button
+    type="button"
+    onclick="alert('Premium feature coming soon!')"
+>
 Upgrade Now
 </button>
 
 </div>
+
 
 </aside>
 
@@ -1075,39 +1319,62 @@ MAIN
 
 <main class="main">
 
+
 <div class="topbar">
+
 
 <div class="page-title">
 
-<h1>Heart Rate</h1>
+<h1>
+Heart Rate
+</h1>
 
-<p>Track your heart rate and understand your daily activity.</p>
+<p>
+Track your heart rate and understand your daily activity.
+</p>
 
 </div>
+
 
 <div class="top-actions">
 
+
 <div class="notification">
+
 <i class="fa-regular fa-bell"></i>
+
 </div>
+
 
 <div class="profile">
 
-<div class="profile-circle">
-R
+
+<div
+    class="profile-circle"
+    id="profileInitial"
+>
+U
 </div>
+
 
 <div class="profile-text">
 
-<strong>Ramu</strong>
+<strong id="profileName">
+User
+</strong>
 
-<span>Stay Consistent!</span>
+<span>
+Stay Consistent!
+</span>
 
 </div>
 
-</div>
 
 </div>
+
+
+</div>
+
 
 </div>
 
@@ -1118,27 +1385,34 @@ STATS
 
 <section class="stats">
 
+
 <div class="stat">
 
 <div class="stat-top">
 
 <div class="stat-icon red">
+
 <i class="fa-solid fa-heart-pulse"></i>
+
 </div>
 
 <div>
 
-<p>Current Heart Rate</p>
+<p>
+Current Heart Rate
+</p>
 
 <h3 id="currentRate">
-72 BPM
+--
 </h3>
 
 </div>
 
 </div>
 
-<p>Latest reading</p>
+<p>
+Latest reading
+</p>
 
 </div>
 
@@ -1148,22 +1422,28 @@ STATS
 <div class="stat-top">
 
 <div class="stat-icon green">
+
 <i class="fa-solid fa-heart"></i>
+
 </div>
 
 <div>
 
-<p>Resting Heart Rate</p>
+<p>
+Resting Heart Rate
+</p>
 
 <h3 id="restingRate">
-68 BPM
+--
 </h3>
 
 </div>
 
 </div>
 
-<p>Resting average</p>
+<p>
+Lowest resting reading
+</p>
 
 </div>
 
@@ -1173,22 +1453,28 @@ STATS
 <div class="stat-top">
 
 <div class="stat-icon blue">
+
 <i class="fa-solid fa-chart-line"></i>
+
 </div>
 
 <div>
 
-<p>Average</p>
+<p>
+Average
+</p>
 
 <h3 id="averageRate">
-72 BPM
+--
 </h3>
 
 </div>
 
 </div>
 
-<p>Recent readings</p>
+<p>
+Recent readings
+</p>
 
 </div>
 
@@ -1198,24 +1484,31 @@ STATS
 <div class="stat-top">
 
 <div class="stat-icon orange">
+
 <i class="fa-solid fa-arrow-trend-up"></i>
+
 </div>
 
 <div>
 
-<p>Maximum</p>
+<p>
+Maximum
+</p>
 
 <h3 id="maxRate">
-82 BPM
+--
 </h3>
 
 </div>
 
 </div>
 
-<p>Recent maximum</p>
+<p>
+Highest reading
+</p>
 
 </div>
+
 
 </section>
 
@@ -1231,16 +1524,22 @@ CONTENT
 
 <section class="panel">
 
+
 <div class="panel-header">
 
-<h2>Heart Rate Overview</h2>
+<h2>
+Heart Rate Overview
+</h2>
+
 
 <button
-class="add-rate"
-id="openRate"
+    class="add-rate"
+    id="openRate"
+    type="button"
 >
 
 <i class="fa-solid fa-plus"></i>
+
 Add Reading
 
 </button>
@@ -1250,73 +1549,94 @@ Add Reading
 
 <div class="current-rate">
 
+
 <div
-class="heart-circle"
-id="heartCircle"
+    class="heart-circle"
+    id="heartCircle"
 >
+
 
 <div class="heart-content">
 
 <i class="fa-solid fa-heart-pulse"></i>
 
 <strong id="circleRate">
-72
+--
 </strong>
 
-<span>BPM</span>
+<span>
+BPM
+</span>
 
 </div>
+
 
 </div>
 
 
 <div class="rate-message">
 
+
 <h3 id="rateMessage">
-Normal resting range
+No heart rate data
 </h3>
 
+
 <p>
-Keep tracking your heart rate regularly.
-Changes over time can help you understand
-your activity and recovery patterns.
+Add a heart rate reading to start
+tracking your heart rate and activity.
 </p>
 
 
 <div class="status-box">
 
+
 <div class="status-header">
 
-<strong>Heart Rate Status</strong>
+<strong>
+Heart Rate Status
+</strong>
 
 <span id="statusText">
-Normal
+No data
 </span>
 
 </div>
 
+
 <div class="status-bar">
 
 <div
-class="status-fill"
-id="statusFill"
-></div>
-
-</div>
-
-</div>
-
+    class="status-fill"
+    id="statusFill"
+>
 </div>
 
 </div>
 
 
-<h2 style="font-size:18px;margin-top:8px;margin-bottom:5px;">
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<h2
+    style="
+        font-size:18px;
+        margin-top:8px;
+        margin-bottom:5px;
+    "
+>
 Recent Readings
 </h2>
 
 
-<div id="rateList"></div>
+<div id="rateList">
+</div>
 
 
 </section>
@@ -1326,20 +1646,25 @@ Recent Readings
 
 <section class="panel">
 
+
 <div class="panel-header">
 
-<h2>Heart Rate Trend</h2>
+<h2>
+Heart Rate Trend
+</h2>
 
 </div>
 
 
 <div
-class="chart"
-id="rateChart"
-></div>
+    class="chart"
+    id="rateChart"
+>
+</div>
 
 
 <div class="rate-row">
+
 
 <div class="rate-icon red">
 
@@ -1347,28 +1672,38 @@ id="rateChart"
 
 </div>
 
+
 <div class="rate-info">
 
-<strong>Current</strong>
+<strong>
+Current
+</strong>
 
-<span>Latest reading</span>
+<span>
+Latest reading
+</span>
 
 </div>
+
 
 <div class="rate-value">
 
 <strong id="summaryCurrent">
-72 BPM
+--
 </strong>
 
-<span>now</span>
+<span>
+latest
+</span>
 
 </div>
+
 
 </div>
 
 
 <div class="rate-row">
+
 
 <div class="rate-icon green">
 
@@ -1376,28 +1711,38 @@ id="rateChart"
 
 </div>
 
+
 <div class="rate-info">
 
-<strong>Resting</strong>
+<strong>
+Resting
+</strong>
 
-<span>Lowest recent reading</span>
+<span>
+Lowest resting reading
+</span>
 
 </div>
+
 
 <div class="rate-value">
 
 <strong id="summaryResting">
-68 BPM
+--
 </strong>
 
-<span>resting</span>
+<span>
+resting
+</span>
 
 </div>
+
 
 </div>
 
 
 <div class="rate-row">
+
 
 <div class="rate-icon blue">
 
@@ -1405,28 +1750,38 @@ id="rateChart"
 
 </div>
 
+
 <div class="rate-info">
 
-<strong>Average</strong>
+<strong>
+Average
+</strong>
 
-<span>All recent readings</span>
+<span>
+All readings
+</span>
 
 </div>
+
 
 <div class="rate-value">
 
 <strong id="summaryAverage">
-72 BPM
+--
 </strong>
 
-<span>average</span>
+<span>
+average
+</span>
 
 </div>
+
 
 </div>
 
 
 <div class="rate-row">
+
 
 <div class="rate-icon orange">
 
@@ -1434,31 +1789,44 @@ id="rateChart"
 
 </div>
 
+
 <div class="rate-info">
 
-<strong>Maximum</strong>
+<strong>
+Maximum
+</strong>
 
-<span>Highest recent reading</span>
+<span>
+Highest reading
+</span>
 
 </div>
+
 
 <div class="rate-value">
 
 <strong id="summaryMax">
-82 BPM
+--
 </strong>
 
-<span>maximum</span>
+<span>
+maximum
+</span>
 
 </div>
 
+
 </div>
+
 
 </section>
 
+
 </div>
 
+
 </main>
+
 
 </div>
 
@@ -1468,27 +1836,32 @@ MODAL
 ========================= -->
 
 <div
-class="modal"
-id="rateModal"
+    class="modal"
+    id="rateModal"
 >
+
 
 <div class="modal-box">
 
+
 <div class="modal-header">
+
 
 <h2 id="modalTitle">
 Add Heart Rate
 </h2>
 
+
 <button
-class="close-btn"
-id="closeRate"
-type="button"
+    class="close-btn"
+    id="closeRate"
+    type="button"
 >
 
 <i class="fa-solid fa-xmark"></i>
 
 </button>
+
 
 </div>
 
@@ -1503,12 +1876,12 @@ Heart Rate (BPM)
 </label>
 
 <input
-type="number"
-id="rateInput"
-placeholder="72"
-min="30"
-max="220"
-required
+    type="number"
+    id="rateInput"
+    placeholder="72"
+    min="30"
+    max="220"
+    required
 >
 
 </div>
@@ -1545,796 +1918,1441 @@ After Exercise
 
 <div class="modal-buttons">
 
+
 <button
-type="button"
-class="cancel-btn"
-id="cancelRate"
+    type="button"
+    class="cancel-btn"
+    id="cancelRate"
 >
 Cancel
 </button>
 
+
 <button
-type="submit"
-class="save-btn"
-id="saveRate"
+    type="submit"
+    class="save-btn"
+    id="saveRate"
 >
+
 <i class="fa-solid fa-check"></i>
+
 Add Reading
+
 </button>
 
+
 </div>
+
 
 </form>
 
+
 </div>
+
 
 </div>
 
 
 <script>
 
-/* =========================
-ELEMENTS
-========================= */
 
-const rateModal =
-document.getElementById("rateModal");
+/* ==========================================
+LOGIN PROTECTION
+========================================== */
 
-const openRate =
-document.getElementById("openRate");
+if(
+    localStorage.getItem(
+        "fittrackLoggedIn"
+    ) !== "true"
+){
 
-const closeRate =
-document.getElementById("closeRate");
+    window.location.href =
+        "login.html";
 
-const cancelRate =
-document.getElementById("cancelRate");
-
-const rateForm =
-document.getElementById("rateForm");
-
-const rateList =
-document.getElementById("rateList");
-
-let editingRate = null;
+}
 
 
-/* =========================
-DEFAULT DATA
-========================= */
+/* ==========================================
+CURRENT USER
+========================================== */
+
+const currentUser =
+    JSON.parse(
+        localStorage.getItem(
+            "fittrackCurrentUser"
+        )
+    );
+
+
+if(
+    !currentUser ||
+    !currentUser.email
+){
+
+    window.location.href =
+        "login.html";
+
+}
+
+
+/* ==========================================
+ALL USER DATA
+========================================== */
+
+let allUserData =
+    JSON.parse(
+        localStorage.getItem(
+            "fittrackUserData"
+        )
+    ) || {};
+
+
+/* ==========================================
+CREATE USER DATA
+========================================== */
+
+if(
+    !allUserData[
+        currentUser.email
+    ]
+){
+
+    allUserData[
+        currentUser.email
+    ] = {
+
+        workouts: [],
+
+        meals: [],
+
+        steps: [],
+
+        sleep: [],
+
+        heartRate: [],
+
+        goals: {},
+
+        profile: {
+
+            name:
+                currentUser.name,
+
+            email:
+                currentUser.email
+
+        },
+
+        settings: {}
+
+    };
+
+}
+
+
+/* ==========================================
+USER DATA
+========================================== */
+
+let userData =
+    allUserData[
+        currentUser.email
+    ];
+
+
+/* ==========================================
+HEART RATE ARRAY
+========================================== */
+
+if(
+    !Array.isArray(
+        userData.heartRate
+    )
+){
+
+    userData.heartRate = [];
+
+}
+
 
 let savedRates =
-JSON.parse(
-localStorage.getItem("fittrackHeartRate")
-);
+    userData.heartRate;
 
 
-if (!savedRates) {
+/* ==========================================
+SAVE USER DATA
+========================================== */
 
-savedRates = [
+function saveUserData(){
 
-{
-rate: 72,
-type: "Resting"
-},
+    userData.heartRate =
+        savedRates;
 
-{
-rate: 68,
-type: "Resting"
-},
 
-{
-rate: 76,
-type: "Walking"
-},
+    allUserData[
+        currentUser.email
+    ] =
+        userData;
 
-{
-rate: 82,
-type: "Workout"
-},
 
-{
-rate: 70,
-type: "Resting"
-},
-
-{
-rate: 74,
-type: "Walking"
-}
-
-];
-
-localStorage.setItem(
-"fittrackHeartRate",
-JSON.stringify(savedRates)
-);
+    localStorage.setItem(
+        "fittrackUserData",
+        JSON.stringify(
+            allUserData
+        )
+    );
 
 }
 
 
-/* =========================
+/* ==========================================
+PROFILE
+========================================== */
+
+const profileName =
+    userData.profile &&
+    userData.profile.name
+        ? userData.profile.name
+        : currentUser.name;
+
+
+document.getElementById(
+    "profileName"
+).textContent =
+    profileName || "User";
+
+
+document.getElementById(
+    "profileInitial"
+).textContent =
+    profileName
+        ? profileName
+            .charAt(0)
+            .toUpperCase()
+        : "U";
+
+
+/* ==========================================
+ELEMENTS
+========================================== */
+
+const rateModal =
+    document.getElementById(
+        "rateModal"
+    );
+
+
+const openRate =
+    document.getElementById(
+        "openRate"
+    );
+
+
+const closeRate =
+    document.getElementById(
+        "closeRate"
+    );
+
+
+const cancelRate =
+    document.getElementById(
+        "cancelRate"
+    );
+
+
+const rateForm =
+    document.getElementById(
+        "rateForm"
+    );
+
+
+const rateList =
+    document.getElementById(
+        "rateList"
+    );
+
+
+let editingRateIndex =
+    -1;
+
+
+/* ==========================================
 STATUS
-========================= */
+========================================== */
 
-function getStatus(rate) {
+function getStatus(
+    rate
+){
 
-if (rate < 60) {
-return "Low";
-}
+    if(
+        rate < 60
+    ){
 
-if (rate <= 100) {
-return "Normal";
-}
+        return "Low";
 
-if (rate <= 120) {
-return "Elevated";
-}
+    }
 
-return "High";
 
-}
+    if(
+        rate <= 100
+    ){
 
+        return "Normal";
 
-/* =========================
-ROW
-========================= */
+    }
 
-function createRateRow(item) {
 
-const row =
-document.createElement("div");
+    if(
+        rate <= 120
+    ){
 
-row.className =
-"rate-row";
+        return "Elevated";
 
+    }
 
-const icon =
-document.createElement("div");
 
-icon.className =
-"rate-icon red";
-
-icon.innerHTML =
-'<i class="fa-solid fa-heart-pulse"></i>';
-
-
-const info =
-document.createElement("div");
-
-info.className =
-"rate-info";
-
-
-const title =
-document.createElement("strong");
-
-title.textContent =
-item.type;
-
-
-const detail =
-document.createElement("span");
-
-detail.textContent =
-getStatus(item.rate) +
-" heart rate";
-
-
-info.appendChild(title);
-info.appendChild(detail);
-
-
-const value =
-document.createElement("div");
-
-value.className =
-"rate-value";
-
-
-const number =
-document.createElement("strong");
-
-number.textContent =
-item.rate + " BPM";
-
-
-const status =
-document.createElement("span");
-
-status.textContent =
-"reading";
-
-
-value.appendChild(number);
-value.appendChild(status);
-
-
-/* ACTIONS */
-
-const actions =
-document.createElement("div");
-
-actions.className =
-"rate-actions";
-
-
-const edit =
-document.createElement("button");
-
-edit.className =
-"edit-rate";
-
-edit.innerHTML =
-'<i class="fa-solid fa-pen"></i>';
-
-edit.title =
-"Edit";
-
-
-edit.onclick =
-function() {
-
-editingRate = item;
-
-document.getElementById(
-"modalTitle"
-).textContent =
-"Edit Heart Rate";
-
-document.getElementById(
-"rateInput"
-).value =
-item.rate;
-
-document.getElementById(
-"typeInput"
-).value =
-item.type;
-
-document.getElementById(
-"saveRate"
-).innerHTML =
-'<i class="fa-solid fa-check"></i> Save Changes';
-
-rateModal.classList.add("show");
-
-};
-
-
-const del =
-document.createElement("button");
-
-del.className =
-"delete-rate";
-
-del.innerHTML =
-'<i class="fa-solid fa-trash"></i>';
-
-del.title =
-"Delete";
-
-
-del.onclick =
-function() {
-
-savedRates =
-savedRates.filter(
-function(x) {
-return x !== item;
-}
-);
-
-localStorage.setItem(
-"fittrackHeartRate",
-JSON.stringify(savedRates)
-);
-
-render();
-
-};
-
-
-actions.appendChild(edit);
-actions.appendChild(del);
-
-
-row.appendChild(icon);
-row.appendChild(info);
-row.appendChild(value);
-row.appendChild(actions);
-
-
-return row;
+    return "High";
 
 }
 
 
-/* =========================
+/* ==========================================
+CREATE RATE ROW
+========================================== */
+
+function createRateRow(
+    item,
+    index
+){
+
+    const row =
+        document.createElement(
+            "div"
+        );
+
+
+    row.className =
+        "rate-row";
+
+
+    const icon =
+        document.createElement(
+            "div"
+        );
+
+
+    icon.className =
+        "rate-icon red";
+
+
+    icon.innerHTML =
+        '<i class="fa-solid fa-heart-pulse"></i>';
+
+
+    const info =
+        document.createElement(
+            "div"
+        );
+
+
+    info.className =
+        "rate-info";
+
+
+    const title =
+        document.createElement(
+            "strong"
+        );
+
+
+    title.textContent =
+        item.type;
+
+
+    const detail =
+        document.createElement(
+            "span"
+        );
+
+
+    detail.textContent =
+        getStatus(
+            Number(item.rate)
+        ) +
+        " heart rate";
+
+
+    info.appendChild(
+        title
+    );
+
+
+    info.appendChild(
+        detail
+    );
+
+
+    const value =
+        document.createElement(
+            "div"
+        );
+
+
+    value.className =
+        "rate-value";
+
+
+    const number =
+        document.createElement(
+            "strong"
+        );
+
+
+    number.textContent =
+        item.rate +
+        " BPM";
+
+
+    const valueText =
+        document.createElement(
+            "span"
+        );
+
+
+    valueText.textContent =
+        "reading";
+
+
+    value.appendChild(
+        number
+    );
+
+
+    value.appendChild(
+        valueText
+    );
+
+
+    const actions =
+        document.createElement(
+            "div"
+        );
+
+
+    actions.className =
+        "rate-actions";
+
+
+    /* ==========================================
+    EDIT
+    ========================================== */
+
+    const edit =
+        document.createElement(
+            "button"
+        );
+
+
+    edit.type =
+        "button";
+
+
+    edit.className =
+        "edit-rate";
+
+
+    edit.title =
+        "Edit";
+
+
+    edit.innerHTML =
+        '<i class="fa-solid fa-pen"></i>';
+
+
+    edit.addEventListener(
+        "click",
+        function(){
+
+            editingRateIndex =
+                index;
+
+
+            document.getElementById(
+                "modalTitle"
+            ).textContent =
+                "Edit Heart Rate";
+
+
+            document.getElementById(
+                "rateInput"
+            ).value =
+                item.rate;
+
+
+            document.getElementById(
+                "typeInput"
+            ).value =
+                item.type;
+
+
+            document.getElementById(
+                "saveRate"
+            ).innerHTML =
+                '<i class="fa-solid fa-check"></i> Save Changes';
+
+
+            rateModal.classList.add(
+                "show"
+            );
+
+        }
+    );
+
+
+    /* ==========================================
+    DELETE
+    ========================================== */
+
+    const del =
+        document.createElement(
+            "button"
+        );
+
+
+    del.type =
+        "button";
+
+
+    del.className =
+        "delete-rate";
+
+
+    del.title =
+        "Delete";
+
+
+    del.innerHTML =
+        '<i class="fa-solid fa-trash"></i>';
+
+
+    del.addEventListener(
+        "click",
+        function(){
+
+            if(
+                !confirm(
+                    "Delete this heart rate reading?"
+                )
+            ){
+
+                return;
+
+            }
+
+
+            savedRates.splice(
+                index,
+                1
+            );
+
+
+            saveUserData();
+
+
+            render();
+
+        }
+    );
+
+
+    actions.appendChild(
+        edit
+    );
+
+
+    actions.appendChild(
+        del
+    );
+
+
+    row.appendChild(
+        icon
+    );
+
+
+    row.appendChild(
+        info
+    );
+
+
+    row.appendChild(
+        value
+    );
+
+
+    row.appendChild(
+        actions
+    );
+
+
+    return row;
+
+}
+
+
+/* ==========================================
+RENDER LIST
+========================================== */
+
+function renderList(){
+
+    rateList.innerHTML =
+        "";
+
+
+    if(
+        savedRates.length === 0
+    ){
+
+        const empty =
+            document.createElement(
+                "div"
+            );
+
+
+        empty.className =
+            "empty-state";
+
+
+        empty.innerHTML = `
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            <h3>
+                No heart rate readings yet
+            </h3>
+
+            <p>
+                Click "Add Reading" to record your heart rate.
+            </p>
+
+        `;
+
+
+        rateList.appendChild(
+            empty
+        );
+
+
+        return;
+
+    }
+
+
+    savedRates.forEach(
+        function(
+            item,
+            index
+        ){
+
+            rateList.appendChild(
+                createRateRow(
+                    item,
+                    index
+                )
+            );
+
+        }
+    );
+
+}
+
+
+/* ==========================================
+UPDATE STATS
+========================================== */
+
+function updateStats(){
+
+    if(
+        savedRates.length === 0
+    ){
+
+        document.getElementById(
+            "currentRate"
+        ).textContent =
+            "--";
+
+
+        document.getElementById(
+            "restingRate"
+        ).textContent =
+            "--";
+
+
+        document.getElementById(
+            "averageRate"
+        ).textContent =
+            "--";
+
+
+        document.getElementById(
+            "maxRate"
+        ).textContent =
+            "--";
+
+
+        document.getElementById(
+            "circleRate"
+        ).textContent =
+            "--";
+
+
+        document.getElementById(
+            "summaryCurrent"
+        ).textContent =
+            "--";
+
+
+        document.getElementById(
+            "summaryResting"
+        ).textContent =
+            "--";
+
+
+        document.getElementById(
+            "summaryAverage"
+        ).textContent =
+            "--";
+
+
+        document.getElementById(
+            "summaryMax"
+        ).textContent =
+            "--";
+
+
+        document.getElementById(
+            "statusText"
+        ).textContent =
+            "No data";
+
+
+        document.getElementById(
+            "statusFill"
+        ).style.width =
+            "0%";
+
+
+        document.getElementById(
+            "rateMessage"
+        ).textContent =
+            "No heart rate data";
+
+
+        document.getElementById(
+            "heartCircle"
+        ).style.background =
+            "conic-gradient(" +
+            "#edf1f4 0deg, " +
+            "#edf1f4 360deg)";
+
+
+        return;
+
+    }
+
+
+    /* ==========================================
+    VALUES
+    ========================================== */
+
+    const latest =
+        Number(
+            savedRates[0].rate
+        );
+
+
+    const allValues =
+        savedRates.map(
+            function(item){
+
+                return Number(
+                    item.rate
+                );
+
+            }
+        );
+
+
+    const average =
+        Math.round(
+            allValues.reduce(
+                function(
+                    sum,
+                    value
+                ){
+
+                    return (
+                        sum +
+                        value
+                    );
+
+                },
+                0
+            ) /
+            allValues.length
+        );
+
+
+    const restingValues =
+        savedRates
+            .filter(
+                function(item){
+
+                    return (
+                        item.type ===
+                        "Resting"
+                    );
+
+                }
+            )
+            .map(
+                function(item){
+
+                    return Number(
+                        item.rate
+                    );
+
+                }
+            );
+
+
+    const resting =
+        restingValues.length > 0
+            ? Math.min(
+                ...restingValues
+            )
+            : "--";
+
+
+    const maximum =
+        Math.max(
+            ...allValues
+        );
+
+
+    /* ==========================================
+    TOP STATS
+    ========================================== */
+
+    document.getElementById(
+        "currentRate"
+    ).textContent =
+        latest +
+        " BPM";
+
+
+    document.getElementById(
+        "restingRate"
+    ).textContent =
+        resting === "--"
+            ? "--"
+            : resting +
+              " BPM";
+
+
+    document.getElementById(
+        "averageRate"
+    ).textContent =
+        average +
+        " BPM";
+
+
+    document.getElementById(
+        "maxRate"
+    ).textContent =
+        maximum +
+        " BPM";
+
+
+    /* ==========================================
+    CIRCLE
+    ========================================== */
+
+    document.getElementById(
+        "circleRate"
+    ).textContent =
+        latest;
+
+
+    /* ==========================================
+    SUMMARY
+    ========================================== */
+
+    document.getElementById(
+        "summaryCurrent"
+    ).textContent =
+        latest +
+        " BPM";
+
+
+    document.getElementById(
+        "summaryResting"
+    ).textContent =
+        resting === "--"
+            ? "--"
+            : resting +
+              " BPM";
+
+
+    document.getElementById(
+        "summaryAverage"
+    ).textContent =
+        average +
+        " BPM";
+
+
+    document.getElementById(
+        "summaryMax"
+    ).textContent =
+        maximum +
+        " BPM";
+
+
+    /* ==========================================
+    STATUS
+    ========================================== */
+
+    const status =
+        getStatus(
+            latest
+        );
+
+
+    document.getElementById(
+        "statusText"
+    ).textContent =
+        status;
+
+
+    let percentage =
+        70;
+
+
+    if(
+        latest < 60
+    ){
+
+        percentage =
+            45;
+
+    }
+    else if(
+        latest <= 100
+    ){
+
+        percentage =
+            70;
+
+    }
+    else if(
+        latest <= 120
+    ){
+
+        percentage =
+            85;
+
+    }
+    else{
+
+        percentage =
+            100;
+
+    }
+
+
+    document.getElementById(
+        "statusFill"
+    ).style.width =
+        percentage +
+        "%";
+
+
+    /* ==========================================
+    MESSAGE
+    ========================================== */
+
+    if(
+        status === "Normal"
+    ){
+
+        document.getElementById(
+            "rateMessage"
+        ).textContent =
+            "Normal heart rate range";
+
+    }
+    else if(
+        status === "Low"
+    ){
+
+        document.getElementById(
+            "rateMessage"
+        ).textContent =
+            "Low heart rate reading";
+
+    }
+    else if(
+        status === "Elevated"
+    ){
+
+        document.getElementById(
+            "rateMessage"
+        ).textContent =
+            "Elevated heart rate reading";
+
+    }
+    else{
+
+        document.getElementById(
+            "rateMessage"
+        ).textContent =
+            "High heart rate reading";
+
+    }
+
+
+    /* ==========================================
+    CIRCLE PROGRESS
+    ========================================== */
+
+    const degrees =
+        Math.min(
+            Math.max(
+                latest * 3,
+                30
+            ),
+            330
+        );
+
+
+    document.getElementById(
+        "heartCircle"
+    ).style.background =
+        "conic-gradient(" +
+        "#ef4565 " +
+        degrees +
+        "deg, " +
+        "#edf1f4 " +
+        degrees +
+        "deg)";
+
+}
+
+
+/* ==========================================
 CHART
-========================= */
+========================================== */
 
-function renderChart() {
+function renderChart(){
 
-const chart =
-document.getElementById("rateChart");
-
-chart.innerHTML = "";
-
-
-const data =
-savedRates
-.slice(0, 7)
-.reverse();
+    const chart =
+        document.getElementById(
+            "rateChart"
+        );
 
 
-data.forEach(
-function(item, index) {
-
-const column =
-document.createElement("div");
-
-column.className =
-"chart-column";
+    chart.innerHTML =
+        "";
 
 
-const value =
-document.createElement("div");
+    if(
+        savedRates.length === 0
+    ){
 
-value.className =
-"chart-value";
+        chart.innerHTML = `
 
-value.textContent =
-item.rate;
+            <div class="chart-empty">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>
+                    Add heart rate readings to see your trend.
+                </span>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
 
 
-const bar =
-document.createElement("div");
+    const data =
+        savedRates
+            .slice(
+                0,
+                7
+            )
+            .reverse();
 
-bar.className =
-"chart-bar";
+
+    data.forEach(
+        function(
+            item,
+            index
+        ){
+
+            const column =
+                document.createElement(
+                    "div"
+                );
 
 
-const height =
-Math.max(
-20,
-Math.min(
-160,
-(item.rate / 120) * 160
-)
+            column.className =
+                "chart-column";
+
+
+            const value =
+                document.createElement(
+                    "div"
+                );
+
+
+            value.className =
+                "chart-value";
+
+
+            value.textContent =
+                item.rate;
+
+
+            const bar =
+                document.createElement(
+                    "div"
+                );
+
+
+            bar.className =
+                "chart-bar";
+
+
+            const height =
+                Math.max(
+                    20,
+                    Math.min(
+                        160,
+                        (
+                            Number(
+                                item.rate
+                            ) /
+                            120
+                        ) * 160
+                    )
+                );
+
+
+            bar.style.height =
+                height +
+                "px";
+
+
+            const label =
+                document.createElement(
+                    "div"
+                );
+
+
+            label.className =
+                "chart-label";
+
+
+            label.textContent =
+                "#" +
+                (
+                    index +
+                    1
+                );
+
+
+            column.appendChild(
+                value
+            );
+
+
+            column.appendChild(
+                bar
+            );
+
+
+            column.appendChild(
+                label
+            );
+
+
+            chart.appendChild(
+                column
+            );
+
+        }
+    );
+
+}
+
+
+/* ==========================================
+RENDER EVERYTHING
+========================================== */
+
+function render(){
+
+    renderList();
+
+    updateStats();
+
+    renderChart();
+
+}
+
+
+/* ==========================================
+OPEN ADD
+========================================== */
+
+openRate.addEventListener(
+    "click",
+    function(){
+
+        editingRateIndex =
+            -1;
+
+
+        rateForm.reset();
+
+
+        document.getElementById(
+            "modalTitle"
+        ).textContent =
+            "Add Heart Rate";
+
+
+        document.getElementById(
+            "saveRate"
+        ).innerHTML =
+            '<i class="fa-solid fa-check"></i> Add Reading';
+
+
+        rateModal.classList.add(
+            "show"
+        );
+
+    }
 );
 
 
-bar.style.height =
-height + "px";
+/* ==========================================
+CLOSE MODAL
+========================================== */
+
+function closeModal(){
+
+    rateModal.classList.remove(
+        "show"
+    );
 
 
-const label =
-document.createElement("div");
-
-label.className =
-"chart-label";
-
-label.textContent =
-"#" + (index + 1);
+    editingRateIndex =
+        -1;
 
 
-column.appendChild(value);
-column.appendChild(bar);
-column.appendChild(label);
+    rateForm.reset();
 
 
-chart.appendChild(column);
-
-}
-);
-
-}
+    document.getElementById(
+        "modalTitle"
+    ).textContent =
+        "Add Heart Rate";
 
 
-/* =========================
-UPDATE
-========================= */
-
-function updateStats() {
-
-if (savedRates.length === 0) {
-
-return;
+    document.getElementById(
+        "saveRate"
+    ).innerHTML =
+        '<i class="fa-solid fa-check"></i> Add Reading';
 
 }
 
 
-const latest =
-savedRates[0].rate;
-
-
-const average =
-Math.round(
-savedRates.reduce(
-function(sum, item) {
-return sum + Number(item.rate);
-},
-0
-) / savedRates.length
+closeRate.addEventListener(
+    "click",
+    closeModal
 );
 
 
-const restingValues =
-savedRates
-.filter(
-function(item) {
-return item.type === "Resting";
-}
-)
-.map(
-function(item) {
-return Number(item.rate);
-}
+cancelRate.addEventListener(
+    "click",
+    closeModal
 );
 
 
-const resting =
-restingValues.length
-?
-Math.min(...restingValues)
-:
-latest;
+/* ==========================================
+SAVE / EDIT
+========================================== */
+
+rateForm.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
 
 
-const maximum =
-Math.max(
-...savedRates.map(
-function(item) {
-return Number(item.rate);
-}
-)
+        const rate =
+            Number(
+                document.getElementById(
+                    "rateInput"
+                ).value
+            );
+
+
+        const type =
+            document.getElementById(
+                "typeInput"
+            ).value;
+
+
+        if(
+            !rate ||
+            rate < 30 ||
+            rate > 220
+        ){
+
+            alert(
+                "Please enter a heart rate between 30 and 220 BPM."
+            );
+
+            return;
+
+        }
+
+
+        const record = {
+
+            rate:
+                rate,
+
+            type:
+                type,
+
+            date:
+                new Date()
+                    .toISOString()
+                    .split("T")[0]
+
+        };
+
+
+        /* ==========================================
+        EDIT
+        ========================================== */
+
+        if(
+            editingRateIndex >= 0
+        ){
+
+            savedRates[
+                editingRateIndex
+            ] =
+                record;
+
+        }
+
+
+        /* ==========================================
+        ADD
+        ========================================== */
+
+        else{
+
+            savedRates.unshift(
+                record
+            );
+
+        }
+
+
+        saveUserData();
+
+
+        closeModal();
+
+
+        render();
+
+    }
 );
 
 
-document.getElementById(
-"currentRate"
-).textContent =
-latest + " BPM";
-
-
-document.getElementById(
-"restingRate"
-).textContent =
-resting + " BPM";
-
-
-document.getElementById(
-"averageRate"
-).textContent =
-average + " BPM";
-
-
-document.getElementById(
-"maxRate"
-).textContent =
-maximum + " BPM";
-
-
-document.getElementById(
-"circleRate"
-).textContent =
-latest;
-
-
-document.getElementById(
-"summaryCurrent"
-).textContent =
-latest + " BPM";
-
-
-document.getElementById(
-"summaryResting"
-).textContent =
-resting + " BPM";
-
-
-document.getElementById(
-"summaryAverage"
-).textContent =
-average + " BPM";
-
-
-document.getElementById(
-"summaryMax"
-).textContent =
-maximum + " BPM";
-
-
-const status =
-getStatus(latest);
-
-
-document.getElementById(
-"statusText"
-).textContent =
-status;
-
-
-let percentage =
-70;
-
-
-if (latest < 60) {
-percentage = 45;
-}
-else if (latest <= 100) {
-percentage = 70;
-}
-else if (latest <= 120) {
-percentage = 85;
-}
-else {
-percentage = 100;
-}
-
-
-document.getElementById(
-"statusFill"
-).style.width =
-percentage + "%";
-
-
-if (status === "Normal") {
-
-document.getElementById(
-"rateMessage"
-).textContent =
-"Normal heart rate range";
-
-}
-else if (status === "Low") {
-
-document.getElementById(
-"rateMessage"
-).textContent =
-"Low heart rate reading";
-
-}
-else if (status === "Elevated") {
-
-document.getElementById(
-"rateMessage"
-).textContent =
-"Elevated heart rate reading";
-
-}
-else {
-
-document.getElementById(
-"rateMessage"
-).textContent =
-"High heart rate reading";
-
-}
-
-
-const degrees =
-Math.min(
-latest * 3,
-330
-);
-
-
-document.getElementById(
-"heartCircle"
-).style.background =
-"conic-gradient(#ef4565 " +
-degrees +
-"deg, #edf1f4 " +
-degrees +
-"deg)";
-
-}
-
-
-/* =========================
-RENDER
-========================= */
-
-function render() {
-
-rateList.innerHTML = "";
-
-
-savedRates.forEach(
-function(item) {
-
-rateList.appendChild(
-createRateRow(item)
-);
-
-}
-);
-
-
-updateStats();
-
-renderChart();
-
-}
-
-
-/* =========================
-OPEN
-========================= */
-
-openRate.onclick =
-function() {
-
-editingRate = null;
-
-rateForm.reset();
-
-document.getElementById(
-"modalTitle"
-).textContent =
-"Add Heart Rate";
-
-document.getElementById(
-"saveRate"
-).innerHTML =
-'<i class="fa-solid fa-check"></i> Add Reading';
-
-rateModal.classList.add("show");
-
-};
-
-
-/* =========================
-CLOSE
-========================= */
-
-function closeModal() {
-
-rateModal.classList.remove("show");
-
-editingRate = null;
-
-rateForm.reset();
-
-document.getElementById(
-"modalTitle"
-).textContent =
-"Add Heart Rate";
-
-document.getElementById(
-"saveRate"
-).innerHTML =
-'<i class="fa-solid fa-check"></i> Add Reading';
-
-}
-
-
-closeRate.onclick =
-closeModal;
-
-cancelRate.onclick =
-closeModal;
-
-
-/* =========================
-SAVE
-========================= */
-
-rateForm.onsubmit =
-function(event) {
-
-event.preventDefault();
-
-
-const rate =
-Number(
-document.getElementById(
-"rateInput"
-).value
-);
-
-
-const type =
-document.getElementById(
-"typeInput"
-).value;
-
-
-if (
-rate < 30 ||
-rate > 220
-) {
-
-return;
-
-}
-
-
-if (editingRate) {
-
-editingRate.rate =
-rate;
-
-editingRate.type =
-type;
-
-}
-else {
-
-savedRates.unshift({
-
-rate: rate,
-
-type: type
-
-});
-
-}
-
-
-localStorage.setItem(
-"fittrackHeartRate",
-JSON.stringify(savedRates)
-);
-
-
-render();
-
-closeModal();
-
-};
-
-
-/* =========================
+/* ==========================================
 OUTSIDE CLICK
-========================= */
+========================================== */
 
-rateModal.onclick =
-function(event) {
+rateModal.addEventListener(
+    "click",
+    function(event){
 
-if (
-event.target === rateModal
-) {
+        if(
+            event.target ===
+            rateModal
+        ){
 
-closeModal();
+            closeModal();
 
-}
+        }
 
-};
+    }
+);
 
 
-/* =========================
+/* ==========================================
 ESC
-========================= */
+========================================== */
 
 document.addEventListener(
-"keydown",
-function(event) {
+    "keydown",
+    function(event){
 
-if (
-event.key === "Escape" &&
-rateModal.classList.contains("show")
-) {
+        if(
+            event.key === "Escape" &&
+            rateModal.classList.contains(
+                "show"
+            )
+        ){
 
-closeModal();
+            closeModal();
 
-}
+        }
 
-}
+    }
 );
 
 
-/* =========================
+/* ==========================================
+SAVE INITIAL USER DATA
+========================================== */
+
+saveUserData();
+
+
+/* ==========================================
 START
-========================= */
+========================================== */
 
 render();
 
 </script>
 
-<script>
-    if (localStorage.getItem("fittrackLoggedIn") !== "true") {
-        window.location.href = "login.html";
-    }
-</script>
+
+</body>
+
+</html>

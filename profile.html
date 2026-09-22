@@ -1,29 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
 <title>FitTrack - Profile</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com"
+>
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin
+>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet"
+>
+
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
 
 <style>
+
+/* =========================
+RESET
+========================= */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-html,body{
+
+html,
+body{
     width:100%;
     height:100%;
 }
+
 
 body{
     font-family:"Inter",sans-serif;
@@ -32,40 +63,60 @@ body{
     overflow:hidden;
 }
 
+
 .app{
     width:100%;
     height:100vh;
     display:flex;
 }
 
-/* SIDEBAR */
+
+/* =========================
+SIDEBAR
+========================= */
 
 .sidebar{
     width:263px;
     height:100vh;
     flex:0 0 263px;
-    background:linear-gradient(180deg,#061c2c 0%,#071c2b 100%);
+
+    background:linear-gradient(
+        180deg,
+        #061c2c 0%,
+        #071c2b 100%
+    );
+
     color:white;
+
     padding:18px 9px 16px;
+
     display:flex;
     flex-direction:column;
+
     overflow:hidden;
 }
+
 
 .brand{
     height:100px;
     flex:0 0 100px;
+
     display:flex;
     align-items:center;
+
     padding-left:20px;
+
     margin-bottom:8px;
 }
+
 
 .brand img{
     width:196px;
     max-height:88px;
+
     object-fit:contain;
 }
+
 
 .nav{
     display:flex;
@@ -73,483 +124,804 @@ body{
     gap:2px;
 }
 
+
 .nav a{
     height:49px;
     flex:0 0 49px;
+
     border-radius:11px;
+
     display:flex;
     align-items:center;
+
     gap:28px;
+
     padding:0 28px;
+
     color:#e8f0f7;
+
     text-decoration:none;
+
     font-size:16px;
     font-weight:500;
+
     position:relative;
 }
+
 
 .nav a i{
     width:25px;
     flex:0 0 25px;
+
     text-align:center;
+
     font-size:22px;
 }
+
 
 .nav a:hover{
     background:#12344a;
 }
+
 
 .nav a.active{
     background:#12344a;
     font-weight:700;
 }
 
+
 .nav a.active::before{
     content:"";
+
     position:absolute;
+
     left:-9px;
     top:0;
     bottom:0;
+
     width:8px;
+
     border-radius:0 6px 6px 0;
+
     background:#20e69b;
 }
+
 
 .nav a.active i{
     color:#29e9a0;
 }
 
-/* PREMIUM */
+
+/* =========================
+PREMIUM
+========================= */
 
 .premium{
     margin:auto 15px 0;
+
     border:1px solid #1d4158;
-    background:rgba(10,40,57,.7);
+
+    background:rgba(
+        10,
+        40,
+        57,
+        .7
+    );
+
     border-radius:12px;
+
     padding:14px 16px 13px;
 }
+
 
 .premium-title{
     display:flex;
     align-items:center;
+
     gap:10px;
+
     color:#ffd21f;
+
     font-weight:800;
     font-size:15px;
+
     margin-bottom:12px;
 }
 
+
 .premium-feature{
     font-size:12px;
+
     margin:8px 0;
+
     color:#dce8ee;
+
     display:flex;
+
     gap:10px;
+
     align-items:center;
 }
 
+
 .premium-feature i{
     width:15px;
+
     color:#24e8a0;
 }
 
+
 .premium button{
     width:100%;
+
     height:43px;
+
     margin-top:8px;
+
     border:0;
+
     border-radius:12px;
-    background:linear-gradient(90deg,#1ce79a,#2ce9a0);
+
+    background:linear-gradient(
+        90deg,
+        #1ce79a,
+        #2ce9a0
+    );
+
     color:#03251a;
+
     font-size:16px;
+
     font-weight:800;
+
     cursor:pointer;
 }
 
-/* MAIN */
+
+/* =========================
+MAIN
+========================= */
 
 .main{
     flex:1;
+
     min-width:0;
+
     height:100vh;
-    padding:25px 30px 30px;
+
+    padding:
+        25px
+        30px
+        30px;
+
     overflow-y:auto;
     overflow-x:hidden;
 }
 
+
+/* =========================
+TOPBAR
+========================= */
+
 .topbar{
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     margin-bottom:20px;
 }
 
+
 .page-title h1{
     font-size:28px;
+
     margin-bottom:6px;
 }
 
+
 .page-title p{
     color:#718096;
+
     font-size:13px;
 }
 
+
 .top-actions{
     display:flex;
+
     align-items:center;
+
     gap:20px;
 }
+
 
 .notification{
     width:42px;
     height:42px;
+
     border-radius:50%;
+
     background:white;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
-    box-shadow:0 3px 12px rgba(7,24,59,.08);
+
+    box-shadow:
+        0 3px 12px
+        rgba(
+            7,
+            24,
+            59,
+            .08
+        );
+
     font-size:18px;
 }
 
+
 .profile{
     display:flex;
+
     align-items:center;
+
     gap:10px;
 }
+
 
 .profile-circle{
     width:42px;
     height:42px;
+
     border-radius:50%;
+
     background:#263c4a;
+
     color:white;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     font-weight:800;
 }
 
+
 .profile-text strong{
     display:block;
+
     font-size:14px;
 }
 
+
 .profile-text span{
     color:#718096;
+
     font-size:12px;
 }
 
-/* PROFILE */
+
+/* =========================
+PROFILE
+========================= */
 
 .profile-grid{
     display:grid;
-    grid-template-columns:1fr 1.4fr;
+
+    grid-template-columns:
+        1fr
+        1.4fr;
+
     gap:18px;
 }
 
+
 .panel{
     background:white;
+
     border:1px solid #e4ebf0;
+
     border-radius:15px;
+
     padding:22px;
-    box-shadow:0 3px 12px rgba(7,24,59,.05);
+
+    box-shadow:
+        0 3px 12px
+        rgba(
+            7,
+            24,
+            59,
+            .05
+        );
 }
 
-/* LEFT PROFILE CARD */
+
+/* =========================
+LEFT PROFILE CARD
+========================= */
 
 .profile-card{
     text-align:center;
 }
 
+
 .avatar{
     width:105px;
     height:105px;
+
     border-radius:50%;
+
     background:#263c4a;
+
     color:white;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     font-size:38px;
+
     font-weight:800;
-    margin:5px auto 15px;
-    border:5px solid #e5f8f1;
+
+    margin:
+        5px
+        auto
+        15px;
+
+    border:
+        5px solid
+        #e5f8f1;
 }
+
 
 .profile-card h2{
     font-size:21px;
+
     margin-bottom:5px;
 }
 
+
 .profile-card > p{
     color:#718096;
+
     font-size:13px;
 }
 
+
 .profile-badge{
     display:inline-flex;
+
     align-items:center;
+
     gap:7px;
+
     margin-top:13px;
-    padding:7px 12px;
+
+    padding:
+        7px
+        12px;
+
     border-radius:20px;
+
     background:#e2f9ef;
+
     color:#0ca878;
+
     font-size:11px;
+
     font-weight:700;
 }
 
+
 .profile-divider{
     height:1px;
+
     background:#edf1f4;
-    margin:20px 0;
+
+    margin:
+        20px
+        0;
 }
+
 
 .mini-stat{
     display:flex;
+
     justify-content:space-between;
+
     padding:10px 0;
 }
 
+
 .mini-stat span{
     color:#718096;
+
     font-size:12px;
 }
+
 
 .mini-stat strong{
     font-size:13px;
 }
 
-/* RIGHT */
+
+/* =========================
+RIGHT
+========================= */
 
 .panel-header{
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     margin-bottom:18px;
 }
+
 
 .panel-header h2{
     font-size:18px;
 }
 
+
 .edit-btn{
     border:0;
+
     background:#20e69b;
+
     color:#05291e;
+
     border-radius:9px;
-    padding:10px 16px;
+
+    padding:
+        10px
+        16px;
+
     font-weight:800;
+
     cursor:pointer;
 }
 
+
 .info-row{
     display:flex;
+
     align-items:center;
+
     padding:15px 0;
-    border-bottom:1px solid #edf1f4;
+
+    border-bottom:
+        1px solid
+        #edf1f4;
 }
+
 
 .info-row:last-child{
     border-bottom:none;
 }
 
+
 .info-icon{
     width:43px;
     height:43px;
+
     border-radius:50%;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     margin-right:13px;
 }
+
 
 .green{
     background:#dff8ed;
     color:#0bb77b;
 }
 
+
 .blue{
     background:#dff1ff;
     color:#179fe4;
 }
+
 
 .purple{
     background:#eee2ff;
     color:#7c4ce5;
 }
 
+
 .orange{
     background:#fff0d9;
     color:#f59e0b;
 }
+
 
 .red{
     background:#ffe1e7;
     color:#ef4565;
 }
 
+
 .info-text{
     flex:1;
 }
 
+
 .info-text strong{
     display:block;
+
     font-size:14px;
+
     margin-bottom:4px;
 }
+
 
 .info-text span{
     color:#718096;
+
     font-size:12px;
 }
 
+
 .info-value{
     font-size:13px;
+
     font-weight:700;
 }
 
-/* FITNESS */
+
+/* =========================
+FITNESS
+========================= */
 
 .fitness-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:12px;
+
     margin-top:18px;
 }
 
+
 .fitness-box{
     background:#f7fafc;
+
     border-radius:11px;
+
     padding:14px;
 }
 
+
 .fitness-box i{
     font-size:18px;
+
     margin-bottom:8px;
+
+    display:block;
 }
+
 
 .fitness-box strong{
     display:block;
+
     font-size:13px;
+
     margin-bottom:4px;
 }
 
+
 .fitness-box span{
     color:#718096;
+
     font-size:11px;
 }
 
-/* MODAL */
+
+/* =========================
+MODAL
+========================= */
 
 .modal{
     position:fixed;
+
     inset:0;
-    background:rgba(3,20,32,.55);
+
+    background:
+        rgba(
+            3,
+            20,
+            32,
+            .55
+        );
+
     display:none;
+
     align-items:center;
     justify-content:center;
+
     z-index:1000;
 }
+
 
 .modal.show{
     display:flex;
 }
 
+
 .modal-box{
     width:460px;
+
     max-width:92%;
+
     background:white;
+
     border-radius:18px;
+
     padding:25px;
-    box-shadow:0 25px 70px rgba(0,0,0,.22);
+
+    box-shadow:
+        0 25px 70px
+        rgba(
+            0,
+            0,
+            0,
+            .22
+        );
 }
+
 
 .modal-header{
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     margin-bottom:20px;
 }
+
 
 .modal-header h2{
     font-size:21px;
 }
 
+
 .close-btn{
     width:34px;
     height:34px;
+
     border:0;
+
     border-radius:50%;
+
     background:#f1f5f8;
+
     cursor:pointer;
 }
+
 
 .form-group{
     margin-bottom:15px;
 }
 
+
 .form-group label{
     display:block;
+
     font-size:12px;
+
     font-weight:700;
+
     margin-bottom:7px;
 }
+
 
 .form-group input,
 .form-group select{
     width:100%;
+
     height:44px;
-    border:1px solid #dfe7ee;
+
+    border:
+        1px solid
+        #dfe7ee;
+
     border-radius:9px;
+
     background:#f8fafc;
-    padding:0 12px;
+
+    padding:
+        0
+        12px;
+
     outline:none;
+
     font-size:13px;
 }
+
 
 .form-group input:focus,
 .form-group select:focus{
     border-color:#20d99a;
+
     background:white;
 }
 
+
 .form-row{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
     gap:12px;
 }
 
+
 .modal-buttons{
     display:flex;
+
     justify-content:flex-end;
+
     gap:10px;
+
     margin-top:20px;
 }
+
 
 .cancel-btn,
 .save-btn{
     height:42px;
-    padding:0 18px;
+
+    padding:
+        0
+        18px;
+
     border-radius:9px;
+
     cursor:pointer;
+
     font-size:13px;
+
     font-weight:700;
 }
 
+
 .cancel-btn{
-    border:1px solid #dfe7ee;
+    border:
+        1px solid
+        #dfe7ee;
+
     background:white;
 }
 
+
 .save-btn{
     border:0;
+
     background:#20e69b;
+
     color:#05291e;
 }
 
-/* LAPTOP */
+
+/* =========================
+LAPTOP
+========================= */
 
 @media(max-height:850px){
 
@@ -557,228 +929,421 @@ body{
         padding-top:10px;
     }
 
+
     .brand{
         height:82px;
+
         flex-basis:82px;
+
         margin-bottom:2px;
     }
+
 
     .brand img{
         width:184px;
     }
 
+
     .nav a{
         height:43px;
+
         flex-basis:43px;
+
         font-size:14px;
     }
+
 
     .nav a i{
         font-size:19px;
     }
 
+
     .premium{
-        padding:10px 13px;
+        padding:
+            10px
+            13px;
     }
+
 
     .premium-feature{
         margin:5px 0;
+
         font-size:11px;
     }
+
 
     .premium button{
         height:37px;
     }
 
+
     .main{
         padding-top:15px;
     }
 
+
     .panel{
         padding:17px;
     }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="app">
 
-<!-- SIDEBAR -->
+
+<!-- =========================
+SIDEBAR
+========================= -->
 
 <aside class="sidebar">
 
+
 <div class="brand">
-<img src="assets/logo.png" alt="FitTrack">
+
+<img
+src="assets/logo.png"
+alt="FitTrack"
+>
+
 </div>
+
 
 <nav class="nav">
 
+
 <a href="index.html">
+
 <i class="fa-solid fa-house"></i>
-<span>Dashboard</span>
+
+<span>
+Dashboard
+</span>
+
 </a>
+
 
 <a href="workouts.html">
+
 <i class="fa-solid fa-dumbbell"></i>
-<span>Workouts</span>
+
+<span>
+Workouts
+</span>
+
 </a>
+
 
 <a href="nutrition.html">
+
 <i class="fa-solid fa-apple-whole"></i>
-<span>Nutrition</span>
+
+<span>
+Nutrition
+</span>
+
 </a>
+
 
 <a href="steps.html">
+
 <i class="fa-solid fa-person-walking"></i>
-<span>Steps</span>
+
+<span>
+Steps
+</span>
+
 </a>
+
 
 <a href="sleep.html">
+
 <i class="fa-solid fa-moon"></i>
-<span>Sleep</span>
+
+<span>
+Sleep
+</span>
+
 </a>
+
 
 <a href="heart-rate.html">
+
 <i class="fa-regular fa-heart"></i>
-<span>Heart Rate</span>
+
+<span>
+Heart Rate
+</span>
+
 </a>
+
 
 <a href="goals.html">
+
 <i class="fa-solid fa-bullseye"></i>
-<span>Goals</span>
+
+<span>
+Goals
+</span>
+
 </a>
+
 
 <a href="progress.html">
+
 <i class="fa-solid fa-chart-column"></i>
-<span>Progress</span>
+
+<span>
+Progress
+</span>
+
 </a>
+
 
 <a href="reports.html">
+
 <i class="fa-regular fa-file-lines"></i>
-<span>Reports</span>
+
+<span>
+Reports
+</span>
+
 </a>
 
-<a href="profile.html" class="active">
+
+<a
+href="profile.html"
+class="active"
+>
+
 <i class="fa-regular fa-user"></i>
-<span>Profile</span>
+
+<span>
+Profile
+</span>
+
 </a>
+
 
 <a href="settings.html">
+
 <i class="fa-solid fa-gear"></i>
-<span>Settings</span>
+
+<span>
+Settings
+</span>
+
 </a>
+
 
 </nav>
 
+
 <div class="premium">
 
+
 <div class="premium-title">
+
 <i class="fa-solid fa-crown"></i>
-<span>Go Premium</span>
+
+<span>
+Go Premium
+</span>
+
 </div>
 
+
 <div class="premium-feature">
+
 <i class="fa-solid fa-chart-line"></i>
+
 Advanced Insights
+
 </div>
 
+
 <div class="premium-feature">
+
 <i class="fa-solid fa-plus"></i>
+
 Personalized Plans
+
 </div>
+
 
 <div class="premium-feature">
+
 <i class="fa-solid fa-shield-heart"></i>
+
 Ad-Free Experience
-</div>
-
-<button>Upgrade Now</button>
 
 </div>
+
+
+<button>
+Upgrade Now
+</button>
+
+
+</div>
+
 
 </aside>
 
 
-<!-- MAIN -->
+<!-- =========================
+MAIN
+========================= -->
 
 <main class="main">
 
+
 <div class="topbar">
+
 
 <div class="page-title">
 
-<h1>Profile</h1>
+<h1>
+Profile
+</h1>
 
-<p>Manage your personal information and fitness details.</p>
+<p>
+Manage your personal information and fitness details.
+</p>
 
 </div>
+
 
 <div class="top-actions">
 
+
 <div class="notification">
+
 <i class="fa-regular fa-bell"></i>
+
 </div>
+
 
 <div class="profile">
 
-<div class="profile-circle" id="topInitial">R</div>
+
+<div
+class="profile-circle"
+id="topInitial"
+>
+U
+</div>
+
 
 <div class="profile-text">
-<strong id="topName">Ramu</strong>
-<span>Stay Consistent!</span>
-</div>
+
+<strong id="topName">
+User
+</strong>
+
+<span>
+Stay Consistent!
+</span>
 
 </div>
 
-</div>
 
 </div>
 
+
+</div>
+
+
+</div>
+
+
+<!-- =========================
+PROFILE GRID
+========================= -->
 
 <div class="profile-grid">
+
 
 <!-- LEFT -->
 
 <section class="panel profile-card">
 
-<div class="avatar" id="avatar">
-R
+
+<div
+class="avatar"
+id="avatar"
+>
+U
 </div>
 
-<h2 id="profileName">Ramu</h2>
 
-<p id="profileEmail">ramu@example.com</p>
+<h2 id="profileName">
+User
+</h2>
+
+
+<p id="profileEmail">
+--
+</p>
+
 
 <div class="profile-badge">
+
 <i class="fa-solid fa-circle-check"></i>
+
 Active Member
+
 </div>
+
 
 <div class="profile-divider"></div>
 
-<div class="mini-stat">
-
-<span>Member Since</span>
-<strong>September 2026</strong>
-
-</div>
 
 <div class="mini-stat">
 
-<span>Fitness Goal</span>
-<strong id="miniGoal">Weight Loss</strong>
+<span>
+Member Since
+</span>
+
+<strong>
+September 2026
+</strong>
 
 </div>
+
 
 <div class="mini-stat">
 
-<span>Activity Level</span>
-<strong id="miniActivity">Moderate</strong>
+<span>
+Fitness Goal
+</span>
+
+<strong id="miniGoal">
+--
+</strong>
 
 </div>
+
+
+<div class="mini-stat">
+
+<span>
+Activity Level
+</span>
+
+<strong id="miniActivity">
+--
+</strong>
+
+</div>
+
 
 </section>
 
@@ -787,228 +1352,412 @@ Active Member
 
 <section class="panel">
 
+
 <div class="panel-header">
 
-<h2>Personal Information</h2>
+<h2>
+Personal Information
+</h2>
 
-<button class="edit-btn" id="editProfile">
+
+<button
+class="edit-btn"
+id="editProfile"
+>
+
 <i class="fa-solid fa-pen"></i>
+
 Edit Profile
+
 </button>
 
 </div>
 
 
+<!-- NAME -->
+
 <div class="info-row">
+
 
 <div class="info-icon blue">
+
 <i class="fa-regular fa-user"></i>
+
 </div>
+
 
 <div class="info-text">
-<strong>Full Name</strong>
-<span>Your name</span>
+
+<strong>
+Full Name
+</strong>
+
+<span>
+Your name
+</span>
+
 </div>
 
-<div class="info-value" id="infoName">
-Ramu
+
+<div
+class="info-value"
+id="infoName"
+>
+--
 </div>
+
 
 </div>
 
+
+<!-- EMAIL -->
 
 <div class="info-row">
+
 
 <div class="info-icon purple">
+
 <i class="fa-regular fa-envelope"></i>
+
 </div>
+
 
 <div class="info-text">
-<strong>Email</strong>
-<span>Account email</span>
+
+<strong>
+Email
+</strong>
+
+<span>
+Account email
+</span>
+
 </div>
 
-<div class="info-value" id="infoEmail">
-ramu@example.com
+
+<div
+class="info-value"
+id="infoEmail"
+>
+--
 </div>
+
 
 </div>
 
+
+<!-- HEIGHT -->
 
 <div class="info-row">
+
 
 <div class="info-icon green">
+
 <i class="fa-solid fa-ruler-vertical"></i>
+
 </div>
+
 
 <div class="info-text">
-<strong>Height</strong>
-<span>Current height</span>
+
+<strong>
+Height
+</strong>
+
+<span>
+Current height
+</span>
+
 </div>
 
-<div class="info-value" id="infoHeight">
-175 cm
+
+<div
+class="info-value"
+id="infoHeight"
+>
+--
 </div>
+
 
 </div>
 
+
+<!-- WEIGHT -->
 
 <div class="info-row">
+
 
 <div class="info-icon orange">
+
 <i class="fa-solid fa-weight-scale"></i>
+
 </div>
+
 
 <div class="info-text">
-<strong>Current Weight</strong>
-<span>Current body weight</span>
+
+<strong>
+Current Weight
+</strong>
+
+<span>
+Current body weight
+</span>
+
 </div>
 
-<div class="info-value" id="infoWeight">
-104 kg
+
+<div
+class="info-value"
+id="infoWeight"
+>
+--
 </div>
+
 
 </div>
 
+
+<!-- GOAL -->
 
 <div class="info-row">
+
 
 <div class="info-icon red">
+
 <i class="fa-solid fa-bullseye"></i>
+
 </div>
+
 
 <div class="info-text">
-<strong>Fitness Goal</strong>
-<span>Main objective</span>
+
+<strong>
+Fitness Goal
+</strong>
+
+<span>
+Main objective
+</span>
+
 </div>
 
-<div class="info-value" id="infoGoal">
-Weight Loss
+
+<div
+class="info-value"
+id="infoGoal"
+>
+--
 </div>
+
 
 </div>
 
+
+<!-- ACTIVITY -->
 
 <div class="info-row">
 
+
 <div class="info-icon blue">
+
 <i class="fa-solid fa-person-running"></i>
+
 </div>
+
 
 <div class="info-text">
-<strong>Activity Level</strong>
-<span>Daily activity</span>
+
+<strong>
+Activity Level
+</strong>
+
+<span>
+Daily activity
+</span>
+
 </div>
 
-<div class="info-value" id="infoActivity">
-Moderate
+
+<div
+class="info-value"
+id="infoActivity"
+>
+--
 </div>
 
+
 </div>
+
 
 </section>
 
+
 </div>
 
 
-<!-- FITNESS SUMMARY -->
+<!-- =========================
+FITNESS SUMMARY
+========================= -->
 
-<section class="panel" style="margin-top:18px;">
+<section
+class="panel"
+style="margin-top:18px;"
+>
+
 
 <div class="panel-header">
 
-<h2>Fitness Overview</h2>
+<h2>
+Fitness Overview
+</h2>
 
 </div>
 
+
 <div class="fitness-grid">
+
+
+<!-- STEPS -->
 
 <div class="fitness-box">
 
 <i class="fa-solid fa-person-walking green"></i>
 
-<strong>Daily Steps</strong>
+<strong>
+Daily Steps
+</strong>
 
-<span>10,000 goal</span>
+<span id="stepsGoalDisplay">
+Goal not set
+</span>
 
 </div>
 
+
+<!-- CALORIES -->
 
 <div class="fitness-box">
 
 <i class="fa-solid fa-fire red"></i>
 
-<strong>Calories</strong>
+<strong>
+Calories
+</strong>
 
-<span>1,800 kcal goal</span>
+<span id="caloriesGoalDisplay">
+Goal not set
+</span>
 
 </div>
 
+
+<!-- WORKOUT -->
 
 <div class="fitness-box">
 
 <i class="fa-solid fa-dumbbell purple"></i>
 
-<strong>Workout</strong>
+<strong>
+Workout
+</strong>
 
-<span>60 min goal</span>
+<span id="workoutGoalDisplay">
+Goal not set
+</span>
 
 </div>
 
+
+<!-- SLEEP -->
 
 <div class="fitness-box">
 
 <i class="fa-solid fa-moon blue"></i>
 
-<strong>Sleep</strong>
+<strong>
+Sleep
+</strong>
 
-<span>8 hours goal</span>
+<span id="sleepGoalDisplay">
+Goal not set
+</span>
 
 </div>
 
+
+<!-- HEART RATE -->
 
 <div class="fitness-box">
 
 <i class="fa-solid fa-heart red"></i>
 
-<strong>Heart Rate</strong>
+<strong>
+Heart Rate
+</strong>
 
-<span>Track daily</span>
+<span id="heartRateDisplay">
+No reading
+</span>
 
 </div>
 
+
+<!-- PROGRESS -->
 
 <div class="fitness-box">
 
 <i class="fa-solid fa-chart-line green"></i>
 
-<strong>Progress</strong>
+<strong>
+Progress
+</strong>
 
-<span>Keep improving</span>
+<span>
+Keep improving
+</span>
 
 </div>
 
+
 </div>
+
 
 </section>
+
 
 </main>
 
 </div>
 
 
-<!-- EDIT MODAL -->
+<!-- =========================
+EDIT MODAL
+========================= -->
 
-<div class="modal" id="profileModal">
+<div
+class="modal"
+id="profileModal"
+>
+
 
 <div class="modal-box">
 
+
 <div class="modal-header">
 
-<h2>Edit Profile</h2>
+<h2>
+Edit Profile
+</h2>
 
-<button class="close-btn" id="closeModal">
+
+<button
+class="close-btn"
+id="closeModal"
+>
+
 <i class="fa-solid fa-xmark"></i>
+
 </button>
 
 </div>
@@ -1016,14 +1765,17 @@ Moderate
 
 <form id="profileForm">
 
+
 <div class="form-group">
 
-<label>Full Name</label>
+<label>
+Full Name
+</label>
 
 <input
 type="text"
 id="nameInput"
-value="Ramu"
+placeholder="Enter your name"
 required
 >
 
@@ -1032,12 +1784,14 @@ required
 
 <div class="form-group">
 
-<label>Email</label>
+<label>
+Email
+</label>
 
 <input
 type="email"
 id="emailInput"
-value="ramu@example.com"
+placeholder="Enter your email"
 required
 >
 
@@ -1046,17 +1800,20 @@ required
 
 <div class="form-row">
 
+
 <div class="form-group">
 
-<label>Height (cm)</label>
+<label>
+Height (cm)
+</label>
 
 <input
 type="number"
 id="heightInput"
-value="175"
+placeholder="Enter height"
 min="50"
 max="250"
-required
+step="0.1"
 >
 
 </div>
@@ -1064,44 +1821,58 @@ required
 
 <div class="form-group">
 
-<label>Current Weight (kg)</label>
+<label>
+Current Weight (kg)
+</label>
 
 <input
 type="number"
 id="weightInput"
-value="104"
+placeholder="Enter weight"
 min="1"
 max="300"
 step="0.1"
-required
 >
 
 </div>
+
 
 </div>
 
 
 <div class="form-group">
 
-<label>Fitness Goal</label>
+<label>
+Fitness Goal
+</label>
+
 
 <select id="goalInput">
+
+<option value="">
+Select goal
+</option>
+
 
 <option value="Weight Loss">
 Weight Loss
 </option>
 
+
 <option value="Muscle Gain">
 Muscle Gain
 </option>
+
 
 <option value="Maintain Weight">
 Maintain Weight
 </option>
 
+
 <option value="General Fitness">
 General Fitness
 </option>
+
 
 </select>
 
@@ -1110,25 +1881,37 @@ General Fitness
 
 <div class="form-group">
 
-<label>Activity Level</label>
+<label>
+Activity Level
+</label>
+
 
 <select id="activityInput">
+
+<option value="">
+Select activity level
+</option>
+
 
 <option value="Low">
 Low
 </option>
 
+
 <option value="Moderate">
 Moderate
 </option>
+
 
 <option value="High">
 High
 </option>
 
+
 <option value="Very High">
 Very High
 </option>
+
 
 </select>
 
@@ -1137,26 +1920,36 @@ Very High
 
 <div class="modal-buttons">
 
+
 <button
 type="button"
 class="cancel-btn"
 id="cancelModal"
 >
+
 Cancel
+
 </button>
+
 
 <button
 type="submit"
 class="save-btn"
 >
+
 <i class="fa-solid fa-check"></i>
+
 Save Changes
+
 </button>
 
+
 </div>
+
 
 </form>
 
+
 </div>
 
 </div>
@@ -1164,313 +1957,921 @@ Save Changes
 
 <script>
 
-/* =========================
-PROFILE DATA
-========================= */
 
-let profileData =
-JSON.parse(
-localStorage.getItem("fittrackProfile")
-);
+/* ==========================================
+LOGIN PROTECTION
+========================================== */
 
+if(
+    localStorage.getItem(
+        "fittrackLoggedIn"
+    ) !== "true"
+){
 
-if(!profileData){
-
-profileData = {
-
-name:"Ramu",
-
-email:"ramu@example.com",
-
-height:175,
-
-weight:104,
-
-goal:"Weight Loss",
-
-activity:"Moderate"
-
-};
-
-localStorage.setItem(
-"fittrackProfile",
-JSON.stringify(profileData)
-);
+    window.location.href =
+        "login.html";
 
 }
 
 
-/* =========================
-ELEMENTS
-========================= */
+/* ==========================================
+CURRENT USER
+========================================== */
 
-const modal =
-document.getElementById("profileModal");
+let currentUser =
 
-const form =
-document.getElementById("profileForm");
+    JSON.parse(
+        localStorage.getItem(
+            "fittrackCurrentUser"
+        )
+    );
 
 
-/* =========================
-RENDER
-========================= */
+if(
+    !currentUser ||
+    !currentUser.email
+){
+
+    window.location.href =
+        "login.html";
+
+}
+
+
+/* ==========================================
+ALL USER DATA
+========================================== */
+
+let allUserData =
+
+    JSON.parse(
+        localStorage.getItem(
+            "fittrackUserData"
+        )
+    ) || {};
+
+
+/* ==========================================
+CREATE USER DATA IF MISSING
+========================================== */
+
+if(
+    !allUserData[
+        currentUser.email
+    ]
+){
+
+    allUserData[
+        currentUser.email
+    ] = {
+
+        workouts: [],
+
+        meals: [],
+
+        steps: [],
+
+        sleep: [],
+
+        heartRate: [],
+
+        goals: {},
+
+        profile: {
+
+            name:
+                currentUser.name ||
+                "",
+
+            email:
+                currentUser.email ||
+                ""
+
+        },
+
+        settings: {}
+
+    };
+
+
+    localStorage.setItem(
+        "fittrackUserData",
+        JSON.stringify(
+            allUserData
+        )
+    );
+
+}
+
+
+/* ==========================================
+USER DATA
+========================================== */
+
+let userData =
+    allUserData[
+        currentUser.email
+    ];
+
+
+/* ==========================================
+PROFILE
+========================================== */
+
+let profileData =
+
+    userData.profile || {
+
+
+        name:
+            currentUser.name ||
+            "",
+
+
+        email:
+            currentUser.email ||
+            "",
+
+
+        height:"",
+
+
+        weight:"",
+
+
+        goal:"",
+
+
+        activity:""
+
+    };
+
+
+/*
+Keep registered account
+name/email if profile fields
+are missing.
+*/
+
+if(
+    !profileData.name
+){
+
+    profileData.name =
+        currentUser.name || "";
+
+}
+
+
+if(
+    !profileData.email
+){
+
+    profileData.email =
+        currentUser.email || "";
+
+}
+
+
+/* ==========================================
+GOALS
+========================================== */
+
+const goals =
+    userData.goals || {};
+
+
+/* ==========================================
+HELPER
+========================================== */
+
+function displayValue(
+    value,
+    suffix=""
+){
+
+    if(
+        value === undefined ||
+        value === null ||
+        value === "" ||
+        Number(value) === 0
+    ){
+
+        return "--";
+
+    }
+
+
+    return value + suffix;
+
+}
+
+
+/* ==========================================
+HEART RATE
+========================================== */
+
+function getLatestHeartRate(){
+
+    if(
+        !Array.isArray(
+            userData.heartRate
+        )
+    ){
+
+        return null;
+
+    }
+
+
+    const validReadings =
+
+        userData.heartRate.filter(
+
+            function(
+                reading
+            ){
+
+                return Number(
+                    reading.bpm || 0
+                ) > 0;
+
+            }
+
+        );
+
+
+    if(
+        validReadings.length === 0
+    ){
+
+        return null;
+
+    }
+
+
+    return validReadings[
+        validReadings.length - 1
+    ];
+
+}
+
+
+/* ==========================================
+RENDER PROFILE
+========================================== */
 
 function renderProfile(){
 
-const name =
-profileData.name || "Ramu";
+
+    const name =
+
+        profileData.name ||
+
+        currentUser.name ||
+
+        "User";
 
 
-const initial =
-name.charAt(0).toUpperCase();
+    const email =
+
+        profileData.email ||
+
+        currentUser.email ||
+
+        "--";
 
 
-document.getElementById(
-"avatar"
-).textContent =
-initial;
+    const initial =
+
+        name
+            .charAt(0)
+            .toUpperCase();
 
 
-document.getElementById(
-"profileName"
-).textContent =
-name;
+    /* TOP */
+
+    document.getElementById(
+        "topInitial"
+    ).textContent =
+        initial;
 
 
-document.getElementById(
-"profileEmail"
-).textContent =
-profileData.email;
+    document.getElementById(
+        "topName"
+    ).textContent =
+        name;
 
 
-document.getElementById(
-"topInitial"
-).textContent =
-initial;
+    /* PROFILE CARD */
+
+    document.getElementById(
+        "avatar"
+    ).textContent =
+        initial;
 
 
-document.getElementById(
-"topName"
-).textContent =
-name;
+    document.getElementById(
+        "profileName"
+    ).textContent =
+        name;
 
 
-document.getElementById(
-"infoName"
-).textContent =
-name;
+    document.getElementById(
+        "profileEmail"
+    ).textContent =
+        email;
 
 
-document.getElementById(
-"infoEmail"
-).textContent =
-profileData.email;
+    /* PERSONAL INFO */
+
+    document.getElementById(
+        "infoName"
+    ).textContent =
+        name;
 
 
-document.getElementById(
-"infoHeight"
-).textContent =
-profileData.height + " cm";
+    document.getElementById(
+        "infoEmail"
+    ).textContent =
+        email;
 
 
-document.getElementById(
-"infoWeight"
-).textContent =
-profileData.weight + " kg";
+    document.getElementById(
+        "infoHeight"
+    ).textContent =
+
+        profileData.height
+            ? profileData.height +
+              " cm"
+            : "--";
 
 
-document.getElementById(
-"infoGoal"
-).textContent =
-profileData.goal;
+    document.getElementById(
+        "infoWeight"
+    ).textContent =
+
+        profileData.weight
+            ? profileData.weight +
+              " kg"
+            : "--";
 
 
-document.getElementById(
-"infoActivity"
-).textContent =
-profileData.activity;
+    document.getElementById(
+        "infoGoal"
+    ).textContent =
+
+        profileData.goal ||
+        "--";
 
 
-document.getElementById(
-"miniGoal"
-).textContent =
-profileData.goal;
+    document.getElementById(
+        "infoActivity"
+    ).textContent =
+
+        profileData.activity ||
+        "--";
 
 
-document.getElementById(
-"miniActivity"
-).textContent =
-profileData.activity;
+    /* MINI */
+
+    document.getElementById(
+        "miniGoal"
+    ).textContent =
+
+        profileData.goal ||
+        "--";
+
+
+    document.getElementById(
+        "miniActivity"
+    ).textContent =
+
+        profileData.activity ||
+        "--";
+
+
+    /* ==========================================
+    FITNESS OVERVIEW
+    ========================================== */
+
+
+    const stepsGoal =
+        Number(
+            goals.steps || 0
+        );
+
+
+    const caloriesGoal =
+        Number(
+            goals.calories || 0
+        );
+
+
+    const workoutGoal =
+        Number(
+            goals.workout || 0
+        );
+
+
+    const sleepGoal =
+        Number(
+            goals.sleep || 0
+        );
+
+
+    document.getElementById(
+        "stepsGoalDisplay"
+    ).textContent =
+
+        stepsGoal
+            ? stepsGoal.toLocaleString() +
+              " steps goal"
+            : "Goal not set";
+
+
+    document.getElementById(
+        "caloriesGoalDisplay"
+    ).textContent =
+
+        caloriesGoal
+            ? caloriesGoal.toLocaleString() +
+              " kcal goal"
+            : "Goal not set";
+
+
+    document.getElementById(
+        "workoutGoalDisplay"
+    ).textContent =
+
+        workoutGoal
+            ? workoutGoal +
+              " min goal"
+            : "Goal not set";
+
+
+    document.getElementById(
+        "sleepGoalDisplay"
+    ).textContent =
+
+        sleepGoal
+            ? sleepGoal.toFixed(1) +
+              " hours goal"
+            : "Goal not set";
+
+
+    const latestHeartRate =
+        getLatestHeartRate();
+
+
+    document.getElementById(
+        "heartRateDisplay"
+    ).textContent =
+
+        latestHeartRate
+            ? Number(
+                latestHeartRate.bpm
+              ) +
+              " BPM"
+            : "No reading";
 
 }
 
 
-/* =========================
+/* ==========================================
 OPEN EDIT
-========================= */
+========================================== */
 
 document.getElementById(
-"editProfile"
+    "editProfile"
 ).onclick =
+
 function(){
 
-document.getElementById(
-"nameInput"
-).value =
-profileData.name;
 
-document.getElementById(
-"emailInput"
-).value =
-profileData.email;
+    document.getElementById(
+        "nameInput"
+    ).value =
 
-document.getElementById(
-"heightInput"
-).value =
-profileData.height;
+        profileData.name || "";
 
-document.getElementById(
-"weightInput"
-).value =
-profileData.weight;
 
-document.getElementById(
-"goalInput"
-).value =
-profileData.goal;
+    document.getElementById(
+        "emailInput"
+    ).value =
 
-document.getElementById(
-"activityInput"
-).value =
-profileData.activity;
+        profileData.email ||
+        currentUser.email ||
+        "";
 
-modal.classList.add("show");
+
+    document.getElementById(
+        "heightInput"
+    ).value =
+
+        profileData.height || "";
+
+
+    document.getElementById(
+        "weightInput"
+    ).value =
+
+        profileData.weight || "";
+
+
+    document.getElementById(
+        "goalInput"
+    ).value =
+
+        profileData.goal || "";
+
+
+    document.getElementById(
+        "activityInput"
+    ).value =
+
+        profileData.activity || "";
+
+
+    document.getElementById(
+        "profileModal"
+    ).classList.add(
+        "show"
+    );
 
 };
 
 
-/* =========================
-CLOSE
-========================= */
+/* ==========================================
+CLOSE MODAL
+========================================== */
 
 function closeModal(){
 
-modal.classList.remove("show");
+    document.getElementById(
+        "profileModal"
+    ).classList.remove(
+        "show"
+    );
 
 }
 
-document.getElementById(
-"closeModal"
-).onclick =
-closeModal;
 
 document.getElementById(
-"cancelModal"
+    "closeModal"
 ).onclick =
-closeModal;
+    closeModal;
 
 
-modal.onclick =
-function(e){
+document.getElementById(
+    "cancelModal"
+).onclick =
+    closeModal;
 
-if(e.target === modal){
 
-closeModal();
+/* ==========================================
+CLICK OUTSIDE
+========================================== */
 
-}
+document.getElementById(
+    "profileModal"
+).onclick =
+
+function(event){
+
+    if(
+        event.target ===
+        document.getElementById(
+            "profileModal"
+        )
+    ){
+
+        closeModal();
+
+    }
 
 };
 
 
-/* =========================
-SAVE
-========================= */
+/* ==========================================
+SAVE PROFILE
+========================================== */
 
-form.onsubmit =
-function(e){
-
-e.preventDefault();
-
-
-profileData.name =
 document.getElementById(
-"nameInput"
-).value.trim();
+    "profileForm"
+).onsubmit =
+
+function(event){
+
+    event.preventDefault();
 
 
-profileData.email =
-document.getElementById(
-"emailInput"
-).value.trim();
+    const newName =
+
+        document.getElementById(
+            "nameInput"
+        ).value.trim();
 
 
-profileData.height =
-Number(
-document.getElementById(
-"heightInput"
-).value
-);
+    const newEmail =
+
+        document.getElementById(
+            "emailInput"
+        ).value
+        .trim()
+        .toLowerCase();
 
 
-profileData.weight =
-Number(
-document.getElementById(
-"weightInput"
-).value
-);
+    const newHeight =
+
+        document.getElementById(
+            "heightInput"
+        ).value;
 
 
-profileData.goal =
-document.getElementById(
-"goalInput"
-).value;
+    const newWeight =
+
+        document.getElementById(
+            "weightInput"
+        ).value;
 
 
-profileData.activity =
-document.getElementById(
-"activityInput"
-).value;
+    const newGoal =
+
+        document.getElementById(
+            "goalInput"
+        ).value;
 
 
-localStorage.setItem(
-"fittrackProfile",
-JSON.stringify(profileData)
-);
+    const newActivity =
+
+        document.getElementById(
+            "activityInput"
+        ).value;
 
 
-renderProfile();
+    if(
+        !newName ||
+        !newEmail
+    ){
 
-closeModal();
+        return;
+
+    }
+
+
+    const oldEmail =
+        currentUser.email;
+
+
+    /* ==========================================
+    EMAIL CHANGED
+    ========================================== */
+
+    if(
+        newEmail !== oldEmail
+    ){
+
+        const users =
+
+            JSON.parse(
+                localStorage.getItem(
+                    "fittrackUsers"
+                )
+            ) || [];
+
+
+        const emailAlreadyExists =
+
+            users.some(
+
+                function(user){
+
+                    return (
+                        user.email ===
+                        newEmail
+                    );
+
+                }
+
+            );
+
+
+        if(
+            emailAlreadyExists
+        ){
+
+            alert(
+                "This email is already registered."
+            );
+
+            return;
+
+        }
+
+
+        /* UPDATE USERS */
+
+        users.forEach(
+
+            function(user){
+
+                if(
+                    user.email ===
+                    oldEmail
+                ){
+
+                    user.email =
+                        newEmail;
+
+                    user.name =
+                        newName;
+
+                }
+
+            }
+
+        );
+
+
+        localStorage.setItem(
+            "fittrackUsers",
+            JSON.stringify(
+                users
+            )
+        );
+
+
+        /* MOVE USER DATA */
+
+        allUserData[
+            newEmail
+        ] =
+            allUserData[
+                oldEmail
+            ] || {};
+
+
+        delete allUserData[
+            oldEmail
+        ];
+
+
+        localStorage.setItem(
+            "fittrackUserData",
+            JSON.stringify(
+                allUserData
+            )
+        );
+
+
+        /* UPDATE CURRENT USER */
+
+        currentUser.email =
+            newEmail;
+
+
+        currentUser.name =
+            newName;
+
+
+        localStorage.setItem(
+            "fittrackCurrentUser",
+            JSON.stringify(
+                currentUser
+            )
+        );
+
+
+        userData =
+            allUserData[
+                newEmail
+            ];
+
+    }
+
+
+    /* ==========================================
+    SAVE PROFILE
+    ========================================== */
+
+    profileData = {
+
+        name:
+            newName,
+
+        email:
+            newEmail,
+
+        height:
+            newHeight
+                ? Number(
+                    newHeight
+                  )
+                : "",
+
+        weight:
+            newWeight
+                ? Number(
+                    newWeight
+                  )
+                : "",
+
+        goal:
+            newGoal,
+
+        activity:
+            newActivity
+
+    };
+
+
+    userData.profile =
+        profileData;
+
+
+    allUserData[
+        newEmail
+    ] =
+        userData;
+
+
+    localStorage.setItem(
+        "fittrackUserData",
+        JSON.stringify(
+            allUserData
+        )
+    );
+
+
+    /* UPDATE LOCAL CURRENT USER */
+
+    currentUser.name =
+        newName;
+
+    currentUser.email =
+        newEmail;
+
+
+    localStorage.setItem(
+        "fittrackCurrentUser",
+        JSON.stringify(
+            currentUser
+        )
+    );
+
+
+    renderProfile();
+
+    closeModal();
 
 };
 
 
-/* ESC */
+/* ==========================================
+ESC KEY
+========================================== */
 
 document.addEventListener(
-"keydown",
-function(e){
 
-if(
-e.key === "Escape" &&
-modal.classList.contains("show")
-){
+    "keydown",
 
-closeModal();
+    function(event){
 
-}
-
-});
+        const modal =
+            document.getElementById(
+                "profileModal"
+            );
 
 
-/* START */
+        if(
+            event.key ===
+            "Escape" &&
+
+            modal.classList.contains(
+                "show"
+            )
+        ){
+
+            closeModal();
+
+        }
+
+    }
+
+);
+
+
+/* ==========================================
+START
+========================================== */
 
 renderProfile();
 
+
 </script>
 
-<script>
-    if (localStorage.getItem("fittrackLoggedIn") !== "true") {
-        window.location.href = "login.html";
-    }
-</script>
+
+</body>
+
+</html>

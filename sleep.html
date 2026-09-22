@@ -1,49 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>FitTrack - Sleep</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html,
-body {
-    width: 100%;
-    height: 100%;
+body{
+    width:100%;
+    height:100%;
 }
 
-body {
-    font-family: "Inter", sans-serif;
-    background: #f4f8fb;
-    color: #07183b;
-    overflow: hidden;
+body{
+    font-family:"Inter",sans-serif;
+    background:#f4f8fb;
+    color:#07183b;
+    overflow:hidden;
 }
 
 button,
-input,
-select {
-    font-family: inherit;
+input{
+    font-family:inherit;
 }
 
-.app {
-    width: 100%;
-    height: 100vh;
-    display: flex;
+.app{
+    width:100%;
+    height:100vh;
+    display:flex;
 }
 
 
@@ -51,109 +61,114 @@ select {
 SIDEBAR
 ========================= */
 
-.sidebar {
-    width: 263px;
-    height: 100vh;
-    flex: 0 0 263px;
+.sidebar{
+    width:263px;
+    height:100vh;
+    flex:0 0 263px;
 
-    background: linear-gradient(
+    background:linear-gradient(
         180deg,
         #061c2c 0%,
         #071c2b 100%
     );
 
-    color: white;
+    color:white;
 
-    padding: 18px 9px 16px;
+    padding:18px 9px 16px;
 
-    display: flex;
-    flex-direction: column;
+    display:flex;
+    flex-direction:column;
 
-    overflow: hidden;
+    overflow:hidden;
+
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
 }
 
-.brand {
-    height: 100px;
-    flex: 0 0 100px;
+.brand{
+    height:100px;
+    flex:0 0 100px;
 
-    display: flex;
-    align-items: center;
+    display:flex;
+    align-items:center;
 
-    padding-left: 20px;
-    margin-bottom: 8px;
+    padding-left:20px;
+    margin-bottom:8px;
 }
 
-.brand img {
-    width: 196px;
-    max-height: 88px;
-    object-fit: contain;
+.brand img{
+    width:196px;
+    max-height:88px;
+    object-fit:contain;
 }
 
-.nav {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+.nav{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
 }
 
-.nav a {
-    height: 49px;
-    flex: 0 0 49px;
+.nav a{
+    height:49px;
+    flex:0 0 49px;
 
-    border-radius: 11px;
+    border-radius:11px;
 
-    display: flex;
-    align-items: center;
+    display:flex;
+    align-items:center;
 
-    gap: 28px;
-    padding: 0 28px;
+    gap:28px;
+    padding:0 28px;
 
-    color: #e8f0f7;
-    text-decoration: none;
+    color:#e8f0f7;
+    text-decoration:none;
 
-    font-size: 16px;
-    font-weight: 500;
+    font-size:16px;
+    font-weight:500;
 
-    position: relative;
+    position:relative;
 
-    transition: .18s;
+    transition:.18s;
 }
 
-.nav a i {
-    width: 25px;
-    flex: 0 0 25px;
+.nav a i{
+    width:25px;
+    flex:0 0 25px;
 
-    text-align: center;
+    text-align:center;
 
-    font-size: 22px;
+    font-size:22px;
 }
 
-.nav a:hover {
-    background: #12344a;
+.nav a:hover{
+    background:#12344a;
 }
 
-.nav a.active {
-    background: #12344a;
-    font-weight: 700;
+.nav a.active{
+    background:#12344a;
+    font-weight:700;
 }
 
-.nav a.active::before {
-    content: "";
+.nav a.active::before{
+    content:"";
 
-    position: absolute;
+    position:absolute;
 
-    left: -9px;
-    top: 0;
-    bottom: 0;
+    left:-9px;
+    top:0;
+    bottom:0;
 
-    width: 8px;
+    width:8px;
 
-    border-radius: 0 6px 6px 0;
+    border-radius:0 6px 6px 0;
 
-    background: #20e69b;
+    background:#20e69b;
 }
 
-.nav a.active i {
-    color: #29e9a0;
+.nav a.active i{
+    color:#29e9a0;
 }
 
 
@@ -161,72 +176,73 @@ SIDEBAR
 PREMIUM
 ========================= */
 
-.premium {
-    margin: auto 15px 0;
+.premium{
+    margin:auto 15px 0;
 
-    border: 1px solid #1d4158;
+    border:1px solid #1d4158;
 
-    background: rgba(10,40,57,.7);
+    background:rgba(10,40,57,.7);
 
-    border-radius: 12px;
+    border-radius:12px;
 
-    padding: 14px 16px 13px;
+    padding:14px 16px 13px;
 }
 
-.premium-title {
-    display: flex;
-    align-items: center;
+.premium-title{
+    display:flex;
+    align-items:center;
 
-    gap: 10px;
+    gap:10px;
 
-    color: #ffd21f;
+    color:#ffd21f;
 
-    font-weight: 800;
-    font-size: 15px;
+    font-weight:800;
+    font-size:15px;
 
-    margin-bottom: 12px;
+    margin-bottom:12px;
 }
 
-.premium-feature {
-    font-size: 12px;
+.premium-feature{
+    font-size:12px;
 
-    margin: 8px 0;
+    margin:8px 0;
 
-    color: #dce8ee;
+    color:#dce8ee;
 
-    display: flex;
+    display:flex;
 
-    gap: 10px;
+    gap:10px;
 
-    align-items: center;
+    align-items:center;
 }
 
-.premium-feature i {
-    width: 15px;
-    color: #24e8a0;
+.premium-feature i{
+    width:15px;
+
+    color:#24e8a0;
 }
 
-.premium button {
-    width: 100%;
-    height: 43px;
+.premium button{
+    width:100%;
+    height:43px;
 
-    margin-top: 8px;
+    margin-top:8px;
 
-    border: 0;
-    border-radius: 12px;
+    border:0;
+    border-radius:12px;
 
-    background: linear-gradient(
+    background:linear-gradient(
         90deg,
         #1ce79a,
         #2ce9a0
     );
 
-    color: #03251a;
+    color:#03251a;
 
-    font-size: 16px;
-    font-weight: 800;
+    font-size:16px;
+    font-weight:800;
 
-    cursor: pointer;
+    cursor:pointer;
 }
 
 
@@ -234,16 +250,18 @@ PREMIUM
 MAIN
 ========================= */
 
-.main {
-    flex: 1;
-    min-width: 0;
+.main{
+    margin-left:263px;
 
-    height: 100vh;
+    flex:1;
+    min-width:0;
 
-    padding: 25px 30px 30px;
+    height:100vh;
 
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
 }
 
 
@@ -251,164 +269,79 @@ MAIN
 TOPBAR
 ========================= */
 
-.topbar {
-    display: flex;
+.topbar{
+    height:82px;
+    flex:0 0 82px;
 
-    align-items: center;
-    justify-content: space-between;
+    background:white;
 
-    margin-bottom: 22px;
+    border-bottom:1px solid #e8eef3;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 30px;
 }
 
-.page-title h1 {
-    font-size: 28px;
-    margin-bottom: 6px;
+.page-title h1{
+    font-size:25px;
+    font-weight:800;
+    color:#07183b;
 }
 
-.page-title p {
-    color: #718096;
-    font-size: 13px;
+.page-title p{
+    margin-top:4px;
+
+    font-size:13px;
+
+    color:#7b8795;
 }
 
-.top-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.user-area{
+    display:flex;
+    align-items:center;
+
+    gap:12px;
 }
 
-.notification {
-    width: 42px;
-    height: 42px;
-
-    border-radius: 50%;
-
-    background: white;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    box-shadow:
-        0 3px 12px rgba(7,24,59,.08);
-
-    font-size: 18px;
+.user-text{
+    text-align:right;
 }
 
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.user-text strong{
+    display:block;
+
+    font-size:14px;
+
+    color:#102040;
 }
 
-.profile-circle {
-    width: 42px;
-    height: 42px;
+.user-text span{
+    display:block;
 
-    border-radius: 50%;
+    font-size:12px;
 
-    background: #263c4a;
+    color:#87919e;
 
-    color: white;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-weight: 800;
+    margin-top:3px;
 }
 
-.profile-text strong {
-    display: block;
-    font-size: 14px;
-}
+.avatar{
+    width:43px;
+    height:43px;
 
-.profile-text span {
-    color: #718096;
-    font-size: 12px;
-}
+    border-radius:50%;
 
+    background:#d9f8ed;
 
-/* =========================
-STATS
-========================= */
+    color:#0b8b60;
 
-.stats {
-    display: grid;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 15px;
-
-    margin-bottom: 20px;
-}
-
-.stat {
-    background: white;
-
-    border: 1px solid #e4ebf0;
-
-    border-radius: 14px;
-
-    padding: 18px;
-
-    box-shadow:
-        0 3px 12px rgba(7,24,59,.05);
-}
-
-.stat-top {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
-}
-
-.stat-icon {
-    width: 43px;
-    height: 43px;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 18px;
-}
-
-.green {
-    background: #dff8ed;
-    color: #0bb77b;
-}
-
-.blue {
-    background: #dff1ff;
-    color: #179fe4;
-}
-
-.orange {
-    background: #fff0d9;
-    color: #f59e0b;
-}
-
-.purple {
-    background: #eee2ff;
-    color: #7c4ce5;
-}
-
-.pink {
-    background: #ffe2ea;
-    color: #ef4565;
-}
-
-.stat h3 {
-    font-size: 22px;
-    margin-bottom: 3px;
-}
-
-.stat p {
-    color: #718096;
-    font-size: 12px;
+    font-weight:800;
 }
 
 
@@ -416,266 +349,355 @@ STATS
 CONTENT
 ========================= */
 
-.content-grid {
-    display: grid;
+.content{
+    flex:1;
+
+    padding:24px 30px;
+
+    overflow:hidden;
+}
+
+
+/* =========================
+TOP CARDS
+========================= */
+
+.top-cards{
+    display:grid;
 
     grid-template-columns:
-        1.45fr
-        1fr;
+        repeat(4,1fr);
 
-    gap: 18px;
+    gap:18px;
+
+    margin-bottom:20px;
 }
 
-.panel {
-    background: white;
+.stat-card{
+    background:white;
 
-    border: 1px solid #e4ebf0;
+    border-radius:14px;
 
-    border-radius: 15px;
+    padding:18px 20px;
 
-    padding: 20px;
+    min-height:110px;
+
+    border:1px solid #e9eef2;
 
     box-shadow:
-        0 3px 12px rgba(7,24,59,.05);
+        0 5px 16px
+        rgba(15,35,55,.04);
+
+    display:flex;
+    align-items:center;
+
+    gap:15px;
 }
 
-.panel-header {
-    display: flex;
+.stat-icon{
+    width:46px;
+    height:46px;
 
-    align-items: center;
-    justify-content: space-between;
+    border-radius:12px;
 
-    margin-bottom: 18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:21px;
 }
 
-.panel-header h2 {
-    font-size: 18px;
+.stat-icon.purple{
+    background:#f0eaff;
+    color:#8055e8;
 }
 
-
-/* =========================
-ADD BUTTON
-========================= */
-
-.add-sleep {
-    border: none;
-
-    background: #20e69b;
-
-    color: #05291e;
-
-    font-weight: 800;
-
-    padding: 11px 18px;
-
-    border-radius: 9px;
-
-    cursor: pointer;
-
-    font-size: 12px;
+.stat-icon.blue{
+    background:#e9f2ff;
+    color:#4b8ef7;
 }
 
-
-/* =========================
-SLEEP SUMMARY
-========================= */
-
-.sleep-summary {
-    display: flex;
-
-    align-items: center;
-
-    gap: 22px;
-
-    padding: 10px 0 22px;
+.stat-icon.green{
+    background:#e6faf1;
+    color:#16ad73;
 }
 
-.sleep-circle {
-    width: 135px;
-    height: 135px;
-
-    border-radius: 50%;
-
-    background:
-        conic-gradient(
-            #8055e8 0deg,
-            #8055e8 0deg,
-            #e9edf2 0deg
-        );
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
-
-    flex-shrink: 0;
+.stat-icon.orange{
+    background:#fff1e5;
+    color:#ee8d38;
 }
 
-.sleep-circle::before {
-    content: "";
+.stat-info span{
+    display:block;
 
-    position: absolute;
+    color:#87919e;
 
-    width: 105px;
-    height: 105px;
+    font-size:12px;
 
-    background: white;
-
-    border-radius: 50%;
+    margin-bottom:6px;
 }
 
-.sleep-circle-content {
-    position: relative;
-    text-align: center;
-}
+.stat-info strong{
+    font-size:22px;
 
-.sleep-circle-content strong {
-    display: block;
-    font-size: 23px;
-}
-
-.sleep-circle-content span {
-    color: #718096;
-    font-size: 11px;
-}
-
-.sleep-info {
-    flex: 1;
-}
-
-.sleep-info h3 {
-    font-size: 18px;
-    margin-bottom: 7px;
-}
-
-.sleep-info p {
-    color: #718096;
-    font-size: 12px;
-    line-height: 1.6;
+    color:#102040;
 }
 
 
 /* =========================
-SLEEP ROW
+SLEEP LAYOUT
 ========================= */
 
-.sleep-row {
-    display: flex;
+.sleep-layout{
+    display:grid;
 
-    align-items: center;
+    grid-template-columns:
+        1.35fr .85fr;
 
-    padding: 14px 0;
+    gap:20px;
 
-    border-bottom: 1px solid #edf1f4;
+    height:calc(
+        100vh - 82px - 24px - 110px - 20px - 48px
+    );
 }
 
-.sleep-row:last-child {
-    border-bottom: none;
-}
+.card{
+    background:white;
 
-.sleep-icon {
-    width: 44px;
-    height: 44px;
+    border:1px solid #e9eef2;
 
-    border-radius: 50%;
+    border-radius:15px;
 
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin-right: 13px;
-
-    flex-shrink: 0;
-}
-
-.sleep-info-row {
-    flex: 1;
-    min-width: 0;
-}
-
-.sleep-info-row strong {
-    display: block;
-
-    font-size: 14px;
-
-    margin-bottom: 4px;
-}
-
-.sleep-info-row span {
-    color: #718096;
-    font-size: 12px;
-}
-
-.sleep-value {
-    text-align: right;
-    margin-left: 10px;
-}
-
-.sleep-value strong {
-    display: block;
-    font-size: 14px;
-}
-
-.sleep-value span {
-    color: #718096;
-    font-size: 11px;
+    box-shadow:
+        0 5px 16px
+        rgba(15,35,55,.04);
 }
 
 
 /* =========================
-ACTIONS
+LEFT CARD
 ========================= */
 
-.sleep-actions {
-    display: flex;
+.sleep-card{
+    padding:22px;
 
-    align-items: center;
+    min-height:0;
 
-    gap: 6px;
-
-    margin-left: 12px;
+    display:flex;
+    flex-direction:column;
 }
 
-.sleep-edit,
-.sleep-delete {
-    width: 32px;
-    height: 32px;
+.card-header{
+    display:flex;
 
-    border: none;
-    border-radius: 8px;
+    justify-content:space-between;
+    align-items:center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-
-    font-size: 13px;
-
-    transition: .2s;
+    margin-bottom:18px;
 }
 
-.sleep-edit {
-    background: #eef5ff;
-    color: #2196f3;
+.card-header h2{
+    font-size:18px;
+
+    font-weight:800;
 }
 
-.sleep-edit:hover {
-    background: #dcecff;
-    transform: scale(1.05);
+.card-header p{
+    color:#89939e;
+
+    font-size:12px;
+
+    margin-top:4px;
 }
 
-.sleep-delete {
-    background: #fff0f2;
-    color: #ef4565;
+.add-btn{
+    border:0;
+
+    background:#20df98;
+
+    color:#063223;
+
+    border-radius:10px;
+
+    height:40px;
+
+    padding:0 17px;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
 }
 
-.sleep-delete:hover {
-    background: #ffe0e5;
-    transform: scale(1.05);
+.add-btn:hover{
+    background:#19d48e;
+}
+
+.sleep-list{
+    flex:1;
+
+    overflow:auto;
+
+    padding-right:4px;
+}
+
+.sleep-row{
+    min-height:72px;
+
+    border:1px solid #edf0f3;
+
+    border-radius:12px;
+
+    margin-bottom:10px;
+
+    padding:12px 14px;
+
+    display:grid;
+
+    grid-template-columns:
+        43px 1fr auto auto;
+
+    align-items:center;
+
+    gap:13px;
+
+    background:#fff;
+}
+
+.sleep-icon{
+    width:43px;
+    height:43px;
+
+    border-radius:11px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:18px;
+}
+
+.sleep-icon.purple{
+    background:#f0eaff;
+    color:#8055e8;
+}
+
+.sleep-info-row strong{
+    display:block;
+
+    font-size:15px;
+
+    color:#122142;
+}
+
+.sleep-info-row span{
+    display:block;
+
+    font-size:11px;
+
+    color:#89939e;
+
+    margin-top:4px;
+}
+
+.sleep-value{
+    text-align:right;
+}
+
+.sleep-value strong{
+    display:block;
+
+    font-size:15px;
+
+    color:#172344;
+}
+
+.sleep-value span{
+    display:block;
+
+    font-size:10px;
+
+    color:#89939e;
+
+    margin-top:3px;
+}
+
+.sleep-actions{
+    display:flex;
+
+    gap:6px;
+}
+
+.sleep-actions button{
+    width:31px;
+    height:31px;
+
+    border:0;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.sleep-edit{
+    background:#edf5ff;
+
+    color:#4384db;
+}
+
+.sleep-delete{
+    background:#fff0f0;
+
+    color:#e05b5b;
+}
+
+.empty-state{
+    height:100%;
+
+    min-height:240px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    color:#89939e;
+}
+
+.empty-state i{
+    font-size:34px;
+
+    color:#c9d1d9;
+
+    margin-bottom:13px;
+}
+
+.empty-state h3{
+    color:#39465d;
+
+    font-size:16px;
+
+    margin-bottom:6px;
+}
+
+.empty-state p{
+    font-size:12px;
 }
 
 
@@ -683,122 +705,193 @@ ACTIONS
 RIGHT SUMMARY
 ========================= */
 
-.summary-item {
-    display: flex;
+.summary-card{
+    padding:22px;
 
-    align-items: center;
+    min-height:0;
 
-    padding: 14px 0;
+    display:flex;
 
-    border-bottom: 1px solid #edf1f4;
+    flex-direction:column;
 }
 
-.summary-item:last-child {
-    border-bottom: none;
+.summary-card h2{
+    font-size:18px;
+
+    font-weight:800;
+
+    margin-bottom:18px;
 }
 
-.summary-icon {
-    width: 43px;
-    height: 43px;
+.sleep-circle-wrap{
+    display:flex;
 
-    border-radius: 50%;
+    justify-content:center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-right: 13px;
+    margin-bottom:18px;
 }
 
-.summary-info {
-    flex: 1;
+.sleep-circle{
+    width:170px;
+    height:170px;
+
+    border-radius:50%;
+
+    background:
+        conic-gradient(
+            #8055e8 0deg,
+            #8055e8 0deg,
+            #e9edf2 0deg,
+            #e9edf2 360deg
+        );
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
 }
 
-.summary-info strong {
-    display: block;
+.sleep-circle::after{
+    content:"";
 
-    font-size: 14px;
+    position:absolute;
 
-    margin-bottom: 4px;
+    width:136px;
+    height:136px;
+
+    border-radius:50%;
+
+    background:white;
 }
 
-.summary-info span {
-    color: #718096;
+.circle-content{
+    position:relative;
 
-    font-size: 12px;
+    z-index:2;
+
+    text-align:center;
 }
 
-.summary-value {
-    text-align: right;
+.circle-content strong{
+    display:block;
+
+    font-size:27px;
+
+    color:#152143;
 }
 
-.summary-value strong {
-    display: block;
+.circle-content span{
+    display:block;
 
-    font-size: 14px;
+    color:#89939e;
+
+    font-size:11px;
+
+    margin-top:3px;
 }
 
-.summary-value span {
-    color: #718096;
+.sleep-message{
+    text-align:center;
 
-    font-size: 11px;
+    font-size:13px;
+
+    font-weight:700;
+
+    color:#34415a;
+
+    margin-bottom:18px;
+}
+
+.quality-box{
+    border-top:1px solid #edf0f3;
+
+    padding-top:16px;
+
+    margin-top:auto;
+}
+
+.quality-header{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:9px;
+}
+
+.quality-header strong{
+    font-size:13px;
+}
+
+.quality-header span{
+    color:#89939e;
+
+    font-size:11px;
+}
+
+.quality-bar{
+    width:100%;
+
+    height:7px;
+
+    border-radius:10px;
+
+    background:#edf0f3;
+
+    overflow:hidden;
+}
+
+.quality-fill{
+    width:0%;
+
+    height:100%;
+
+    background:#8055e8;
+
+    border-radius:10px;
 }
 
 
 /* =========================
-QUALITY
+SUMMARY ITEMS
 ========================= */
 
-.quality-box {
-    background: #f7fafc;
+.summary-items{
+    display:grid;
 
-    border-radius: 12px;
+    grid-template-columns:
+        repeat(2,1fr);
 
-    padding: 17px;
+    gap:10px;
 
-    margin-top: 20px;
+    margin-top:16px;
 }
 
-.quality-header {
-    display: flex;
+.summary-item{
+    background:#f8fafc;
 
-    align-items: center;
-    justify-content: space-between;
+    border-radius:10px;
 
-    margin-bottom: 10px;
+    padding:12px;
 }
 
-.quality-header strong {
-    font-size: 14px;
+.summary-item span{
+    display:block;
+
+    font-size:10px;
+
+    color:#89939e;
+
+    margin-bottom:5px;
 }
 
-.quality-header span {
-    color: #718096;
+.summary-item strong{
+    font-size:14px;
 
-    font-size: 12px;
-}
-
-.quality-bar {
-    width: 100%;
-    height: 9px;
-
-    background: #e7eef2;
-
-    border-radius: 10px;
-
-    overflow: hidden;
-}
-
-.quality-fill {
-    height: 100%;
-
-    width: 0%;
-
-    background: #8055e8;
-
-    border-radius: 10px;
-
-    transition: width .3s;
+    color:#162344;
 }
 
 
@@ -806,202 +899,211 @@ QUALITY
 MODAL
 ========================= */
 
-.modal {
-    position: fixed;
+.modal{
+    position:fixed;
 
-    inset: 0;
+    inset:0;
 
-    background: rgba(3,20,32,.55);
+    background:rgba(
+        5,
+        20,
+        35,
+        .52
+    );
 
-    display: none;
+    display:none;
 
-    align-items: center;
-    justify-content: center;
+    align-items:center;
+    justify-content:center;
 
-    z-index: 1000;
+    z-index:1000;
+
+    padding:20px;
 }
 
-.modal.show {
-    display: flex;
+.modal.show{
+    display:flex;
 }
 
-.modal-box {
-    width: 440px;
-    max-width: 92%;
+.modal-box{
+    width:480px;
 
-    background: white;
+    max-width:100%;
 
-    border-radius: 18px;
+    background:white;
 
-    padding: 25px;
+    border-radius:16px;
+
+    padding:22px;
 
     box-shadow:
-        0 25px 70px rgba(0,0,0,.22);
+        0 25px 70px
+        rgba(0,0,0,.22);
 }
 
-.modal-header {
-    display: flex;
+.modal-header{
+    display:flex;
 
-    align-items: center;
-    justify-content: space-between;
+    align-items:center;
+    justify-content:space-between;
 
-    margin-bottom: 22px;
+    margin-bottom:20px;
 }
 
-.modal-header h2 {
-    font-size: 21px;
+.modal-header h2{
+    font-size:20px;
+
+    color:#132143;
 }
 
-.close-btn {
-    width: 34px;
-    height: 34px;
+.close-btn{
+    width:34px;
+    height:34px;
 
-    border: none;
+    border:0;
 
-    border-radius: 50%;
+    border-radius:8px;
 
-    background: #f1f5f8;
+    background:#f2f5f7;
 
-    cursor: pointer;
+    color:#5e6874;
+
+    cursor:pointer;
 }
 
-.form-group {
-    margin-bottom: 17px;
+.form-row{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:14px;
 }
 
-.form-group label {
-    display: block;
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    margin-bottom: 7px;
+.form-group{
+    margin-bottom:15px;
 }
 
-.form-group input,
-.form-group select {
-    width: 100%;
+.form-group label{
+    display:block;
 
-    height: 46px;
+    font-size:12px;
 
-    border: 1px solid #dfe7ee;
+    font-weight:700;
 
-    border-radius: 9px;
+    color:#3d4a60;
 
-    background: #f8fafc;
-
-    padding: 0 13px;
-
-    outline: none;
-
-    font-size: 14px;
+    margin-bottom:7px;
 }
 
-.form-group input:focus,
-.form-group select:focus {
-    border-color: #8055e8;
+.form-group input{
+    width:100%;
 
-    background: white;
+    height:43px;
+
+    border:1px solid #dce3e8;
+
+    border-radius:9px;
+
+    padding:0 12px;
+
+    outline:none;
+
+    color:#172344;
+
+    background:white;
 }
 
-.form-row {
-    display: grid;
+.form-group input:focus{
+    border-color:#20df98;
 
-    grid-template-columns: 1fr 1fr;
-
-    gap: 12px;
+    box-shadow:
+        0 0 0 3px
+        rgba(32,223,152,.12);
 }
 
-.modal-buttons {
-    display: flex;
+.form-group input[readonly]{
+    background:#f5f8fa;
 
-    justify-content: flex-end;
+    color:#667384;
 
-    gap: 10px;
+    cursor:not-allowed;
+}
 
-    margin-top: 23px;
+.modal-buttons{
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:10px;
+
+    margin-top:5px;
 }
 
 .cancel-btn,
-.save-btn {
-    height: 43px;
+.save-btn{
+    height:42px;
 
-    padding: 0 18px;
+    border:0;
 
-    border-radius: 9px;
+    border-radius:9px;
 
-    cursor: pointer;
+    padding:0 17px;
 
-    font-size: 13px;
+    font-weight:800;
 
-    font-weight: 700;
+    cursor:pointer;
 }
 
-.cancel-btn {
-    border: 1px solid #dfe7ee;
+.cancel-btn{
+    background:#eef2f5;
 
-    background: white;
+    color:#596575;
 }
 
-.save-btn {
-    border: none;
+.save-btn{
+    background:#20df98;
 
-    background: #20e69b;
-
-    color: #05291e;
+    color:#052c1e;
 }
 
+@media(max-width:1100px){
 
-/* =========================
-LAPTOP
-========================= */
-
-@media (max-height: 850px) {
-
-    .sidebar {
-        padding-top: 10px;
+    .sidebar{
+        width:220px;
+        flex-basis:220px;
     }
 
-    .brand {
-        height: 82px;
-        flex-basis: 82px;
-        margin-bottom: 2px;
+    .main{
+        margin-left:220px;
     }
 
-    .brand img {
-        width: 184px;
+    .nav a{
+        padding:0 20px;
+        gap:18px;
     }
 
-    .nav a {
-        height: 43px;
-        flex-basis: 43px;
-        font-size: 14px;
+    .brand{
+        padding-left:10px;
     }
 
-    .nav a i {
-        font-size: 19px;
+    .brand img{
+        width:180px;
     }
 
-    .premium {
-        padding: 10px 13px;
-    }
-
-    .premium-feature {
-        margin: 5px 0;
-        font-size: 11px;
-    }
-
-    .premium button {
-        height: 37px;
+    .sleep-layout{
+        grid-template-columns:1fr;
     }
 
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <div class="app">
 
@@ -1012,67 +1114,143 @@ SIDEBAR
 
 <aside class="sidebar">
 
+
 <div class="brand">
-<img src="assets/logo.png" alt="FitTrack">
+
+<img
+    src="assets/logo.png"
+    alt="FitTrack"
+>
+
 </div>
 
 
 <nav class="nav">
 
+
 <a href="index.html">
+
 <i class="fa-solid fa-house"></i>
-<span>Dashboard</span>
+
+<span>
+Dashboard
+</span>
+
 </a>
+
 
 <a href="workouts.html">
+
 <i class="fa-solid fa-dumbbell"></i>
-<span>Workouts</span>
+
+<span>
+Workouts
+</span>
+
 </a>
+
 
 <a href="nutrition.html">
-<i class="fa-solid fa-apple-whole"></i>
-<span>Nutrition</span>
+
+<i class="fa-solid fa-utensils"></i>
+
+<span>
+Nutrition
+</span>
+
 </a>
+
 
 <a href="steps.html">
-<i class="fa-solid fa-person-walking"></i>
-<span>Steps</span>
+
+<i class="fa-solid fa-shoe-prints"></i>
+
+<span>
+Steps
+</span>
+
 </a>
 
-<a href="sleep.html" class="active">
+
+<a
+    href="sleep.html"
+    class="active"
+>
+
 <i class="fa-solid fa-moon"></i>
-<span>Sleep</span>
+
+<span>
+Sleep
+</span>
+
 </a>
+
 
 <a href="heart-rate.html">
-<i class="fa-regular fa-heart"></i>
-<span>Heart Rate</span>
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+<span>
+Heart Rate
+</span>
+
 </a>
+
 
 <a href="goals.html">
+
 <i class="fa-solid fa-bullseye"></i>
-<span>Goals</span>
+
+<span>
+Goals
+</span>
+
 </a>
+
 
 <a href="progress.html">
-<i class="fa-solid fa-chart-column"></i>
-<span>Progress</span>
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>
+Progress
+</span>
+
 </a>
+
 
 <a href="reports.html">
-<i class="fa-regular fa-file-lines"></i>
-<span>Reports</span>
+
+<i class="fa-solid fa-file-lines"></i>
+
+<span>
+Reports
+</span>
+
 </a>
+
 
 <a href="profile.html">
-<i class="fa-regular fa-user"></i>
-<span>Profile</span>
+
+<i class="fa-solid fa-user"></i>
+
+<span>
+Profile
+</span>
+
 </a>
 
+
 <a href="settings.html">
+
 <i class="fa-solid fa-gear"></i>
-<span>Settings</span>
+
+<span>
+Settings
+</span>
+
 </a>
+
 
 </nav>
 
@@ -1080,30 +1258,58 @@ SIDEBAR
 <div class="premium">
 
 <div class="premium-title">
+
 <i class="fa-solid fa-crown"></i>
-<span>Go Premium</span>
+
+<span>
+FitTrack Premium
+</span>
+
 </div>
+
 
 <div class="premium-feature">
-<i class="fa-solid fa-chart-line"></i>
-Advanced Insights
+
+<i class="fa-solid fa-check"></i>
+
+<span>
+Advanced Reports
+</span>
+
 </div>
+
 
 <div class="premium-feature">
-<i class="fa-solid fa-plus"></i>
-Personalized Plans
+
+<i class="fa-solid fa-check"></i>
+
+<span>
+Smart Health Insights
+</span>
+
 </div>
+
 
 <div class="premium-feature">
-<i class="fa-solid fa-shield-heart"></i>
-Ad-Free Experience
+
+<i class="fa-solid fa-check"></i>
+
+<span>
+Unlimited Tracking
+</span>
+
 </div>
 
-<button>
+
+<button
+    type="button"
+    onclick="alert('Premium feature coming soon!')"
+>
 Upgrade Now
 </button>
 
 </div>
+
 
 </aside>
 
@@ -1115,175 +1321,188 @@ MAIN
 <main class="main">
 
 
-<div class="topbar">
+<header class="topbar">
+
 
 <div class="page-title">
 
-<h1>Sleep</h1>
+<h1>
+Sleep
+</h1>
 
-<p>Track your sleep and improve your recovery.</p>
+<p>
+Track your sleep and recovery
+</p>
+
+</div>
+
+
+<div class="user-area">
+
+<div class="user-text">
+
+<strong id="profileName">
+User
+</strong>
+
+<span>
+Member
+</span>
 
 </div>
 
 
-<div class="top-actions">
-
-<div class="notification">
-<i class="fa-regular fa-bell"></i>
-</div>
-
-<div class="profile">
-
-<div class="profile-circle">
-R
-</div>
-
-<div class="profile-text">
-
-<strong>Ramu</strong>
-
-<span>Stay Consistent!</span>
-
+<div
+    class="avatar"
+    id="profileInitial"
+>
+U
 </div>
 
 </div>
 
-</div>
 
-</div>
+</header>
+
+
+<section class="content">
 
 
 <!-- =========================
-STATS
+TOP CARDS
 ========================= -->
 
-<section class="stats">
+<div class="top-cards">
 
 
-<div class="stat">
-
-<div class="stat-top">
+<div class="stat-card">
 
 <div class="stat-icon purple">
+
 <i class="fa-solid fa-moon"></i>
-</div>
-
-<div>
-
-<p>Last Night</p>
-
-<h3 id="totalSleep">
-7h 20m
-</h3>
 
 </div>
 
+<div class="stat-info">
+
+<span>
+Latest Sleep
+</span>
+
+<strong id="totalSleep">
+--
+</strong>
+
 </div>
 
-<p>Sleep duration</p>
-
 </div>
 
 
-<div class="stat">
-
-<div class="stat-top">
+<div class="stat-card">
 
 <div class="stat-icon blue">
+
 <i class="fa-solid fa-bed"></i>
-</div>
-
-<div>
-
-<p>Bedtime</p>
-
-<h3 id="bedtime">
-10:30 PM
-</h3>
 
 </div>
 
+<div class="stat-info">
+
+<span>
+Bedtime
+</span>
+
+<strong id="bedtime">
+--
+</strong>
+
 </div>
 
-<p>Last night</p>
-
 </div>
 
 
-<div class="stat">
-
-<div class="stat-top">
+<div class="stat-card">
 
 <div class="stat-icon green">
+
 <i class="fa-solid fa-sun"></i>
-</div>
-
-<div>
-
-<p>Wake Up</p>
-
-<h3 id="wakeTime">
-5:50 AM
-</h3>
 
 </div>
 
+<div class="stat-info">
+
+<span>
+Wake Up
+</span>
+
+<strong id="wakeTime">
+--
+</strong>
+
 </div>
 
-<p>Last morning</p>
-
 </div>
 
 
-<div class="stat">
-
-<div class="stat-top">
+<div class="stat-card">
 
 <div class="stat-icon orange">
+
 <i class="fa-solid fa-star"></i>
-</div>
-
-<div>
-
-<p>Sleep Quality</p>
-
-<h3 id="quality">
-82%
-</h3>
 
 </div>
 
+<div class="stat-info">
+
+<span>
+Sleep Quality
+</span>
+
+<strong id="quality">
+--
+</strong>
+
 </div>
 
-<p>Good quality</p>
-
 </div>
 
 
-</section>
+</div>
 
 
 <!-- =========================
-CONTENT
+SLEEP CONTENT
 ========================= -->
 
-<div class="content-grid">
+<div class="sleep-layout">
 
 
-<!-- LEFT -->
+<section class="card sleep-card">
 
-<section class="panel">
 
-<div class="panel-header">
+<div class="card-header">
 
-<h2>Sleep Overview</h2>
+<div>
+
+<h2>
+Sleep History
+</h2>
+
+<p>
+Your recorded sleep sessions
+</p>
+
+</div>
+
 
 <button
-class="add-sleep"
-id="openSleep"
+    class="add-btn"
+    id="openSleep"
+    type="button"
 >
 
 <i class="fa-solid fa-plus"></i>
+
 Add Sleep
 
 </button>
@@ -1291,231 +1510,139 @@ Add Sleep
 </div>
 
 
-<div class="sleep-summary">
-
 <div
-class="sleep-circle"
-id="sleepCircle"
+    class="sleep-list"
+    id="sleepList"
 >
-
-<div class="sleep-circle-content">
-
-<strong id="sleepPercent">
-92%
-</strong>
-
-<span>Goal</span>
-
-</div>
-
 </div>
 
 
-<div class="sleep-info">
-
-<h3 id="sleepMessage">
-Great sleep!
-</h3>
-
-<p>
-A consistent sleep schedule helps your body
-recover and keeps you energized throughout
-the day.
-</p>
+</section>
 
 
-<div class="quality-box">
-
-<div class="quality-header">
-
-<strong>Sleep Goal</strong>
-
-<span>
-<span id="sleepCurrent">
-7h 20m
-</span>
-/
-<span id="sleepGoal">
-8h
-</span>
-</span>
-
-</div>
-
-<div class="quality-bar">
-
-<div
-class="quality-fill"
-id="qualityFill"
-></div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+<section class="card summary-card">
 
 
-<h2 style="font-size:18px;margin-top:8px;margin-bottom:5px;">
-Recent Sleep
+<h2>
+Sleep Summary
 </h2>
 
 
-<div id="sleepList"></div>
+<div class="sleep-circle-wrap">
+
+<div
+    class="sleep-circle"
+    id="sleepCircle"
+>
+
+<div class="circle-content">
+
+<strong id="sleepPercent">
+0%
+</strong>
+
+<span>
+of 8h goal
+</span>
+
+</div>
+
+</div>
+
+</div>
 
 
-</section>
+<div
+    class="sleep-message"
+    id="sleepMessage"
+>
+No sleep recorded yet
+</div>
 
 
-<!-- RIGHT -->
+<div class="summary-items">
 
-<section class="panel">
 
-<div class="panel-header">
+<div class="summary-item">
 
-<h2>Sleep Summary</h2>
+<span>
+Current Sleep
+</span>
+
+<strong id="sleepCurrent">
+0h 0m
+</strong>
 
 </div>
 
 
 <div class="summary-item">
 
-<div class="summary-icon purple">
-
-<i class="fa-solid fa-moon"></i>
-
-</div>
-
-<div class="summary-info">
-
-<strong>Average Sleep</strong>
-
-<span>Recent records</span>
-
-</div>
-
-<div class="summary-value">
+<span>
+Average Sleep
+</span>
 
 <strong id="averageSleep">
-7h 20m
+--
 </strong>
-
-<span>per night</span>
-
-</div>
 
 </div>
 
 
 <div class="summary-item">
 
-<div class="summary-icon blue">
-
-<i class="fa-solid fa-bed"></i>
-
-</div>
-
-<div class="summary-info">
-
-<strong>Bedtime</strong>
-
-<span>Average</span>
-
-</div>
-
-<div class="summary-value">
+<span>
+Bedtime
+</span>
 
 <strong id="summaryBedtime">
-10:30 PM
+--
 </strong>
-
-<span>night</span>
-
-</div>
 
 </div>
 
 
 <div class="summary-item">
 
-<div class="summary-icon green">
-
-<i class="fa-solid fa-sun"></i>
-
-</div>
-
-<div class="summary-info">
-
-<strong>Wake Up</strong>
-
-<span>Average</span>
-
-</div>
-
-<div class="summary-value">
+<span>
+Wake Up
+</span>
 
 <strong id="summaryWake">
-5:50 AM
+--
 </strong>
 
-<span>morning</span>
-
 </div>
 
-</div>
-
-
-<div class="summary-item">
-
-<div class="summary-icon orange">
-
-<i class="fa-solid fa-star"></i>
-
-</div>
-
-<div class="summary-info">
-
-<strong>Quality</strong>
-
-<span>Average rating</span>
-
-</div>
-
-<div class="summary-value">
-
-<strong id="summaryQuality">
-82%
-</strong>
-
-<span>quality</span>
-
-</div>
 
 </div>
 
 
 <div class="quality-box">
 
+
 <div class="quality-header">
 
-<strong>Sleep Quality</strong>
+<strong>
+Sleep Quality
+</strong>
 
 <span id="qualityText">
-Good
+No data
 </span>
 
 </div>
 
+
 <div class="quality-bar">
 
 <div
-class="quality-fill"
-id="summaryQualityFill"
+    class="quality-fill"
+    id="summaryQualityFill"
 ></div>
 
 </div>
+
 
 </div>
 
@@ -1525,36 +1652,47 @@ id="summaryQualityFill"
 
 </div>
 
+
+</section>
+
+
 </main>
+
 
 </div>
 
 
 <!-- =========================
-MODAL
+ADD / EDIT SLEEP MODAL
 ========================= -->
 
 <div
-class="modal"
-id="sleepModal"
+    class="modal"
+    id="sleepModal"
 >
+
 
 <div class="modal-box">
 
 
 <div class="modal-header">
 
-<h2>Add Sleep</h2>
+
+<h2 id="modalTitle">
+Add Sleep
+</h2>
+
 
 <button
-class="close-btn"
-id="closeSleep"
-type="button"
+    class="close-btn"
+    id="closeSleep"
+    type="button"
 >
 
 <i class="fa-solid fa-xmark"></i>
 
 </button>
+
 
 </div>
 
@@ -1564,6 +1702,7 @@ type="button"
 
 <div class="form-row">
 
+
 <div class="form-group">
 
 <label>
@@ -1571,10 +1710,9 @@ Bedtime
 </label>
 
 <input
-type="time"
-id="bedtimeInput"
-value="22:30"
-required
+    type="time"
+    id="bedtimeInput"
+    required
 >
 
 </div>
@@ -1587,13 +1725,13 @@ Wake Up
 </label>
 
 <input
-type="time"
-id="wakeInput"
-value="05:50"
-required
+    type="time"
+    id="wakeInput"
+    required
 >
 
 </div>
+
 
 </div>
 
@@ -1605,13 +1743,13 @@ Sleep Duration (hours)
 </label>
 
 <input
-type="number"
-id="durationInput"
-placeholder="7.5"
-step="0.1"
-min="0.1"
-max="24"
-required
+    type="number"
+    id="durationInput"
+    step="0.1"
+    min="0.1"
+    max="24"
+    readonly
+    required
 >
 
 </div>
@@ -1624,12 +1762,12 @@ Sleep Quality (%)
 </label>
 
 <input
-type="number"
-id="qualityInput"
-placeholder="80"
-min="0"
-max="100"
-required
+    type="number"
+    id="qualityInput"
+    placeholder="80"
+    min="0"
+    max="100"
+    required
 >
 
 </div>
@@ -1637,159 +1775,299 @@ required
 
 <div class="modal-buttons">
 
+
 <button
-type="button"
-class="cancel-btn"
-id="cancelSleep"
+    type="button"
+    class="cancel-btn"
+    id="cancelSleep"
 >
 Cancel
 </button>
 
+
 <button
-type="submit"
-class="save-btn"
+    type="submit"
+    class="save-btn"
+    id="saveSleepButton"
 >
+
 <i class="fa-solid fa-check"></i>
+
 Add Sleep
+
 </button>
+
 
 </div>
 
 
 </form>
 
+
 </div>
+
 
 </div>
 
 
 <script>
 
-/* =========================
-ELEMENTS
-========================= */
 
-const sleepModal =
-    document.getElementById("sleepModal");
+/* ==========================================
+LOGIN PROTECTION
+========================================== */
 
-const openSleep =
-    document.getElementById("openSleep");
+if(
+    localStorage.getItem(
+        "fittrackLoggedIn"
+    ) !== "true"
+){
 
-const closeSleep =
-    document.getElementById("closeSleep");
-
-const cancelSleep =
-    document.getElementById("cancelSleep");
-
-const sleepForm =
-    document.getElementById("sleepForm");
-
-const sleepList =
-    document.getElementById("sleepList");
-
-
-/* =========================
-EDIT MODE
-========================= */
-
-let editingSleep = null;
-
-
-/* =========================
-LOAD DATA
-========================= */
-
-let savedSleep =
-    JSON.parse(
-        localStorage.getItem("fittrackSleep")
-    );
-
-
-/* =========================
-DEFAULT DATA
-========================= */
-
-if (!savedSleep) {
-
-    savedSleep = [
-
-        {
-            bedtime: "22:30",
-            wake: "05:50",
-            duration: 7.33,
-            quality: 82
-        },
-
-        {
-            bedtime: "22:45",
-            wake: "06:00",
-            duration: 7.25,
-            quality: 80
-        },
-
-        {
-            bedtime: "22:20",
-            wake: "05:40",
-            duration: 7.33,
-            quality: 85
-        }
-
-    ];
-
-
-    localStorage.setItem(
-        "fittrackSleep",
-        JSON.stringify(savedSleep)
-    );
+    window.location.href =
+        "login.html";
 
 }
 
 
-/* =========================
-FORMAT DURATION
-========================= */
+/* ==========================================
+CURRENT USER
+========================================== */
 
-function formatDuration(hours) {
+const currentUser =
+    JSON.parse(
+        localStorage.getItem(
+            "fittrackCurrentUser"
+        )
+    );
+
+
+if(
+    !currentUser ||
+    !currentUser.email
+){
+
+    window.location.href =
+        "login.html";
+
+}
+
+
+/* ==========================================
+ALL USER DATA
+========================================== */
+
+let allUserData =
+    JSON.parse(
+        localStorage.getItem(
+            "fittrackUserData"
+        )
+    ) || {};
+
+
+/* ==========================================
+CREATE USER DATA IF NEEDED
+========================================== */
+
+if(
+    !allUserData[currentUser.email]
+){
+
+    allUserData[currentUser.email] = {
+
+        workouts: [],
+
+        meals: [],
+
+        steps: [],
+
+        sleep: [],
+
+        heartRate: [],
+
+        goals: {},
+
+        profile: {
+
+            name:
+                currentUser.name,
+
+            email:
+                currentUser.email
+
+        },
+
+        settings: {}
+
+    };
+
+}
+
+
+/* ==========================================
+CURRENT USER DATA
+========================================== */
+
+let userData =
+    allUserData[currentUser.email];
+
+
+/* ==========================================
+MAKE SURE SLEEP ARRAY EXISTS
+========================================== */
+
+if(
+    !Array.isArray(
+        userData.sleep
+    )
+){
+
+    userData.sleep = [];
+
+}
+
+
+/* ==========================================
+SAVE INITIAL USER STRUCTURE
+========================================== */
+
+allUserData[currentUser.email] =
+    userData;
+
+
+localStorage.setItem(
+    "fittrackUserData",
+    JSON.stringify(
+        allUserData
+    )
+);
+
+
+/* ==========================================
+PROFILE
+========================================== */
+
+const profileName =
+    userData.profile &&
+    userData.profile.name
+        ? userData.profile.name
+        : currentUser.name;
+
+
+document.getElementById(
+    "profileName"
+).textContent =
+    profileName || "User";
+
+
+document.getElementById(
+    "profileInitial"
+).textContent =
+    profileName
+        ? profileName
+            .charAt(0)
+            .toUpperCase()
+        : "U";
+
+
+/* ==========================================
+SLEEP DATA
+========================================== */
+
+let savedSleep =
+    Array.isArray(
+        userData.sleep
+    )
+        ? userData.sleep
+        : [];
+
+
+/* ==========================================
+EDIT MODE
+========================================== */
+
+let editingSleepIndex = -1;
+
+
+/* ==========================================
+FORMAT DURATION
+========================================== */
+
+function formatDuration(hours){
+
+    hours =
+        Number(hours) || 0;
+
 
     const h =
         Math.floor(hours);
 
+
     const minutes =
         Math.round(
-            (hours - h) * 60
+            (
+                hours - h
+            ) * 60
         );
 
-    if (minutes === 60) {
 
-        return (h + 1) + "h 0m";
+    if(
+        minutes === 60
+    ){
+
+        return (
+            h + 1
+        ) +
+        "h 0m";
 
     }
 
-    return h + "h " + minutes + "m";
+
+    return (
+        h +
+        "h " +
+        minutes +
+        "m"
+    );
 
 }
 
 
-/* =========================
+/* ==========================================
 FORMAT TIME
-========================= */
+========================================== */
 
-function formatTime(time) {
+function formatTime(time){
+
+    if(
+        !time
+    ){
+
+        return "--";
+
+    }
+
 
     const parts =
         time.split(":");
 
+
     let hour =
         Number(parts[0]);
 
+
     const minute =
-        parts[1];
+        parts[1] || "00";
+
 
     const suffix =
-        hour >= 12 ? "PM" : "AM";
+        hour >= 12
+            ? "PM"
+            : "AM";
+
 
     hour =
         hour % 12 || 12;
+
 
     return (
         hour +
@@ -1802,123 +2080,321 @@ function formatTime(time) {
 }
 
 
-/* =========================
-CREATE ROW
-========================= */
+/* ==========================================
+AUTO CALCULATE SLEEP DURATION
+========================================== */
 
-function createSleepRow(sleep) {
+function calculateSleepDuration(){
+
+    const bedtime =
+        document.getElementById(
+            "bedtimeInput"
+        ).value;
+
+
+    const wake =
+        document.getElementById(
+            "wakeInput"
+        ).value;
+
+
+    const durationInput =
+        document.getElementById(
+            "durationInput"
+        );
+
+
+    if(
+        !bedtime ||
+        !wake
+    ){
+
+        durationInput.value =
+            "";
+
+        return;
+
+    }
+
+
+    const bedtimeParts =
+        bedtime.split(":");
+
+
+    const wakeParts =
+        wake.split(":");
+
+
+    let bedtimeMinutes =
+        Number(
+            bedtimeParts[0]
+        ) * 60 +
+        Number(
+            bedtimeParts[1]
+        );
+
+
+    let wakeMinutes =
+        Number(
+            wakeParts[0]
+        ) * 60 +
+        Number(
+            wakeParts[1]
+        );
+
+
+    /* ==========================================
+    SLEEP CROSSES MIDNIGHT
+    ========================================== */
+
+    if(
+        wakeMinutes <=
+        bedtimeMinutes
+    ){
+
+        wakeMinutes +=
+            24 * 60;
+
+    }
+
+
+    const durationMinutes =
+        wakeMinutes -
+        bedtimeMinutes;
+
+
+    const durationHours =
+        durationMinutes / 60;
+
+
+    durationInput.value =
+        durationHours.toFixed(1);
+
+}
+
+
+/* ==========================================
+TIME CHANGE EVENTS
+========================================== */
+
+document.getElementById(
+    "bedtimeInput"
+).addEventListener(
+    "input",
+    calculateSleepDuration
+);
+
+
+document.getElementById(
+    "wakeInput"
+).addEventListener(
+    "input",
+    calculateSleepDuration
+);
+
+
+/* ==========================================
+SAVE USER DATA
+========================================== */
+
+function saveUserData(){
+
+    userData.sleep =
+        savedSleep;
+
+
+    allUserData[
+        currentUser.email
+    ] =
+        userData;
+
+
+    localStorage.setItem(
+        "fittrackUserData",
+        JSON.stringify(
+            allUserData
+        )
+    );
+
+}
+
+
+/* ==========================================
+CREATE SLEEP ROW
+========================================== */
+
+function createSleepRow(
+    sleep,
+    index
+){
 
     const row =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
+
 
     row.className =
         "sleep-row";
 
 
     const icon =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
+
 
     icon.className =
         "sleep-icon purple";
+
 
     icon.innerHTML =
         '<i class="fa-solid fa-moon"></i>';
 
 
     const info =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
+
 
     info.className =
         "sleep-info-row";
 
 
     const title =
-        document.createElement("strong");
+        document.createElement(
+            "strong"
+        );
+
 
     title.textContent =
         formatDuration(
-            Number(sleep.duration)
+            sleep.duration
         );
 
 
     const details =
-        document.createElement("span");
+        document.createElement(
+            "span"
+        );
+
 
     details.textContent =
-        formatTime(sleep.bedtime) +
+        formatTime(
+            sleep.bedtime
+        ) +
         " → " +
-        formatTime(sleep.wake);
+        formatTime(
+            sleep.wake
+        );
 
 
-    info.appendChild(title);
+    info.appendChild(
+        title
+    );
 
-    info.appendChild(details);
+
+    info.appendChild(
+        details
+    );
 
 
     const value =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
+
 
     value.className =
         "sleep-value";
 
 
     const quality =
-        document.createElement("strong");
+        document.createElement(
+            "strong"
+        );
+
 
     quality.textContent =
-        sleep.quality + "%";
+        Number(
+            sleep.quality
+        ) +
+        "%";
 
 
     const qualityText =
-        document.createElement("span");
+        document.createElement(
+            "span"
+        );
+
 
     qualityText.textContent =
         "quality";
 
 
-    value.appendChild(quality);
+    value.appendChild(
+        quality
+    );
 
-    value.appendChild(qualityText);
+
+    value.appendChild(
+        qualityText
+    );
 
 
     const actions =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
+
 
     actions.className =
         "sleep-actions";
 
 
-    /* EDIT */
+    /* ==========================================
+    EDIT
+    ========================================== */
 
     const editButton =
-        document.createElement("button");
+        document.createElement(
+            "button"
+        );
+
+
+    editButton.type =
+        "button";
+
 
     editButton.className =
         "sleep-edit";
 
-    editButton.innerHTML =
-        '<i class="fa-solid fa-pen"></i>';
 
     editButton.title =
         "Edit sleep";
 
 
+    editButton.innerHTML =
+        '<i class="fa-solid fa-pen"></i>';
+
+
     editButton.addEventListener(
         "click",
-        function() {
+        function(){
 
-            editingSleep =
-                sleep;
+            editingSleepIndex =
+                index;
 
 
-            document.querySelector(
-                ".modal-header h2"
+            document.getElementById(
+                "modalTitle"
             ).textContent =
                 "Edit Sleep";
 
 
-            document.querySelector(
-                ".save-btn"
+            document.getElementById(
+                "saveSleepButton"
             ).innerHTML =
                 '<i class="fa-solid fa-check"></i> Save Changes';
 
@@ -1935,10 +2411,12 @@ function createSleepRow(sleep) {
                 sleep.wake;
 
 
-            document.getElementById(
-                "durationInput"
-            ).value =
-                sleep.duration;
+            /*
+            Recalculate automatically
+            from bedtime and wake time.
+            */
+
+            calculateSleepDuration();
 
 
             document.getElementById(
@@ -1955,39 +2433,58 @@ function createSleepRow(sleep) {
     );
 
 
-    /* DELETE */
+    /* ==========================================
+    DELETE
+    ========================================== */
 
     const deleteButton =
-        document.createElement("button");
+        document.createElement(
+            "button"
+        );
+
+
+    deleteButton.type =
+        "button";
+
 
     deleteButton.className =
         "sleep-delete";
 
-    deleteButton.innerHTML =
-        '<i class="fa-solid fa-trash"></i>';
 
     deleteButton.title =
         "Delete sleep";
 
 
+    deleteButton.innerHTML =
+        '<i class="fa-solid fa-trash"></i>';
+
+
     deleteButton.addEventListener(
         "click",
-        function() {
+        function(){
 
-            savedSleep =
-                savedSleep.filter(
-                    function(item) {
-
-                        return item !== sleep;
-
-                    }
+            const confirmed =
+                confirm(
+                    "Delete this sleep record?"
                 );
 
 
-            localStorage.setItem(
-                "fittrackSleep",
-                JSON.stringify(savedSleep)
+            if(
+                !confirmed
+            ){
+
+                return;
+
+            }
+
+
+            savedSleep.splice(
+                index,
+                1
             );
+
+
+            saveUserData();
 
 
             renderSleep();
@@ -2000,18 +2497,30 @@ function createSleepRow(sleep) {
         editButton
     );
 
+
     actions.appendChild(
         deleteButton
     );
 
 
-    row.appendChild(icon);
+    row.appendChild(
+        icon
+    );
 
-    row.appendChild(info);
 
-    row.appendChild(value);
+    row.appendChild(
+        info
+    );
 
-    row.appendChild(actions);
+
+    row.appendChild(
+        value
+    );
+
+
+    row.appendChild(
+        actions
+    );
 
 
     return row;
@@ -2019,24 +2528,70 @@ function createSleepRow(sleep) {
 }
 
 
-/* =========================
+/* ==========================================
 RENDER
-========================= */
+========================================== */
 
-function renderSleep() {
+function renderSleep(){
 
-    sleepList.innerHTML = "";
+    sleepList.innerHTML =
+        "";
 
 
-    savedSleep.forEach(
-        function(sleep) {
+    if(
+        savedSleep.length === 0
+    ){
 
-            sleepList.appendChild(
-                createSleepRow(sleep)
+        const empty =
+            document.createElement(
+                "div"
             );
 
-        }
-    );
+
+        empty.className =
+            "empty-state";
+
+
+        empty.innerHTML = `
+
+            <i class="fa-solid fa-moon"></i>
+
+            <h3>
+                No sleep recorded yet
+            </h3>
+
+            <p>
+                Click "Add Sleep" to record your sleep.
+            </p>
+
+        `;
+
+
+        sleepList.appendChild(
+            empty
+        );
+
+    }
+
+    else{
+
+        savedSleep.forEach(
+            function(
+                sleep,
+                index
+            ){
+
+                sleepList.appendChild(
+                    createSleepRow(
+                        sleep,
+                        index
+                    )
+                );
+
+            }
+        );
+
+    }
 
 
     updateTotals();
@@ -2044,25 +2599,144 @@ function renderSleep() {
 }
 
 
-/* =========================
+/* ==========================================
 UPDATE TOTALS
-========================= */
+========================================== */
 
-function updateTotals() {
+function updateTotals(){
 
-    if (savedSleep.length === 0) {
+    if(
+        savedSleep.length === 0
+    ){
+
+        /* TOP CARDS */
+
+        document.getElementById(
+            "totalSleep"
+        ).textContent =
+            "--";
+
+
+        document.getElementById(
+            "bedtime"
+        ).textContent =
+            "--";
+
+
+        document.getElementById(
+            "wakeTime"
+        ).textContent =
+            "--";
+
+
+        document.getElementById(
+            "quality"
+        ).textContent =
+            "--";
+
+
+        /* CIRCLE */
+
+        document.getElementById(
+            "sleepPercent"
+        ).textContent =
+            "0%";
+
+
+        document.getElementById(
+            "sleepCircle"
+        ).style.background =
+            "conic-gradient(" +
+            "#e9edf2 0deg, " +
+            "#e9edf2 360deg)";
+
+
+        document.getElementById(
+            "sleepMessage"
+        ).textContent =
+            "No sleep recorded yet";
+
+
+        document.getElementById(
+            "sleepCurrent"
+        ).textContent =
+            "0h 0m";
+
+
+        document.getElementById(
+            "qualityFill"
+        ).style.width =
+            "0%";
+
+
+        /* RIGHT */
+
+        document.getElementById(
+            "averageSleep"
+        ).textContent =
+            "--";
+
+
+        document.getElementById(
+            "summaryBedtime"
+        ).textContent =
+            "--";
+
+
+        document.getElementById(
+            "summaryWake"
+        ).textContent =
+            "--";
+
+
+        document.getElementById(
+            "summaryQuality"
+        ).textContent =
+            "--";
+
+
+        document.getElementById(
+            "summaryQualityFill"
+        ).style.width =
+            "0%";
+
+
+        document.getElementById(
+            "qualityText"
+        ).textContent =
+            "No data";
+
 
         return;
 
     }
 
 
+    /* ==========================================
+    LATEST RECORD
+    ========================================== */
+
+    const latest =
+        savedSleep[0];
+
+
+    /* ==========================================
+    AVERAGE DURATION
+    ========================================== */
+
     const totalHours =
         savedSleep.reduce(
-            function(sum, item) {
+            function(
+                sum,
+                item
+            ){
 
-                return sum +
-                    Number(item.duration);
+                return (
+                    sum +
+                    Number(
+                        item.duration || 0
+                    )
+                );
 
             },
             0
@@ -2074,38 +2748,69 @@ function updateTotals() {
         savedSleep.length;
 
 
-    const averageQuality =
-        savedSleep.reduce(
-            function(sum, item) {
+    /* ==========================================
+    AVERAGE QUALITY
+    ========================================== */
 
-                return sum +
-                    Number(item.quality);
+    const totalQuality =
+        savedSleep.reduce(
+            function(
+                sum,
+                item
+            ){
+
+                return (
+                    sum +
+                    Number(
+                        item.quality || 0
+                    )
+                );
 
             },
             0
-        ) /
+        );
+
+
+    const averageQuality =
+        totalQuality /
         savedSleep.length;
 
 
-    const latest =
-        savedSleep[0];
+    /* ==========================================
+    SLEEP GOAL = 8 HOURS
+    ========================================== */
+
+    const sleepGoal =
+        8;
+
+
+    const latestDuration =
+        Number(
+            latest.duration || 0
+        );
 
 
     const sleepPercent =
         Math.min(
+            100,
             Math.round(
-                (Number(latest.duration) / 8) *
-                100
-            ),
-            100
+                (
+                    latestDuration /
+                    sleepGoal
+                ) * 100
+            )
         );
 
+
+    /* ==========================================
+    TOP CARDS
+    ========================================== */
 
     document.getElementById(
         "totalSleep"
     ).textContent =
         formatDuration(
-            Number(latest.duration)
+            latestDuration
         );
 
 
@@ -2129,9 +2834,94 @@ function updateTotals() {
         "quality"
     ).textContent =
         Math.round(
-            latest.quality
-        ) + "%";
+            Number(
+                latest.quality || 0
+            )
+        ) +
+        "%";
 
+
+    /* ==========================================
+    MAIN CIRCLE
+    ========================================== */
+
+    document.getElementById(
+        "sleepPercent"
+    ).textContent =
+        sleepPercent +
+        "%";
+
+
+    const degrees =
+        sleepPercent * 3.6;
+
+
+    document.getElementById(
+        "sleepCircle"
+    ).style.background =
+        "conic-gradient(" +
+        "#8055e8 " +
+        degrees +
+        "deg, " +
+        "#e9edf2 " +
+        degrees +
+        "deg)";
+
+
+    document.getElementById(
+        "sleepCurrent"
+    ).textContent =
+        formatDuration(
+            latestDuration
+        );
+
+
+    document.getElementById(
+        "qualityFill"
+    ).style.width =
+        sleepPercent +
+        "%";
+
+
+    /* ==========================================
+    MESSAGE
+    ========================================== */
+
+    if(
+        latestDuration >= 8
+    ){
+
+        document.getElementById(
+            "sleepMessage"
+        ).textContent =
+            "Great sleep!";
+
+    }
+
+    else if(
+        latestDuration >= 7
+    ){
+
+        document.getElementById(
+            "sleepMessage"
+        ).textContent =
+            "Good sleep!";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "sleepMessage"
+        ).textContent =
+            "Try to get more sleep.";
+
+    }
+
+
+    /* ==========================================
+    RIGHT SUMMARY
+    ========================================== */
 
     document.getElementById(
         "averageSleep"
@@ -2157,46 +2947,6 @@ function updateTotals() {
         );
 
 
-    document.getElementById(
-        "summaryQuality"
-    ).textContent =
-        Math.round(
-            averageQuality
-        ) + "%";
-
-
-    document.getElementById(
-        "sleepPercent"
-    ).textContent =
-        sleepPercent + "%";
-
-
-    document.getElementById(
-        "sleepCurrent"
-    ).textContent =
-        formatDuration(
-            Number(latest.duration)
-        );
-
-
-    const degrees =
-        sleepPercent * 3.6;
-
-
-    document.getElementById(
-        "sleepCircle"
-    ).style.background =
-        "conic-gradient(#8055e8 " +
-        degrees +
-        "deg, #e9edf2 " +
-        degrees +
-        "deg)";
-
-
-    document.getElementById(
-        "qualityFill"
-    ).style.width =
-        sleepPercent + "%";
 
 
     document.getElementById(
@@ -2204,48 +2954,37 @@ function updateTotals() {
     ).style.width =
         Math.round(
             averageQuality
-        ) + "%";
+        ) +
+        "%";
 
 
-    if (latest.duration >= 8) {
+    /* ==========================================
+    QUALITY TEXT
+    ========================================== */
 
-        document.getElementById(
-            "sleepMessage"
-        ).textContent =
-            "Great sleep!";
-
-    } else if (latest.duration >= 7) {
-
-        document.getElementById(
-            "sleepMessage"
-        ).textContent =
-            "Good sleep!";
-
-    } else {
-
-        document.getElementById(
-            "sleepMessage"
-        ).textContent =
-            "Try to get more sleep.";
-
-    }
-
-
-    if (averageQuality >= 85) {
+    if(
+        averageQuality >= 85
+    ){
 
         document.getElementById(
             "qualityText"
         ).textContent =
             "Excellent";
 
-    } else if (averageQuality >= 70) {
+    }
+
+    else if(
+        averageQuality >= 70
+    ){
 
         document.getElementById(
             "qualityText"
         ).textContent =
             "Good";
 
-    } else {
+    }
+
+    else{
 
         document.getElementById(
             "qualityText"
@@ -2257,40 +2996,69 @@ function updateTotals() {
 }
 
 
-/* =========================
-OPEN ADD
-========================= */
+/* ==========================================
+ELEMENTS
+========================================== */
+
+const sleepModal =
+    document.getElementById(
+        "sleepModal"
+    );
+
+
+const openSleep =
+    document.getElementById(
+        "openSleep"
+    );
+
+
+const closeSleep =
+    document.getElementById(
+        "closeSleep"
+    );
+
+
+const cancelSleep =
+    document.getElementById(
+        "cancelSleep"
+    );
+
+
+const sleepForm =
+    document.getElementById(
+        "sleepForm"
+    );
+
+
+const sleepList =
+    document.getElementById(
+        "sleepList"
+    );
+
+
+/* ==========================================
+OPEN ADD SLEEP
+========================================== */
 
 openSleep.addEventListener(
     "click",
-    function() {
+    function(){
 
-        editingSleep = null;
+        editingSleepIndex =
+            -1;
 
 
         sleepForm.reset();
 
 
         document.getElementById(
-            "bedtimeInput"
-        ).value =
-            "22:30";
-
-
-        document.getElementById(
-            "wakeInput"
-        ).value =
-            "05:50";
-
-
-        document.querySelector(
-            ".modal-header h2"
+            "modalTitle"
         ).textContent =
             "Add Sleep";
 
 
-        document.querySelector(
-            ".save-btn"
+        document.getElementById(
+            "saveSleepButton"
         ).innerHTML =
             '<i class="fa-solid fa-check"></i> Add Sleep';
 
@@ -2303,29 +3071,32 @@ openSleep.addEventListener(
 );
 
 
-/* =========================
-CLOSE
-========================= */
+/* ==========================================
+CLOSE MODAL
+========================================== */
 
-function closeSleepModal() {
+function closeSleepModal(){
 
     sleepModal.classList.remove(
         "show"
     );
 
+
     sleepForm.reset();
 
-    editingSleep = null;
+
+    editingSleepIndex =
+        -1;
 
 
-    document.querySelector(
-        ".modal-header h2"
+    document.getElementById(
+        "modalTitle"
     ).textContent =
         "Add Sleep";
 
 
-    document.querySelector(
-        ".save-btn"
+    document.getElementById(
+        "saveSleepButton"
     ).innerHTML =
         '<i class="fa-solid fa-check"></i> Add Sleep';
 
@@ -2344,13 +3115,13 @@ cancelSleep.addEventListener(
 );
 
 
-/* =========================
-SAVE
-========================= */
+/* ==========================================
+SAVE / EDIT SLEEP
+========================================== */
 
 sleepForm.addEventListener(
     "submit",
-    function(event) {
+    function(event){
 
         event.preventDefault();
 
@@ -2365,6 +3136,14 @@ sleepForm.addEventListener(
             document.getElementById(
                 "wakeInput"
             ).value;
+
+
+        /*
+        Always calculate duration
+        from bedtime and wake time.
+        */
+
+        calculateSleepDuration();
 
 
         const duration =
@@ -2383,13 +3162,17 @@ sleepForm.addEventListener(
             );
 
 
-        if (
+        if(
             !bedtime ||
             !wake ||
             duration <= 0 ||
             quality < 0 ||
             quality > 100
-        ) {
+        ){
+
+            alert(
+                "Please enter valid sleep details."
+            );
 
             return;
 
@@ -2398,32 +3181,47 @@ sleepForm.addEventListener(
 
         const sleepData = {
 
-            bedtime: bedtime,
+            bedtime:
+                bedtime,
 
-            wake: wake,
+            wake:
+                wake,
 
-            duration: duration,
+            duration:
+                duration,
 
-            quality: quality
+            quality:
+                quality,
+
+            date:
+                new Date()
+                    .toISOString()
+                    .split("T")[0]
 
         };
 
 
-        if (editingSleep) {
+        /* ==========================================
+        EDIT
+        ========================================== */
 
-            editingSleep.bedtime =
-                sleepData.bedtime;
+        if(
+            editingSleepIndex >= 0
+        ){
 
-            editingSleep.wake =
-                sleepData.wake;
+            savedSleep[
+                editingSleepIndex
+            ] =
+                sleepData;
 
-            editingSleep.duration =
-                sleepData.duration;
+        }
 
-            editingSleep.quality =
-                sleepData.quality;
 
-        } else {
+        /* ==========================================
+        ADD
+        ========================================== */
+
+        else{
 
             savedSleep.unshift(
                 sleepData
@@ -2431,33 +3229,28 @@ sleepForm.addEventListener(
 
         }
 
+saveUserData();
 
-        localStorage.setItem(
-            "fittrackSleep",
-            JSON.stringify(savedSleep)
-        );
+closeSleepModal();
 
-
-        renderSleep();
-
-
-        closeSleepModal();
+renderSleep();
 
     }
 );
 
 
-/* =========================
+/* ==========================================
 OUTSIDE CLICK
-========================= */
+========================================== */
 
 sleepModal.addEventListener(
     "click",
-    function(event) {
+    function(event){
 
-        if (
-            event.target === sleepModal
-        ) {
+        if(
+            event.target ===
+            sleepModal
+        ){
 
             closeSleepModal();
 
@@ -2467,18 +3260,21 @@ sleepModal.addEventListener(
 );
 
 
-/* =========================
-ESC
-========================= */
+/* ==========================================
+ESC KEY
+========================================== */
 
 document.addEventListener(
     "keydown",
-    function(event) {
+    function(event){
 
-        if (
-            event.key === "Escape" &&
-            sleepModal.classList.contains("show")
-        ) {
+        if(
+            event.key ===
+            "Escape" &&
+            sleepModal.classList.contains(
+                "show"
+            )
+        ){
 
             closeSleepModal();
 
@@ -2488,16 +3284,14 @@ document.addEventListener(
 );
 
 
-/* =========================
+/* ==========================================
 INITIAL LOAD
-========================= */
+========================================== */
 
 renderSleep();
 
 </script>
 
-<script>
-    if (localStorage.getItem("fittrackLoggedIn") !== "true") {
-        window.location.href = "login.html";
-    }
-</script>
+</body>
+
+</html>

@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>FitTrack - Goals</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com"
+>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet"
+>
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
 
 <style>
+
+/* ==========================================
+RESET
+========================================== */
 
 *{
     margin:0;
@@ -21,46 +41,79 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     box-sizing:border-box;
 }
 
-html,body{
-    width:100%;
-    height:100%;
-}
 
 body{
+
     font-family:"Inter",sans-serif;
+
     background:#f4f8fb;
+
     color:#07183b;
-    overflow:hidden;
+
+    min-height:100vh;
+
 }
+
+
+/* ==========================================
+APP
+========================================== */
 
 .app{
-    width:100%;
-    height:100vh;
+
     display:flex;
+
+    min-height:100vh;
+
 }
 
-/* SIDEBAR */
+
+/* =========================
+SIDEBAR
+========================= */
 
 .sidebar{
     width:263px;
     height:100vh;
     flex:0 0 263px;
-    background:linear-gradient(180deg,#061c2c 0%,#071c2b 100%);
+
+    background:linear-gradient(
+        180deg,
+        #061c2c 0%,
+        #071c2b 100%
+    );
+
     color:white;
+
     padding:18px 9px 16px;
+
     display:flex;
     flex-direction:column;
+
     overflow:hidden;
+
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
 }
+
+
+/* =========================
+BRAND
+========================= */
 
 .brand{
     height:100px;
     flex:0 0 100px;
+
     display:flex;
     align-items:center;
+
     padding-left:20px;
     margin-bottom:8px;
 }
+
 
 .brand img{
     width:196px;
@@ -68,576 +121,187 @@ body{
     object-fit:contain;
 }
 
+
+/* =========================
+NAVIGATION
+========================= */
+
 .nav{
     display:flex;
     flex-direction:column;
     gap:2px;
 }
 
+
 .nav a{
     height:49px;
     flex:0 0 49px;
+
     border-radius:11px;
+
     display:flex;
     align-items:center;
+
     gap:28px;
     padding:0 28px;
+
     color:#e8f0f7;
+
     text-decoration:none;
+
     font-size:16px;
     font-weight:500;
+
     position:relative;
+
+    transition:.18s;
 }
+
 
 .nav a i{
     width:25px;
     flex:0 0 25px;
+
     text-align:center;
+
     font-size:22px;
 }
+
 
 .nav a:hover{
     background:#12344a;
 }
+
 
 .nav a.active{
     background:#12344a;
     font-weight:700;
 }
 
+
 .nav a.active::before{
     content:"";
+
     position:absolute;
+
     left:-9px;
     top:0;
     bottom:0;
+
     width:8px;
+
     border-radius:0 6px 6px 0;
+
     background:#20e69b;
 }
+
 
 .nav a.active i{
     color:#29e9a0;
 }
 
-/* PREMIUM */
+
+/* =========================
+PREMIUM
+========================= */
 
 .premium{
     margin:auto 15px 0;
+
     border:1px solid #1d4158;
+
     background:rgba(10,40,57,.7);
+
     border-radius:12px;
+
     padding:14px 16px 13px;
 }
+
 
 .premium-title{
     display:flex;
     align-items:center;
+
     gap:10px;
+
     color:#ffd21f;
+
     font-weight:800;
     font-size:15px;
+
     margin-bottom:12px;
 }
 
+
 .premium-feature{
     font-size:12px;
+
     margin:8px 0;
+
     color:#dce8ee;
+
     display:flex;
+
     gap:10px;
+
     align-items:center;
 }
+
 
 .premium-feature i{
     width:15px;
     color:#24e8a0;
 }
 
+
 .premium button{
     width:100%;
     height:43px;
+
     margin-top:8px;
+
     border:0;
+
     border-radius:12px;
-    background:linear-gradient(90deg,#1ce79a,#2ce9a0);
+
+    background:linear-gradient(
+        90deg,
+        #1ce79a,
+        #2ce9a0
+    );
+
     color:#03251a;
+
     font-size:16px;
     font-weight:800;
+
     cursor:pointer;
 }
 
-/* MAIN */
+
+/* =========================
+MAIN
+========================= */
 
 .main{
+    margin-left:263px;
+
     flex:1;
     min-width:0;
+
     height:100vh;
+
     padding:25px 30px 30px;
+
     overflow-y:auto;
     overflow-x:hidden;
 }
 
-/* TOP */
 
-.topbar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    margin-bottom:22px;
-}
-
-.page-title h1{
-    font-size:28px;
-    margin-bottom:6px;
-}
-
-.page-title p{
-    color:#718096;
-    font-size:13px;
-}
-
-.top-actions{
-    display:flex;
-    align-items:center;
-    gap:20px;
-}
-
-.notification{
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    background:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 3px 12px rgba(7,24,59,.08);
-    font-size:18px;
-}
-
-.profile{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.profile-circle{
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    background:#263c4a;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:800;
-}
-
-.profile-text strong{
-    display:block;
-    font-size:14px;
-}
-
-.profile-text span{
-    color:#718096;
-    font-size:12px;
-}
-
-/* GOAL CARDS */
-
-.goal-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-    margin-bottom:20px;
-}
-
-.goal-card{
-    background:white;
-    border:1px solid #e4ebf0;
-    border-radius:14px;
-    padding:18px;
-    box-shadow:0 3px 12px rgba(7,24,59,.05);
-}
-
-.goal-card-top{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    margin-bottom:14px;
-}
-
-.goal-icon{
-    width:43px;
-    height:43px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:18px;
-}
-
-.green{
-    background:#dff8ed;
-    color:#0bb77b;
-}
-
-.blue{
-    background:#dff1ff;
-    color:#179fe4;
-}
-
-.red{
-    background:#ffe1e7;
-    color:#ef4565;
-}
-
-.purple{
-    background:#eee2ff;
-    color:#7c4ce5;
-}
-
-.orange{
-    background:#fff0d9;
-    color:#f59e0b;
-}
-
-.goal-card p{
-    color:#718096;
-    font-size:12px;
-}
-
-.goal-card h3{
-    font-size:21px;
-    margin-top:3px;
-}
-
-.progress-bar{
-    width:100%;
-    height:8px;
-    background:#e8eef2;
-    border-radius:10px;
-    overflow:hidden;
-    margin-top:10px;
-}
-
-.progress-fill{
-    height:100%;
-    border-radius:10px;
-    transition:.3s;
-}
-
-.fill-green{
-    background:#20d99a;
-}
-
-.fill-blue{
-    background:#3d91ed;
-}
-
-.fill-red{
-    background:#f54867;
-}
-
-.fill-purple{
-    background:#8350e8;
-}
-
-/* CONTENT */
-
-.content-grid{
-    display:grid;
-    grid-template-columns:1.45fr 1fr;
-    gap:18px;
-}
-
-.panel{
-    background:white;
-    border:1px solid #e4ebf0;
-    border-radius:15px;
-    padding:20px;
-    box-shadow:0 3px 12px rgba(7,24,59,.05);
-}
-
-.panel-header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    margin-bottom:18px;
-}
-
-.panel-header h2{
-    font-size:18px;
-}
-
-.edit-all{
-    border:0;
-    background:#20e69b;
-    color:#05291e;
-    font-weight:800;
-    padding:10px 17px;
-    border-radius:9px;
-    cursor:pointer;
-}
-
-/* GOAL ROW */
-
-.goal-row{
-    display:flex;
-    align-items:center;
-    padding:17px 0;
-    border-bottom:1px solid #edf1f4;
-}
-
-.goal-row:last-child{
-    border-bottom:none;
-}
-
-.row-icon{
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-right:14px;
-    flex-shrink:0;
-}
-
-.row-info{
-    flex:1;
-    min-width:0;
-}
-
-.row-info strong{
-    display:block;
-    font-size:14px;
-    margin-bottom:4px;
-}
-
-.row-info span{
-    color:#718096;
-    font-size:12px;
-}
-
-.row-progress{
-    width:170px;
-    margin:0 15px;
-}
-
-.row-progress-top{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:6px;
-}
-
-.row-progress-top span{
-    color:#718096;
-    font-size:11px;
-}
-
-.row-bar{
-    width:100%;
-    height:8px;
-    background:#e8eef2;
-    border-radius:10px;
-    overflow:hidden;
-}
-
-.row-fill{
-    height:100%;
-    border-radius:10px;
-}
-
-.row-percent{
-    width:42px;
-    text-align:right;
-    font-size:12px;
-    color:#718096;
-}
-
-/* RIGHT SIDE */
-
-.summary-title{
-    font-size:18px;
-    margin-bottom:18px;
-}
-
-.summary-item{
-    display:flex;
-    align-items:center;
-    padding:15px 0;
-    border-bottom:1px solid #edf1f4;
-}
-
-.summary-item:last-child{
-    border-bottom:none;
-}
-
-.summary-icon{
-    width:43px;
-    height:43px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-right:13px;
-}
-
-.summary-info{
-    flex:1;
-}
-
-.summary-info strong{
-    display:block;
-    font-size:14px;
-    margin-bottom:4px;
-}
-
-.summary-info span{
-    color:#718096;
-    font-size:12px;
-}
-
-.summary-value{
-    text-align:right;
-}
-
-.summary-value strong{
-    display:block;
-    font-size:14px;
-}
-
-.summary-value span{
-    color:#718096;
-    font-size:11px;
-}
-
-.motivation{
-    background:#f6faf9;
-    border-radius:12px;
-    padding:18px;
-    margin-top:18px;
-}
-
-.motivation h3{
-    font-size:15px;
-    margin-bottom:7px;
-}
-
-.motivation p{
-    color:#718096;
-    font-size:12px;
-    line-height:1.6;
-}
-
-/* MODAL */
-
-.modal{
-    position:fixed;
-    inset:0;
-    background:rgba(3,20,32,.55);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:1000;
-}
-
-.modal.show{
-    display:flex;
-}
-
-.modal-box{
-    width:440px;
-    max-width:92%;
-    background:white;
-    border-radius:18px;
-    padding:25px;
-    box-shadow:0 25px 70px rgba(0,0,0,.22);
-}
-
-.modal-header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    margin-bottom:22px;
-}
-
-.modal-header h2{
-    font-size:21px;
-}
-
-.close-btn{
-    width:34px;
-    height:34px;
-    border:0;
-    border-radius:50%;
-    background:#f1f5f8;
-    cursor:pointer;
-}
-
-.form-group{
-    margin-bottom:17px;
-}
-
-.form-group label{
-    display:block;
-    font-size:13px;
-    font-weight:700;
-    margin-bottom:7px;
-}
-
-.form-group input{
-    width:100%;
-    height:46px;
-    border:1px solid #dfe7ee;
-    border-radius:9px;
-    background:#f8fafc;
-    padding:0 13px;
-    outline:none;
-    font-size:14px;
-}
-
-.form-group input:focus{
-    border-color:#20d99a;
-    background:white;
-}
-
-.form-row{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-}
-
-.modal-buttons{
-    display:flex;
-    justify-content:flex-end;
-    gap:10px;
-    margin-top:23px;
-}
-
-.cancel-btn,
-.save-btn{
-    height:43px;
-    padding:0 18px;
-    border-radius:9px;
-    cursor:pointer;
-    font-size:13px;
-    font-weight:700;
-}
-
-.cancel-btn{
-    border:1px solid #dfe7ee;
-    background:white;
-}
-
-.save-btn{
-    border:0;
-    background:#20e69b;
-    color:#05291e;
-}
-
-/* LAPTOP */
+/* =========================
+SHORT SCREEN
+SAME AS HEART RATE
+========================= */
 
 @media(max-height:850px){
 
@@ -678,525 +342,1114 @@ body{
         height:37px;
     }
 
-    .main{
-        padding-top:15px;
+}
+
+
+/* ==========================================
+MAIN
+========================================== */
+
+.main{
+    margin-left:263px;
+    flex:1;
+    min-width:0;
+    height:100vh;
+    padding:20px 30px;
+    overflow:hidden;
+}
+
+
+/* ==========================================
+TOPBAR
+========================================== */
+
+.topbar{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:22px;
+
+}
+
+
+.page-title h1{
+
+    font-size:29px;
+
+    margin-bottom:6px;
+
+}
+
+
+.page-title p{
+
+    color:#718096;
+
+    font-size:14px;
+
+}
+
+
+.top-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+.notification{
+
+    width:44px;
+
+    height:44px;
+
+    background:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    box-shadow:0 3px 12px rgba(7,24,59,.08);
+
+}
+
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+.profile-circle{
+
+    width:44px;
+
+    height:44px;
+
+    border-radius:50%;
+
+    background:#263c4a;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:800;
+
+}
+
+
+.profile-text strong{
+
+    display:block;
+
+    font-size:14px;
+
+}
+
+
+.profile-text span{
+
+    display:block;
+
+    color:#718096;
+
+    font-size:12px;
+
+    margin-top:3px;
+
+}
+
+
+/* ==========================================
+HEADER CARD
+========================================== */
+
+.goal-header{
+
+    background:white;
+
+    border:1px solid #e4ebf0;
+
+    border-radius:15px;
+
+    padding:24px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:20px;
+
+    box-shadow:0 3px 12px rgba(7,24,59,.05);
+
+}
+
+
+.goal-header h2{
+
+    font-size:20px;
+
+    margin-bottom:6px;
+
+}
+
+
+.goal-header p{
+
+    color:#718096;
+
+    font-size:13px;
+
+}
+
+
+.edit-btn{
+
+    border:0;
+
+    background:#20d99a;
+
+    color:#03251a;
+
+    padding:13px 23px;
+
+    border-radius:11px;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+}
+
+
+.edit-btn i{
+
+    margin-right:7px;
+
+}
+
+
+/* ==========================================
+GOAL CARDS
+========================================== */
+
+.goal-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:16px;
+
+}
+
+
+.goal-card{
+    background:white;
+    border:1px solid #e4ebf0;
+    border-radius:15px;
+    padding:18px 22px;
+    min-height:165px;
+    box-shadow:0 3px 12px rgba(7,24,59,.05);
+}
+
+
+.goal-icon{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:17px;
+
+    font-size:18px;
+
+}
+
+
+.green{
+
+    background:#dff8ed;
+
+    color:#0bb77b;
+
+}
+
+
+.blue{
+
+    background:#dff1ff;
+
+    color:#179fe4;
+
+}
+
+
+.red{
+
+    background:#ffe1e7;
+
+    color:#ef4565;
+
+}
+
+
+.purple{
+
+    background:#eee2ff;
+
+    color:#7c4ce5;
+
+}
+
+
+.goal-card h3{
+
+    font-size:14px;
+
+    margin-bottom:12px;
+
+}
+
+
+.goal-value{
+
+    font-size:25px;
+
+    font-weight:800;
+
+    color:#07183b;
+
+}
+
+
+.goal-label{
+
+    color:#718096;
+
+    font-size:12px;
+
+    margin-top:7px;
+
+}
+
+
+/* ==========================================
+WEIGHT FULL WIDTH
+========================================== */
+
+
+.weight-card{
+    grid-column:span 1;
+}
+
+/* ==========================================
+EMPTY MESSAGE
+========================================== */
+
+.empty-message{
+    display:none;
+}
+
+
+/* ==========================================
+MODAL
+========================================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(3,20,32,.55);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:1000;
+
+    padding:20px;
+
+}
+
+
+.modal.show{
+
+    display:flex;
+
+}
+
+
+.modal-box{
+
+    width:620px;
+
+    max-width:100%;
+
+    background:white;
+
+    border-radius:17px;
+
+    padding:25px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+
+}
+
+
+.modal-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:22px;
+
+}
+
+
+.modal-header h2{
+
+    font-size:21px;
+
+}
+
+
+.close-btn{
+
+    width:35px;
+
+    height:35px;
+
+    border:0;
+
+    background:#f1f5f8;
+
+    border-radius:50%;
+
+    font-size:23px;
+
+    cursor:pointer;
+
+    color:#526273;
+
+}
+
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+.form-group label{
+
+    font-size:13px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+    color:#24344d;
+
+}
+
+
+.form-group input{
+
+    width:100%;
+
+    height:45px;
+
+    border:1px solid #d9e2e8;
+
+    border-radius:9px;
+
+    padding:0 13px;
+
+    font-size:14px;
+
+    outline:none;
+
+}
+
+
+.form-group input:focus{
+
+    border-color:#20d99a;
+
+}
+
+
+.modal-buttons{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:10px;
+
+    margin-top:25px;
+
+}
+
+
+.cancel-btn{
+
+    border:1px solid #d9e2e8;
+
+    background:white;
+
+    color:#526273;
+
+    padding:11px 20px;
+
+    border-radius:9px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+}
+
+
+.save-btn{
+
+    border:0;
+
+    background:#20d99a;
+
+    color:#03251a;
+
+    padding:11px 22px;
+
+    border-radius:9px;
+
+    cursor:pointer;
+
+    font-weight:800;
+
+}
+
+
+/* ==========================================
+RESPONSIVE
+========================================== */
+
+@media(max-width:1100px){
+
+    .goal-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
     }
 
-    .goal-card{
-        padding:14px;
+}
+
+
+@media(max-width:700px){
+
+    .sidebar{
+
+        width:220px;
+
+        min-width:220px;
+
     }
 
-    .panel{
-        padding:17px;
+
+    .goal-grid{
+
+        grid-template-columns:1fr;
+
     }
 
-    .goal-row{
-        padding:13px 0;
+
+    .weight-card{
+
+        grid-column:span 1;
+
+    }
+
+
+    .form-grid{
+
+        grid-template-columns:1fr;
+
     }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="app">
 
-<!-- SIDEBAR -->
+
+<!-- ==========================================
+SIDEBAR
+========================================== -->
 
 <aside class="sidebar">
 
+
 <div class="brand">
-<img src="assets/logo.png" alt="FitTrack">
+
+<img
+src="assets/logo.png"
+alt="FitTrack"
+>
+
 </div>
+
 
 <nav class="nav">
 
+
 <a href="index.html">
+
 <i class="fa-solid fa-house"></i>
+
 <span>Dashboard</span>
+
 </a>
+
 
 <a href="workouts.html">
+
 <i class="fa-solid fa-dumbbell"></i>
+
 <span>Workouts</span>
+
 </a>
+
 
 <a href="nutrition.html">
+
 <i class="fa-solid fa-apple-whole"></i>
+
 <span>Nutrition</span>
+
 </a>
+
 
 <a href="steps.html">
+
 <i class="fa-solid fa-person-walking"></i>
+
 <span>Steps</span>
+
 </a>
+
 
 <a href="sleep.html">
+
 <i class="fa-solid fa-moon"></i>
+
 <span>Sleep</span>
+
 </a>
+
 
 <a href="heart-rate.html">
+
 <i class="fa-regular fa-heart"></i>
+
 <span>Heart Rate</span>
+
 </a>
 
-<a href="goals.html" class="active">
+
+<a
+href="goals.html"
+class="active"
+>
+
 <i class="fa-solid fa-bullseye"></i>
+
 <span>Goals</span>
+
 </a>
+
 
 <a href="progress.html">
+
 <i class="fa-solid fa-chart-column"></i>
+
 <span>Progress</span>
+
 </a>
+
 
 <a href="reports.html">
+
 <i class="fa-regular fa-file-lines"></i>
+
 <span>Reports</span>
+
 </a>
+
 
 <a href="profile.html">
+
 <i class="fa-regular fa-user"></i>
+
 <span>Profile</span>
+
 </a>
+
 
 <a href="settings.html">
+
 <i class="fa-solid fa-gear"></i>
+
 <span>Settings</span>
+
 </a>
 
+
 </nav>
+
 
 <div class="premium">
 
 <div class="premium-title">
+
 <i class="fa-solid fa-crown"></i>
-<span>Go Premium</span>
+
+Go Premium
+
 </div>
 
+
 <div class="premium-feature">
+
 <i class="fa-solid fa-chart-line"></i>
+
 Advanced Insights
+
 </div>
 
+
 <div class="premium-feature">
+
 <i class="fa-solid fa-plus"></i>
+
 Personalized Plans
+
 </div>
+
 
 <div class="premium-feature">
+
 <i class="fa-solid fa-shield-heart"></i>
+
 Ad-Free Experience
-</div>
-
-<button>Upgrade Now</button>
-
-</div>
-
-</aside>
-
-
-<!-- MAIN -->
-
-<main class="main">
-
-<div class="topbar">
-
-<div class="page-title">
-
-<h1>Goals</h1>
-
-<p>Set targets and stay focused on your fitness journey.</p>
-
-</div>
-
-<div class="top-actions">
-
-<div class="notification">
-<i class="fa-regular fa-bell"></i>
-</div>
-
-<div class="profile">
-
-<div class="profile-circle">R</div>
-
-<div class="profile-text">
-<strong>Ramu</strong>
-<span>Stay Consistent!</span>
-</div>
-
-</div>
-
-</div>
 
 </div>
 
 
-<!-- GOAL CARDS -->
+<button>
 
-<section class="goal-grid">
+Upgrade Now
 
-<div class="goal-card">
-
-<div class="goal-card-top">
-
-<div class="goal-icon green">
-<i class="fa-solid fa-weight-scale"></i>
-</div>
-
-<div>
-<p>Weight Goal</p>
-<h3 id="weightCard">90 kg</h3>
-</div>
-
-</div>
-
-<p>Current: <span id="weightCurrent">104</span> kg</p>
-
-<div class="progress-bar">
-<div class="progress-fill fill-green" id="weightFill"></div>
-</div>
-
-</div>
-
-
-<div class="goal-card">
-
-<div class="goal-card-top">
-
-<div class="goal-icon blue">
-<i class="fa-solid fa-person-walking"></i>
-</div>
-
-<div>
-<p>Steps Goal</p>
-<h3 id="stepsCard">10,000</h3>
-</div>
-
-</div>
-
-<p>Today: <span id="stepsCurrent">7,842</span></p>
-
-<div class="progress-bar">
-<div class="progress-fill fill-blue" id="stepsFill"></div>
-</div>
-
-</div>
-
-
-<div class="goal-card">
-
-<div class="goal-card-top">
-
-<div class="goal-icon red">
-<i class="fa-solid fa-fire"></i>
-</div>
-
-<div>
-<p>Calories Goal</p>
-<h3 id="calorieCard">1,800</h3>
-</div>
-
-</div>
-
-<p>Today: <span id="calorieCurrent">1,650</span></p>
-
-<div class="progress-bar">
-<div class="progress-fill fill-red" id="calorieFill"></div>
-</div>
-
-</div>
-
-
-<div class="goal-card">
-
-<div class="goal-card-top">
-
-<div class="goal-icon purple">
-<i class="fa-solid fa-dumbbell"></i>
-</div>
-
-<div>
-<p>Workout Goal</p>
-<h3 id="workoutCard">60 min</h3>
-</div>
-
-</div>
-
-<p>Today: <span id="workoutCurrent">45</span> min</p>
-
-<div class="progress-bar">
-<div class="progress-fill fill-purple" id="workoutFill"></div>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CONTENT -->
-
-<div class="content-grid">
-
-
-<section class="panel">
-
-<div class="panel-header">
-
-<h2>Your Goals</h2>
-
-<button class="edit-all" id="editGoals">
-<i class="fa-solid fa-pen"></i>
-Edit Goals
 </button>
 
 </div>
 
 
-<div class="goal-row">
+</aside>
 
-<div class="row-icon green">
-<i class="fa-solid fa-weight-scale"></i>
-</div>
 
-<div class="row-info">
-<strong>Weight</strong>
-<span id="weightText">Lose to 90 kg</span>
-</div>
+<!-- ==========================================
+MAIN
+========================================== -->
 
-<div class="row-progress">
+<main class="main">
 
-<div class="row-progress-top">
-<span id="weightProgressText">104 / 90 kg</span>
-<span id="weightPercent">62%</span>
-</div>
 
-<div class="row-bar">
-<div class="row-fill fill-green" id="weightRowFill"></div>
-</div>
+<div class="topbar">
 
-</div>
 
-<div class="row-percent">
-<i class="fa-solid fa-arrow-down"></i>
-</div>
+<div class="page-title">
 
-</div>
+<h1>Goals</h1>
 
-
-<div class="goal-row">
-
-<div class="row-icon blue">
-<i class="fa-solid fa-person-walking"></i>
-</div>
-
-<div class="row-info">
-<strong>Steps</strong>
-<span id="stepsText">10,000 steps</span>
-</div>
-
-<div class="row-progress">
-
-<div class="row-progress-top">
-<span id="stepsProgressText">7,842 / 10,000</span>
-<span id="stepsPercent">78%</span>
-</div>
-
-<div class="row-bar">
-<div class="row-fill fill-blue" id="stepsRowFill"></div>
-</div>
-
-</div>
-
-<div class="row-percent">
-78%
-</div>
-
-</div>
-
-
-<div class="goal-row">
-
-<div class="row-icon red">
-<i class="fa-solid fa-fire"></i>
-</div>
-
-<div class="row-info">
-<strong>Calories</strong>
-<span id="calorieText">1,800 kcal</span>
-</div>
-
-<div class="row-progress">
-
-<div class="row-progress-top">
-<span id="calorieProgressText">1,650 / 1,800</span>
-<span id="caloriePercent">92%</span>
-</div>
-
-<div class="row-bar">
-<div class="row-fill fill-red" id="calorieRowFill"></div>
-</div>
-
-</div>
-
-<div class="row-percent">
-92%
-</div>
-
-</div>
-
-
-<div class="goal-row">
-
-<div class="row-icon purple">
-<i class="fa-solid fa-dumbbell"></i>
-</div>
-
-<div class="row-info">
-<strong>Workout</strong>
-<span id="workoutText">60 minutes</span>
-</div>
-
-<div class="row-progress">
-
-<div class="row-progress-top">
-<span id="workoutProgressText">45 / 60 min</span>
-<span id="workoutPercent">75%</span>
-</div>
-
-<div class="row-bar">
-<div class="row-fill fill-purple" id="workoutRowFill"></div>
-</div>
-
-</div>
-
-<div class="row-percent">
-75%
-</div>
-
-</div>
-
-
-</section>
-
-
-<!-- RIGHT -->
-
-<section class="panel">
-
-<h2 class="summary-title">Goal Summary</h2>
-
-
-<div class="summary-item">
-
-<div class="summary-icon green">
-<i class="fa-solid fa-weight-scale"></i>
-</div>
-
-<div class="summary-info">
-<strong>Weight</strong>
-<span>Target weight</span>
-</div>
-
-<div class="summary-value">
-<strong id="summaryWeight">90 kg</strong>
-<span>goal</span>
-</div>
-
-</div>
-
-
-<div class="summary-item">
-
-<div class="summary-icon blue">
-<i class="fa-solid fa-person-walking"></i>
-</div>
-
-<div class="summary-info">
-<strong>Steps</strong>
-<span>Daily target</span>
-</div>
-
-<div class="summary-value">
-<strong id="summarySteps">10,000</strong>
-<span>steps</span>
-</div>
-
-</div>
-
-
-<div class="summary-item">
-
-<div class="summary-icon red">
-<i class="fa-solid fa-fire"></i>
-</div>
-
-<div class="summary-info">
-<strong>Calories</strong>
-<span>Daily target</span>
-</div>
-
-<div class="summary-value">
-<strong id="summaryCalories">1,800</strong>
-<span>kcal</span>
-</div>
-
-</div>
-
-
-<div class="summary-item">
-
-<div class="summary-icon purple">
-<i class="fa-solid fa-dumbbell"></i>
-</div>
-
-<div class="summary-info">
-<strong>Workout</strong>
-<span>Daily target</span>
-</div>
-
-<div class="summary-value">
-<strong id="summaryWorkout">60 min</strong>
-<span>exercise</span>
-</div>
-
-</div>
-
-
-<div class="motivation">
-
-<h3>💪 Keep Going</h3>
-
-<p id="motivationText">
-You're making progress. Stay consistent with your daily goals and keep moving forward.
+<p>
+Set your personal fitness goals.
 </p>
 
 </div>
 
-</section>
+
+<div class="top-actions">
+
+
+<div class="notification">
+
+<i class="fa-regular fa-bell"></i>
 
 </div>
+
+
+<div class="profile">
+
+<div
+class="profile-circle"
+id="profileCircle"
+>
+U
+</div>
+
+
+<div class="profile-text">
+
+<strong id="profileName">
+User
+</strong>
+
+<span>
+Stay Consistent!
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ==========================================
+HEADER
+========================================== -->
+
+<section class="goal-header">
+
+
+<div>
+
+<h2>
+Your Personal Goals
+</h2>
+
+<p>
+Set the targets you want to achieve.
+</p>
+
+</div>
+
+
+<button
+class="edit-btn"
+id="editGoals"
+>
+
+<i class="fa-solid fa-pen"></i>
+
+Edit Goals
+
+</button>
+
+
+</section>
+
+
+<!-- ==========================================
+GOAL CARDS
+ONLY GOALS — NO PROGRESS
+========================================== -->
+
+<section class="goal-grid">
+
+
+<!-- CURRENT WEIGHT -->
+
+<div class="goal-card weight-card">
+
+<div class="goal-icon green">
+
+<i class="fa-solid fa-weight-scale"></i>
+
+</div>
+
+
+<h3>
+Current Weight
+</h3>
+
+
+<div
+class="goal-value"
+id="currentWeightDisplay"
+>
+Not set
+</div>
+
+
+<div class="goal-label">
+kg
+</div>
+
+</div>
+
+
+<!-- TARGET WEIGHT -->
+
+<div class="goal-card">
+
+<div class="goal-icon green">
+
+<i class="fa-solid fa-bullseye"></i>
+
+</div>
+
+
+<h3>
+Target Weight
+</h3>
+
+
+<div
+class="goal-value"
+id="targetWeightDisplay"
+>
+Not set
+</div>
+
+
+<div class="goal-label">
+kg
+</div>
+
+</div>
+
+
+<!-- STEPS -->
+
+<div class="goal-card">
+
+<div class="goal-icon blue">
+
+<i class="fa-solid fa-person-walking"></i>
+
+</div>
+
+
+<h3>
+Daily Steps Goal
+</h3>
+
+
+<div
+class="goal-value"
+id="stepsDisplay"
+>
+Not set
+</div>
+
+
+<div class="goal-label">
+steps per day
+</div>
+
+</div>
+
+
+<!-- CALORIES -->
+
+<div class="goal-card">
+
+<div class="goal-icon red">
+
+<i class="fa-solid fa-fire"></i>
+
+</div>
+
+
+<h3>
+Daily Calories Goal
+</h3>
+
+
+<div
+class="goal-value"
+id="caloriesDisplay"
+>
+Not set
+</div>
+
+
+<div class="goal-label">
+kcal per day
+</div>
+
+</div>
+
+
+<!-- WORKOUT -->
+
+<div class="goal-card">
+
+    <div class="goal-icon purple">
+        <i class="fa-solid fa-dumbbell"></i>
+    </div>
+
+    <h3>
+        Daily Workout Goal
+    </h3>
+
+    <div
+        class="goal-value"
+        id="workoutDisplay"
+    >
+        Not set
+    </div>
+
+    <div class="goal-label">
+        minutes per day
+    </div>
+
+</div>
+
+
+<!-- SLEEP -->
+
+<div class="goal-card">
+
+    <div class="goal-icon purple">
+
+        <i class="fa-solid fa-moon"></i>
+
+    </div>
+
+    <h3>
+        Daily Sleep Goal
+    </h3>
+
+    <div
+        class="goal-value"
+        id="sleepDisplay"
+    >
+        Not set
+    </div>
+
+    <div class="goal-label">
+        hours per night
+    </div>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<div class="empty-message">
+
+Your goals are saved here.
+Progress and activity calculations are shown on the
+<strong>Progress</strong> page.
+
+</div>
+
 
 </main>
 
 </div>
 
 
-<!-- MODAL -->
+<!-- ==========================================
+EDIT GOALS MODAL
+========================================== -->
 
-<div class="modal" id="goalModal">
+<div
+class="modal"
+id="goalModal"
+>
+
 
 <div class="modal-box">
 
+
 <div class="modal-header">
 
-<h2>Edit Goals</h2>
+<h2>
+Edit Goals
+</h2>
 
-<button class="close-btn" id="closeGoals">
-<i class="fa-solid fa-xmark"></i>
+
+<button
+class="close-btn"
+id="closeGoals"
+type="button"
+>
+×
 </button>
 
 </div>
@@ -1205,86 +1458,131 @@ You're making progress. Stay consistent with your daily goals and keep moving fo
 <form id="goalForm">
 
 
+<div class="form-grid">
+
+
+<!-- CURRENT WEIGHT -->
+
 <div class="form-group">
 
-<label>Current Weight (kg)</label>
+<label>
+Current Weight (kg)
+</label>
 
 <input
 type="number"
 id="weightCurrentInput"
-min="1"
-max="300"
 step="0.1"
-value="104"
+min="1"
+placeholder="Enter current weight"
 required
 >
 
 </div>
 
 
+<!-- TARGET WEIGHT -->
+
 <div class="form-group">
 
-<label>Target Weight (kg)</label>
+<label>
+Target Weight (kg)
+</label>
 
 <input
 type="number"
 id="weightGoalInput"
-min="1"
-max="300"
 step="0.1"
-value="90"
+min="1"
+placeholder="Enter target weight"
 required
 >
 
 </div>
 
 
+<!-- STEPS -->
+
 <div class="form-group">
 
-<label>Daily Steps Goal</label>
+<label>
+Daily Steps Goal
+</label>
 
 <input
 type="number"
 id="stepsGoalInput"
 min="1"
-value="10000"
+placeholder="Enter steps goal"
 required
 >
 
 </div>
 
 
+<!-- CALORIES -->
+
 <div class="form-group">
 
-<label>Daily Calories Goal</label>
+<label>
+Daily Calories Goal
+</label>
 
 <input
 type="number"
 id="calorieGoalInput"
 min="1"
-value="1800"
+placeholder="Enter calories goal"
 required
 >
 
 </div>
 
 
+<!-- WORKOUT -->
+
 <div class="form-group">
 
-<label>Daily Workout Goal (minutes)</label>
+<label>
+Daily Workout Goal (minutes)
+</label>
 
 <input
 type="number"
 id="workoutGoalInput"
 min="1"
-value="60"
+placeholder="Enter workout time"
 required
 >
 
 </div>
 
+<!-- SLEEP -->
+
+<div class="form-group">
+
+    <label>
+        Daily Sleep Goal (hours)
+    </label>
+
+    <input
+        type="number"
+        id="sleepGoalInput"
+        min="0.1"
+        max="24"
+        step="0.1"
+        placeholder="Enter sleep goal"
+        required
+    >
+
+</div>
+
+
+</div>
+
 
 <div class="modal-buttons">
+
 
 <button
 type="button"
@@ -1294,15 +1592,17 @@ id="cancelGoals"
 Cancel
 </button>
 
+
 <button
 type="submit"
 class="save-btn"
 >
-<i class="fa-solid fa-check"></i>
 Save Goals
 </button>
 
+
 </div>
+
 
 </form>
 
@@ -1313,519 +1613,444 @@ Save Goals
 
 <script>
 
-/* =========================
-DATA
-========================= */
-
-let goals =
-JSON.parse(
-localStorage.getItem("fittrackGoals")
-);
-
-
-if(!goals){
-
-goals = {
-    currentWeight:104,
-    targetWeight:90,
-    steps:10000,
-    calories:1800,
-    workout:60
-};
-
-localStorage.setItem(
-"fittrackGoals",
-JSON.stringify(goals)
-);
-
-}
-
-
-/* CURRENT DAILY VALUES */
-
-const today = {
-    steps:7842,
-    calories:1650,
-    workout:45
-};
-
-
-/* =========================
-ELEMENTS
-========================= */
-
-const modal =
-document.getElementById("goalModal");
-
-const form =
-document.getElementById("goalForm");
-
-
-/* =========================
-CALCULATE WEIGHT %
-========================= */
-
-function weightProgress(){
-
-const startWeight = 104;
-
-const lost =
-startWeight - Number(goals.currentWeight);
-
-const targetLoss =
-startWeight - Number(goals.targetWeight);
-
-if(targetLoss <= 0){
-return 100;
-}
-
-return Math.min(
-100,
-Math.max(
-0,
-Math.round(
-(lost / targetLoss) * 100
-)
-)
-);
-
-}
-
-
-/* =========================
-PERCENT
-========================= */
-
-function percent(current,target){
-
-if(target <= 0) return 0;
-
-return Math.min(
-100,
-Math.round(
-(current / target) * 100
-)
-);
-
-}
-
-
-/* =========================
-RENDER
-========================= */
-
-function render(){
-
-const wp =
-weightProgress();
-
-const sp =
-percent(today.steps,goals.steps);
-
-const cp =
-percent(today.calories,goals.calories);
-
-const workp =
-percent(today.workout,goals.workout);
-
-
-/* CARDS */
-
-document.getElementById(
-"weightCard"
-).textContent =
-goals.targetWeight + " kg";
-
-document.getElementById(
-"weightCurrent"
-).textContent =
-goals.currentWeight;
-
-
-document.getElementById(
-"stepsCard"
-).textContent =
-Number(goals.steps).toLocaleString();
-
-
-document.getElementById(
-"calorieCard"
-).textContent =
-Number(goals.calories).toLocaleString();
-
-
-document.getElementById(
-"workoutCard"
-).textContent =
-goals.workout + " min";
-
-
-document.getElementById(
-"stepsCurrent"
-).textContent =
-Number(today.steps).toLocaleString();
-
-
-document.getElementById(
-"calorieCurrent"
-).textContent =
-Number(today.calories).toLocaleString();
-
-
-document.getElementById(
-"workoutCurrent"
-).textContent =
-today.workout;
-
-
-/* CARD BARS */
-
-document.getElementById(
-"weightFill"
-).style.width =
-wp + "%";
-
-document.getElementById(
-"stepsFill"
-).style.width =
-sp + "%";
-
-document.getElementById(
-"calorieFill"
-).style.width =
-cp + "%";
-
-document.getElementById(
-"workoutFill"
-).style.width =
-workp + "%";
-
-
-/* WEIGHT */
-
-document.getElementById(
-"weightText"
-).textContent =
-"Lose to " +
-goals.targetWeight +
-" kg";
-
-document.getElementById(
-"weightProgressText"
-).textContent =
-goals.currentWeight +
-" / " +
-goals.targetWeight +
-" kg";
-
-document.getElementById(
-"weightPercent"
-).textContent =
-wp + "%";
-
-document.getElementById(
-"weightRowFill"
-).style.width =
-wp + "%";
-
-
-/* STEPS */
-
-document.getElementById(
-"stepsText"
-).textContent =
-Number(goals.steps).toLocaleString() +
-" steps";
-
-document.getElementById(
-"stepsProgressText"
-).textContent =
-Number(today.steps).toLocaleString() +
-" / " +
-Number(goals.steps).toLocaleString();
-
-document.getElementById(
-"stepsPercent"
-).textContent =
-sp + "%";
-
-document.getElementById(
-"stepsRowFill"
-).style.width =
-sp + "%";
-
-
-/* CALORIES */
-
-document.getElementById(
-"calorieText"
-).textContent =
-Number(goals.calories).toLocaleString() +
-" kcal";
-
-document.getElementById(
-"calorieProgressText"
-).textContent =
-Number(today.calories).toLocaleString() +
-" / " +
-Number(goals.calories).toLocaleString();
-
-document.getElementById(
-"caloriePercent"
-).textContent =
-cp + "%";
-
-document.getElementById(
-"calorieRowFill"
-).style.width =
-cp + "%";
-
-
-/* WORKOUT */
-
-document.getElementById(
-"workoutText"
-).textContent =
-goals.workout +
-" minutes";
-
-document.getElementById(
-"workoutProgressText"
-).textContent =
-today.workout +
-" / " +
-goals.workout +
-" min";
-
-document.getElementById(
-"workoutPercent"
-).textContent =
-workp + "%";
-
-document.getElementById(
-"workoutRowFill"
-).style.width =
-workp + "%";
-
-
-/* SUMMARY */
-
-document.getElementById(
-"summaryWeight"
-).textContent =
-goals.targetWeight + " kg";
-
-document.getElementById(
-"summarySteps"
-).textContent =
-Number(goals.steps).toLocaleString();
-
-document.getElementById(
-"summaryCalories"
-).textContent =
-Number(goals.calories).toLocaleString();
-
-document.getElementById(
-"summaryWorkout"
-).textContent =
-goals.workout + " min";
-
-
-/* MOTIVATION */
-
-const motivation =
-document.getElementById(
-"motivationText"
-);
+/* ==========================================
+LOGIN PROTECTION
+========================================== */
 
 if(
-sp >= 100 &&
-cp >= 100 &&
-workp >= 100
+    localStorage.getItem(
+        "fittrackLoggedIn"
+    ) !== "true"
 ){
 
-motivation.textContent =
-"Excellent! You completed all your daily goals. Keep this consistency going.";
+    window.location.href =
+        "login.html";
 
 }
-else if(
-sp >= 75 &&
-workp >= 75
+
+
+/* ==========================================
+CURRENT USER
+========================================== */
+
+const currentUser =
+    JSON.parse(
+        localStorage.getItem(
+            "fittrackCurrentUser"
+        )
+    );
+
+
+if(
+    !currentUser ||
+    !currentUser.email
 ){
 
-motivation.textContent =
-"You're doing great. You're already close to your daily targets.";
-
-}
-else{
-
-motivation.textContent =
-"Keep going. Small daily actions add up to big results.";
-
-}
+    window.location.href =
+        "login.html";
 
 }
 
 
-/* =========================
-OPEN MODAL
-========================= */
+/* ==========================================
+USER DATA
+========================================== */
+
+let allUserData =
+    JSON.parse(
+        localStorage.getItem(
+            "fittrackUserData"
+        )
+    ) || {};
+
+
+if(
+    !allUserData[currentUser.email]
+){
+
+    allUserData[currentUser.email] = {
+
+        workouts: [],
+
+        meals: [],
+
+        steps: [],
+
+        sleep: [],
+
+        heartRate: [],
+
+        goals: {},
+
+        profile: {
+
+            name:
+                currentUser.name || "",
+
+            email:
+                currentUser.email || ""
+
+        },
+
+        settings: {}
+
+    };
+
+}
+
+
+let userData =
+    allUserData[currentUser.email];
+
+
+if(
+    !userData.goals ||
+    typeof userData.goals !== "object"
+){
+
+    userData.goals = {};
+
+}
+
+
+let goals =
+    userData.goals;
+
+
+/* ==========================================
+PROFILE
+========================================== */
+
+const profileName =
+    userData.profile &&
+    userData.profile.name
+        ? userData.profile.name
+        : currentUser.name || "User";
+
 
 document.getElementById(
-"editGoals"
+    "profileName"
+).textContent =
+    profileName;
+
+
+document.getElementById(
+    "profileCircle"
+).textContent =
+    profileName
+        .charAt(0)
+        .toUpperCase();
+
+
+/* ==========================================
+SAVE
+========================================== */
+
+function saveGoals(){
+
+    userData.goals =
+        goals;
+
+    allUserData[currentUser.email] =
+        userData;
+
+
+    localStorage.setItem(
+        "fittrackUserData",
+        JSON.stringify(
+            allUserData
+        )
+    );
+
+}
+
+
+/* ==========================================
+DISPLAY GOALS
+NO CALCULATIONS
+========================================== */
+
+function displayGoals(){
+
+    document.getElementById(
+        "currentWeightDisplay"
+    ).textContent =
+
+        goals.currentWeight
+            ? goals.currentWeight
+            : "Not set";
+
+
+    document.getElementById(
+        "targetWeightDisplay"
+    ).textContent =
+
+        goals.targetWeight
+            ? goals.targetWeight
+            : "Not set";
+
+
+    document.getElementById(
+        "stepsDisplay"
+    ).textContent =
+
+        goals.steps
+            ? Number(
+                goals.steps
+              ).toLocaleString()
+            : "Not set";
+
+
+    document.getElementById(
+        "caloriesDisplay"
+    ).textContent =
+
+        goals.calories
+            ? Number(
+                goals.calories
+              ).toLocaleString()
+            : "Not set";
+
+
+    document.getElementById(
+        "workoutDisplay"
+    ).textContent =
+
+        goals.workout
+            ? goals.workout
+            : "Not set";
+
+            document.getElementById(
+    "sleepDisplay"
+).textContent =
+
+    goals.sleep
+        ? goals.sleep
+        : "Not set";
+
+}
+
+
+/* ==========================================
+OPEN EDIT
+========================================== */
+
+document.getElementById(
+    "editGoals"
 ).onclick =
 function(){
 
-document.getElementById(
-"weightCurrentInput"
-).value =
-goals.currentWeight;
+    document.getElementById(
+        "weightCurrentInput"
+    ).value =
+        goals.currentWeight || "";
 
-document.getElementById(
-"weightGoalInput"
-).value =
-goals.targetWeight;
 
-document.getElementById(
-"stepsGoalInput"
-).value =
-goals.steps;
+    document.getElementById(
+        "weightGoalInput"
+    ).value =
+        goals.targetWeight || "";
 
-document.getElementById(
-"calorieGoalInput"
-).value =
-goals.calories;
 
-document.getElementById(
-"workoutGoalInput"
-).value =
-goals.workout;
+    document.getElementById(
+        "stepsGoalInput"
+    ).value =
+        goals.steps || "";
 
-modal.classList.add("show");
+
+    document.getElementById(
+        "calorieGoalInput"
+    ).value =
+        goals.calories || "";
+
+
+    document.getElementById(
+        "workoutGoalInput"
+    ).value =
+        goals.workout || "";
+
+        document.getElementById(
+    "sleepGoalInput"
+).value =
+    goals.sleep || "";
+
+
+    document.getElementById(
+        "goalModal"
+    ).classList.add(
+        "show"
+    );
 
 };
 
 
-/* =========================
-CLOSE
-========================= */
+/* ==========================================
+CLOSE MODAL
+========================================== */
 
 function closeModal(){
 
-modal.classList.remove("show");
+    document.getElementById(
+        "goalModal"
+    ).classList.remove(
+        "show"
+    );
 
 }
 
-document.getElementById(
-"closeGoals"
-).onclick =
-closeModal;
 
 document.getElementById(
-"cancelGoals"
+    "closeGoals"
 ).onclick =
 closeModal;
 
 
-modal.onclick =
-function(e){
+document.getElementById(
+    "cancelGoals"
+).onclick =
+closeModal;
 
-if(e.target === modal){
 
-closeModal();
+document.getElementById(
+    "goalModal"
+).onclick =
+function(event){
 
-}
+    if(
+        event.target ===
+        document.getElementById(
+            "goalModal"
+        )
+    ){
+
+        closeModal();
+
+    }
 
 };
 
 
-/* =========================
-SAVE
-========================= */
+/* ==========================================
+SAVE GOALS
+ONLY SAVE VALUES
+========================================== */
 
-form.onsubmit =
-function(e){
-
-e.preventDefault();
-
-
-goals.currentWeight =
-Number(
 document.getElementById(
-"weightCurrentInput"
-).value
-);
+    "goalForm"
+).onsubmit =
+function(event){
 
-goals.targetWeight =
-Number(
-document.getElementById(
-"weightGoalInput"
-).value
-);
-
-goals.steps =
-Number(
-document.getElementById(
-"stepsGoalInput"
-).value
-);
-
-goals.calories =
-Number(
-document.getElementById(
-"calorieGoalInput"
-).value
-);
-
-goals.workout =
-Number(
-document.getElementById(
-"workoutGoalInput"
-).value
-);
+    event.preventDefault();
 
 
-localStorage.setItem(
-"fittrackGoals",
-JSON.stringify(goals)
-);
+    const currentWeight =
+        Number(
+            document.getElementById(
+                "weightCurrentInput"
+            ).value
+        );
 
 
-render();
+    const targetWeight =
+        Number(
+            document.getElementById(
+                "weightGoalInput"
+            ).value
+        );
 
-closeModal();
+
+    const steps =
+        Number(
+            document.getElementById(
+                "stepsGoalInput"
+            ).value
+        );
+
+
+    const calories =
+        Number(
+            document.getElementById(
+                "calorieGoalInput"
+            ).value
+        );
+
+
+    const workout =
+        Number(
+            document.getElementById(
+                "workoutGoalInput"
+            ).value
+        );
+
+        const sleep =
+    Number(
+        document.getElementById(
+            "sleepGoalInput"
+        ).value
+    );
+
+
+    goals.currentWeight =
+        currentWeight;
+
+
+    goals.targetWeight =
+        targetWeight;
+
+
+    goals.steps =
+        steps;
+
+
+    goals.calories =
+        calories;
+
+
+    goals.workout =
+        workout;
+
+    goals.sleep =
+    sleep;
+
+
+    saveGoals();
+
+    displayGoals();
+
+    closeModal();
 
 };
 
 
-/* =========================
+/* ==========================================
 ESC
-========================= */
+========================================== */
 
 document.addEventListener(
-"keydown",
-function(e){
+    "keydown",
+    function(event){
 
-if(
-e.key === "Escape" &&
-modal.classList.contains("show")
-){
+        if(
+            event.key === "Escape"
+        ){
 
-closeModal();
+            closeModal();
 
-}
+        }
 
-});
-
-
-/* START */
-
-render();
-
-</script>
-
-<script>
-    if (localStorage.getItem("fittrackLoggedIn") !== "true") {
-        window.location.href = "login.html";
     }
+);
+
+
+/* ==========================================
+START
+========================================== */
+
+displayGoals();
+
 </script>
+
+
+</body>
+
+</html>

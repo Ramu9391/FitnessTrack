@@ -3,845 +3,915 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <title>FitTrack - Admin Dashboard</title>
+<title>FitTrack - Admin Dashboard</title>
 
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
+<style>
 
-    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f8fb;
+    color:#07183b;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f8fb;
-            color: #07183b;
-        }
+button,
+a{
+    font-family:inherit;
+}
 
+.app{
+    min-height:100vh;
+    display:flex;
+}
 
-        /* =========================
-           SIDEBAR
-        ========================= */
 
-        .sidebar {
+/* =========================
+SIDEBAR
+========================= */
 
-            position: fixed;
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
 
-            left: 0;
-            top: 0;
+    width:250px;
+    height:100vh;
 
-            width: 250px;
-            height: 100vh;
+    background:#032b3b;
+    color:white;
 
-            background: #032b3b;
+    padding:25px 18px;
 
-            color: white;
+    display:flex;
+    flex-direction:column;
 
-            padding: 25px 18px;
+    z-index:100;
+}
 
-            display: flex;
-            flex-direction: column;
-        }
+.logo{
+    text-align:center;
+    margin-bottom:30px;
+}
 
+.logo img{
+    width:165px;
+    max-height:70px;
+    object-fit:contain;
+}
 
-        .logo {
+.admin-label{
+    text-align:center;
 
-            text-align: center;
+    background:rgba(32,230,155,0.12);
+    color:#20e69b;
 
-            margin-bottom: 35px;
-        }
+    padding:9px;
 
+    border-radius:8px;
 
-        .logo img {
+    font-size:12px;
+    font-weight:700;
 
-            width: 165px;
-            max-height: 70px;
+    margin-bottom:25px;
+}
 
-            object-fit: contain;
-        }
+.nav{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
 
+.nav a{
+    display:flex;
+    align-items:center;
 
-        .admin-label {
+    gap:13px;
 
-            text-align: center;
+    height:48px;
 
-            background:
-                rgba(32, 230, 155, 0.12);
+    padding:0 15px;
 
-            color: #20e69b;
+    border-radius:9px;
 
-            padding: 8px;
+    color:#cbd8df;
 
-            border-radius: 8px;
+    text-decoration:none;
 
-            font-size: 12px;
-            font-weight: 700;
+    font-size:14px;
+    font-weight:500;
 
-            margin-bottom: 25px;
-        }
+    cursor:pointer;
 
+    transition:.2s;
+}
 
-        .nav {
+.nav a:hover{
+    background:rgba(32,230,155,0.12);
+    color:white;
+}
 
-            display: flex;
+.nav a.active{
+    background:#20e69b;
+    color:#032b3b;
+    font-weight:700;
+}
 
-            flex-direction: column;
+.nav-icon{
+    width:22px;
+    text-align:center;
+    font-size:17px;
+}
 
-            gap: 7px;
-        }
+.sidebar-bottom{
+    margin-top:auto;
+}
 
+.logout-btn{
+    width:100%;
+    height:45px;
 
-        .nav a {
+    border:1px solid rgba(255,255,255,0.15);
 
-            display: flex;
+    border-radius:9px;
 
-            align-items: center;
+    background:transparent;
+    color:#cbd8df;
 
-            gap: 13px;
+    cursor:pointer;
 
-            height: 46px;
+    font-size:14px;
 
-            padding: 0 15px;
+    transition:.2s;
+}
 
-            border-radius: 9px;
+.logout-btn:hover{
+    background:#ef3155;
+    border-color:#ef3155;
+    color:white;
+}
 
-            color: #cbd8df;
 
-            text-decoration: none;
+/* =========================
+MAIN
+========================= */
 
-            font-size: 14px;
+.main{
+    margin-left:250px;
 
-            font-weight: 500;
+    width:calc(100% - 250px);
 
-            transition: .2s;
-        }
+    min-height:100vh;
 
+    padding:30px;
+}
 
-        .nav a:hover,
-        .nav a.active {
 
-            background: #20e69b;
+/* =========================
+TOPBAR
+========================= */
 
-            color: #032b3b;
+.topbar{
+    display:flex;
 
-            font-weight: 700;
-        }
+    justify-content:space-between;
+    align-items:center;
 
+    margin-bottom:28px;
+}
 
-        .nav a i {
+.topbar h1{
+    font-size:29px;
+    color:#07183b;
+}
 
-            width: 20px;
+.topbar p{
+    color:#718096;
+    font-size:13px;
+    margin-top:6px;
+}
 
-            text-align: center;
-        }
+.admin-profile{
+    display:flex;
+    align-items:center;
 
+    gap:10px;
 
-        .sidebar-bottom {
+    background:white;
 
-            margin-top: auto;
-        }
+    padding:9px 15px;
 
+    border-radius:10px;
 
-        .logout-btn {
+    box-shadow:
+        0 5px 18px
+        rgba(7,24,59,.06);
 
-            width: 100%;
+    font-size:13px;
+    font-weight:600;
+}
 
-            height: 45px;
+.admin-avatar{
+    width:35px;
+    height:35px;
 
-            border:
-                1px solid
-                rgba(255,255,255,0.15);
+    border-radius:50%;
 
-            border-radius: 9px;
+    background:#20e69b;
 
-            background: transparent;
+    color:#032b3b;
 
-            color: #cbd8df;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-            cursor: pointer;
+    font-weight:800;
+}
 
-            font-size: 14px;
 
-            transition: .2s;
-        }
+/* =========================
+SECTIONS
+========================= */
 
+.page-section{
+    display:none;
 
-        .logout-btn:hover {
+    animation:
+        fadeIn
+        .25s
+        ease;
+}
 
-            background: #ef3155;
+.page-section.active-section{
+    display:block;
+}
 
-            border-color: #ef3155;
+@keyframes fadeIn{
 
-            color: white;
-        }
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
 
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 
-        /* =========================
-           MAIN
-        ========================= */
+}
 
-        .main {
 
-            margin-left: 250px;
+/* =========================
+STATS
+========================= */
 
-            min-height: 100vh;
+.stats-grid{
+    display:grid;
 
-            padding: 30px;
-        }
+    grid-template-columns:
+        repeat(4,1fr);
 
+    gap:18px;
 
-        .topbar {
+    margin-bottom:22px;
+}
 
-            display: flex;
+.stat-card{
+    background:white;
 
-            justify-content: space-between;
+    border-radius:14px;
 
-            align-items: center;
+    padding:21px;
 
-            margin-bottom: 30px;
-        }
+    box-shadow:
+        0 6px 22px
+        rgba(7,24,59,.06);
+}
 
+.stat-top{
+    display:flex;
 
-        .topbar h1 {
+    justify-content:space-between;
+    align-items:center;
+}
 
-            font-size: 28px;
-        }
+.stat-title{
+    color:#718096;
+    font-size:12px;
+}
 
+.stat-icon{
+    width:43px;
+    height:43px;
 
-        .topbar p {
+    border-radius:10px;
 
-            color: #718096;
+    background:
+        rgba(32,230,155,.12);
 
-            font-size: 13px;
+    color:#16b97c;
 
-            margin-top: 6px;
-        }
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
+    font-size:19px;
+}
 
-        .admin-profile {
+.stat-card h3{
+    font-size:28px;
+    margin-top:17px;
+}
 
-            display: flex;
+.stat-card p{
+    color:#718096;
+    font-size:11px;
+    margin-top:5px;
+}
 
-            align-items: center;
+.online{
+    color:#0bad68;
+}
 
-            gap: 10px;
 
-            background: white;
+/* =========================
+PANELS
+========================= */
 
-            padding: 9px 14px;
+.panel{
+    background:white;
 
-            border-radius: 10px;
+    border-radius:14px;
 
-            box-shadow:
-                0 5px 18px
-                rgba(7,24,59,0.06);
+    padding:22px;
 
-            font-size: 13px;
+    box-shadow:
+        0 6px 22px
+        rgba(7,24,59,.06);
 
-            font-weight: 600;
-        }
+    margin-bottom:20px;
+}
 
+.panel-header{
+    display:flex;
 
-        .admin-profile i {
+    justify-content:space-between;
+    align-items:center;
 
-            width: 34px;
-            height: 34px;
+    margin-bottom:20px;
+}
 
-            border-radius: 50%;
+.panel-header h2{
+    font-size:19px;
+}
 
-            background: #20e69b;
+.panel-header p{
+    color:#718096;
+    font-size:12px;
+    margin-top:5px;
+}
 
-            color: #032b3b;
 
-            display: flex;
+/* =========================
+QUICK ACTIONS
+========================= */
 
-            align-items: center;
-            justify-content: center;
-        }
+.quick-grid{
+    display:grid;
 
+    grid-template-columns:
+        repeat(4,1fr);
 
-        /* =========================
-           STATISTICS
-        ========================= */
+    gap:15px;
+}
 
-        .stats-grid {
+.quick-action{
+    border:1px solid #e7edf2;
 
-            display: grid;
+    border-radius:11px;
 
-            grid-template-columns:
-                repeat(4, 1fr);
+    background:#f9fbfc;
 
-            gap: 18px;
+    min-height:115px;
 
-            margin-bottom: 25px;
-        }
+    cursor:pointer;
 
+    display:flex;
+    flex-direction:column;
 
-        .stat-card {
+    align-items:center;
+    justify-content:center;
 
-            background: white;
+    gap:10px;
 
-            border-radius: 14px;
+    transition:.2s;
+}
 
-            padding: 20px;
+.quick-action:hover{
+    border-color:#20e69b;
 
-            box-shadow:
-                0 6px 22px
-                rgba(7,24,59,0.06);
-        }
+    background:
+        rgba(32,230,155,.06);
 
+    transform:translateY(-2px);
+}
 
-        .stat-top {
+.quick-action-icon{
+    font-size:26px;
+    color:#16b97c;
+}
 
-            display: flex;
+.quick-action span{
+    font-size:12px;
+    font-weight:700;
+}
 
-            justify-content: space-between;
 
-            align-items: center;
-        }
+/* =========================
+TABLE
+========================= */
 
+.table-container{
+    overflow-x:auto;
+}
 
-        .stat-icon {
+table{
+    width:100%;
+    border-collapse:collapse;
+}
 
-            width: 42px;
-            height: 42px;
+th{
+    text-align:left;
 
-            border-radius: 10px;
+    font-size:11px;
 
-            background:
-                rgba(32,230,155,0.12);
+    color:#718096;
 
-            color: #16b97c;
+    padding:12px;
 
-            display: flex;
+    border-bottom:
+        1px solid
+        #edf1f5;
+}
 
-            align-items: center;
-            justify-content: center;
+td{
+    padding:14px 12px;
 
-            font-size: 18px;
-        }
+    font-size:12px;
 
+    border-bottom:
+        1px solid
+        #edf1f5;
+}
 
-        .stat-card h3 {
+.user-name{
+    font-weight:700;
+}
 
-            font-size: 27px;
+.user-email{
+    color:#718096;
+}
 
-            margin-top: 18px;
-        }
+.status{
+    display:inline-block;
 
+    padding:5px 9px;
 
-        .stat-card p {
+    border-radius:20px;
 
-            color: #718096;
+    background:
+        rgba(32,230,155,.12);
 
-            font-size: 12px;
+    color:#129b6b;
 
-            margin-top: 4px;
-        }
+    font-size:10px;
 
+    font-weight:700;
+}
 
-        .online {
+.view-btn{
+    border:none;
 
-            color: #0bad68;
+    background:
+        rgba(32,230,155,.12);
 
-            font-weight: 700;
-        }
+    color:#129b6b;
 
+    padding:7px 11px;
 
-        /* =========================
-           CONTENT GRID
-        ========================= */
+    border-radius:7px;
 
-        .content-grid {
+    font-size:11px;
 
-            display: grid;
+    font-weight:700;
 
-            grid-template-columns:
-                1.5fr 1fr;
+    cursor:pointer;
 
-            gap: 20px;
+    margin-right:6px;
 
-            align-items: start;
-        }
+    transition:.2s;
+}
 
+.view-btn:hover{
+    background:#20e69b;
+    color:#032b3b;
+}
 
-        .panel {
+.delete-btn{
+    border:none;
 
-            background: white;
+    background:
+        rgba(239,49,85,.10);
 
-            border-radius: 14px;
+    color:#ef3155;
 
-            padding: 22px;
+    padding:7px 11px;
 
-            box-shadow:
-                0 6px 22px
-                rgba(7,24,59,0.06);
-        }
+    border-radius:7px;
 
+    font-size:11px;
 
-        .panel-header {
+    font-weight:700;
 
-            display: flex;
+    cursor:pointer;
 
-            justify-content: space-between;
+    transition:.2s;
+}
 
-            align-items: center;
+.delete-btn:hover{
+    background:#ef3155;
+    color:white;
+}
 
-            margin-bottom: 20px;
-        }
+.empty{
+    text-align:center;
 
+    padding:35px;
 
-        .panel-header h2 {
+    color:#718096;
 
-            font-size: 18px;
-        }
+    font-size:13px;
+}
 
 
-        .panel-header span {
+/* =========================
+ACTIVITY
+========================= */
 
-            color: #718096;
+.activity-grid{
+    display:grid;
 
-            font-size: 12px;
-        }
+    grid-template-columns:
+        repeat(4,1fr);
 
+    gap:16px;
+}
 
-        /* =========================
-           USER TABLE
-        ========================= */
+.activity-box{
+    background:#f8fafc;
 
-        .table-container {
+    border:
+        1px solid
+        #edf1f5;
 
-            overflow-x: auto;
-        }
+    border-radius:12px;
 
+    padding:20px;
+}
 
-        table {
+.activity-icon{
+    width:40px;
+    height:40px;
 
-            width: 100%;
+    border-radius:10px;
 
-            border-collapse: collapse;
-        }
+    background:
+        rgba(32,230,155,.12);
 
+    color:#16b97c;
 
-        th {
+    display:flex;
 
-            text-align: left;
+    align-items:center;
+    justify-content:center;
 
-            font-size: 11px;
+    margin-bottom:15px;
 
-            color: #718096;
+    font-size:17px;
+}
 
-            padding: 11px;
+.activity-label{
+    color:#718096;
+    font-size:11px;
+}
 
-            border-bottom:
-                1px solid #edf1f5;
-        }
+.activity-value{
+    display:block;
 
+    margin-top:8px;
 
-        td {
+    font-size:27px;
 
-            padding: 13px 11px;
+    color:#07183b;
+}
 
-            font-size: 12px;
+.refresh-btn{
+    border:none;
 
-            border-bottom:
-                1px solid #edf1f5;
-        }
+    background:#20e69b;
 
+    color:#032b3b;
 
-        .user-name {
+    padding:9px 13px;
 
-            font-weight: 700;
-        }
+    border-radius:7px;
 
+    font-size:11px;
 
-        .user-email {
+    font-weight:700;
 
-            color: #718096;
-        }
+    cursor:pointer;
 
+    margin-right:7px;
+}
 
-        .status {
+.refresh-btn:hover{
+    transform:translateY(-1px);
+}
 
-            display: inline-block;
 
-            padding: 5px 9px;
+/* =========================
+SYSTEM
+========================= */
 
-            border-radius: 20px;
+.system-info{
+    display:flex;
+    flex-direction:column;
+}
 
-            background:
-                rgba(32,230,155,0.12);
+.info-row{
+    display:flex;
 
-            color: #129b6b;
+    justify-content:space-between;
+    align-items:center;
 
-            font-size: 10px;
+    padding:18px 5px;
 
-            font-weight: 700;
-        }
+    border-bottom:
+        1px solid
+        #edf1f5;
 
+    font-size:13px;
+}
 
-        .no-users {
+.info-row:last-child{
+    border-bottom:none;
+}
 
-            text-align: center;
+.info-label{
+    color:#718096;
+}
 
-            color: #718096;
+.info-value{
+    font-weight:700;
+}
 
-            padding: 25px;
+.system-active{
+    color:#0bad68;
+}
 
-            font-size: 13px;
-        }
 
+/* =========================
+BACK BUTTON
+========================= */
 
-        /* =========================
-           DELETE BUTTON
-        ========================= */
+.back-btn{
+    border:none;
 
-        .delete-btn {
+    background:#032b3b;
 
-            border: none;
+    color:white;
 
-            background:
-                rgba(239,49,85,0.10);
+    padding:10px 15px;
 
-            color: #ef3155;
+    border-radius:8px;
 
-            padding: 7px 10px;
+    cursor:pointer;
 
-            border-radius: 7px;
+    font-size:12px;
 
-            font-size: 11px;
+    font-weight:700;
 
-            font-weight: 700;
+    transition:.2s;
+}
 
-            cursor: pointer;
+.back-btn:hover{
+    background:#20e69b;
+    color:#032b3b;
+}
 
-            transition: .2s;
-        }
 
+/* =========================
+WELCOME
+========================= */
 
-        .delete-btn:hover {
+.welcome-card{
+    background:
+        linear-gradient(
+            135deg,
+            #032b3b,
+            #07506a
+        );
 
-            background: #ef3155;
+    color:white;
 
-            color: white;
-        }
+    border-radius:14px;
 
+    padding:24px;
 
-        /* =========================
-           QUICK ACTIONS
-        ========================= */
+    margin-bottom:20px;
+}
 
-        .quick-actions {
+.welcome-card h2{
+    font-size:20px;
+    margin-bottom:7px;
+}
 
-            display: grid;
+.welcome-card p{
+    color:#cbd8df;
+    font-size:12px;
+}
 
-            grid-template-columns:
-                1fr 1fr;
 
-            gap: 12px;
-        }
+/* =========================
+RECENT
+========================= */
 
+.recent-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
 
-        .quick-action {
+.recent-item{
+    display:flex;
 
-            height: 100px;
+    align-items:center;
 
-            border:
-                1px solid #e7edf2;
+    gap:13px;
 
-            border-radius: 11px;
+    padding:13px;
 
-            background: #f9fbfc;
+    background:#f8fafc;
 
-            cursor: pointer;
+    border-radius:9px;
+}
 
-            text-decoration: none;
+.recent-icon{
+    width:38px;
+    height:38px;
 
-            color: #07183b;
+    border-radius:9px;
 
-            display: flex;
+    background:
+        rgba(32,230,155,.12);
 
-            flex-direction: column;
+    color:#16b97c;
 
-            align-items: center;
+    display:flex;
 
-            justify-content: center;
+    align-items:center;
+    justify-content:center;
+}
 
-            gap: 9px;
+.recent-item strong{
+    display:block;
+    font-size:12px;
+}
 
-            transition: .2s;
-        }
+.recent-item span{
+    display:block;
 
+    color:#718096;
 
-        .quick-action:hover {
+    font-size:10px;
 
-            border-color: #20e69b;
+    margin-top:3px;
+}
 
-            background:
-                rgba(32,230,155,0.06);
 
-            transform:
-                translateY(-2px);
-        }
+/* =========================
+TOAST
+========================= */
 
+.toast{
+    position:fixed;
 
-        .quick-action i {
+    right:25px;
+    bottom:25px;
 
-            font-size: 21px;
+    background:#032b3b;
 
-            color: #16b97c;
-        }
+    color:white;
 
+    padding:13px 18px;
 
-        .quick-action span {
+    border-radius:9px;
 
-            font-size: 12px;
+    font-size:12px;
 
-            font-weight: 600;
-        }
+    opacity:0;
 
+    pointer-events:none;
 
-        /* =========================
-           ACTIVITY GRID
-        ========================= */
+    transform:translateY(15px);
 
-        .activity-grid {
+    transition:.3s;
 
-            display: grid;
+    z-index:9999;
+}
 
-            grid-template-columns:
-                1fr 1fr;
+.toast.show{
+    opacity:1;
+    transform:translateY(0);
+}
 
-            gap: 12px;
-        }
 
+/* =========================
+RESPONSIVE
+========================= */
 
-        .activity-box {
+@media(max-width:1100px){
 
-            padding: 15px;
+    .stats-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
 
-            background: #f8fafc;
+    .activity-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
 
-            border-radius: 10px;
+    .quick-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
 
-            border:
-                1px solid #edf1f5;
-        }
+}
 
+@media(max-width:750px){
 
-        .activity-label {
+    .sidebar{
+        position:static;
+        width:100%;
+        height:auto;
+    }
 
-            color: #718096;
+    .app{
+        display:block;
+    }
 
-            font-size: 11px;
-        }
+    .main{
+        margin-left:0;
+        width:100%;
+        padding:20px;
+    }
 
+    .topbar{
+        align-items:flex-start;
 
-        .activity-value {
+        gap:15px;
 
-            display: block;
+        flex-direction:column;
+    }
 
-            margin-top: 7px;
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
 
-            font-size: 23px;
+    .activity-grid{
+        grid-template-columns:1fr;
+    }
 
-            color: #07183b;
-        }
+    .quick-grid{
+        grid-template-columns:1fr;
+    }
 
+}
 
-        .refresh-btn {
-
-            border: none;
-
-            background: #20e69b;
-
-            color: #032b3b;
-
-            padding: 8px 12px;
-
-            border-radius: 7px;
-
-            font-size: 11px;
-
-            font-weight: 700;
-
-            cursor: pointer;
-
-            transition: .2s;
-        }
-
-
-        .refresh-btn:hover {
-
-            transform:
-                translateY(-1px);
-
-            box-shadow:
-                0 5px 12px
-                rgba(32,230,155,0.20);
-        }
-
-
-        /* =========================
-           SYSTEM INFORMATION
-        ========================= */
-
-        .system-info {
-
-            margin-top: 20px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 12px;
-        }
-
-
-        .info-row {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            padding-bottom: 12px;
-
-            border-bottom:
-                1px solid #edf1f5;
-
-            font-size: 12px;
-        }
-
-
-        .info-row span:first-child {
-
-            color: #718096;
-        }
-
-
-        /* =========================
-           TOAST
-        ========================= */
-
-        .toast {
-
-            position: fixed;
-
-            right: 25px;
-
-            bottom: 25px;
-
-            background: #032b3b;
-
-            color: white;
-
-            padding: 13px 18px;
-
-            border-radius: 9px;
-
-            font-size: 12px;
-
-            opacity: 0;
-
-            pointer-events: none;
-
-            transform:
-                translateY(15px);
-
-            transition: .3s;
-
-            z-index: 9999;
-        }
-
-
-        .toast.show {
-
-            opacity: 1;
-
-            transform:
-                translateY(0);
-        }
-
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media(max-width: 1100px) {
-
-            .stats-grid {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-
-            .content-grid {
-
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-
-        @media(max-width: 750px) {
-
-            .sidebar {
-
-                position: static;
-
-                width: 100%;
-
-                height: auto;
-            }
-
-
-            .main {
-
-                margin-left: 0;
-
-                padding: 20px;
-            }
-
-
-            .topbar {
-
-                align-items: flex-start;
-
-                gap: 15px;
-            }
-
-
-            .stats-grid {
-
-                grid-template-columns: 1fr;
-            }
-
-
-            .activity-grid {
-
-                grid-template-columns:
-                    1fr 1fr;
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -849,1355 +919,3028 @@
 <body>
 
 
-    <!-- =========================
-         SIDEBAR
-    ========================= -->
+<div class="app">
 
-    <aside class="sidebar">
 
+<!-- =========================
+SIDEBAR
+========================= -->
 
-        <div class="logo">
+<aside class="sidebar">
 
-            <img
-                src="assets/logo.png"
-                alt="FitTrack"
-            >
+<div class="logo">
 
-        </div>
+<img
+    src="assets/logo.png"
+    alt="FitTrack"
+>
 
+</div>
 
-        <div class="admin-label">
 
-            <i class="fa-solid fa-user-shield"></i>
+<div class="admin-label">
 
-            ADMIN PANEL
+🛡️ ADMIN PANEL
 
-        </div>
+</div>
 
 
-        <nav class="nav">
+<nav class="nav">
 
 
-            <a
-                href="admin-dashboard.html"
-                class="active"
-            >
+<a
+    href="#dashboard"
+    class="nav-link active"
+    data-section="dashboard"
+>
 
-                <i class="fa-solid fa-chart-pie"></i>
+<span class="nav-icon">
+📊
+</span>
 
-                Dashboard
+Dashboard
 
-            </a>
+</a>
 
 
-            <a href="#users">
+<a
+    href="#users"
+    class="nav-link"
+    data-section="users"
+>
 
-                <i class="fa-solid fa-users"></i>
+<span class="nav-icon">
+👥
+</span>
 
-                Users
+Users
 
-            </a>
+</a>
 
 
-            <a href="#activity">
+<a
+    href="#activity"
+    class="nav-link"
+    data-section="activity"
+>
 
-                <i class="fa-solid fa-chart-line"></i>
+<span class="nav-icon">
+📈
+</span>
 
-                Activity
+Activity
 
-            </a>
+</a>
 
 
-            <a href="#system">
+<a
+    href="#system"
+    class="nav-link"
+    data-section="system"
+>
 
-                <i class="fa-solid fa-server"></i>
+<span class="nav-icon">
+⚙️
+</span>
 
-                System
+System
 
-            </a>
+</a>
 
 
-        </nav>
+</nav>
 
 
-        <div class="sidebar-bottom">
+<div class="sidebar-bottom">
 
+<button
+    class="logout-btn"
+    id="adminLogout"
+>
 
-            <button
-                class="logout-btn"
-                id="adminLogout"
-            >
+🚪 &nbsp; Logout
 
-                <i class="fa-solid fa-right-from-bracket"></i>
+</button>
 
-                &nbsp; Logout
+</div>
 
-            </button>
+</aside>
 
 
-        </div>
+<!-- =========================
+MAIN
+========================= -->
 
-    </aside>
+<main class="main">
 
 
+<div class="topbar">
 
-    <!-- =========================
-         MAIN
-    ========================= -->
 
-    <main class="main">
+<div>
 
+<h1 id="pageTitle">
+Admin Dashboard
+</h1>
 
-        <!-- TOPBAR -->
+<p id="pageSubtitle">
+Manage and monitor your FitTrack platform.
+</p>
 
-        <div class="topbar">
+</div>
 
 
-            <div>
+<div class="admin-profile">
 
-                <h1>
-                    Admin Dashboard
-                </h1>
+<div class="admin-avatar">
+A
+</div>
 
-                <p>
-                    Manage and monitor your FitTrack platform.
-                </p>
+<span>
+Administrator
+</span>
 
-            </div>
+</div>
 
 
-            <div class="admin-profile">
+</div>
 
-                <i class="fa-solid fa-user-shield"></i>
 
-                <span>
-                    Administrator
-                </span>
+<!-- =========================
+DASHBOARD
+========================= -->
 
-            </div>
+<section
+    id="dashboardSection"
+    class="page-section active-section"
+>
 
 
-        </div>
+<div class="welcome-card">
 
+<h2>
+Welcome, Administrator 👋
+</h2>
 
+<p>
+Monitor your FitTrack platform,
+registered users and fitness activity
+from one place.
+</p>
 
-        <!-- =========================
-             STATISTICS
-        ========================= -->
+</div>
 
-        <div class="stats-grid">
 
+<div class="stats-grid">
 
-            <!-- TOTAL USERS -->
 
-            <div class="stat-card">
+<div class="stat-card">
 
+<div class="stat-top">
 
-                <div class="stat-top">
+<div class="stat-title">
+Total Users
+</div>
 
+<div class="stat-icon">
+👥
+</div>
 
-                    <div>
+</div>
 
-                        <p>
-                            Total Users
-                        </p>
+<h3 id="totalUsers">
+0
+</h3>
 
-                    </div>
+<p>
+Registered accounts
+</p>
 
+</div>
 
-                    <div class="stat-icon">
 
-                        <i class="fa-solid fa-users"></i>
+<div class="stat-card">
 
-                    </div>
+<div class="stat-top">
 
+<div class="stat-title">
+Active Users
+</div>
 
-                </div>
+<div class="stat-icon">
+✓
+</div>
 
+</div>
 
-                <h3 id="totalUsers">
-                    0
-                </h3>
+<h3 id="activeUsers">
+0
+</h3>
 
+<p>
+Current FitTrack users
+</p>
 
-                <p>
-                    Registered accounts
-                </p>
+</div>
 
 
-            </div>
+<div class="stat-card">
 
+<div class="stat-top">
 
+<div class="stat-title">
+Workouts
+</div>
 
-            <!-- ACTIVE USERS -->
+<div class="stat-icon">
+🏋️
+</div>
 
-            <div class="stat-card">
+</div>
 
+<h3 id="totalWorkouts">
+0
+</h3>
 
-                <div class="stat-top">
+<p>
+Recorded activity
+</p>
 
+</div>
 
-                    <div>
 
-                        <p>
-                            Active Users
-                        </p>
+<div class="stat-card">
 
-                    </div>
+<div class="stat-top">
 
+<div class="stat-title">
+System
+</div>
 
-                    <div class="stat-icon">
+<div class="stat-icon">
+🖥️
+</div>
 
-                        <i class="fa-solid fa-user-check"></i>
+</div>
 
-                    </div>
+<h3 class="online">
+Online
+</h3>
 
+<p>
+Local Storage system
+</p>
 
-                </div>
+</div>
 
 
-                <h3 id="activeUsers">
-                    0
-                </h3>
+</div>
 
 
-                <p>
-                    Current FitTrack users
-                </p>
+<div class="panel">
 
+<div class="panel-header">
 
-            </div>
+<div>
 
+<h2>
+Quick Actions
+</h2>
 
+<p>
+Quickly access different admin sections.
+</p>
 
-            <!-- WORKOUTS -->
+</div>
 
-            <div class="stat-card">
+</div>
 
 
-                <div class="stat-top">
+<div class="quick-grid">
 
 
-                    <div>
+<button
+    class="quick-action"
+    data-open-section="users"
+>
 
-                        <p>
-                            Workouts
-                        </p>
+<div class="quick-action-icon">
+👥
+</div>
 
-                    </div>
+<span>
+View Users
+</span>
 
+</button>
 
-                    <div class="stat-icon">
 
-                        <i class="fa-solid fa-dumbbell"></i>
+<button
+    class="quick-action"
+    data-open-section="activity"
+>
 
-                    </div>
+<div class="quick-action-icon">
+📈
+</div>
 
+<span>
+Activity
+</span>
 
-                </div>
+</button>
 
 
-                <h3 id="totalWorkouts">
-                    0
-                </h3>
+<button
+    class="quick-action"
+    data-open-section="system"
+>
 
+<div class="quick-action-icon">
+⚙️
+</div>
 
-                <p>
-                    Recorded activity
-                </p>
+<span>
+System
+</span>
 
+</button>
 
-            </div>
 
+<button
+    class="quick-action"
+    id="openUserDashboard"
+>
 
+<div class="quick-action-icon">
+🏠
+</div>
 
-            <!-- SYSTEM -->
+<span>
+User Dashboard
+</span>
 
-            <div class="stat-card">
+</button>
 
 
-                <div class="stat-top">
+</div>
 
+</div>
 
-                    <div>
 
-                        <p>
-                            System
-                        </p>
+<div class="panel">
 
-                    </div>
+<div class="panel-header">
 
+<div>
 
-                    <div class="stat-icon">
+<h2>
+Platform Overview
+</h2>
 
-                        <i class="fa-solid fa-server"></i>
+<p>
+Current FitTrack system status.
+</p>
 
-                    </div>
+</div>
 
+</div>
 
-                </div>
 
+<div class="recent-list">
 
-                <h3 class="online">
-                    Online
-                </h3>
 
+<div class="recent-item">
 
-                <p>
-                    Local Storage system
-                </p>
+<div class="recent-icon">
+👥
+</div>
 
+<div>
 
-            </div>
+<strong>
+User Management
+</strong>
 
+<span>
+Manage registered FitTrack users
+</span>
 
-        </div>
+</div>
 
+</div>
 
 
-        <!-- =========================
-             CONTENT GRID
-        ========================= -->
+<div class="recent-item">
 
-        <div class="content-grid">
+<div class="recent-icon">
+📈
+</div>
 
+<div>
 
-            <!-- =========================
-                 USERS
-            ========================= -->
+<strong>
+Fitness Activity
+</strong>
 
-            <section
-                class="panel"
-                id="users"
-            >
+<span>
+Monitor workouts, steps,
+calories and heart rate
+</span>
 
+</div>
 
-                <div class="panel-header">
+</div>
 
 
-                    <h2>
-                        Registered Users
-                    </h2>
+<div class="recent-item">
 
+<div class="recent-icon">
+🔐
+</div>
 
-                    <span id="userCountText">
-                        0 users
-                    </span>
+<div>
 
+<strong>
+Authentication
+</strong>
 
-                </div>
+<span>
+Admin authentication is protected
+using Local Storage
+</span>
 
+</div>
 
+</div>
 
-                <div class="table-container">
 
+</div>
 
-                    <table>
+</div>
 
 
-                        <thead>
+</section>
 
 
-                            <tr>
+<!-- =========================
+USERS
+========================= -->
 
+<section
+    id="usersSection"
+    class="page-section"
+>
 
-                                <th>
-                                    NAME
-                                </th>
 
+<div class="panel">
 
-                                <th>
-                                    EMAIL
-                                </th>
 
+<div class="panel-header">
 
-                                <th>
-                                    STATUS
-                                </th>
+<div>
 
+<h2>
+Registered Users
+</h2>
 
-                                <th>
-                                    ACTION
-                                </th>
+<p>
+Manage all registered FitTrack accounts.
+</p>
 
+</div>
 
-                            </tr>
 
+<button
+    class="back-btn"
+    data-open-section="dashboard"
+>
+← Dashboard
+</button>
 
-                        </thead>
+</div>
 
 
-                        <tbody id="usersTable">
+<div class="table-container">
 
-                        </tbody>
+<table>
 
+<thead>
 
-                    </table>
+<tr>
 
+<th>
+NAME
+</th>
 
-                </div>
+<th>
+EMAIL
+</th>
 
+<th>
+STATUS
+</th>
 
-            </section>
+<th>
+ACTION
+</th>
 
+</tr>
 
+</thead>
 
-            <!-- =========================
-                 RIGHT SIDE
-            ========================= -->
 
-            <div>
+<tbody id="usersTable">
+</tbody>
 
+</table>
 
-                <!-- QUICK ACTIONS -->
+</div>
 
-                <section
-                    class="panel"
-                    id="quickActions"
-                >
+</div>
 
 
-                    <div class="panel-header">
+<div class="panel">
 
+<div class="panel-header">
 
-                        <h2>
-                            Quick Actions
-                        </h2>
+<div>
 
+<h2>
+User Statistics
+</h2>
 
-                    </div>
+<p>
+Current registration information.
+</p>
 
+</div>
 
+</div>
 
-                    <div class="quick-actions">
 
+<div class="stats-grid">
 
-                        <a
-                            href="#users"
-                            class="quick-action"
-                        >
 
-                            <i class="fa-solid fa-users"></i>
+<div class="stat-card">
 
-                            <span>
-                                View Users
-                            </span>
+<div class="stat-title">
+Registered Users
+</div>
 
-                        </a>
+<h3 id="usersPageCount">
+0
+</h3>
 
+<p>
+Total accounts
+</p>
 
+</div>
 
-                        <a
-                            href="#activity"
-                            class="quick-action"
-                        >
 
-                            <i class="fa-solid fa-chart-line"></i>
+<div class="stat-card">
 
-                            <span>
-                                Activity
-                            </span>
+<div class="stat-title">
+Active Users
+</div>
 
-                        </a>
+<h3 id="usersPageActive">
+0
+</h3>
 
+<p>
+Active accounts
+</p>
 
+</div>
 
-                        <a
-                            href="#system"
-                            class="quick-action"
-                        >
 
-                            <i class="fa-solid fa-gear"></i>
+</div>
 
-                            <span>
-                                System
-                            </span>
+</div>
 
-                        </a>
 
+</section>
 
 
-                        <a
-                            href="index.html"
-                            class="quick-action"
-                        >
+<!-- =========================
+ACTIVITY
+========================= -->
 
-                            <i class="fa-solid fa-house"></i>
+<section
+    id="activitySection"
+    class="page-section"
+>
 
-                            <span>
-                                User Dashboard
-                            </span>
 
-                        </a>
+<div class="panel">
 
 
-                    </div>
+<div class="panel-header">
 
+<div>
 
-                </section>
+<h2>
+Activity Overview
+</h2>
 
+<p>
+Monitor fitness activity stored by users.
+</p>
 
+</div>
 
-                <!-- =========================
-                     ACTIVITY
-                ========================= -->
 
-                <section
-                    class="panel"
-                    id="activity"
-                    style="margin-top:20px;"
-                >
+<div>
 
+<button
+    class="refresh-btn"
+    id="refreshActivity"
+>
+↻ Refresh
+</button>
 
-                    <div class="panel-header">
+<button
+    class="back-btn"
+    data-open-section="dashboard"
+>
+← Dashboard
+</button>
 
+</div>
 
-                        <h2>
-                            Activity Overview
-                        </h2>
+</div>
 
 
-                        <button
-                            class="refresh-btn"
-                            id="refreshActivity"
-                        >
+<!-- USER SELECT -->
 
-                            <i class="fa-solid fa-rotate"></i>
+<div
+    class="panel"
+    style="
+        background:#f8fafc;
+        border:1px solid #edf1f5;
+        box-shadow:none;
+        margin-bottom:18px;
+    "
+>
 
-                            Refresh
+<div
+    style="
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:15px;
+        flex-wrap:wrap;
+    "
+>
 
-                        </button>
+<div>
 
+<strong
+    style="
+        display:block;
+        font-size:13px;
+    "
+>
+Selected User
+</strong>
 
-                    </div>
+<span
+    style="
+        display:block;
+        color:#718096;
+        font-size:11px;
+        margin-top:4px;
+    "
+>
+Select a registered user to view only their activity.
+</span>
 
+</div>
 
 
-                    <div class="activity-grid">
+<select
+    id="activityUserSelect"
+    style="
+        min-width:260px;
+        height:40px;
+        border:1px solid #dfe7ee;
+        border-radius:8px;
+        padding:0 10px;
+        background:white;
+        color:#07183b;
+        outline:none;
+        font-size:12px;
+    "
+>
 
+<option value="">
+Select a user
+</option>
 
-                        <!-- WORKOUTS -->
+</select>
 
-                        <div class="activity-box">
+</div>
 
+</div>
 
-                            <div class="activity-label">
 
-                                Total Workouts
+<!-- SELECTED USER -->
 
-                            </div>
+<div
+    id="selectedUserDetails"
+    class="panel"
+    style="
+        display:none;
+        background:#f8fafc;
+        border:1px solid #edf1f5;
+        box-shadow:none;
+        margin-bottom:18px;
+    "
+>
 
+<div
+    style="
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:12px;
+    "
+>
 
-                            <strong
-                                class="activity-value"
-                                id="activityWorkouts"
-                            >
-                                0
-                            </strong>
+<div>
 
+<span class="activity-label">
+Name
+</span>
 
-                        </div>
+<strong
+    class="activity-value"
+    id="selectedUserName"
+    style="font-size:16px;"
+>
+—
+</strong>
 
+</div>
 
 
-                        <!-- STEPS -->
+<div>
 
-                        <div class="activity-box">
+<span class="activity-label">
+Email
+</span>
 
+<strong
+    class="activity-value"
+    id="selectedUserEmail"
+    style="
+        font-size:16px;
+        word-break:break-word;
+    "
+>
+—
+</strong>
 
-                            <div class="activity-label">
+</div>
 
-                                Total Steps
 
-                            </div>
+<div>
 
+<span class="activity-label">
+Fitness Goal
+</span>
 
-                            <strong
-                                class="activity-value"
-                                id="activitySteps"
-                            >
-                                0
-                            </strong>
+<strong
+    class="activity-value"
+    id="selectedUserGoal"
+    style="font-size:16px;"
+>
+—
+</strong>
 
+</div>
 
-                        </div>
 
+</div>
 
+</div>
 
-                        <!-- CALORIES -->
 
-                        <div class="activity-box">
+<!-- ACTIVITY CARDS -->
 
+<div class="activity-grid">
 
-                            <div class="activity-label">
 
-                                Calories
+<div class="activity-box">
 
-                            </div>
+<div class="activity-icon">
+🏋️
+</div>
 
+<div class="activity-label">
+Total Workouts
+</div>
 
-                            <strong
-                                class="activity-value"
-                                id="activityCalories"
-                            >
-                                0
-                            </strong>
+<strong
+    class="activity-value"
+    id="activityWorkouts"
+>
+0
+</strong>
 
+</div>
 
-                        </div>
 
+<div class="activity-box">
 
+<div class="activity-icon">
+👟
+</div>
 
-                        <!-- HEART RATE -->
+<div class="activity-label">
+Today's Steps
+</div>
 
-                        <div class="activity-box">
+<strong
+    class="activity-value"
+    id="activitySteps"
+>
+0
+</strong>
 
+</div>
 
-                            <div class="activity-label">
 
-                                Heart Rate
+<div class="activity-box">
 
-                            </div>
+<div class="activity-icon">
+🔥
+</div>
 
+<div class="activity-label">
+Today's Calories
+</div>
 
-                            <strong
-                                class="activity-value"
-                                id="activityHeartRate"
-                            >
-                                —
-                            </strong>
+<strong
+    class="activity-value"
+    id="activityCalories"
+>
+0
+</strong>
 
+</div>
 
-                        </div>
 
+<div class="activity-box">
 
-                    </div>
+<div class="activity-icon">
+❤️
+</div>
 
+<div class="activity-label">
+Heart Rate
+</div>
 
-                </section>
+<strong
+    class="activity-value"
+    id="activityHeartRate"
+>
+—
+</strong>
 
+</div>
 
 
-                <!-- =========================
-                     SYSTEM
-                ========================= -->
+<div class="activity-box">
 
-                <section
-                    class="panel"
-                    id="system"
-                    style="margin-top:20px;"
-                >
+<div class="activity-icon">
+🌙
+</div>
 
+<div class="activity-label">
+Sleep
+</div>
 
-                    <div class="panel-header">
+<strong
+    class="activity-value"
+    id="activitySleep"
+>
+—
+</strong>
 
+</div>
 
-                        <h2>
-                            System Information
-                        </h2>
 
+<div class="activity-box">
 
-                    </div>
+<div class="activity-icon">
+🍽️
+</div>
 
+<div class="activity-label">
+Meals
+</div>
 
+<strong
+    class="activity-value"
+    id="activityMeals"
+>
+0
+</strong>
 
-                    <div class="system-info">
+</div>
 
 
-                        <div class="info-row">
+<div class="activity-box">
 
+<div class="activity-icon">
+🎯
+</div>
 
-                            <span>
-                                Application
-                            </span>
+<div class="activity-label">
+Goals
+</div>
 
+<strong
+    class="activity-value"
+    id="activityGoals"
+>
+0
+</strong>
 
-                            <strong>
-                                FitTrack
-                            </strong>
+</div>
 
 
-                        </div>
+</div>
 
+</div>
 
 
-                        <div class="info-row">
+<div class="panel">
 
+<div class="panel-header">
 
-                            <span>
-                                Authentication
-                            </span>
+<div>
 
+<h2>
+Activity Summary
+</h2>
 
-                            <strong>
-                                Local Storage
-                            </strong>
+<p>
+Fitness tracking data currently available in Local Storage.
+</p>
 
+</div>
 
-                        </div>
+</div>
 
 
+<div class="recent-list">
 
-                        <div class="info-row">
 
+<div class="recent-item">
 
-                            <span>
-                                Platform Status
-                            </span>
+<div class="recent-icon">
+🏋️
+</div>
 
+<div>
 
-                            <strong class="online">
-                                Active
-                            </strong>
+<strong>
+Workout Tracking
+</strong>
 
+<span>
+Number of recorded workouts is calculated
+from the selected user's saved data.
+</span>
 
-                        </div>
+</div>
 
+</div>
 
 
-                        <div class="info-row">
+<div class="recent-item">
 
+<div class="recent-icon">
+👟
+</div>
 
-                            <span>
-                                Admin Role
-                            </span>
+<div>
 
+<strong>
+Step Tracking
+</strong>
 
-                            <strong>
-                                Administrator
-                            </strong>
+<span>
+Today's step information is retrieved
+from the selected user's Local Storage data.
+</span>
 
+</div>
 
-                        </div>
+</div>
 
 
-                    </div>
+<div class="recent-item">
 
+<div class="recent-icon">
+❤️
+</div>
 
-                </section>
+<div>
 
+<strong>
+Health Monitoring
+</strong>
 
-            </div>
+<span>
+Calories, sleep and heart-rate information
+are displayed when available.
+</span>
 
+</div>
 
-        </div>
+</div>
 
 
-    </main>
+</div>
 
+</div>
 
 
-    <!-- =========================
-         TOAST
-    ========================= -->
+</section>
 
-    <div
-        class="toast"
-        id="toast"
-    ></div>
 
+<!-- =========================
+SYSTEM
+========================= -->
 
+<section
+    id="systemSection"
+    class="page-section"
+>
 
-    <script>
 
+<div class="panel">
 
-        /* ==========================================
-           ADMIN PAGE PROTECTION
-        ========================================== */
+<div class="panel-header">
 
-        if (
+<div>
+
+<h2>
+System Information
+</h2>
+
+<p>
+FitTrack application and platform details.
+</p>
+
+</div>
+
+
+<button
+    class="back-btn"
+    data-open-section="dashboard"
+>
+← Dashboard
+</button>
+
+</div>
+
+
+<div class="system-info">
+
+
+<div class="info-row">
+
+<span class="info-label">
+Application
+</span>
+
+<span class="info-value">
+FitTrack
+</span>
+
+</div>
+
+
+<div class="info-row">
+
+<span class="info-label">
+Application Type
+</span>
+
+<span class="info-value">
+Fitness Tracking System
+</span>
+
+</div>
+
+
+<div class="info-row">
+
+<span class="info-label">
+Frontend
+</span>
+
+<span class="info-value">
+HTML, CSS, JavaScript
+</span>
+
+</div>
+
+
+<div class="info-row">
+
+<span class="info-label">
+Authentication
+</span>
+
+<span class="info-value">
+Local Storage
+</span>
+
+</div>
+
+
+<div class="info-row">
+
+<span class="info-label">
+Data Storage
+</span>
+
+<span class="info-value">
+Browser Local Storage
+</span>
+
+</div>
+
+
+<div class="info-row">
+
+<span class="info-label">
+Platform Status
+</span>
+
+<span class="info-value system-active">
+● Active
+</span>
+
+</div>
+
+
+<div class="info-row">
+
+<span class="info-label">
+Admin Role
+</span>
+
+<span class="info-value">
+Administrator
+</span>
+
+</div>
+
+
+<div class="info-row">
+
+<span class="info-label">
+Project
+</span>
+
+<span class="info-value">
+FitTrack SDC Project
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="panel">
+
+<div class="panel-header">
+
+<div>
+
+<h2>
+Security & Access
+</h2>
+
+<p>
+Current admin access controls.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="recent-list">
+
+
+<div class="recent-item">
+
+<div class="recent-icon">
+🔐
+</div>
+
+<div>
+
+<strong>
+Admin Authentication
+</strong>
+
+<span>
+Unauthorized users are redirected
+to the admin login page.
+</span>
+
+</div>
+
+</div>
+
+
+<div class="recent-item">
+
+<div class="recent-icon">
+💾
+</div>
+
+<div>
+
+<strong>
+Browser Storage
+</strong>
+
+<span>
+Admin login status and application
+data are managed using Local Storage.
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+</div>
+
+
+<div
+    class="toast"
+    id="toast"
+></div>
+
+
+<script>
+
+/* ==========================================
+ADMIN PAGE PROTECTION
+========================================== */
+
+if(
     localStorage.getItem(
         "fittrackAdminLoggedIn"
     ) !== "true"
-) {
+){
+
     window.location.href =
         "admin-login.html";
+
 }
 
 
+/* ==========================================
+PAGE DATA
+========================================== */
 
-        /* ==========================================
-           USER MANAGEMENT
-        ========================================== */
-
-        let users =
-            JSON.parse(
-                localStorage.getItem(
-                    "fittrackUsers"
-                )
-            ) || [];
-
+let users =
+    JSON.parse(
+        localStorage.getItem(
+            "fittrackUsers"
+        )
+    ) || [];
 
 
-        /* ==========================================
-           UPDATE USER COUNTS
-        ========================================== */
-
-        function updateUserCounts() {
+let selectedUserEmail = "";
 
 
-            document.getElementById(
-                "totalUsers"
-            ).textContent =
-                users.length;
+/* ==========================================
+SECTIONS
+========================================== */
+
+const sections = {
+
+    dashboard:
+        document.getElementById(
+            "dashboardSection"
+        ),
+
+    users:
+        document.getElementById(
+            "usersSection"
+        ),
+
+    activity:
+        document.getElementById(
+            "activitySection"
+        ),
+
+    system:
+        document.getElementById(
+            "systemSection"
+        )
+
+};
 
 
-            document.getElementById(
-                "activeUsers"
-            ).textContent =
-                users.length;
+const navLinks =
+    document.querySelectorAll(
+        ".nav-link"
+    );
 
 
-            document.getElementById(
-                "userCountText"
-            ).textContent =
-                users.length +
-                (
-                    users.length === 1
-                        ? " user"
-                        : " users"
-                );
+const pageTitle =
+    document.getElementById(
+        "pageTitle"
+    );
 
+
+const pageSubtitle =
+    document.getElementById(
+        "pageSubtitle"
+    );
+
+
+/* ==========================================
+PAGE INFORMATION
+========================================== */
+
+const pageInformation = {
+
+    dashboard:{
+        title:
+            "Admin Dashboard",
+
+        subtitle:
+            "Manage and monitor your FitTrack platform."
+    },
+
+    users:{
+        title:
+            "Users",
+
+        subtitle:
+            "Manage registered FitTrack accounts."
+    },
+
+    activity:{
+        title:
+            "Activity",
+
+        subtitle:
+            "Monitor fitness activity and health data."
+    },
+
+    system:{
+        title:
+            "System",
+
+        subtitle:
+            "View FitTrack application and system information."
+    }
+
+};
+
+
+/* ==========================================
+SHOW SECTION
+========================================== */
+
+function showSection(
+    sectionName
+){
+
+    if(
+        !sections[sectionName]
+    ){
+
+        sectionName =
+            "dashboard";
+
+    }
+
+
+    Object.values(
+        sections
+    ).forEach(
+        function(section){
+
+            section.classList.remove(
+                "active-section"
+            );
 
         }
+    );
 
 
-
-        /* ==========================================
-           DISPLAY USERS
-        ========================================== */
-
-        function displayUsers() {
-
-
-            const usersTable =
-                document.getElementById(
-                    "usersTable"
-                );
+    sections[
+        sectionName
+    ].classList.add(
+        "active-section"
+    );
 
 
-            usersTable.innerHTML = "";
+    navLinks.forEach(
+        function(link){
 
-
-
-            if (
-                users.length === 0
-            ) {
-
-
-                usersTable.innerHTML = `
-
-                    <tr>
-
-                        <td
-                            colspan="4"
-                            class="no-users"
-                        >
-
-                            No registered users yet.
-
-                        </td>
-
-                    </tr>
-
-                `;
-
-
-                updateUserCounts();
-
-
-                return;
-
-            }
-
-
-
-            users.forEach(
-                function(user, index) {
-
-
-                    const row =
-                        document.createElement(
-                            "tr"
-                        );
-
-
-                    row.innerHTML = `
-
-                        <td>
-
-                            <div class="user-name">
-
-                                ${escapeHTML(user.name)}
-
-                            </div>
-
-                        </td>
-
-
-                        <td>
-
-                            <div class="user-email">
-
-                                ${escapeHTML(user.email)}
-
-                            </div>
-
-                        </td>
-
-
-                        <td>
-
-                            <span class="status">
-
-                                Active
-
-                            </span>
-
-                        </td>
-
-
-                        <td>
-
-                            <button
-                                class="delete-btn"
-                                data-index="${index}"
-                            >
-
-                                <i class="fa-solid fa-trash"></i>
-
-                                Delete
-
-                            </button>
-
-                        </td>
-
-                    `;
-
-
-                    usersTable.appendChild(
-                        row
-                    );
-
-
-                }
+            link.classList.remove(
+                "active"
             );
 
 
+            if(
+                link.dataset.section ===
+                sectionName
+            ){
 
-            /* DELETE BUTTONS */
-
-            document
-                .querySelectorAll(
-                    ".delete-btn"
-                )
-                .forEach(
-                    function(button) {
-
-
-                        button.addEventListener(
-                            "click",
-                            function() {
-
-
-                                const index =
-                                    Number(
-                                        this.dataset.index
-                                    );
-
-
-                                const user =
-                                    users[index];
-
-
-                                if (!user) {
-
-                                    return;
-
-                                }
-
-
-
-                                const confirmDelete =
-                                    confirm(
-                                        "Are you sure you want to delete " +
-                                        user.name +
-                                        "?"
-                                    );
-
-
-                                if (
-                                    !confirmDelete
-                                ) {
-
-                                    return;
-
-                                }
-
-
-
-                                /* REMOVE USER */
-
-                                users.splice(
-                                    index,
-                                    1
-                                );
-
-
-
-                                /* SAVE */
-
-                               localStorage.setItem(
-    "fittrackUsers",
-    JSON.stringify(users)
-);
-
-
-
-                                /* UPDATE */
-
-                                displayUsers();
-
-
-
-                                showToast(
-                                    "User deleted successfully."
-                                );
-
-
-                            }
-                        );
-
-
-                    }
+                link.classList.add(
+                    "active"
                 );
 
-
-
-            updateUserCounts();
-
+            }
 
         }
+    );
 
 
+    pageTitle.textContent =
+        pageInformation[
+            sectionName
+        ].title;
 
-        /* INITIAL DISPLAY */
+
+    pageSubtitle.textContent =
+        pageInformation[
+            sectionName
+        ].subtitle;
+
+
+    if(
+        window.location.hash !==
+        "#" + sectionName
+    ){
+
+        history.replaceState(
+            null,
+            "",
+            "#" + sectionName
+        );
+
+    }
+
+
+    if(
+        sectionName ===
+        "users"
+    ){
 
         displayUsers();
 
+    }
 
 
-        /* ==========================================
-           ACTIVITY DATA
-        ========================================== */
+    if(
+        sectionName ===
+        "activity"
+    ){
 
-        function loadActivityData() {
+        populateActivityUsers();
 
+        loadActivityData();
 
-            /* =========================
-               WORKOUTS
-            ========================= */
-
-            let workouts = [];
+    }
 
 
-            const savedWorkouts =
-                localStorage.getItem(
-                    "fittrackWorkouts"
+    if(
+        sectionName ===
+        "dashboard"
+    ){
+
+        updateDashboardStats();
+
+    }
+
+}
+
+
+/* ==========================================
+SIDEBAR
+========================================== */
+
+navLinks.forEach(
+    function(link){
+
+        link.addEventListener(
+            "click",
+            function(event){
+
+                event.preventDefault();
+
+                showSection(
+                    this.dataset.section
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* ==========================================
+QUICK ACTIONS
+========================================== */
+
+document
+    .querySelectorAll(
+        "[data-open-section]"
+    )
+    .forEach(
+        function(button){
+
+            button.addEventListener(
+                "click",
+                function(){
+
+                    showSection(
+                        this.dataset.openSection
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+/* ==========================================
+HASH NAVIGATION
+========================================== */
+
+window.addEventListener(
+    "hashchange",
+    function(){
+
+        let section =
+            window.location.hash
+                .replace(
+                    "#",
+                    ""
                 );
 
 
-            if (savedWorkouts) {
+        if(
+            !sections[section]
+        ){
+
+            section =
+                "dashboard";
+
+        }
 
 
-                try {
+        showSection(
+            section
+        );
+
+    }
+);
 
 
-                    const parsedWorkouts =
-                        JSON.parse(
-                            savedWorkouts
-                        );
+/* ==========================================
+USER DATA
+========================================== */
+
+function getAllUserData(){
+
+    return JSON.parse(
+        localStorage.getItem(
+            "fittrackUserData"
+        )
+    ) || {};
+
+}
 
 
-                    if (
-                        Array.isArray(
-                            parsedWorkouts
+function getToday(){
+
+    const now =
+        new Date();
+
+
+    return (
+
+        now.getFullYear() +
+        "-" +
+
+        String(
+            now.getMonth() + 1
+        ).padStart(
+            2,
+            "0"
+        ) +
+
+        "-" +
+
+        String(
+            now.getDate()
+        ).padStart(
+            2,
+            "0"
+        )
+
+    );
+
+}
+
+
+/* ==========================================
+TODAY STEPS
+========================================== */
+
+function getTodaySteps(
+    userData
+){
+
+    if(
+        !userData ||
+        userData.steps === undefined ||
+        userData.steps === null
+    ){
+
+        return 0;
+
+    }
+
+
+    if(
+        Array.isArray(
+            userData.steps
+        )
+    ){
+
+        return userData.steps.reduce(
+
+            function(
+                total,
+                record
+            ){
+
+                if(
+                    typeof record ===
+                    "number"
+                ){
+
+                    return (
+                        total +
+                        Number(
+                            record
                         )
-                    ) {
+                    );
 
-                        workouts =
-                            parsedWorkouts;
+                }
+
+
+                if(
+                    record &&
+                    (
+                        record.date ===
+                        getToday() ||
+
+                        record.day ===
+                        getToday()
+                    )
+                ){
+
+                    return (
+                        total +
+                        Number(
+                            record.steps ||
+                            0
+                        )
+                    );
+
+                }
+
+
+                return total;
+
+            },
+
+            0
+
+        );
+
+    }
+
+
+    return Number(
+        userData.steps
+    ) || 0;
+
+}
+
+
+/* ==========================================
+TODAY CALORIES
+========================================== */
+
+function getTodayCalories(
+    userData
+){
+
+    if(
+        !userData ||
+        !Array.isArray(
+            userData.meals
+        )
+    ){
+
+        return 0;
+
+    }
+
+
+    return userData.meals.reduce(
+
+        function(
+            total,
+            meal
+        ){
+
+            if(
+                meal &&
+                meal.date ===
+                getToday()
+            ){
+
+                return (
+                    total +
+                    Number(
+                        meal.calories ||
+                        0
+                    )
+                );
+
+            }
+
+
+            return total;
+
+        },
+
+        0
+
+    );
+
+}
+
+
+/* ==========================================
+HEART RATE
+========================================== */
+
+function getHeartRate(
+    userData
+){
+
+    if(
+        !userData ||
+        !Array.isArray(
+            userData.heartRate
+        ) ||
+        userData.heartRate.length === 0
+    ){
+
+        return 0;
+
+    }
+
+
+    const readings =
+
+        userData.heartRate
+
+            .map(
+                function(item){
+
+                    if(
+                        typeof item ===
+                        "number"
+                    ){
+
+                        return Number(
+                            item
+                        );
 
                     }
 
 
-                } catch (error) {
+                    return Number(
 
-                    workouts = [];
+                        item.bpm ||
 
-                }
+                        item.value ||
 
-            }
+                        item.heartRate ||
 
+                        0
 
-
-            /* =========================
-               STEPS
-            ========================= */
-
-            let steps = 0;
-
-
-            const savedSteps =
-                localStorage.getItem(
-                    "fittrackSteps"
-                );
-
-
-            if (savedSteps) {
-
-                steps =
-                    Number(
-                        savedSteps
-                    ) || 0;
-
-            }
-
-
-
-            /* =========================
-               CALORIES
-            ========================= */
-
-            let calories = 0;
-
-
-            const savedCalories =
-                localStorage.getItem(
-                    "fittrackCalories"
-                );
-
-
-            if (savedCalories) {
-
-                calories =
-                    Number(
-                        savedCalories
-                    ) || 0;
-
-            }
-
-
-
-            /* =========================
-               HEART RATE
-            ========================= */
-
-            let heartRate = 0;
-
-
-            const savedHeartRate =
-                localStorage.getItem(
-                    "fittrackHeartRate"
-                );
-
-
-            if (savedHeartRate) {
-
-                heartRate =
-                    Number(
-                        savedHeartRate
-                    ) || 0;
-
-            }
-
-
-
-            /* =========================
-               DISPLAY
-            ========================= */
-
-            document.getElementById(
-                "activityWorkouts"
-            ).textContent =
-                workouts.length;
-
-
-            document.getElementById(
-                "activitySteps"
-            ).textContent =
-                steps.toLocaleString();
-
-
-            document.getElementById(
-                "activityCalories"
-            ).textContent =
-                calories.toLocaleString();
-
-
-            document.getElementById(
-                "activityHeartRate"
-            ).textContent =
-                heartRate > 0
-                    ? heartRate + " BPM"
-                    : "—";
-
-
-
-            /* MAIN WORKOUT CARD */
-
-            document.getElementById(
-                "totalWorkouts"
-            ).textContent =
-                workouts.length;
-
-
-        }
-
-
-
-        /* INITIAL ACTIVITY LOAD */
-
-        loadActivityData();
-
-
-
-        /* ==========================================
-           REFRESH ACTIVITY
-        ========================================== */
-
-        document
-            .getElementById(
-                "refreshActivity"
-            )
-            .addEventListener(
-                "click",
-                function() {
-
-
-                    loadActivityData();
-
-
-                    showToast(
-                        "Activity data refreshed."
                     );
 
+                }
+            )
+
+            .filter(
+                function(value){
+
+                    return value > 0;
 
                 }
             );
 
 
+    if(
+        readings.length === 0
+    ){
 
-        /* ==========================================
-           HTML SECURITY
-        ========================================== */
+        return 0;
 
-        function escapeHTML(value) {
+    }
 
 
-            return String(value)
+    return Math.round(
 
-                .replace(
-                    /&/g,
-                    "&amp;"
-                )
+        readings.reduce(
 
-                .replace(
-                    /</g,
-                    "&lt;"
-                )
+            function(
+                sum,
+                value
+            ){
 
-                .replace(
-                    />/g,
-                    "&gt;"
-                )
-
-                .replace(
-                    /"/g,
-                    "&quot;"
-                )
-
-                .replace(
-                    /'/g,
-                    "&#039;"
+                return (
+                    sum +
+                    value
                 );
 
+            },
+
+            0
+
+        ) /
+        readings.length
+
+    );
+
+}
+
+
+/* ==========================================
+SLEEP
+========================================== */
+
+function getLatestSleep(
+    userData
+){
+
+    if(
+        !userData ||
+        !Array.isArray(
+            userData.sleep
+        ) ||
+        userData.sleep.length === 0
+    ){
+
+        return 0;
+
+    }
+
+
+    const todaySleep =
+
+        userData.sleep.filter(
+
+            function(item){
+
+                return (
+
+                    item &&
+                    item.date ===
+                    getToday()
+
+                );
+
+            }
+
+        );
+
+
+    if(
+        todaySleep.length > 0
+    ){
+
+        return todaySleep.reduce(
+
+            function(
+                total,
+                item
+            ){
+
+                return (
+                    total +
+                    Number(
+                        item.duration ||
+                        0
+                    )
+                );
+
+            },
+
+            0
+
+        );
+
+    }
+
+
+    const latest =
+        userData.sleep[
+            userData.sleep.length - 1
+        ];
+
+
+    return Number(
+        latest &&
+        latest.duration
+    ) || 0;
+
+}
+
+
+/* ==========================================
+TOTAL WORKOUTS
+========================================== */
+
+function getTotalWorkouts(){
+
+    const allUserData =
+        getAllUserData();
+
+
+    let total = 0;
+
+
+    Object.keys(
+        allUserData
+    ).forEach(
+        function(email){
+
+            const data =
+                allUserData[email];
+
+
+            if(
+                data &&
+                Array.isArray(
+                    data.workouts
+                )
+            ){
+
+                total +=
+                    data.workouts.length;
+
+            }
 
         }
+    );
 
 
+    return total;
 
-        /* ==========================================
-           TOAST
-        ========================================== */
-
-        function showToast(text) {
+}
 
 
-            const toast =
-                document.getElementById(
-                    "toast"
+/* ==========================================
+SELECTED USER DATA
+========================================== */
+
+function getSelectedUserData(){
+
+    const allUserData =
+        getAllUserData();
+
+
+    if(
+        !selectedUserEmail ||
+        !allUserData[
+            selectedUserEmail
+        ]
+    ){
+
+        return null;
+
+    }
+
+
+    return allUserData[
+        selectedUserEmail
+    ];
+
+}
+
+
+/* ==========================================
+USER SELECT
+========================================== */
+
+function populateActivityUsers(){
+
+    const select =
+        document.getElementById(
+            "activityUserSelect"
+        );
+
+
+    if(
+        !select
+    ){
+
+        return;
+
+    }
+
+
+    users =
+        JSON.parse(
+            localStorage.getItem(
+                "fittrackUsers"
+            )
+        ) || [];
+
+
+    select.innerHTML = `
+
+        <option value="">
+            Select a user
+        </option>
+
+    `;
+
+
+    users.forEach(
+        function(user){
+
+            const option =
+                document.createElement(
+                    "option"
                 );
 
 
-            toast.textContent =
-                text;
+            option.value =
+                user.email || "";
 
 
-            toast.classList.add(
+            option.textContent =
+
+                (
+                    user.name ||
+                    "User"
+                ) +
+
+                " — " +
+
+                (
+                    user.email ||
+                    "No email"
+                );
+
+
+            select.appendChild(
+                option
+            );
+
+        }
+    );
+
+
+    if(
+        selectedUserEmail
+    ){
+
+        select.value =
+            selectedUserEmail;
+
+    }
+
+}
+
+
+/* ==========================================
+LOAD SELECTED USER ACTIVITY
+========================================== */
+
+function loadActivityData(
+    email
+){
+
+    if(
+        email !== undefined
+    ){
+
+        selectedUserEmail =
+            email || "";
+
+    }
+
+
+    populateActivityUsers();
+
+
+    const userData =
+        getSelectedUserData();
+
+
+    const details =
+        document.getElementById(
+            "selectedUserDetails"
+        );
+
+
+    /* NO USER SELECTED */
+
+    if(
+        !userData
+    ){
+
+        document.getElementById(
+            "activityWorkouts"
+        ).textContent =
+            "0";
+
+
+        document.getElementById(
+            "activitySteps"
+        ).textContent =
+            "0";
+
+
+        document.getElementById(
+            "activityCalories"
+        ).textContent =
+            "0";
+
+
+        document.getElementById(
+            "activityHeartRate"
+        ).textContent =
+            "—";
+
+
+        document.getElementById(
+            "activitySleep"
+        ).textContent =
+            "—";
+
+
+        document.getElementById(
+            "activityMeals"
+        ).textContent =
+            "0";
+
+
+        document.getElementById(
+            "activityGoals"
+        ).textContent =
+            "0";
+
+
+        details.style.display =
+            "none";
+
+
+        document.getElementById(
+            "totalWorkouts"
+        ).textContent =
+            getTotalWorkouts();
+
+
+        return;
+
+    }
+
+
+    /* WORKOUTS */
+
+    const workouts =
+
+        Array.isArray(
+            userData.workouts
+        )
+
+            ? userData.workouts
+
+            : [];
+
+
+    /* MEALS */
+
+    const meals =
+
+        Array.isArray(
+            userData.meals
+        )
+
+            ? userData.meals
+
+            : [];
+
+
+    /* GOALS */
+
+    const goals =
+        userData.goals || {};
+
+
+    /* PROFILE */
+
+    const profile =
+        userData.profile || {};
+
+
+    /* USER */
+
+    const selectedUser =
+
+        users.find(
+            function(user){
+
+                return (
+                    user.email ===
+                    selectedUserEmail
+                );
+
+            }
+        ) || {};
+
+
+    /* VALUES */
+
+    const steps =
+        getTodaySteps(
+            userData
+        );
+
+
+    const calories =
+        getTodayCalories(
+            userData
+        );
+
+
+    const heartRate =
+        getHeartRate(
+            userData
+        );
+
+
+    const sleep =
+        getLatestSleep(
+            userData
+        );
+
+
+    const goalCount =
+
+        Object.keys(
+            goals
+        ).filter(
+            function(key){
+
+                return (
+
+                    goals[key] !==
+                    "" &&
+
+                    goals[key] !==
+                    null &&
+
+                    goals[key] !==
+                    undefined
+
+                );
+
+            }
+        ).length;
+
+
+    /* DISPLAY */
+
+    document.getElementById(
+        "activityWorkouts"
+    ).textContent =
+        workouts.length;
+
+
+    document.getElementById(
+        "activitySteps"
+    ).textContent =
+        steps.toLocaleString();
+
+
+    document.getElementById(
+        "activityCalories"
+    ).textContent =
+        calories.toLocaleString();
+
+
+    document.getElementById(
+        "activityHeartRate"
+    ).textContent =
+
+        heartRate > 0
+
+            ? heartRate + " BPM"
+
+            : "—";
+
+
+    document.getElementById(
+        "activitySleep"
+    ).textContent =
+
+        sleep > 0
+
+            ? sleep.toFixed(1) +
+              " h"
+
+            : "—";
+
+
+    document.getElementById(
+        "activityMeals"
+    ).textContent =
+        meals.length;
+
+
+    document.getElementById(
+        "activityGoals"
+    ).textContent =
+        goalCount;
+
+
+    document.getElementById(
+        "selectedUserName"
+    ).textContent =
+
+        profile.name ||
+
+        selectedUser.name ||
+
+        "User";
+
+
+    document.getElementById(
+        "selectedUserEmail"
+    ).textContent =
+
+        profile.email ||
+
+        selectedUser.email ||
+
+        "No email";
+
+
+    document.getElementById(
+        "selectedUserGoal"
+    ).textContent =
+
+        goals.fitnessGoal ||
+
+        goals.goal ||
+
+        profile.goal ||
+
+        "Not set";
+
+
+    details.style.display =
+        "block";
+
+
+    document.getElementById(
+        "totalWorkouts"
+    ).textContent =
+        getTotalWorkouts();
+
+}
+
+
+/* ==========================================
+ACTIVITY USER SELECT CHANGE
+========================================== */
+
+const activityUserSelect =
+    document.getElementById(
+        "activityUserSelect"
+    );
+
+
+if(
+    activityUserSelect
+){
+
+    activityUserSelect.addEventListener(
+        "change",
+        function(){
+
+            loadActivityData(
+                this.value
+            );
+
+        }
+    );
+
+}
+
+
+/* ==========================================
+DISPLAY USERS
+========================================== */
+
+function displayUsers(){
+
+    users =
+        JSON.parse(
+            localStorage.getItem(
+                "fittrackUsers"
+            )
+        ) || [];
+
+
+    const table =
+        document.getElementById(
+            "usersTable"
+        );
+
+
+    table.innerHTML = "";
+
+
+    if(
+        users.length === 0
+    ){
+
+        table.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="4"
+                    class="empty"
+                >
+                    No registered users yet.
+                </td>
+
+            </tr>
+
+        `;
+
+
+        updateDashboardStats();
+
+        return;
+
+    }
+
+
+    users.forEach(
+        function(
+            user,
+            index
+        ){
+
+            const row =
+                document.createElement(
+                    "tr"
+                );
+
+
+            row.innerHTML = `
+
+                <td>
+
+                    <div class="user-name">
+
+                        ${escapeHTML(
+                            user.name ||
+                            "User"
+                        )}
+
+                    </div>
+
+                </td>
+
+
+                <td>
+
+                    <div class="user-email">
+
+                        ${escapeHTML(
+                            user.email ||
+                            "No email"
+                        )}
+
+                    </div>
+
+                </td>
+
+
+                <td>
+
+                    <span class="status">
+                        Active
+                    </span>
+
+                </td>
+
+
+                <td>
+
+                    <button
+                        class="view-btn"
+                        data-email="${escapeHTML(
+                            user.email ||
+                            ""
+                        )}"
+                    >
+                        👁 View Activity
+                    </button>
+
+
+                    <button
+                        class="delete-btn"
+                        data-index="${index}"
+                    >
+                        🗑 Delete
+                    </button>
+
+                </td>
+
+            `;
+
+
+            table.appendChild(
+                row
+            );
+
+        }
+    );
+
+
+    /* ==========================================
+    DELETE USER
+    ========================================== */
+
+    document
+        .querySelectorAll(
+            ".delete-btn"
+        )
+        .forEach(
+            function(button){
+
+                button.addEventListener(
+                    "click",
+                    function(){
+
+                        const index =
+                            Number(
+                                this.dataset.index
+                            );
+
+
+                        const user =
+                            users[index];
+
+
+                        if(
+                            !user
+                        ){
+
+                            return;
+
+                        }
+
+
+                        const confirmed =
+                            confirm(
+
+                                "Are you sure you want to delete " +
+
+                                (
+                                    user.name ||
+                                    "this user"
+                                ) +
+
+                                "?"
+
+                            );
+
+
+                        if(
+                            !confirmed
+                        ){
+
+                            return;
+
+                        }
+
+
+                        users.splice(
+                            index,
+                            1
+                        );
+
+
+                        localStorage.setItem(
+
+                            "fittrackUsers",
+
+                            JSON.stringify(
+                                users
+                            )
+
+                        );
+
+
+                        /* DELETE USER FITNESS DATA */
+
+                        let allUserData =
+
+                            JSON.parse(
+
+                                localStorage.getItem(
+                                    "fittrackUserData"
+                                )
+
+                            ) || {};
+
+
+                        if(
+                            user.email &&
+                            allUserData[
+                                user.email
+                            ]
+                        ){
+
+                            delete allUserData[
+                                user.email
+                            ];
+
+                        }
+
+
+                        localStorage.setItem(
+
+                            "fittrackUserData",
+
+                            JSON.stringify(
+                                allUserData
+                            )
+
+                        );
+
+
+                        if(
+                            selectedUserEmail ===
+                            user.email
+                        ){
+
+                            selectedUserEmail =
+                                "";
+
+                        }
+
+
+                        displayUsers();
+
+                        populateActivityUsers();
+
+                        loadActivityData();
+
+                        updateDashboardStats();
+
+
+                        showToast(
+                            "User deleted successfully."
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+    /* ==========================================
+    VIEW USER ACTIVITY
+    ========================================== */
+
+    document
+        .querySelectorAll(
+            ".view-btn"
+        )
+        .forEach(
+            function(button){
+
+                button.addEventListener(
+                    "click",
+                    function(){
+
+                        const email =
+                            this.dataset.email;
+
+
+                        selectedUserEmail =
+                            email;
+
+
+                        showSection(
+                            "activity"
+                        );
+
+
+                        loadActivityData(
+                            email
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+    updateDashboardStats();
+
+}
+
+
+/* ==========================================
+DASHBOARD STATISTICS
+========================================== */
+
+function updateDashboardStats(){
+
+    users =
+        JSON.parse(
+            localStorage.getItem(
+                "fittrackUsers"
+            )
+        ) || [];
+
+
+    document.getElementById(
+        "totalUsers"
+    ).textContent =
+        users.length;
+
+
+    document.getElementById(
+        "activeUsers"
+    ).textContent =
+        users.length;
+
+
+    document.getElementById(
+        "usersPageCount"
+    ).textContent =
+        users.length;
+
+
+    document.getElementById(
+        "usersPageActive"
+    ).textContent =
+        users.length;
+
+
+    document.getElementById(
+        "totalWorkouts"
+    ).textContent =
+        getTotalWorkouts();
+
+}
+
+
+/* ==========================================
+REFRESH ACTIVITY
+========================================== */
+
+document
+    .getElementById(
+        "refreshActivity"
+    )
+    .addEventListener(
+        "click",
+        function(){
+
+            loadActivityData();
+
+            showToast(
+                "Activity data refreshed."
+            );
+
+        }
+    );
+
+
+/* ==========================================
+USER DASHBOARD
+========================================== */
+
+document
+    .getElementById(
+        "openUserDashboard"
+    )
+    .addEventListener(
+        "click",
+        function(){
+
+            window.location.href =
+                "index.html";
+
+        }
+    );
+
+
+/* ==========================================
+ADMIN LOGOUT
+========================================== */
+
+document
+    .getElementById(
+        "adminLogout"
+    )
+    .addEventListener(
+        "click",
+        function(){
+
+            localStorage.removeItem(
+                "fittrackAdminLoggedIn"
+            );
+
+            localStorage.removeItem(
+                "fittrackAdmin"
+            );
+
+            window.location.href =
+                "admin-login.html";
+
+        }
+    );
+
+
+/* ==========================================
+HTML SECURITY
+========================================== */
+
+function escapeHTML(
+    value
+){
+
+    return String(
+        value
+    )
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+/* ==========================================
+TOAST
+========================================== */
+
+function showToast(
+    message
+){
+
+    const toast =
+        document.getElementById(
+            "toast"
+        );
+
+
+    toast.textContent =
+        message;
+
+
+    toast.classList.add(
+        "show"
+    );
+
+
+    setTimeout(
+        function(){
+
+            toast.classList.remove(
                 "show"
             );
 
+        },
+        2000
+    );
 
-            setTimeout(
-                function() {
-
-
-                    toast.classList.remove(
-                        "show"
-                    );
+}
 
 
-                },
-                2000
-            );
+/* ==========================================
+INITIALIZE
+========================================== */
+
+updateDashboardStats();
+
+displayUsers();
+
+populateActivityUsers();
+
+loadActivityData();
 
 
-        }
+let initialSection =
+
+    window.location.hash
+        .replace(
+            "#",
+            ""
+        );
 
 
+if(
+    !sections[
+        initialSection
+    ]
+){
 
-        /* ==========================================
-           ADMIN LOGOUT
-        ========================================== */
+    initialSection =
+        "dashboard";
 
-        document
-            .getElementById(
-                "adminLogout"
-            )
-            .addEventListener(
-                "click",
-                function() {
+}
 
 
-                    localStorage.removeItem(
-    "fittrackAdminLoggedIn"
+showSection(
+    initialSection
 );
 
-localStorage.removeItem(
-    "fittrackAdmin"
-);
-
-
-                    window.location.href =
-                        "admin-login.html";
-
-
-                }
-            );
-
-
-    </script>
+</script>
 
 </body>
 

@@ -16,489 +16,479 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html,
-body {
-    width: 100%;
-    height: 100%;
+body{
+    width:100%;
+    height:100%;
 }
 
-body {
-    font-family: "Inter", sans-serif;
-    background: #f4f8fb;
-    color: #07183b;
-    overflow: hidden;
+body{
+    font-family:"Inter",sans-serif;
+    background:#f4f8fb;
+    color:#07183b;
+    overflow:hidden;
 }
 
 button,
-input {
-    font-family: inherit;
+input{
+    font-family:inherit;
 }
 
-.app {
-    width: 100%;
-    height: 100vh;
-    display: flex;
+.app{
+    width:100%;
+    height:100vh;
+    display:flex;
 }
 
-
-/* ==========================================
+/* =========================
 SIDEBAR
-========================================== */
+========================= */
 
-.sidebar {
-    width: 263px;
-    height: 100vh;
-    flex: 0 0 263px;
+.sidebar{
+    width:263px;
+    height:100vh;
+    flex:0 0 263px;
 
-    background: linear-gradient(
+    background:linear-gradient(
         180deg,
         #061c2c 0%,
         #071c2b 100%
     );
 
-    color: white;
+    color:white;
+    padding:18px 9px 16px;
 
-    padding: 18px 9px 16px;
+    display:flex;
+    flex-direction:column;
 
-    display: flex;
-    flex-direction: column;
+    overflow:hidden;
 
-    overflow: hidden;
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
 }
 
-.brand {
-    height: 100px;
-    flex: 0 0 100px;
+.brand{
+    height:100px;
+    flex:0 0 100px;
 
-    display: flex;
-    align-items: center;
+    display:flex;
+    align-items:center;
 
-    padding-left: 20px;
-    margin-bottom: 8px;
+    padding-left:20px;
+    margin-bottom:8px;
 }
 
-.brand img {
-    width: 196px;
-    max-height: 88px;
-    object-fit: contain;
+.brand img{
+    width:196px;
+    max-height:88px;
+    object-fit:contain;
 }
 
-.nav {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+.nav{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
 }
 
-.nav a {
-    height: 49px;
-    flex: 0 0 49px;
+.nav a{
+    height:49px;
+    flex:0 0 49px;
 
-    border-radius: 11px;
+    border-radius:11px;
 
-    display: flex;
-    align-items: center;
+    display:flex;
+    align-items:center;
 
-    gap: 28px;
-    padding: 0 28px;
+    gap:28px;
+    padding:0 28px;
 
-    color: #e8f0f7;
-    text-decoration: none;
+    color:#e8f0f7;
+    text-decoration:none;
 
-    font-size: 16px;
-    font-weight: 500;
+    font-size:16px;
+    font-weight:500;
 
-    position: relative;
+    position:relative;
 
-    transition: .18s;
+    transition:.18s;
 }
 
-.nav a i {
-    width: 25px;
-    flex: 0 0 25px;
-
-    text-align: center;
-
-    font-size: 22px;
+.nav a i{
+    width:25px;
+    flex:0 0 25px;
+    text-align:center;
+    font-size:22px;
 }
 
-.nav a:hover {
-    background: #12344a;
+.nav a:hover{
+    background:#12344a;
 }
 
-.nav a.active {
-    background: #12344a;
-    font-weight: 700;
+.nav a.active{
+    background:#12344a;
+    font-weight:700;
 }
 
-.nav a.active::before {
-    content: "";
+.nav a.active::before{
+    content:"";
 
-    position: absolute;
+    position:absolute;
 
-    left: -9px;
-    top: 0;
-    bottom: 0;
+    left:-9px;
+    top:0;
+    bottom:0;
 
-    width: 8px;
+    width:8px;
 
-    border-radius: 0 6px 6px 0;
+    border-radius:0 6px 6px 0;
 
-    background: #20e69b;
+    background:#20e69b;
 }
 
-.nav a.active i {
-    color: #29e9a0;
+.nav a.active i{
+    color:#29e9a0;
 }
 
-
-/* ==========================================
+/* =========================
 PREMIUM
-========================================== */
+========================= */
 
-.premium {
-    margin: auto 15px 0;
+.premium{
+    margin:auto 15px 0;
 
-    border: 1px solid #1d4158;
+    border:1px solid #1d4158;
 
-    background: rgba(10,40,57,.7);
+    background:rgba(10,40,57,.7);
 
-    border-radius: 12px;
+    border-radius:12px;
 
-    padding: 14px 16px 13px;
+    padding:14px 16px 13px;
 }
 
-.premium-title {
-    display: flex;
-    align-items: center;
+.premium-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
 
-    gap: 10px;
+    color:#ffd21f;
 
-    color: #ffd21f;
+    font-weight:800;
+    font-size:15px;
 
-    font-weight: 800;
-    font-size: 15px;
-
-    margin-bottom: 12px;
+    margin-bottom:12px;
 }
 
-.premium-feature {
-    font-size: 12px;
+.premium-feature{
+    font-size:12px;
 
-    margin: 8px 0;
+    margin:8px 0;
 
-    color: #dce8ee;
+    color:#dce8ee;
 
-    display: flex;
+    display:flex;
 
-    gap: 10px;
+    gap:10px;
 
-    align-items: center;
+    align-items:center;
 }
 
-.premium-feature i {
-    width: 15px;
-    color: #24e8a0;
+.premium-feature i{
+    width:15px;
+    color:#24e8a0;
 }
 
-.premium button {
-    width: 100%;
-    height: 43px;
+.premium button{
+    width:100%;
+    height:43px;
 
-    margin-top: 8px;
+    margin-top:8px;
 
-    border: 0;
-    border-radius: 12px;
+    border:0;
+    border-radius:12px;
 
-    background: linear-gradient(
+    background:linear-gradient(
         90deg,
         #1ce79a,
         #2ce9a0
     );
 
-    color: #03251a;
+    color:#03251a;
 
-    font-size: 16px;
-    font-weight: 800;
+    font-size:16px;
+    font-weight:800;
 
-    cursor: pointer;
+    cursor:pointer;
 }
 
-
-/* ==========================================
+/* =========================
 MAIN
-========================================== */
+========================= */
 
-.main {
-    flex: 1;
-    min-width: 0;
+.main{
+    margin-left:263px;
 
-    height: 100vh;
+    flex:1;
+    min-width:0;
 
-    padding: 25px 30px 30px;
+    height:100vh;
 
-    overflow-y: auto;
-    overflow-x: hidden;
+    padding:25px 30px 30px;
+
+    overflow-y:auto;
+    overflow-x:hidden;
 }
 
-
-/* ==========================================
+/* =========================
 TOPBAR
-========================================== */
+========================= */
 
-.topbar {
-    display: flex;
+.topbar{
+    display:flex;
 
-    align-items: center;
-    justify-content: space-between;
+    align-items:center;
+    justify-content:space-between;
 
-    margin-bottom: 22px;
+    margin-bottom:22px;
 }
 
-.page-title h1 {
-    font-size: 28px;
-
-    margin-bottom: 6px;
+.page-title h1{
+    font-size:28px;
+    margin-bottom:6px;
 }
 
-.page-title p {
-    color: #718096;
-    font-size: 13px;
+.page-title p{
+    color:#718096;
+    font-size:13px;
 }
 
-.top-actions {
-    display: flex;
+.top-actions{
+    display:flex;
 
-    align-items: center;
+    align-items:center;
 
-    gap: 20px;
+    gap:20px;
 }
 
-.notification {
-    width: 42px;
-    height: 42px;
+.notification{
+    width:42px;
+    height:42px;
 
-    border-radius: 50%;
+    border-radius:50%;
 
-    background: white;
+    background:white;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
     box-shadow:
         0 3px 12px rgba(7,24,59,.08);
 
-    font-size: 18px;
+    font-size:18px;
 }
 
-.profile {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
+.profile{
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
-.profile-circle {
-    width: 42px;
-    height: 42px;
+.profile-circle{
+    width:42px;
+    height:42px;
 
-    border-radius: 50%;
+    border-radius:50%;
 
-    background: #263c4a;
+    background:#263c4a;
 
-    color: white;
+    color:white;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    font-weight: 800;
+    font-weight:800;
 }
 
-.profile-text strong {
-    display: block;
-    font-size: 14px;
+.profile-text strong{
+    display:block;
+    font-size:14px;
 }
 
-.profile-text span {
-    color: #718096;
-    font-size: 12px;
+.profile-text span{
+    color:#718096;
+    font-size:12px;
 }
 
-
-/* ==========================================
+/* =========================
 STATS
-========================================== */
+========================= */
 
-.stats {
-    display: grid;
+.stats{
+    display:grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(4,1fr);
 
-    gap: 15px;
+    gap:15px;
 
-    margin-bottom: 20px;
+    margin-bottom:20px;
 }
 
-.stat {
-    background: white;
+.stat{
+    background:white;
 
-    border: 1px solid #e4ebf0;
+    border:1px solid #e4ebf0;
 
-    border-radius: 14px;
+    border-radius:14px;
 
-    padding: 18px;
+    padding:18px;
 
     box-shadow:
         0 3px 12px rgba(7,24,59,.05);
 }
 
-.stat-top {
-    display: flex;
+.stat-top{
+    display:flex;
 
-    align-items: center;
+    align-items:center;
 
-    gap: 12px;
+    gap:12px;
 
-    margin-bottom: 12px;
+    margin-bottom:12px;
 }
 
-.stat-icon {
-    width: 43px;
-    height: 43px;
+.stat-icon{
+    width:43px;
+    height:43px;
 
-    border-radius: 50%;
+    border-radius:50%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    font-size: 18px;
+    font-size:18px;
 }
 
-.green {
-    background: #dff8ed;
-    color: #0bb77b;
+.green{
+    background:#dff8ed;
+    color:#0bb77b;
 }
 
-.blue {
-    background: #dff1ff;
-    color: #179fe4;
+.blue{
+    background:#dff1ff;
+    color:#179fe4;
 }
 
-.orange {
-    background: #fff0d9;
-    color: #f59e0b;
+.orange{
+    background:#fff0d9;
+    color:#f59e0b;
 }
 
-.purple {
-    background: #eee2ff;
-    color: #7c4ce5;
+.purple{
+    background:#eee2ff;
+    color:#7c4ce5;
 }
 
-.stat h3 {
-    font-size: 22px;
-
-    margin-bottom: 3px;
+.stat h3{
+    font-size:22px;
+    margin-bottom:3px;
 }
 
-.stat p {
-    color: #718096;
-    font-size: 12px;
+.stat p{
+    color:#718096;
+    font-size:12px;
 }
 
-
-/* ==========================================
+/* =========================
 CONTENT
-========================================== */
+========================= */
 
-.content-grid {
-    display: grid;
+.content-grid{
+    display:grid;
 
     grid-template-columns:
-        1.45fr
-        1fr;
+        1.45fr 1fr;
 
-    gap: 18px;
+    gap:18px;
 }
 
-.panel {
-    background: white;
+.panel{
+    background:white;
 
-    border: 1px solid #e4ebf0;
+    border:1px solid #e4ebf0;
 
-    border-radius: 15px;
+    border-radius:15px;
 
-    padding: 20px;
+    padding:20px;
 
     box-shadow:
         0 3px 12px rgba(7,24,59,.05);
 }
 
-.panel-header {
-    display: flex;
+.panel-header{
+    display:flex;
 
-    align-items: center;
-    justify-content: space-between;
+    align-items:center;
+    justify-content:space-between;
 
-    margin-bottom: 18px;
+    margin-bottom:18px;
 }
 
-.panel-header h2 {
-    font-size: 18px;
+.panel-header h2{
+    font-size:18px;
 }
 
+/* =========================
+BUTTON
+========================= */
 
-/* ==========================================
-ADD BUTTON
-========================================== */
+.add-steps{
+    border:none;
 
-.add-steps {
-    border: none;
+    background:#20e69b;
 
-    background: #20e69b;
+    color:#05291e;
 
-    color: #05291e;
+    font-weight:800;
 
-    font-weight: 800;
+    padding:11px 18px;
 
-    padding: 11px 18px;
+    border-radius:9px;
 
-    border-radius: 9px;
+    cursor:pointer;
 
-    cursor: pointer;
-
-    font-size: 12px;
+    font-size:12px;
 }
 
+/* =========================
+PROGRESS
+========================= */
 
-/* ==========================================
-STEP PROGRESS
-========================================== */
+.step-progress{
+    display:flex;
 
-.step-progress {
-    display: flex;
+    align-items:center;
 
-    align-items: center;
+    gap:22px;
 
-    gap: 22px;
-
-    padding: 15px 0 22px;
+    padding:15px 0 22px;
 }
 
-.progress-circle {
-    width: 135px;
-    height: 135px;
+.progress-circle{
+    width:135px;
+    height:135px;
 
-    border-radius: 50%;
+    border-radius:50%;
 
     background:
         conic-gradient(
@@ -507,413 +497,485 @@ STEP PROGRESS
             #e9f0f4 0deg
         );
 
-    display: flex;
+    display:flex;
 
-    align-items: center;
-    justify-content: center;
+    align-items:center;
+    justify-content:center;
 
-    position: relative;
+    position:relative;
+
+    flex:0 0 135px;
 }
 
-.progress-circle::before {
-    content: "";
+.progress-circle::before{
+    content:"";
 
-    position: absolute;
+    position:absolute;
 
-    width: 105px;
-    height: 105px;
+    width:105px;
+    height:105px;
 
-    background: white;
+    background:white;
 
-    border-radius: 50%;
+    border-radius:50%;
 }
 
-.progress-content {
-    position: relative;
+.progress-content{
+    position:relative;
 
-    text-align: center;
+    text-align:center;
 }
 
-.progress-content strong {
-    display: block;
+.progress-content strong{
+    display:block;
 
-    font-size: 25px;
+    font-size:25px;
 }
 
-.progress-content span {
-    color: #718096;
+.progress-content span{
+    color:#718096;
 
-    font-size: 11px;
+    font-size:11px;
 }
 
-.step-info {
-    flex: 1;
+.step-info{
+    flex:1;
 }
 
-.step-info h3 {
-    font-size: 18px;
+.step-info h3{
+    font-size:18px;
 
-    margin-bottom: 8px;
+    margin-bottom:8px;
 }
 
-.step-info p {
-    color: #718096;
+.step-info p{
+    color:#718096;
 
-    font-size: 12px;
+    font-size:12px;
 
-    line-height: 1.6;
+    line-height:1.6;
 }
 
-
-/* ==========================================
-STEP LIST
-========================================== */
-
-.step-row {
-    display: flex;
-
-    align-items: center;
-
-    padding: 14px 0;
-
-    border-bottom: 1px solid #edf1f4;
-}
-
-.step-row:last-child {
-    border-bottom: none;
-}
-
-.step-icon {
-    width: 44px;
-    height: 44px;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin-right: 13px;
-}
-
-.step-info-row {
-    flex: 1;
-}
-
-.step-info-row strong {
-    display: block;
-
-    font-size: 14px;
-
-    margin-bottom: 4px;
-}
-
-.step-info-row span {
-    color: #718096;
-
-    font-size: 12px;
-}
-
-.step-value {
-    text-align: right;
-}
-
-.step-value strong {
-    display: block;
-
-    font-size: 14px;
-}
-
-.step-value span {
-    color: #718096;
-
-    font-size: 11px;
-}
-
-
-/* ==========================================
+/* =========================
 GOAL
-========================================== */
+========================= */
 
-.goal-box {
-    background: #f7fafc;
+.goal-box{
+    background:#f7fafc;
 
-    border-radius: 12px;
+    border-radius:12px;
 
-    padding: 17px;
+    padding:15px 17px;
 
-    margin-top: 12px;
+    margin-top:12px;
 }
 
-.goal-header {
-    display: flex;
+.goal-header{
+    display:flex;
 
-    align-items: center;
-    justify-content: space-between;
+    align-items:center;
+    justify-content:space-between;
 
-    margin-bottom: 10px;
+    margin-bottom:10px;
 }
 
-.goal-header strong {
-    font-size: 14px;
+.goal-left{
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
-.goal-header span {
-    font-size: 12px;
-
-    color: #718096;
+.goal-header strong{
+    font-size:14px;
 }
 
-.goal-bar {
-    width: 100%;
-    height: 9px;
-
-    background: #e7eef2;
-
-    border-radius: 10px;
-
-    overflow: hidden;
+.goal-header span{
+    font-size:12px;
+    color:#718096;
 }
 
-.goal-fill {
-    height: 100%;
-
-    width: 0%;
-
-    background: #20d997;
-
-    border-radius: 10px;
-
-    transition: width .3s;
+.edit-goal{
+    border:none;
+    background:#e8f8f2;
+    color:#0bb77b;
+    font-size:11px;
+    font-weight:700;
+    padding:6px 9px;
+    border-radius:7px;
+    cursor:pointer;
 }
 
+.edit-goal:hover{
+    background:#d8f3e9;
+}
 
-/* ==========================================
+.goal-bar{
+    width:100%;
+    height:9px;
+
+    background:#e7eef2;
+
+    border-radius:10px;
+
+    overflow:hidden;
+}
+
+.goal-fill{
+    height:100%;
+
+    width:0%;
+
+    background:#20d997;
+
+    border-radius:10px;
+
+    transition:width .3s;
+}
+
+/* =========================
+STEP LIST
+========================= */
+
+.step-row{
+    display:flex;
+
+    align-items:center;
+
+    padding:14px 0;
+
+    border-bottom:1px solid #edf1f4;
+}
+
+.step-row:last-child{
+    border-bottom:none;
+}
+
+.step-icon{
+    width:44px;
+    height:44px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-right:13px;
+}
+
+.step-info-row{
+    flex:1;
+}
+
+.step-info-row strong{
+    display:block;
+
+    font-size:14px;
+
+    margin-bottom:4px;
+}
+
+.step-info-row span{
+    color:#718096;
+
+    font-size:12px;
+}
+
+.step-value{
+    text-align:right;
+}
+
+.step-value strong{
+    display:block;
+
+    font-size:14px;
+}
+
+.step-value span{
+    color:#718096;
+
+    font-size:11px;
+}
+
+/* =========================
+EMPTY
+========================= */
+
+.empty-state{
+    text-align:center;
+
+    padding:35px 10px;
+
+    color:#718096;
+}
+
+.empty-state i{
+    font-size:38px;
+
+    color:#cbd5df;
+
+    margin-bottom:12px;
+}
+
+.empty-state h3{
+    color:#526174;
+
+    font-size:16px;
+
+    margin-bottom:6px;
+}
+
+.empty-state p{
+    font-size:12px;
+}
+
+/* =========================
 MODAL
-========================================== */
+========================= */
 
-.modal {
-    position: fixed;
+.modal{
+    position:fixed;
 
-    inset: 0;
+    inset:0;
 
-    background: rgba(3,20,32,.55);
+    background:rgba(3,20,32,.55);
 
-    display: none;
+    display:none;
 
-    align-items: center;
-    justify-content: center;
+    align-items:center;
+    justify-content:center;
 
-    z-index: 1000;
+    z-index:1000;
 }
 
-.modal.show {
-    display: flex;
+.modal.show{
+    display:flex;
 }
 
-.modal-box {
-    width: 430px;
-    max-width: 92%;
+.modal-box{
+    width:430px;
+    max-width:92%;
 
-    background: white;
+    background:white;
 
-    border-radius: 18px;
+    border-radius:18px;
 
-    padding: 25px;
+    padding:25px;
 
     box-shadow:
         0 25px 70px rgba(0,0,0,.22);
 }
 
-.modal-header {
-    display: flex;
+.modal-header{
+    display:flex;
 
-    align-items: center;
-    justify-content: space-between;
+    align-items:center;
+    justify-content:space-between;
 
-    margin-bottom: 22px;
+    margin-bottom:22px;
 }
 
-.modal-header h2 {
-    font-size: 21px;
+.modal-header h2{
+    font-size:21px;
 }
 
-.close-btn {
-    width: 34px;
-    height: 34px;
+.close-btn{
+    width:34px;
+    height:34px;
 
-    border: none;
+    border:none;
 
-    border-radius: 50%;
+    border-radius:50%;
 
-    background: #f1f5f8;
+    background:#f1f5f8;
 
-    cursor: pointer;
+    cursor:pointer;
+
+    font-size:16px;
 }
 
-.form-group {
-    margin-bottom: 17px;
+.form-group{
+    margin-bottom:17px;
 }
 
-.form-group label {
-    display: block;
+.form-group label{
+    display:block;
 
-    font-size: 13px;
+    font-size:13px;
 
-    font-weight: 700;
+    font-weight:700;
 
-    margin-bottom: 7px;
+    margin-bottom:7px;
 }
 
-.form-group input {
-    width: 100%;
+.form-group input{
+    width:100%;
 
-    height: 46px;
+    height:46px;
 
-    border: 1px solid #dfe7ee;
+    border:1px solid #dfe7ee;
 
-    border-radius: 9px;
+    border-radius:9px;
 
-    background: #f8fafc;
+    background:#f8fafc;
 
-    padding: 0 13px;
+    padding:0 13px;
 
-    outline: none;
+    outline:none;
 
-    font-size: 14px;
+    font-size:14px;
 }
 
-.form-group input:focus {
-    border-color: #20d997;
+.form-group input:focus{
+    border-color:#20d997;
 
-    background: white;
+    background:white;
 }
 
-.modal-buttons {
-    display: flex;
+.modal-buttons{
+    display:flex;
 
-    justify-content: flex-end;
+    justify-content:flex-end;
 
-    gap: 10px;
+    gap:10px;
 
-    margin-top: 23px;
+    margin-top:23px;
 }
 
 .cancel-btn,
-.save-btn {
-    height: 43px;
+.save-btn{
+    height:43px;
 
-    padding: 0 18px;
+    padding:0 18px;
 
-    border-radius: 9px;
+    border-radius:9px;
 
-    cursor: pointer;
+    cursor:pointer;
 
-    font-size: 13px;
+    font-size:13px;
 
-    font-weight: 700;
+    font-weight:700;
 }
 
-.cancel-btn {
-    border: 1px solid #dfe7ee;
+.cancel-btn{
+    border:1px solid #dfe7ee;
 
-    background: white;
+    background:white;
+
+    color:#526174;
 }
 
-.save-btn {
-    border: none;
+.save-btn{
+    border:none;
 
-    background: #20e69b;
+    background:#20e69b;
 
-    color: #05291e;
+    color:#05291e;
 }
 
+/* =========================
+RESPONSIVE
+========================= */
 
-/* ==========================================
-LAPTOP HEIGHT
-========================================== */
+@media(max-width:1000px){
 
-@media (max-height: 850px) {
-
-    .sidebar {
-        padding-top: 10px;
+    .sidebar{
+        width:220px;
+        flex-basis:220px;
     }
 
-    .brand {
-        height: 82px;
-        flex-basis: 82px;
-        margin-bottom: 2px;
+    .main{
+        margin-left:220px;
     }
 
-    .brand img {
-        width: 184px;
+    .stats{
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
-    .nav a {
-        height: 43px;
-        flex-basis: 43px;
-        font-size: 14px;
+    .content-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-height:850px){
+
+    .sidebar{
+        padding-top:10px;
     }
 
-    .nav a i {
-        font-size: 19px;
+    .brand{
+        height:82px;
+        flex-basis:82px;
+        margin-bottom:2px;
     }
 
-    .premium {
-        padding: 10px 13px;
+    .brand img{
+        width:184px;
     }
 
-    .premium-feature {
-        margin: 5px 0;
-        font-size: 11px;
+    .nav a{
+        height:43px;
+        flex-basis:43px;
+        font-size:14px;
     }
 
-    .premium button {
-        height: 37px;
+    .nav a i{
+        font-size:19px;
+    }
+
+    .premium{
+        padding:10px 13px;
+    }
+
+    .premium-feature{
+        margin:5px 0;
+        font-size:11px;
+    }
+
+    .premium button{
+        height:37px;
     }
 }
 
 </style>
 </head>
 
-
 <body>
 
 <div class="app">
 
-
-<!-- ==========================================
+<!-- =========================
 SIDEBAR
-========================================== -->
+========================= -->
 
 <aside class="sidebar">
 
 <div class="brand">
-<img src="assets/logo.png" alt="FitTrack">
+    <img src="assets/logo.png" alt="FitTrack">
 </div>
-
 
 <nav class="nav">
 
 <a href="index.html">
-<i class="fa-solid fa-house"></i>
-<span>Dashboard</span>
+    <i class="fa-solid fa-house"></i>
+    <span>Dashboard</span>
 </a>
 
 <a href="workouts.html">
-<i class="fa-solid fa-dumbbell"></i>
-<span>Workouts</span>
+    <i class="fa-solid fa-dumbbell"></i>
+    <span>Workouts</span>
 </a>
 
 <a href="nutrition.html">
-<i class="fa-solid fa-apple-whole"></i>
-<span>Nutrition</span>
+    <i class="fa-solid fa-apple-whole"></i>
+    <span>Nutrition</span>
 </a>
 
 <a href="steps.html" class="active">
-<i class="fa-solid fa-person-walking"></i>
-<span>Steps</span>
+    <i class="fa-solid fa-person-walking"></i>
+    <span>Steps</span>
 </a>
 
 <a href="sleep.html">
@@ -922,62 +984,61 @@ SIDEBAR
 </a>
 
 <a href="heart-rate.html">
-<i class="fa-regular fa-heart"></i>
-<span>Heart Rate</span>
+    <i class="fa-regular fa-heart"></i>
+    <span>Heart Rate</span>
 </a>
 
 <a href="goals.html">
-<i class="fa-solid fa-bullseye"></i>
-<span>Goals</span>
+    <i class="fa-solid fa-bullseye"></i>
+    <span>Goals</span>
 </a>
 
 <a href="progress.html">
-<i class="fa-solid fa-chart-column"></i>
-<span>Progress</span>
+    <i class="fa-solid fa-chart-column"></i>
+    <span>Progress</span>
 </a>
 
 <a href="reports.html">
-<i class="fa-regular fa-file-lines"></i>
-<span>Reports</span>
+    <i class="fa-regular fa-file-lines"></i>
+    <span>Reports</span>
 </a>
 
 <a href="profile.html">
-<i class="fa-regular fa-user"></i>
-<span>Profile</span>
+    <i class="fa-regular fa-user"></i>
+    <span>Profile</span>
 </a>
 
 <a href="settings.html">
-<i class="fa-solid fa-gear"></i>
-<span>Settings</span>
+    <i class="fa-solid fa-gear"></i>
+    <span>Settings</span>
 </a>
 
 </nav>
 
-
 <div class="premium">
 
 <div class="premium-title">
-<i class="fa-solid fa-crown"></i>
-<span>Go Premium</span>
+    <i class="fa-solid fa-crown"></i>
+    <span>Go Premium</span>
 </div>
 
 <div class="premium-feature">
-<i class="fa-solid fa-chart-line"></i>
-Advanced Insights
+    <i class="fa-solid fa-chart-line"></i>
+    Advanced Insights
 </div>
 
 <div class="premium-feature">
-<i class="fa-solid fa-plus"></i>
-Personalized Plans
+    <i class="fa-solid fa-plus"></i>
+    Personalized Plans
 </div>
 
 <div class="premium-feature">
-<i class="fa-solid fa-shield-heart"></i>
-Ad-Free Experience
+    <i class="fa-solid fa-shield-heart"></i>
+    Ad-Free Experience
 </div>
 
 <button>
-Upgrade Now
+    Upgrade Now
 </button>
 
 </div>
@@ -985,12 +1046,11 @@ Upgrade Now
 </aside>
 
 
-<!-- ==========================================
+<!-- =========================
 MAIN
-========================================== -->
+========================= -->
 
 <main class="main">
-
 
 <div class="topbar">
 
@@ -998,28 +1058,37 @@ MAIN
 
 <h1>Steps</h1>
 
-<p>Track your daily movement and stay active.</p>
+<p>
+Track your daily movement and stay active.
+</p>
 
 </div>
-
 
 <div class="top-actions">
 
 <div class="notification">
-<i class="fa-regular fa-bell"></i>
+    <i class="fa-regular fa-bell"></i>
 </div>
 
 <div class="profile">
 
-<div class="profile-circle">
-R
+<div
+class="profile-circle"
+id="profileInitial">
+U
 </div>
 
 <div class="profile-text">
 
-<strong>Ramu</strong>
+<strong id="profileName">
+User
+</strong>
 
-<span>Stay Consistent!</span>
+<span>
+Stay Consistent!
+</span>
+
+</div>
 
 </div>
 
@@ -1027,15 +1096,12 @@ R
 
 </div>
 
-</div>
 
-
-<!-- ==========================================
+<!-- =========================
 STATS
-========================================== -->
+========================= -->
 
 <section class="stats">
-
 
 <div class="stat">
 
@@ -1050,14 +1116,16 @@ STATS
 <p>Today's Steps</p>
 
 <h3 id="totalSteps">
-10000
+0
 </h3>
 
 </div>
 
 </div>
 
-<p>Steps today</p>
+<p>
+Steps today
+</p>
 
 </div>
 
@@ -1075,14 +1143,16 @@ STATS
 <p>Distance</p>
 
 <h3 id="distance">
-7.5 km
+0 km
 </h3>
 
 </div>
 
 </div>
 
-<p>Estimated distance</p>
+<p>
+Estimated distance
+</p>
 
 </div>
 
@@ -1100,14 +1170,16 @@ STATS
 <p>Calories Burned</p>
 
 <h3 id="calories">
-420
+0
 </h3>
 
 </div>
 
 </div>
 
-<p>From walking</p>
+<p>
+From walking
+</p>
 
 </div>
 
@@ -1125,24 +1197,25 @@ STATS
 <p>Daily Goal</p>
 
 <h3 id="goal">
-10000
+Set Goal
 </h3>
 
 </div>
 
 </div>
 
-<p>Steps</p>
+<p>
+Steps
+</p>
 
 </div>
-
 
 </section>
 
 
-<!-- ==========================================
+<!-- =========================
 CONTENT
-========================================== -->
+========================= -->
 
 <div class="content-grid">
 
@@ -1153,11 +1226,14 @@ CONTENT
 
 <div class="panel-header">
 
-<h2>Today's Activity</h2>
+<h2>
+Today's Activity
+</h2>
 
 <button
 class="add-steps"
 id="openSteps"
+type="button"
 >
 
 <i class="fa-solid fa-plus"></i>
@@ -1179,10 +1255,12 @@ id="progressCircle"
 <div class="progress-content">
 
 <strong id="progressNumber">
-100%
+0%
 </strong>
 
-<span>Goal</span>
+<span>
+Goal
+</span>
 
 </div>
 
@@ -1192,7 +1270,7 @@ id="progressCircle"
 <div class="step-info">
 
 <h3 id="stepMessage">
-Daily goal completed!
+Set your daily step goal
 </h3>
 
 <p>
@@ -1200,23 +1278,49 @@ Keep moving throughout the day.
 Every step counts toward a healthier lifestyle.
 </p>
 
+
 <div class="goal-box">
 
 <div class="goal-header">
 
-<strong>Daily Step Goal</strong>
+<div class="goal-left">
+
+<strong>
+Daily Step Goal
+</strong>
+
+<button
+class="edit-goal"
+id="editGoal"
+type="button"
+>
+
+<i class="fa-solid fa-pen"></i>
+
+<span id="goalButtonText">
+Set Goal
+</span>
+
+</button>
+
+</div>
 
 <span>
+
 <span id="goalCurrent">
-10000
+0
 </span>
+
 /
+
 <span id="goalText">
-10000
+Not set
 </span>
+
 </span>
 
 </div>
+
 
 <div class="goal-bar">
 
@@ -1234,13 +1338,18 @@ id="goalFill"
 </div>
 
 
-<h2 style="font-size:18px;margin-top:8px;margin-bottom:5px;">
+<h2
+style="
+font-size:18px;
+margin-top:8px;
+margin-bottom:5px;
+"
+>
 Recent Activity
 </h2>
 
 
 <div id="stepList"></div>
-
 
 </section>
 
@@ -1251,7 +1360,9 @@ Recent Activity
 
 <div class="panel-header">
 
-<h2>Activity Summary</h2>
+<h2>
+Activity Summary
+</h2>
 
 </div>
 
@@ -1266,19 +1377,25 @@ Recent Activity
 
 <div class="step-info-row">
 
-<strong>Steps</strong>
+<strong>
+Steps
+</strong>
 
-<span>Today's total</span>
+<span>
+Today's total
+</span>
 
 </div>
 
 <div class="step-value">
 
 <strong id="summarySteps">
-10000
+0
 </strong>
 
-<span>steps</span>
+<span>
+steps
+</span>
 
 </div>
 
@@ -1295,19 +1412,25 @@ Recent Activity
 
 <div class="step-info-row">
 
-<strong>Distance</strong>
+<strong>
+Distance
+</strong>
 
-<span>Estimated distance</span>
+<span>
+Estimated distance
+</span>
 
 </div>
 
 <div class="step-value">
 
 <strong id="summaryDistance">
-7.5
+0
 </strong>
 
-<span>km</span>
+<span>
+km
+</span>
 
 </div>
 
@@ -1324,19 +1447,25 @@ Recent Activity
 
 <div class="step-info-row">
 
-<strong>Calories</strong>
+<strong>
+Calories
+</strong>
 
-<span>Walking calories</span>
+<span>
+Walking calories
+</span>
 
 </div>
 
 <div class="step-value">
 
 <strong id="summaryCalories">
-420
+0
 </strong>
 
-<span>kcal</span>
+<span>
+kcal
+</span>
 
 </div>
 
@@ -1353,36 +1482,48 @@ Recent Activity
 
 <div class="step-info-row">
 
-<strong>Goal Progress</strong>
+<strong>
+Goal Progress
+</strong>
 
-<span>Daily target</span>
+<span>
+Daily target
+</span>
 
 </div>
 
 <div class="step-value">
 
 <strong id="summaryProgress">
-100%
+0%
 </strong>
 
-<span>completed</span>
-
-</div>
-
-</div>
-
-
-<div class="goal-box" style="margin-top:20px;">
-
-<div class="goal-header">
-
-<strong>Keep Moving</strong>
-
-<span id="remainingText">
-Goal completed
+<span>
+completed
 </span>
 
 </div>
+
+</div>
+
+
+<div
+class="goal-box"
+style="margin-top:20px;"
+>
+
+<div class="goal-header">
+
+<strong>
+Keep Moving
+</strong>
+
+<span id="remainingText">
+Goal not set
+</span>
+
+</div>
+
 
 <div class="goal-bar">
 
@@ -1395,21 +1536,18 @@ id="summaryFill"
 
 </div>
 
-
 </section>
 
-
 </div>
-
 
 </main>
 
 </div>
 
 
-<!-- ==========================================
-MODAL
-========================================== -->
+<!-- =========================
+ADD STEPS MODAL
+========================= -->
 
 <div
 class="modal"
@@ -1418,10 +1556,11 @@ id="stepsModal"
 
 <div class="modal-box">
 
-
 <div class="modal-header">
 
-<h2>Add Steps</h2>
+<h2>
+Add Steps
+</h2>
 
 <button
 class="close-btn"
@@ -1437,7 +1576,6 @@ type="button"
 
 
 <form id="stepsForm">
-
 
 <div class="form-group">
 
@@ -1487,12 +1625,94 @@ Cancel
 type="submit"
 class="save-btn"
 >
+
 <i class="fa-solid fa-check"></i>
+
 Add Steps
+
 </button>
 
 </div>
 
+</form>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+SET / EDIT GOAL MODAL
+========================= -->
+
+<div
+class="modal"
+id="goalModal"
+>
+
+<div class="modal-box">
+
+<div class="modal-header">
+
+<h2>
+Set Daily Step Goal
+</h2>
+
+<button
+class="close-btn"
+id="closeGoal"
+type="button"
+>
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+
+<form id="goalForm">
+
+<div class="form-group">
+
+<label>
+Daily Step Goal
+</label>
+
+<input
+type="number"
+id="goalInput"
+min="100"
+step="100"
+placeholder="Example: 10000"
+required
+>
+
+</div>
+
+
+<div class="modal-buttons">
+
+<button
+type="button"
+class="cancel-btn"
+id="cancelGoal"
+>
+Cancel
+</button>
+
+<button
+type="submit"
+class="save-btn"
+>
+
+<i class="fa-solid fa-check"></i>
+
+Save Goal
+
+</button>
+
+</div>
 
 </form>
 
@@ -1504,156 +1724,639 @@ Add Steps
 <script>
 
 /* ==========================================
-ELEMENTS
+LOGIN PROTECTION
 ========================================== */
 
-const stepsModal =
-    document.getElementById("stepsModal");
+if(
+    localStorage.getItem(
+        "fittrackLoggedIn"
+    ) !== "true"
+){
 
-const openSteps =
-    document.getElementById("openSteps");
+    window.location.href =
+        "login.html";
 
-const closeSteps =
-    document.getElementById("closeSteps");
-
-const cancelSteps =
-    document.getElementById("cancelSteps");
-
-const stepsForm =
-    document.getElementById("stepsForm");
-
-const stepList =
-    document.getElementById("stepList");
+}
 
 
 /* ==========================================
-SAVED STEPS
+CURRENT USER
 ========================================== */
 
-let savedSteps =
+const currentUser =
     JSON.parse(
-        localStorage.getItem("fittrackSteps")
+        localStorage.getItem(
+            "fittrackCurrentUser"
+        )
     );
 
+if(
+    !currentUser ||
+    !currentUser.email
+){
 
-if (!savedSteps) {
+    window.location.href =
+        "login.html";
 
-    savedSteps = [
+}
 
-        {
-            steps: 4000,
-            calories: 170
+
+/* ==========================================
+ALL USER DATA
+========================================== */
+
+let allUserData =
+    JSON.parse(
+        localStorage.getItem(
+            "fittrackUserData"
+        )
+    ) || {};
+
+
+/* ==========================================
+CREATE NEW USER DATA
+NO DEFAULT STEP GOAL
+========================================== */
+
+if(
+    !allUserData[currentUser.email]
+){
+
+    allUserData[currentUser.email] = {
+
+        workouts: [],
+
+        meals: [],
+
+        steps: [],
+
+        sleep: [],
+
+        heartRate: [],
+
+        goals: {},
+
+        profile: {
+            name: currentUser.name,
+            email: currentUser.email
         },
 
-        {
-            steps: 3500,
-            calories: 145
-        },
+        settings: {}
 
-        {
-            steps: 2500,
-            calories: 105
-        }
-
-    ];
+    };
 
     localStorage.setItem(
-        "fittrackSteps",
-        JSON.stringify(savedSteps)
+        "fittrackUserData",
+        JSON.stringify(
+            allUserData
+        )
     );
 
 }
 
 
 /* ==========================================
-RENDER
+CURRENT USER DATA
 ========================================== */
 
-function renderSteps() {
+let userData =
+    allUserData[currentUser.email];
+
+
+/* ==========================================
+MAKE SURE GOALS OBJECT EXISTS
+
+IMPORTANT:
+NO 10,000 DEFAULT
+========================================== */
+
+if(
+    !userData.goals
+){
+
+    userData.goals = {};
+
+}
+
+
+/* ==========================================
+PROFILE
+========================================== */
+
+const displayName =
+    userData.profile &&
+    userData.profile.name
+        ? userData.profile.name
+        : currentUser.name;
+
+
+document.getElementById(
+    "profileName"
+).textContent =
+    displayName;
+
+
+document.getElementById(
+    "profileInitial"
+).textContent =
+    displayName
+        ? displayName
+            .charAt(0)
+            .toUpperCase()
+        : "U";
+
+
+/* ==========================================
+TODAY DATE
+
+This is what makes steps reset every day.
+========================================== */
+
+function getToday(){
+
+    const now =
+        new Date();
+
+    const year =
+        now.getFullYear();
+
+    const month =
+        String(
+            now.getMonth() + 1
+        ).padStart(2,"0");
+
+    const day =
+        String(
+            now.getDate()
+        ).padStart(2,"0");
+
+    return (
+        year +
+        "-" +
+        month +
+        "-" +
+        day
+    );
+
+}
+
+const today =
+    getToday();
+
+
+/* ==========================================
+ALL STEP RECORDS
+========================================== */
+
+let allStepRecords = [];
+
+
+/*
+If steps are already stored as an array,
+use them.
+*/
+
+if(
+    Array.isArray(
+        userData.steps
+    )
+){
+
+    allStepRecords =
+        userData.steps;
+
+}
+
+
+/*
+Support old numeric step format.
+*/
+
+else if(
+    typeof userData.steps === "number"
+){
+
+    if(
+        userData.steps > 0
+    ){
+
+        allStepRecords = [
+
+            {
+                steps:
+                    userData.steps,
+
+                calories:
+                    Number(
+                        userData.caloriesBurned || 0
+                    ),
+
+                date:
+                    today
+
+            }
+
+        ];
+
+    }
+
+}
+
+
+/* ==========================================
+ADD DATE TO OLD RECORDS
+========================================== */
+
+allStepRecords =
+    allStepRecords.map(
+        function(item){
+
+            if(
+                !item.date
+            ){
+
+                return {
+
+                    ...item,
+
+                    date: today
+
+                };
+
+            }
+
+            return item;
+
+        }
+    );
+
+
+/* ==========================================
+TODAY'S STEPS ONLY
+========================================== */
+
+let savedSteps =
+    allStepRecords.filter(
+        function(item){
+
+            return (
+                item.date === today
+            );
+
+        }
+    );
+
+
+/* ==========================================
+ELEMENTS
+========================================== */
+
+const stepsModal =
+    document.getElementById(
+        "stepsModal"
+    );
+
+const openSteps =
+    document.getElementById(
+        "openSteps"
+    );
+
+const closeSteps =
+    document.getElementById(
+        "closeSteps"
+    );
+
+const cancelSteps =
+    document.getElementById(
+        "cancelSteps"
+    );
+
+const stepsForm =
+    document.getElementById(
+        "stepsForm"
+    );
+
+const stepList =
+    document.getElementById(
+        "stepList"
+    );
+
+
+/* GOAL */
+
+const goalModal =
+    document.getElementById(
+        "goalModal"
+    );
+
+const editGoal =
+    document.getElementById(
+        "editGoal"
+    );
+
+const closeGoal =
+    document.getElementById(
+        "closeGoal"
+    );
+
+const cancelGoal =
+    document.getElementById(
+        "cancelGoal"
+    );
+
+const goalForm =
+    document.getElementById(
+        "goalForm"
+    );
+
+const goalInput =
+    document.getElementById(
+        "goalInput"
+    );
+
+
+/* ==========================================
+SAVE USER DATA
+========================================== */
+
+function saveUserData(){
+
+    /*
+    Keep previous dates.
+
+    Replace only today's
+    records with current
+    savedSteps.
+    */
+
+    const previousRecords =
+        Array.isArray(
+            userData.steps
+        )
+            ? userData.steps.filter(
+                function(item){
+
+                    return (
+                        item.date !== today
+                    );
+
+                }
+            )
+            : [];
+
+
+    userData.steps =
+        previousRecords.concat(
+            savedSteps
+        );
+
+
+    allUserData[
+        currentUser.email
+    ] =
+        userData;
+
+
+    localStorage.setItem(
+        "fittrackUserData",
+        JSON.stringify(
+            allUserData
+        )
+    );
+
+}
+
+
+/* ==========================================
+GET DAILY GOAL
+
+NO DEFAULT GOAL
+========================================== */
+
+function getDailyGoal(){
+
+    const savedGoal =
+        Number(
+            userData.goals &&
+            userData.goals.steps
+        );
+
+
+    if(
+        savedGoal > 0
+    ){
+
+        return savedGoal;
+
+    }
+
+
+    return 0;
+
+}
+
+
+/* ==========================================
+UPDATE GOAL BUTTON
+========================================== */
+
+function updateGoalButton(){
+
+    const goal =
+        getDailyGoal();
+
+
+    document.getElementById(
+        "goalButtonText"
+    ).textContent =
+        goal > 0
+            ? "Edit"
+            : "Set Goal";
+
+}
+
+
+/* ==========================================
+RENDER STEPS
+========================================== */
+
+function renderSteps(){
 
     stepList.innerHTML = "";
 
 
-    savedSteps.forEach(
-        function(item, index) {
+    if(
+        savedSteps.length === 0
+    ){
 
-            const row =
-                document.createElement("div");
-
-            row.className =
-                "step-row";
-
-
-            const icon =
-                document.createElement("div");
-
-            icon.className =
-                "step-icon green";
-
-            icon.innerHTML =
-                '<i class="fa-solid fa-shoe-prints"></i>';
+        const empty =
+            document.createElement(
+                "div"
+            );
 
 
-            const info =
-                document.createElement("div");
-
-            info.className =
-                "step-info-row";
+        empty.className =
+            "empty-state";
 
 
-            const title =
-                document.createElement("strong");
+        empty.innerHTML = `
 
-            title.textContent =
-                "Walking";
+            <i class="fa-solid fa-shoe-prints"></i>
 
+            <h3>
+                No steps recorded today
+            </h3>
 
-            const details =
-                document.createElement("span");
+            <p>
+                Click "Add Steps" to record today's activity.
+            </p>
 
-            details.textContent =
-                "Activity " +
-                (index + 1);
-
-
-            info.appendChild(title);
-            info.appendChild(details);
+        `;
 
 
-            const value =
-                document.createElement("div");
+        stepList.appendChild(
+            empty
+        );
 
-            value.className =
-                "step-value";
+    }
 
+    else{
 
-            const stepText =
-                document.createElement("strong");
+        savedSteps.forEach(
+            function(
+                item,
+                index
+            ){
 
-            stepText.textContent =
-                Number(item.steps).toLocaleString();
-
-
-            const calorieText =
-                document.createElement("span");
-
-            calorieText.textContent =
-                item.calories + " kcal";
-
-
-            value.appendChild(stepText);
-            value.appendChild(calorieText);
+                const row =
+                    document.createElement(
+                        "div"
+                    );
 
 
-            row.appendChild(icon);
-            row.appendChild(info);
-            row.appendChild(value);
+                row.className =
+                    "step-row";
 
 
-            stepList.appendChild(row);
+                const icon =
+                    document.createElement(
+                        "div"
+                    );
 
-        }
-    );
+
+                icon.className =
+                    "step-icon green";
+
+
+                icon.innerHTML =
+                    '<i class="fa-solid fa-shoe-prints"></i>';
+
+
+                const info =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                info.className =
+                    "step-info-row";
+
+
+                const title =
+                    document.createElement(
+                        "strong"
+                    );
+
+
+                title.textContent =
+                    "Walking";
+
+
+                const details =
+                    document.createElement(
+                        "span"
+                    );
+
+
+                details.textContent =
+                    "Activity " +
+                    (index + 1);
+
+
+                info.appendChild(
+                    title
+                );
+
+                info.appendChild(
+                    details
+                );
+
+
+                const value =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                value.className =
+                    "step-value";
+
+
+                const stepText =
+                    document.createElement(
+                        "strong"
+                    );
+
+
+                stepText.textContent =
+                    Number(
+                        item.steps || 0
+                    ).toLocaleString();
+
+
+                const calorieText =
+                    document.createElement(
+                        "span"
+                    );
+
+
+                calorieText.textContent =
+                    Number(
+                        item.calories || 0
+                    ) +
+                    " kcal";
+
+
+                value.appendChild(
+                    stepText
+                );
+
+                value.appendChild(
+                    calorieText
+                );
+
+
+                row.appendChild(
+                    icon
+                );
+
+                row.appendChild(
+                    info
+                );
+
+                row.appendChild(
+                    value
+                );
+
+
+                stepList.appendChild(
+                    row
+                );
+
+            }
+        );
+
+    }
 
 
     updateTotals();
@@ -1665,14 +2368,21 @@ function renderSteps() {
 UPDATE TOTALS
 ========================================== */
 
-function updateTotals() {
+function updateTotals(){
 
     const totalSteps =
         savedSteps.reduce(
-            function(sum, item) {
+            function(
+                sum,
+                item
+            ){
 
-                return sum +
-                    Number(item.steps);
+                return (
+                    sum +
+                    Number(
+                        item.steps || 0
+                    )
+                );
 
             },
             0
@@ -1681,10 +2391,17 @@ function updateTotals() {
 
     const totalCalories =
         savedSteps.reduce(
-            function(sum, item) {
+            function(
+                sum,
+                item
+            ){
 
-                return sum +
-                    Number(item.calories);
+                return (
+                    sum +
+                    Number(
+                        item.calories || 0
+                    )
+                );
 
             },
             0
@@ -1692,22 +2409,153 @@ function updateTotals() {
 
 
     const goal =
-        10000;
+        getDailyGoal();
 
+
+    /* =========================
+    NO GOAL SET
+    ========================= */
+
+    if(
+        goal === 0
+    ){
+
+        document.getElementById(
+            "totalSteps"
+        ).textContent =
+            totalSteps.toLocaleString();
+
+
+        document.getElementById(
+            "distance"
+        ).textContent =
+            (
+                totalSteps *
+                0.00075
+            ).toFixed(2) +
+            " km";
+
+
+        document.getElementById(
+            "calories"
+        ).textContent =
+            totalCalories;
+
+
+        document.getElementById(
+            "goal"
+        ).textContent =
+            "Set Goal";
+
+
+        document.getElementById(
+            "summarySteps"
+        ).textContent =
+            totalSteps.toLocaleString();
+
+
+        document.getElementById(
+            "summaryDistance"
+        ).textContent =
+            (
+                totalSteps *
+                0.00075
+            ).toFixed(2);
+
+
+        document.getElementById(
+            "summaryCalories"
+        ).textContent =
+            totalCalories;
+
+
+        document.getElementById(
+            "summaryProgress"
+        ).textContent =
+            "0%";
+
+
+        document.getElementById(
+            "goalCurrent"
+        ).textContent =
+            totalSteps.toLocaleString();
+
+
+        document.getElementById(
+            "goalText"
+        ).textContent =
+            "Not set";
+
+
+        document.getElementById(
+            "goalFill"
+        ).style.width =
+            "0%";
+
+
+        document.getElementById(
+            "summaryFill"
+        ).style.width =
+            "0%";
+
+
+        document.getElementById(
+            "progressNumber"
+        ).textContent =
+            "0%";
+
+
+        document.getElementById(
+            "progressCircle"
+        ).style.background =
+            "conic-gradient(" +
+            "#e9f0f4 0deg," +
+            "#e9f0f4 360deg)";
+
+
+        document.getElementById(
+            "stepMessage"
+        ).textContent =
+            "Set your daily step goal";
+
+
+        document.getElementById(
+            "remainingText"
+        ).textContent =
+            "Goal not set";
+
+
+        updateGoalButton();
+
+        return;
+
+    }
+
+
+    /* =========================
+    GOAL EXISTS
+    ========================= */
 
     const percentage =
         Math.min(
+            100,
             Math.round(
-                (totalSteps / goal) * 100
-            ),
-            100
+                (
+                    totalSteps /
+                    goal
+                ) * 100
+            )
         );
 
 
     const distance =
-        (totalSteps * 0.00075)
-            .toFixed(2);
+        (
+            totalSteps *
+            0.00075
+        ).toFixed(2);
 
+
+    /* TOP */
 
     document.getElementById(
         "totalSteps"
@@ -1718,7 +2566,8 @@ function updateTotals() {
     document.getElementById(
         "distance"
     ).textContent =
-        distance + " km";
+        distance +
+        " km";
 
 
     document.getElementById(
@@ -1726,6 +2575,14 @@ function updateTotals() {
     ).textContent =
         totalCalories;
 
+
+    document.getElementById(
+        "goal"
+    ).textContent =
+        goal.toLocaleString();
+
+
+    /* SUMMARY */
 
     document.getElementById(
         "summarySteps"
@@ -1746,16 +2603,13 @@ function updateTotals() {
 
 
     document.getElementById(
-        "progressNumber"
-    ).textContent =
-        percentage + "%";
-
-
-    document.getElementById(
         "summaryProgress"
     ).textContent =
-        percentage + "%";
+        percentage +
+        "%";
 
+
+    /* GOAL */
 
     document.getElementById(
         "goalCurrent"
@@ -1772,14 +2626,18 @@ function updateTotals() {
     document.getElementById(
         "goalFill"
     ).style.width =
-        percentage + "%";
+        percentage +
+        "%";
 
 
     document.getElementById(
         "summaryFill"
     ).style.width =
-        percentage + "%";
+        percentage +
+        "%";
 
+
+    /* CIRCLE */
 
     const degrees =
         percentage * 3.6;
@@ -1788,21 +2646,53 @@ function updateTotals() {
     document.getElementById(
         "progressCircle"
     ).style.background =
-        "conic-gradient(#20d997 " +
+        "conic-gradient(" +
+        "#20d997 " +
         degrees +
-        "deg, #e9f0f4 " +
+        "deg, " +
+        "#e9f0f4 " +
         degrees +
         "deg)";
 
 
+    document.getElementById(
+        "progressNumber"
+    ).textContent =
+        percentage +
+        "%";
+
+
+    /* MESSAGE */
+
     const remaining =
         Math.max(
-            goal - totalSteps,
+            goal -
+            totalSteps,
             0
         );
 
 
-    if (remaining > 0) {
+    if(
+        totalSteps === 0
+    ){
+
+        document.getElementById(
+            "stepMessage"
+        ).textContent =
+            "Start moving today!";
+
+
+        document.getElementById(
+            "remainingText"
+        ).textContent =
+            goal.toLocaleString() +
+            " remaining";
+
+    }
+
+    else if(
+        remaining > 0
+    ){
 
         document.getElementById(
             "stepMessage"
@@ -1810,18 +2700,22 @@ function updateTotals() {
             remaining.toLocaleString() +
             " steps to reach your goal";
 
+
         document.getElementById(
             "remainingText"
         ).textContent =
             remaining.toLocaleString() +
             " remaining";
 
-    } else {
+    }
+
+    else{
 
         document.getElementById(
             "stepMessage"
         ).textContent =
             "Daily goal completed!";
+
 
         document.getElementById(
             "remainingText"
@@ -1830,30 +2724,37 @@ function updateTotals() {
 
     }
 
+
+    updateGoalButton();
+
 }
 
 
 /* ==========================================
-OPEN
+OPEN ADD STEPS
 ========================================== */
 
 openSteps.addEventListener(
     "click",
-    function() {
+    function(){
 
         stepsModal.classList.add(
             "show"
         );
+
+        document.getElementById(
+            "stepInput"
+        ).focus();
 
     }
 );
 
 
 /* ==========================================
-CLOSE
+CLOSE ADD STEPS
 ========================================== */
 
-function closeModal() {
+function closeStepsModal(){
 
     stepsModal.classList.remove(
         "show"
@@ -1866,13 +2767,13 @@ function closeModal() {
 
 closeSteps.addEventListener(
     "click",
-    closeModal
+    closeStepsModal
 );
 
 
 cancelSteps.addEventListener(
     "click",
-    closeModal
+    closeStepsModal
 );
 
 
@@ -1882,7 +2783,7 @@ ADD STEPS
 
 stepsForm.addEventListener(
     "submit",
-    function(event) {
+    function(event){
 
         event.preventDefault();
 
@@ -1903,10 +2804,10 @@ stepsForm.addEventListener(
             );
 
 
-        if (
+        if(
             steps <= 0 ||
             calories < 0
-        ) {
+        ){
 
             return;
 
@@ -1915,23 +2816,167 @@ stepsForm.addEventListener(
 
         savedSteps.push({
 
-            steps: steps,
+            steps:
+                steps,
 
-            calories: calories
+            calories:
+                calories,
+
+            date:
+                today
 
         });
 
 
-        localStorage.setItem(
-            "fittrackSteps",
-            JSON.stringify(savedSteps)
-        );
+        saveUserData();
 
 
         renderSteps();
 
 
-        closeModal();
+        closeStepsModal();
+
+    }
+);
+
+
+/* ==========================================
+OPEN SET / EDIT GOAL
+========================================== */
+
+editGoal.addEventListener(
+    "click",
+    function(){
+
+        const currentGoal =
+            getDailyGoal();
+
+
+        /*
+        If no goal exists,
+        input is empty.
+        */
+
+        goalInput.value =
+            currentGoal > 0
+                ? currentGoal
+                : "";
+
+
+        goalModal.classList.add(
+            "show"
+        );
+
+
+        setTimeout(
+            function(){
+
+                goalInput.focus();
+
+                if(
+                    currentGoal > 0
+                ){
+
+                    goalInput.select();
+
+                }
+
+            },
+            50
+        );
+
+    }
+);
+
+
+/* ==========================================
+CLOSE GOAL
+========================================== */
+
+function closeGoalModal(){
+
+    goalModal.classList.remove(
+        "show"
+    );
+
+    goalForm.reset();
+
+}
+
+
+closeGoal.addEventListener(
+    "click",
+    closeGoalModal
+);
+
+
+cancelGoal.addEventListener(
+    "click",
+    closeGoalModal
+);
+
+
+/* ==========================================
+SAVE GOAL
+========================================== */
+
+goalForm.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+
+        const newGoal =
+            Number(
+                goalInput.value
+            );
+
+
+        if(
+            newGoal < 100
+        ){
+
+            alert(
+                "Please enter a goal of at least 100 steps."
+            );
+
+            return;
+
+        }
+
+
+        if(
+            !userData.goals
+        ){
+
+            userData.goals = {};
+
+        }
+
+
+        userData.goals.steps =
+            newGoal;
+
+
+        allUserData[
+            currentUser.email
+        ] =
+            userData;
+
+
+        localStorage.setItem(
+            "fittrackUserData",
+            JSON.stringify(
+                allUserData
+            )
+        );
+
+
+        updateTotals();
+
+
+        closeGoalModal();
 
     }
 );
@@ -1943,13 +2988,31 @@ CLICK OUTSIDE
 
 stepsModal.addEventListener(
     "click",
-    function(event) {
+    function(event){
 
-        if (
-            event.target === stepsModal
-        ) {
+        if(
+            event.target ===
+            stepsModal
+        ){
 
-            closeModal();
+            closeStepsModal();
+
+        }
+
+    }
+);
+
+
+goalModal.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target ===
+            goalModal
+        ){
+
+            closeGoalModal();
 
         }
 
@@ -1963,14 +3026,35 @@ ESC
 
 document.addEventListener(
     "keydown",
-    function(event) {
+    function(event){
 
-        if (
-            event.key === "Escape" &&
-            stepsModal.classList.contains("show")
-        ) {
+        if(
+            event.key !== "Escape"
+        ){
 
-            closeModal();
+            return;
+
+        }
+
+
+        if(
+            stepsModal.classList.contains(
+                "show"
+            )
+        ){
+
+            closeStepsModal();
+
+        }
+
+
+        if(
+            goalModal.classList.contains(
+                "show"
+            )
+        ){
+
+            closeGoalModal();
 
         }
 
@@ -1979,17 +3063,11 @@ document.addEventListener(
 
 
 /* ==========================================
-LOAD
+INITIAL LOAD
 ========================================== */
 
 renderSteps();
 
-</script>
-
-<script>
-    if (localStorage.getItem("fittrackLoggedIn") !== "true") {
-        window.location.href = "login.html";
-    }
 </script>
 
 </body>

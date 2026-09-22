@@ -800,25 +800,101 @@
 
 
                 // ==========================================
-                // LOGIN SUCCESS
-                // ==========================================
+// LOGIN SUCCESS
+// ==========================================
 
-                localStorage.setItem(
-                    "fittrackLoggedIn",
-                    "true"
-                );
+localStorage.setItem(
+    "fittrackLoggedIn",
+    "true"
+);
+
+localStorage.setItem(
+    "fittrackCurrentUser",
+    JSON.stringify({
+        name: user.name,
+        email: user.email
+    })
+);
 
 
-                localStorage.setItem(
-                    "fittrackCurrentUser",
-                    JSON.stringify({
+// ==========================================
+// USER-SPECIFIC FITTRACK DATA
+// ==========================================
 
-                        name: user.name,
+let allUserData =
+    JSON.parse(
+        localStorage.getItem(
+            "fittrackUserData"
+        )
+    ) || {};
 
-                        email: user.email
 
-                    })
-                );
+// ------------------------------------------
+// CREATE DATA ONLY FOR A NEW USER
+// ------------------------------------------
+
+if (!allUserData[user.email]) {
+
+    allUserData[user.email] = {
+
+        workouts: [],
+
+        meals: [],
+
+        steps: 0,
+
+        sleep: [],
+
+        heartRate: [],
+
+        goals: {},
+
+        profile: {
+            name: user.name,
+            email: user.email
+        },
+
+        settings: {}
+
+    };
+
+
+    // --------------------------------------
+    // MIGRATE OLD WORKOUTS
+    // Only if old shared workouts exist
+    // --------------------------------------
+
+    const oldWorkouts =
+        JSON.parse(
+            localStorage.getItem(
+                "fittrackWorkouts"
+            )
+        );
+
+
+    if (
+        Array.isArray(oldWorkouts) &&
+        oldWorkouts.length > 0
+    ) {
+
+        allUserData[user.email].workouts =
+            oldWorkouts;
+
+    }
+
+
+    // --------------------------------------
+    // SAVE USER DATA
+    // --------------------------------------
+
+    localStorage.setItem(
+        "fittrackUserData",
+        JSON.stringify(
+            allUserData
+        )
+    );
+
+}
 
 
                 // REMEMBER ME

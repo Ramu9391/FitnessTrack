@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +9,26 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-html,body{
+html,
+body{
     width:100%;
     height:100%;
 }
@@ -38,13 +46,20 @@ body{
     display:flex;
 }
 
-/* SIDEBAR */
+
+/* =========================
+SIDEBAR
+========================= */
 
 .sidebar{
     width:263px;
     height:100vh;
     flex:0 0 263px;
-    background:linear-gradient(180deg,#061c2c 0%,#071c2b 100%);
+    background:linear-gradient(
+        180deg,
+        #061c2c 0%,
+        #071c2b 100%
+    );
     color:white;
     padding:18px 9px 16px;
     display:flex;
@@ -119,7 +134,10 @@ body{
     color:#29e9a0;
 }
 
-/* PREMIUM */
+
+/* =========================
+PREMIUM
+========================= */
 
 .premium{
     margin:auto 15px 0;
@@ -159,13 +177,20 @@ body{
     margin-top:8px;
     border:0;
     border-radius:12px;
-    background:linear-gradient(90deg,#1ce79a,#2ce9a0);
+    background:linear-gradient(
+        90deg,
+        #1ce79a,
+        #2ce9a0
+    );
     color:#03251a;
     font-size:16px;
     font-weight:800;
 }
 
-/* MAIN */
+
+/* =========================
+MAIN
+========================= */
 
 .main{
     flex:1;
@@ -176,7 +201,10 @@ body{
     overflow-x:hidden;
 }
 
-/* TOP */
+
+/* =========================
+TOPBAR
+========================= */
 
 .topbar{
     display:flex;
@@ -241,11 +269,14 @@ body{
     font-size:12px;
 }
 
-/* STAT CARDS */
+
+/* =========================
+STAT CARDS
+========================= */
 
 .stats{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(5,1fr);
     gap:15px;
     margin-bottom:18px;
 }
@@ -295,11 +326,6 @@ body{
     color:#7c4ce5;
 }
 
-.orange{
-    background:#fff0d9;
-    color:#f59e0b;
-}
-
 .stat h3{
     font-size:21px;
     margin-top:3px;
@@ -310,7 +336,10 @@ body{
     font-size:12px;
 }
 
-/* CONTENT */
+
+/* =========================
+CONTENT
+========================= */
 
 .content-grid{
     display:grid;
@@ -337,7 +366,10 @@ body{
     font-size:18px;
 }
 
-/* CHART */
+
+/* =========================
+CHART
+========================= */
 
 .chart{
     height:265px;
@@ -369,6 +401,7 @@ body{
 .bar{
     width:18px;
     border-radius:6px 6px 2px 2px;
+    min-height:2px;
 }
 
 .steps-bar{
@@ -414,7 +447,10 @@ body{
     background:#f54867;
 }
 
-/* PROGRESS ROWS */
+
+/* =========================
+PROGRESS
+========================= */
 
 .progress-row{
     padding:15px 0;
@@ -496,7 +532,14 @@ body{
     font-size:10px;
 }
 
-/* RIGHT SUMMARY */
+
+/* =========================
+SUMMARY
+========================= */
+
+.summary-panel{
+    margin-top:18px;
+}
 
 .summary-item{
     display:flex;
@@ -566,7 +609,10 @@ body{
     line-height:1.6;
 }
 
-/* LAPTOP */
+
+/* =========================
+LAPTOP
+========================= */
 
 @media(max-height:850px){
 
@@ -620,20 +666,43 @@ body{
     }
 }
 
+
+@media(max-width:1000px){
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .content-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
 </style>
 </head>
+
 
 <body>
 
 <div class="app">
 
-<!-- SIDEBAR -->
+
+<!-- =========================
+SIDEBAR
+========================= -->
 
 <aside class="sidebar">
 
 <div class="brand">
-<img src="assets/logo.png" alt="FitTrack">
+
+<img
+src="assets/logo.png"
+alt="FitTrack"
+>
+
 </div>
+
 
 <nav class="nav">
 
@@ -672,7 +741,10 @@ body{
 <span>Goals</span>
 </a>
 
-<a href="progress.html" class="active">
+<a
+href="progress.html"
+class="active"
+>
 <i class="fa-solid fa-chart-column"></i>
 <span>Progress</span>
 </a>
@@ -693,6 +765,7 @@ body{
 </a>
 
 </nav>
+
 
 <div class="premium">
 
@@ -716,16 +789,21 @@ Personalized Plans
 Ad-Free Experience
 </div>
 
-<button>Upgrade Now</button>
+<button>
+Upgrade Now
+</button>
 
 </div>
 
 </aside>
 
 
-<!-- MAIN -->
+<!-- =========================
+MAIN
+========================= -->
 
 <main class="main">
+
 
 <div class="topbar">
 
@@ -733,9 +811,12 @@ Ad-Free Experience
 
 <h1>Progress</h1>
 
-<p>Track your progress and see how your consistency is improving.</p>
+<p>
+Track your progress and see how your consistency is improving.
+</p>
 
 </div>
+
 
 <div class="top-actions">
 
@@ -745,12 +826,22 @@ Ad-Free Experience
 
 <div class="profile">
 
-<div class="profile-circle">R</div>
+<div
+class="profile-circle"
+id="profileCircle"
+>
+U
+</div>
 
 <div class="profile-text">
-<strong>Ramu</strong>
-<span>Stay Consistent!</span>
-</div>
+
+<strong id="profileName">
+User
+</strong>
+
+<span>
+Stay Consistent!
+</span>
 
 </div>
 
@@ -758,10 +849,15 @@ Ad-Free Experience
 
 </div>
 
+</div>
 
-<!-- STATS -->
+
+<!-- =========================
+STAT CARDS
+========================= -->
 
 <section class="stats">
+
 
 <div class="stat">
 
@@ -772,15 +868,23 @@ Ad-Free Experience
 </div>
 
 <div>
+
 <p>Weight Change</p>
-<h3 id="weightChange">-14 kg</h3>
-</div>
+
+<h3 id="weightChange">
+--
+</h3>
 
 </div>
 
-<p>Starting to current</p>
+</div>
+
+<p>
+Starting to current
+</p>
 
 </div>
+
 
 
 <div class="stat">
@@ -792,15 +896,23 @@ Ad-Free Experience
 </div>
 
 <div>
+
 <p>Steps Average</p>
-<h3 id="stepsAverage">12,450</h3>
-</div>
+
+<h3 id="stepsAverage">
+--
+</h3>
 
 </div>
 
-<p>Steps per day</p>
+</div>
+
+<p>
+Steps per day
+</p>
 
 </div>
+
 
 
 <div class="stat">
@@ -812,15 +924,23 @@ Ad-Free Experience
 </div>
 
 <div>
+
 <p>Calories Average</p>
-<h3 id="calorieAverage">1,720</h3>
-</div>
+
+<h3 id="calorieAverage">
+--
+</h3>
 
 </div>
 
-<p>Calories per day</p>
+</div>
+
+<p>
+Calories per day
+</p>
 
 </div>
+
 
 
 <div class="stat">
@@ -832,63 +952,128 @@ Ad-Free Experience
 </div>
 
 <div>
+
 <p>Workout Time</p>
-<h3 id="workoutTotal">245 min</h3>
-</div>
+
+<h3 id="workoutTotal">
+--
+</h3>
 
 </div>
 
-<p>This week</p>
+</div>
+
+<p>
+This week
+</p>
 
 </div>
+
+
+<div class="stat">
+
+<div class="stat-top">
+
+<div class="stat-icon purple">
+<i class="fa-solid fa-moon"></i>
+</div>
+
+<div>
+
+<p>Sleep Average</p>
+
+<h3 id="sleepAverage">
+--
+</h3>
+
+</div>
+
+</div>
+
+<p>
+Hours per night
+</p>
+
+</div>
+
 
 </section>
 
 
-<!-- CONTENT -->
+<!-- =========================
+CONTENT
+========================= -->
 
-<div class="content-grid">
+<section class="content-grid">
 
 
-<!-- CHART -->
+<!-- WEEKLY PROGRESS -->
 
-<section class="panel">
+<div class="panel">
 
 <div class="panel-header">
 
-<h2>Weekly Progress</h2>
+<h2>
+Weekly Progress
+</h2>
+
+<span
+style="
+color:#718096;
+font-size:12px;
+"
+>
+Last 7 days
+</span>
 
 </div>
 
-<div class="chart" id="chart"></div>
+
+<div
+class="chart"
+id="chart"
+>
+</div>
+
 
 <div class="legend">
 
 <div class="legend-item">
+
 <div class="legend-dot dot-green"></div>
+
 Steps
+
 </div>
+
 
 <div class="legend-item">
+
 <div class="legend-dot dot-red"></div>
+
 Calories
+
+</div>
+
 </div>
 
 </div>
 
-</section>
 
+<!-- GOAL PROGRESS -->
 
-<!-- SUMMARY -->
-
-<section class="panel">
+<div class="panel">
 
 <div class="panel-header">
 
-<h2>Goal Progress</h2>
+<h2>
+Goal Progress
+</h2>
 
 </div>
 
+
+<!-- WEIGHT -->
 
 <div class="progress-row">
 
@@ -900,32 +1085,47 @@ Calories
 <i class="fa-solid fa-weight-scale"></i>
 </i>
 
-<strong>Weight Goal</strong>
+<strong>
+Weight Goal
+</strong>
 
 </div>
 
-<span id="weightPercent">62%</span>
+<span id="weightPercent">
+--
+</span>
 
 </div>
+
 
 <div class="progress-bar">
 
 <div
 class="progress-fill fill-green"
 id="weightFill"
-></div>
+style="width:0%"
+>
+</div>
 
 </div>
+
 
 <div class="progress-bottom">
 
-<span>104 kg</span>
-<span>Goal: 90 kg</span>
+<span id="weightCurrentText">
+--
+</span>
+
+<span id="weightGoalText">
+Goal: --
+</span>
 
 </div>
 
 </div>
 
+
+<!-- STEPS -->
 
 <div class="progress-row">
 
@@ -937,32 +1137,47 @@ id="weightFill"
 <i class="fa-solid fa-person-walking"></i>
 </i>
 
-<strong>Steps Goal</strong>
+<strong>
+Steps Goal
+</strong>
 
 </div>
 
-<span id="stepsPercent">78%</span>
+<span id="stepsPercent">
+--
+</span>
 
 </div>
+
 
 <div class="progress-bar">
 
 <div
 class="progress-fill fill-blue"
 id="stepsFill"
-></div>
+style="width:0%"
+>
+</div>
 
 </div>
+
 
 <div class="progress-bottom">
 
-<span>7,842</span>
-<span>Goal: 10,000</span>
+<span id="stepsCurrentText">
+0
+</span>
+
+<span id="stepsGoalText">
+Goal: --
+</span>
 
 </div>
 
 </div>
 
+
+<!-- CALORIES -->
 
 <div class="progress-row">
 
@@ -974,32 +1189,47 @@ id="stepsFill"
 <i class="fa-solid fa-fire"></i>
 </i>
 
-<strong>Calories Goal</strong>
+<strong>
+Calories Goal
+</strong>
 
 </div>
 
-<span id="caloriePercent">92%</span>
+<span id="caloriePercent">
+--
+</span>
 
 </div>
+
 
 <div class="progress-bar">
 
 <div
 class="progress-fill fill-red"
 id="calorieFill"
-></div>
+style="width:0%"
+>
+</div>
 
 </div>
+
 
 <div class="progress-bottom">
 
-<span>1,650</span>
-<span>Goal: 1,800</span>
+<span id="calorieCurrentText">
+0
+</span>
+
+<span id="calorieGoalText">
+Goal: --
+</span>
 
 </div>
 
 </div>
 
+
+<!-- WORKOUT -->
 
 <div class="progress-row">
 
@@ -1011,104 +1241,298 @@ id="calorieFill"
 <i class="fa-solid fa-dumbbell"></i>
 </i>
 
-<strong>Workout Goal</strong>
+<strong>
+Workout Goal
+</strong>
 
 </div>
 
-<span id="workoutPercent">75%</span>
+<span id="workoutPercent">
+--
+</span>
 
 </div>
+
 
 <div class="progress-bar">
 
 <div
 class="progress-fill fill-purple"
 id="workoutFill"
-></div>
+style="width:0%"
+>
+</div>
 
 </div>
+
 
 <div class="progress-bottom">
 
-<span>45 min</span>
-<span>Goal: 60 min</span>
+<span id="workoutCurrentText">
+0 min
+</span>
+
+<span id="workoutGoalText">
+Goal: --
+</span>
 
 </div>
 
 </div>
 
+
+<!-- SLEEP -->
+
+<div class="progress-row">
+
+<div class="progress-top">
+
+<div class="progress-name">
+
+<i class="purple">
+<i class="fa-solid fa-moon"></i>
+</i>
+
+<strong>
+Sleep Goal
+</strong>
+
+</div>
+
+<span id="sleepPercent">
+--
+</span>
+
+</div>
+
+
+<div class="progress-bar">
+
+<div
+class="progress-fill fill-purple"
+id="sleepFill"
+style="width:0%"
+>
+</div>
+
+</div>
+
+
+<div class="progress-bottom">
+
+<span id="sleepCurrentText">
+-- hours
+</span>
+
+<span id="sleepGoalText">
+Goal: --
+</span>
+
+</div>
+
+</div>
+
+
+</div>
 
 </section>
 
-</div>
 
+<!-- =========================
+SUMMARY
+========================= -->
 
-<!-- BOTTOM -->
-
-<section
-class="panel"
-style="margin-top:18px;"
->
+<section class="panel summary-panel">
 
 <div class="panel-header">
 
-<h2>Progress Summary</h2>
+<h2>
+Progress Summary
+</h2>
 
 </div>
 
+
+<!-- WEIGHT -->
 
 <div class="summary-item">
 
 <div class="summary-icon green">
+
 <i class="fa-solid fa-weight-scale"></i>
+
 </div>
 
 <div class="summary-info">
-<strong>Weight</strong>
-<span>Current progress</span>
+
+<strong>
+Weight
+</strong>
+
+<span>
+Current weight
+</span>
+
 </div>
 
 <div class="summary-value">
-<strong id="summaryWeight">104 kg</strong>
-<span>current</span>
-</div>
+
+<strong id="summaryWeight">
+--
+</strong>
+
+<span>
+current
+</span>
 
 </div>
 
+</div>
+
+
+<!-- STEPS -->
 
 <div class="summary-item">
 
 <div class="summary-icon blue">
+
 <i class="fa-solid fa-person-walking"></i>
+
 </div>
 
 <div class="summary-info">
-<strong>Steps</strong>
-<span>Today's activity</span>
+
+<strong>
+Steps
+</strong>
+
+<span>
+Today's activity
+</span>
+
 </div>
 
 <div class="summary-value">
-<strong>7,842</strong>
-<span>steps</span>
-</div>
+
+<strong id="summarySteps">
+0
+</strong>
+
+<span>
+steps
+</span>
 
 </div>
 
+</div>
+
+
+<!-- CALORIES -->
 
 <div class="summary-item">
 
 <div class="summary-icon red">
+
 <i class="fa-solid fa-fire"></i>
+
 </div>
 
 <div class="summary-info">
-<strong>Calories</strong>
-<span>Today's intake</span>
+
+<strong>
+Calories
+</strong>
+
+<span>
+Today's intake
+</span>
+
 </div>
 
 <div class="summary-value">
-<strong>1,650</strong>
-<span>kcal</span>
+
+<strong id="summaryCalories">
+0
+</strong>
+
+<span>
+kcal
+</span>
+
+</div>
+
+</div>
+
+
+<!-- WORKOUT -->
+
+<div class="summary-item">
+
+<div class="summary-icon purple">
+
+<i class="fa-solid fa-dumbbell"></i>
+
+</div>
+
+<div class="summary-info">
+
+<strong>
+Workout
+</strong>
+
+<span>
+Today's workout
+</span>
+
+</div>
+
+<div class="summary-value">
+
+<strong id="summaryWorkout">
+0 min
+</strong>
+
+<span>
+completed
+</span>
+
+</div>
+
+</div>
+
+
+<!-- SLEEP -->
+
+<div class="summary-item">
+
+<div class="summary-icon purple">
+
+<i class="fa-solid fa-moon"></i>
+
+</div>
+
+<div class="summary-info">
+
+<strong>
+Sleep
+</strong>
+
+<span>
+Today's sleep
+</span>
+
+</div>
+
+<div class="summary-value">
+
+<strong id="summarySleep">
+--
+</strong>
+
+<span>
+hours
+</span>
+
 </div>
 
 </div>
@@ -1116,15 +1540,18 @@ style="margin-top:18px;"
 
 <div class="message">
 
-<h3>💪 Keep Going</h3>
+<h3>
+💪 Keep Going
+</h3>
 
 <p id="messageText">
-Your consistency is building momentum. Keep working toward your goals every day.
+Start adding your fitness data to see your progress here.
 </p>
 
 </div>
 
 </section>
+
 
 </main>
 
@@ -1133,296 +1560,1317 @@ Your consistency is building momentum. Keep working toward your goals every day.
 
 <script>
 
-/* =========================
-GET GOALS
-========================= */
+/* ==========================================
+LOGIN PROTECTION
+========================================== */
 
-let goals =
-JSON.parse(
-localStorage.getItem("fittrackGoals")
-);
+if(
+    localStorage.getItem(
+        "fittrackLoggedIn"
+    ) !== "true"
+){
 
-if(!goals){
-
-goals = {
-    currentWeight:104,
-    targetWeight:90,
-    steps:10000,
-    calories:1800,
-    workout:60
-};
+    window.location.href =
+        "login.html";
 
 }
 
 
-/* =========================
-CURRENT DATA
-========================= */
-
-const current = {
-
-steps:7842,
-
-calories:1650,
-
-workout:45,
-
-weight:Number(goals.currentWeight)
-
-};
-
-
-/* =========================
-WEEKLY DATA
-========================= */
-
-const weekly = [
-
-{day:"Mon",steps:10500,calories:1500},
-
-{day:"Tue",steps:13200,calories:1700},
-
-{day:"Wed",steps:10400,calories:1600},
-
-{day:"Thu",steps:16500,calories:1850},
-
-{day:"Fri",steps:13200,calories:1750},
-
-{day:"Sat",steps:15200,calories:1800},
-
-{day:"Sun",steps:12800,calories:1650}
-
-];
-
-
-/* =========================
-PERCENT
-========================= */
-
-function percent(value,target){
-
-if(target <= 0) return 0;
-
-return Math.min(
-100,
-Math.round(
-(value / target) * 100
-)
-);
-
-}
-
-
-/* =========================
-RENDER CHART
-========================= */
-
-function renderChart(){
-
-const chart =
-document.getElementById("chart");
-
-chart.innerHTML="";
-
-
-weekly.forEach(function(item){
-
-const column =
-document.createElement("div");
-
-column.className="chart-column";
-
-
-const bars =
-document.createElement("div");
-
-bars.className="chart-bars";
-
-
-const steps =
-document.createElement("div");
-
-steps.className="bar steps-bar";
-
-steps.style.height =
-Math.max(
-10,
-(item.steps / 20000) * 215
-) + "px";
-
-
-const calories =
-document.createElement("div");
-
-calories.className="bar calorie-bar";
-
-calories.style.height =
-Math.max(
-10,
-(item.calories / 2200) * 215
-) + "px";
-
-
-bars.appendChild(steps);
-bars.appendChild(calories);
-
-
-const label =
-document.createElement("div");
-
-label.className="bar-label";
-
-label.textContent=item.day;
-
-
-column.appendChild(bars);
-column.appendChild(label);
-
-chart.appendChild(column);
-
-});
-
-}
-
-
-/* =========================
-RENDER
-========================= */
-
-function render(){
-const startingWeight = 104;
-
-const weightLost =
-startingWeight - current.weight;
-
-document.getElementById(
-"weightChange"
-).textContent =
-"-" + weightLost + " kg";
-
-
-const weightProgress =
-Math.min(
-100,
-Math.max(
-0,
-Math.round(
-((startingWeight - current.weight) /
-(startingWeight - goals.targetWeight)) * 100
-)
-)
-);
-
-const stepsProgress =
-percent(
-current.steps,
-goals.steps
-);
-
-
-const calorieProgress =
-percent(
-current.calories,
-goals.calories
-);
-
-
-const workoutProgress =
-percent(
-current.workout,
-goals.workout
-);
-
-
-document.getElementById(
-"weightPercent"
-).textContent =
-weightProgress + "%";
-
-document.getElementById(
-"stepsPercent"
-).textContent =
-stepsProgress + "%";
-
-document.getElementById(
-"caloriePercent"
-).textContent =
-calorieProgress + "%";
-
-document.getElementById(
-"workoutPercent"
-).textContent =
-workoutProgress + "%";
-
-
-document.getElementById(
-"weightFill"
-).style.width =
-weightProgress + "%";
-
-document.getElementById(
-"stepsFill"
-).style.width =
-stepsProgress + "%";
-
-document.getElementById(
-"calorieFill"
-).style.width =
-calorieProgress + "%";
-
-document.getElementById(
-"workoutFill"
-).style.width =
-workoutProgress + "%";
-
-
-document.getElementById(
-"summaryWeight"
-).textContent =
-current.weight + " kg";
-
-
-let message =
-"Your consistency is building momentum. Keep working toward your goals every day.";
+/* ==========================================
+CURRENT USER
+========================================== */
+
+const currentUser =
+    JSON.parse(
+        localStorage.getItem(
+            "fittrackCurrentUser"
+        )
+    );
 
 
 if(
-stepsProgress >= 90 &&
-calorieProgress >= 90 &&
-workoutProgress >= 90
+    !currentUser ||
+    !currentUser.email
 ){
 
-message =
-"Excellent consistency! You are very close to completing all your daily targets.";
+    window.location.href =
+        "login.html";
 
 }
-else if(
-stepsProgress >= 75
-){
 
-message =
-"Great progress! Keep your activity consistent and continue moving toward your goals.";
 
-}
+/* ==========================================
+USER DATA
+========================================== */
+
+const allUserData =
+    JSON.parse(
+        localStorage.getItem(
+            "fittrackUserData"
+        )
+    ) || {};
+
+
+const userData =
+    allUserData[
+        currentUser.email
+    ] || {};
+
+
+/* ==========================================
+PROFILE
+========================================== */
+
+const profile =
+    userData.profile || {};
+
+
+const userName =
+    profile.name ||
+    currentUser.name ||
+    "User";
 
 
 document.getElementById(
-"messageText"
+    "profileName"
 ).textContent =
-message;
+    userName;
 
 
-renderChart();
+document.getElementById(
+    "profileCircle"
+).textContent =
+    userName
+        .charAt(0)
+        .toUpperCase();
+
+
+/* ==========================================
+GOALS
+========================================== */
+
+const goals =
+    userData.goals || {};
+
+
+const currentWeight =
+    Number(
+        goals.currentWeight ||
+        profile.weight ||
+        0
+    );
+
+
+const targetWeight =
+    Number(
+        goals.targetWeight ||
+        0
+    );
+
+
+const stepsGoal =
+    Number(
+        goals.steps ||
+        0
+    );
+
+
+const caloriesGoal =
+    Number(
+        goals.calories ||
+        0
+    );
+
+
+const workoutGoal =
+    Number(
+        goals.workout ||
+        0
+    );
+
+
+const sleepGoal =
+    Number(
+        goals.sleep ||
+        0
+    );
+
+
+/* ==========================================
+STARTING WEIGHT
+========================================== */
+
+const startingWeight =
+    Number(
+        profile.startingWeight ||
+        goals.startingWeight ||
+        currentWeight
+    );
+
+
+/* ==========================================
+DATE
+========================================== */
+
+function formatDate(date){
+
+    const d =
+        new Date(date);
+
+    return (
+        d.getFullYear() +
+        "-" +
+        String(
+            d.getMonth() + 1
+        ).padStart(2,"0") +
+        "-" +
+        String(
+            d.getDate()
+        ).padStart(2,"0")
+    );
 
 }
 
 
-render();
+function getToday(){
 
-</script>
+    return formatDate(
+        new Date()
+    );
 
-<script>
-    if (localStorage.getItem("fittrackLoggedIn") !== "true") {
-        window.location.href = "login.html";
+}
+
+
+const today =
+    getToday();
+
+
+/* ==========================================
+STEPS
+========================================== */
+
+function getStepsForDate(
+    date
+){
+
+    if(
+        !Array.isArray(
+            userData.steps
+        )
+    ){
+
+        return 0;
+
     }
+
+
+    return userData.steps.reduce(
+        function(
+            total,
+            item
+        ){
+
+            if(
+                item.date !== date
+            ){
+
+                return total;
+
+            }
+
+
+            return (
+                total +
+                Number(
+                    item.steps || 0
+                )
+            );
+
+        },
+        0
+    );
+
+}
+
+
+/* ==========================================
+CALORIES
+========================================== */
+
+function getCaloriesForDate(
+    date
+){
+
+    if(
+        !Array.isArray(
+            userData.meals
+        )
+    ){
+
+        return 0;
+
+    }
+
+
+    return userData.meals.reduce(
+        function(
+            total,
+            meal
+        ){
+
+            if(
+                meal.date !== date
+            ){
+
+                return total;
+
+            }
+
+
+            return (
+                total +
+                Number(
+                    meal.calories || 0
+                )
+            );
+
+        },
+        0
+    );
+
+}
+
+
+/* ==========================================
+WORKOUT DATE
+========================================== */
+
+function getWorkoutDate(
+    workout
+){
+
+    if(
+        workout.dateISO
+    ){
+
+        return workout.dateISO;
+
+    }
+
+
+    if(
+        workout.date
+    ){
+
+        if(
+            /^\d{4}-\d{2}-\d{2}$/.test(
+                workout.date
+            )
+        ){
+
+            return workout.date;
+
+        }
+
+
+        /*
+        Old format:
+        21 Sep
+        */
+
+        const parts =
+            workout.date.split(" ");
+
+
+        if(
+            parts.length === 2
+        ){
+
+            const d =
+                new Date(
+                    parts[1] +
+                    " " +
+                    parts[0] +
+                    ", " +
+                    new Date()
+                        .getFullYear()
+                );
+
+
+            if(
+                !isNaN(
+                    d.getTime()
+                )
+            ){
+
+                return formatDate(d);
+
+            }
+
+        }
+
+    }
+
+
+    return null;
+
+}
+
+
+/* ==========================================
+WORKOUT
+========================================== */
+
+function getWorkoutForDate(
+    date
+){
+
+    if(
+        !Array.isArray(
+            userData.workouts
+        )
+    ){
+
+        return 0;
+
+    }
+
+
+    return userData.workouts.reduce(
+        function(
+            total,
+            workout
+        ){
+
+            if(
+                getWorkoutDate(
+                    workout
+                ) !== date
+            ){
+
+                return total;
+
+            }
+
+
+            return (
+                total +
+                Number(
+                    workout.duration || 0
+                )
+            );
+
+        },
+        0
+    );
+
+}
+
+
+/* ==========================================
+LAST 7 DAYS
+========================================== */
+
+function getLast7Days(){
+
+    const result = [];
+
+    const now =
+        new Date();
+
+
+    for(
+        let i = 6;
+        i >= 0;
+        i--
+    ){
+
+        const date =
+            new Date(now);
+
+
+        date.setDate(
+            now.getDate() - i
+        );
+
+
+        result.push({
+
+            date:
+                formatDate(date),
+
+            day:
+                date.toLocaleDateString(
+                    "en-US",
+                    {
+                        weekday:"short"
+                    }
+                )
+
+        });
+
+    }
+
+
+    return result;
+
+}
+
+
+const weekly =
+    getLast7Days();
+
+
+/* ==========================================
+WEEKLY DATA
+========================================== */
+
+weekly.forEach(
+    function(day){
+
+        day.steps =
+            getStepsForDate(
+                day.date
+            );
+
+
+        day.calories =
+            getCaloriesForDate(
+                day.date
+            );
+
+
+        day.workout =
+            getWorkoutForDate(
+                day.date
+            );
+
+    }
+);
+
+
+/* ==========================================
+TODAY
+========================================== */
+
+const todaySteps =
+    getStepsForDate(
+        today
+    );
+
+
+const todayCalories =
+    getCaloriesForDate(
+        today
+    );
+
+
+const todayWorkout =
+    getWorkoutForDate(
+        today
+    );
+
+
+/* ==========================================
+SLEEP
+========================================== */
+
+function getSleepForDate(
+    date
+){
+
+    if(
+        !Array.isArray(
+            userData.sleep
+        )
+    ){
+
+        return 0;
+
+    }
+
+
+    return userData.sleep.reduce(
+        function(
+            total,
+            sleep
+        ){
+
+            if(
+                sleep.date !== date
+            ){
+
+                return total;
+
+            }
+
+
+            return (
+                total +
+                Number(
+                    sleep.duration || 0
+                )
+            );
+
+        },
+        0
+    );
+
+}
+
+
+const todaySleep =
+    getSleepForDate(
+        today
+    );
+
+
+/* ==========================================
+AVERAGES
+========================================== */
+
+const stepDays =
+    weekly.filter(
+        function(day){
+
+            return day.steps > 0;
+
+        }
+    );
+
+
+const calorieDays =
+    weekly.filter(
+        function(day){
+
+            return day.calories > 0;
+
+        }
+    );
+
+
+const stepsAverage =
+    stepDays.length
+        ? Math.round(
+            stepDays.reduce(
+                function(
+                    total,
+                    day
+                ){
+
+                    return (
+                        total +
+                        day.steps
+                    );
+
+                },
+                0
+            ) /
+            stepDays.length
+        )
+        : 0;
+
+
+const calorieAverage =
+    calorieDays.length
+        ? Math.round(
+            calorieDays.reduce(
+                function(
+                    total,
+                    day
+                ){
+
+                    return (
+                        total +
+                        day.calories
+                    );
+
+                },
+                0
+            ) /
+            calorieDays.length
+        )
+        : 0;
+
+
+const weeklyWorkout =
+    weekly.reduce(
+        function(
+            total,
+            day
+        ){
+
+            return (
+                total +
+                day.workout
+            );
+
+        },
+        0
+    );
+
+
+/* ==========================================
+SLEEP AVERAGE
+========================================== */
+
+let sleepDays = [];
+
+
+if(
+    Array.isArray(
+        userData.sleep
+    )
+){
+
+    sleepDays =
+        userData.sleep.filter(
+            function(sleep){
+
+                return Number(
+                    sleep.duration || 0
+                ) > 0;
+
+            }
+        );
+
+}
+
+
+const sleepAverage =
+    sleepDays.length
+        ? (
+            sleepDays.reduce(
+                function(
+                    total,
+                    sleep
+                ){
+
+                    return (
+                        total +
+                        Number(
+                            sleep.duration || 0
+                        )
+                    );
+
+                },
+                0
+            ) /
+            sleepDays.length
+        )
+        : 0;
+
+
+/* ==========================================
+PERCENT
+========================================== */
+
+function percent(
+    current,
+    goal
+){
+
+    if(
+        !goal ||
+        goal <= 0
+    ){
+
+        return 0;
+
+    }
+
+
+    return Math.min(
+        100,
+        Math.round(
+            (
+                current /
+                goal
+            ) * 100
+        )
+    );
+
+}
+
+
+/* ==========================================
+ACTIVITY PERCENTAGES
+========================================== */
+
+const stepsPercent =
+    percent(
+        todaySteps,
+        stepsGoal
+    );
+
+
+const caloriesPercent =
+    percent(
+        todayCalories,
+        caloriesGoal
+    );
+
+
+const workoutPercent =
+    percent(
+        todayWorkout,
+        workoutGoal
+    );
+
+
+const sleepPercent =
+    percent(
+        todaySleep,
+        sleepGoal
+    );
+
+
+/* ==========================================
+WEIGHT PROGRESS
+========================================== */
+
+let weightPercent = 0;
+
+
+if(
+    startingWeight &&
+    currentWeight &&
+    targetWeight &&
+    startingWeight > targetWeight
+){
+
+    const totalWeightToLose =
+        startingWeight -
+        targetWeight;
+
+
+    const weightLost =
+        startingWeight -
+        currentWeight;
+
+
+    weightPercent =
+        Math.min(
+            100,
+            Math.max(
+                0,
+                Math.round(
+                    (
+                        weightLost /
+                        totalWeightToLose
+                    ) * 100
+                )
+            )
+        );
+
+}
+
+
+/* ==========================================
+WEIGHT CHANGE
+========================================== */
+
+const weightChange =
+    document.getElementById(
+        "weightChange"
+    );
+
+
+if(
+    weightChange
+){
+
+    if(
+        startingWeight &&
+        currentWeight
+    ){
+
+        const change =
+            startingWeight -
+            currentWeight;
+
+
+        if(
+            change > 0
+        ){
+
+            weightChange.textContent =
+                "-" +
+                change +
+                " kg";
+
+        }
+        else if(
+            change < 0
+        ){
+
+            weightChange.textContent =
+                "+" +
+                Math.abs(change) +
+                " kg";
+
+        }
+        else{
+
+            weightChange.textContent =
+                "0 kg";
+
+        }
+
+    }
+    else{
+
+        weightChange.textContent =
+            "--";
+
+    }
+
+}
+
+
+/* ==========================================
+TOP CARDS
+========================================== */
+
+document.getElementById(
+    "stepsAverage"
+).textContent =
+    stepsAverage
+        ? stepsAverage.toLocaleString()
+        : "--";
+
+
+document.getElementById(
+    "calorieAverage"
+).textContent =
+    calorieAverage
+        ? calorieAverage.toLocaleString()
+        : "--";
+
+
+document.getElementById(
+    "workoutTotal"
+).textContent =
+    weeklyWorkout
+        ? weeklyWorkout + " min"
+        : "--";
+
+
+document.getElementById(
+    "sleepAverage"
+).textContent =
+    sleepAverage
+        ? sleepAverage.toFixed(1) + " h"
+        : "--";
+
+
+/* ==========================================
+WEIGHT GOAL
+========================================== */
+
+document.getElementById(
+    "weightPercent"
+).textContent =
+    currentWeight &&
+    targetWeight
+        ? weightPercent + "%"
+        : "--";
+
+
+document.getElementById(
+    "weightFill"
+).style.width =
+    weightPercent + "%";
+
+
+document.getElementById(
+    "weightCurrentText"
+).textContent =
+    currentWeight
+        ? currentWeight + " kg"
+        : "--";
+
+
+document.getElementById(
+    "weightGoalText"
+).textContent =
+    targetWeight
+        ? "Goal: " +
+          targetWeight +
+          " kg"
+        : "Goal: --";
+
+
+/* ==========================================
+STEPS GOAL
+========================================== */
+
+document.getElementById(
+    "stepsPercent"
+).textContent =
+    stepsGoal
+        ? stepsPercent + "%"
+        : "--";
+
+
+document.getElementById(
+    "stepsFill"
+).style.width =
+    stepsPercent + "%";
+
+
+document.getElementById(
+    "stepsCurrentText"
+).textContent =
+    todaySteps.toLocaleString();
+
+
+document.getElementById(
+    "stepsGoalText"
+).textContent =
+    stepsGoal
+        ? "Goal: " +
+          stepsGoal.toLocaleString()
+        : "Goal: --";
+
+
+/* ==========================================
+CALORIES GOAL
+========================================== */
+
+document.getElementById(
+    "caloriePercent"
+).textContent =
+    caloriesGoal
+        ? caloriesPercent + "%"
+        : "--";
+
+
+document.getElementById(
+    "calorieFill"
+).style.width =
+    caloriesPercent + "%";
+
+
+document.getElementById(
+    "calorieCurrentText"
+).textContent =
+    todayCalories.toLocaleString();
+
+
+document.getElementById(
+    "calorieGoalText"
+).textContent =
+    caloriesGoal
+        ? "Goal: " +
+          caloriesGoal.toLocaleString()
+        : "Goal: --";
+
+
+/* ==========================================
+WORKOUT GOAL
+========================================== */
+
+document.getElementById(
+    "workoutPercent"
+).textContent =
+    workoutGoal
+        ? workoutPercent + "%"
+        : "--";
+
+
+document.getElementById(
+    "workoutFill"
+).style.width =
+    workoutPercent + "%";
+
+
+document.getElementById(
+    "workoutCurrentText"
+).textContent =
+    todayWorkout +
+    " min";
+
+
+document.getElementById(
+    "workoutGoalText"
+).textContent =
+    workoutGoal
+        ? "Goal: " +
+          workoutGoal +
+          " min"
+        : "Goal: --";
+
+
+/* ==========================================
+SLEEP GOAL
+========================================== */
+
+document.getElementById(
+    "sleepPercent"
+).textContent =
+    sleepGoal
+        ? sleepPercent + "%"
+        : "--";
+
+
+document.getElementById(
+    "sleepFill"
+).style.width =
+    sleepPercent + "%";
+
+
+document.getElementById(
+    "sleepCurrentText"
+).textContent =
+    todaySleep
+        ? todaySleep.toFixed(1) + " hours"
+        : "-- hours";
+
+
+document.getElementById(
+    "sleepGoalText"
+).textContent =
+    sleepGoal
+        ? "Goal: " +
+          sleepGoal.toFixed(1) +
+          " hours"
+        : "Goal: --";
+
+
+/* ==========================================
+SUMMARY
+========================================== */
+
+document.getElementById(
+    "summaryWeight"
+).textContent =
+    currentWeight
+        ? currentWeight + " kg"
+        : "--";
+
+
+document.getElementById(
+    "summarySteps"
+).textContent =
+    todaySteps.toLocaleString();
+
+
+document.getElementById(
+    "summaryCalories"
+).textContent =
+    todayCalories.toLocaleString();
+
+
+document.getElementById(
+    "summaryWorkout"
+).textContent =
+    todayWorkout +
+    " min";
+
+
+document.getElementById(
+    "summarySleep"
+).textContent =
+    todaySleep
+        ? todaySleep.toFixed(1)
+        : "--";
+
+
+/* ==========================================
+MESSAGE
+========================================== */
+
+const message =
+    document.getElementById(
+        "messageText"
+    );
+
+
+if(
+    todaySteps === 0 &&
+    todayCalories === 0 &&
+    todayWorkout === 0
+){
+
+    message.textContent =
+        "Start adding your fitness data to see your progress here.";
+
+}
+else{
+
+    message.textContent =
+        "Your progress is calculated from your personal goals and actual activity.";
+
+}
+
+
+/* ==========================================
+WEEKLY GRAPH
+========================================== */
+
+const chart =
+    document.getElementById(
+        "chart"
+    );
+
+
+if(chart){
+
+    chart.innerHTML = "";
+
+
+    const maxSteps =
+        Math.max(
+            10000,
+            ...weekly.map(
+                function(day){
+                    return day.steps;
+                }
+            )
+        );
+
+
+    const maxCalories =
+        Math.max(
+            2000,
+            ...weekly.map(
+                function(day){
+                    return day.calories;
+                }
+            )
+        );
+
+
+    weekly.forEach(
+        function(day){
+
+            const column =
+                document.createElement(
+                    "div"
+                );
+
+            column.className =
+                "chart-column";
+
+
+            const bars =
+                document.createElement(
+                    "div"
+                );
+
+            bars.className =
+                "chart-bars";
+
+
+            const stepBar =
+                document.createElement(
+                    "div"
+                );
+
+            stepBar.className =
+                "bar steps-bar";
+
+
+            const calorieBar =
+                document.createElement(
+                    "div"
+                );
+
+            calorieBar.className =
+                "bar calorie-bar";
+
+
+            /* STEPS */
+
+            if(
+                day.steps > 0
+            ){
+
+                stepBar.style.height =
+                    Math.max(
+                        8,
+                        (
+                            day.steps /
+                            maxSteps
+                        ) * 200
+                    ) +
+                    "px";
+
+            }
+            else{
+
+                stepBar.style.height =
+                    "2px";
+
+            }
+
+
+            /* CALORIES */
+
+            if(
+                day.calories > 0
+            ){
+
+                calorieBar.style.height =
+                    Math.max(
+                        8,
+                        (
+                            day.calories /
+                            maxCalories
+                        ) * 200
+                    ) +
+                    "px";
+
+            }
+            else{
+
+                calorieBar.style.height =
+                    "2px";
+
+            }
+
+
+            bars.appendChild(
+                stepBar
+            );
+
+            bars.appendChild(
+                calorieBar
+            );
+
+
+            const label =
+                document.createElement(
+                    "div"
+                );
+
+            label.className =
+                "bar-label";
+
+            label.textContent =
+                day.day;
+
+
+            column.appendChild(
+                bars
+            );
+
+            column.appendChild(
+                label
+            );
+
+
+            chart.appendChild(
+                column
+            );
+
+        }
+    );
+
+}
+
 </script>
+
+</body>
+</html>

@@ -15,871 +15,712 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html,
-body {
-    width: 100%;
-    min-height: 100%;
+html,body{
+    width:100%;
+    min-height:100%;
 }
 
-body {
-    font-family: "Inter", sans-serif;
-    background: #f4f8fb;
-    color: #07183b;
-    overflow: hidden;
+body{
+    font-family:"Inter",sans-serif;
+    background:#f4f8fb;
+    color:#07183b;
+    overflow:hidden;
 }
 
-button,
-input,
-select {
-    font-family: inherit;
+button,input,select{
+    font-family:inherit;
 }
 
-.app {
-    min-height: 100vh;
-    display: flex;
+.app{
+    min-height:100vh;
+    display:flex;
 }
 
 /* =========================
 SIDEBAR
 ========================= */
 
-.sidebar {
-    width: 263px;
-    height: 100vh;
-    flex: 0 0 263px;
-
-    background: linear-gradient(
-        180deg,
-        #061c2c 0%,
-        #071c2b 100%
-    );
-
-    color: #fff;
-    padding: 18px 9px 16px;
-
-    display: flex;
-    flex-direction: column;
-
-    overflow: hidden;
+.sidebar{
+    width:263px;
+    height:100vh;
+    flex:0 0 263px;
+    background:linear-gradient(180deg,#061c2c 0%,#071c2b 100%);
+    color:#fff;
+    padding:18px 9px 16px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
 }
 
-.brand {
-    height: 100px;
-    flex: 0 0 100px;
-
-    display: flex;
-    align-items: center;
-
-    padding-left: 20px;
-    margin-bottom: 8px;
+.brand{
+    height:100px;
+    flex:0 0 100px;
+    display:flex;
+    align-items:center;
+    padding-left:20px;
+    margin-bottom:8px;
 }
 
-.brand img {
-    width: 196px;
-    max-height: 88px;
-    object-fit: contain;
+.brand img{
+    width:196px;
+    max-height:88px;
+    object-fit:contain;
 }
 
-.nav {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+.nav{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
 }
 
-.nav a {
-    height: 49px;
-    flex: 0 0 49px;
-
-    border-radius: 11px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 28px;
-    padding: 0 28px;
-
-    color: #e8f0f7;
-    text-decoration: none;
-
-    font-size: 16px;
-    font-weight: 500;
-
-    position: relative;
-
-    transition: background .18s ease, color .18s ease;
+.nav a{
+    height:49px;
+    flex:0 0 49px;
+    border-radius:11px;
+    display:flex;
+    align-items:center;
+    gap:28px;
+    padding:0 28px;
+    color:#e8f0f7;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:500;
+    position:relative;
+    transition:.18s;
 }
 
-.nav a i {
-    width: 25px;
-    flex: 0 0 25px;
-
-    text-align: center;
-    font-size: 22px;
+.nav a i{
+    width:25px;
+    flex:0 0 25px;
+    text-align:center;
+    font-size:22px;
 }
 
-.nav a:hover {
-    background: #12344a;
+.nav a:hover{
+    background:#12344a;
 }
 
-.nav a.active {
-    background: #12344a;
-    font-weight: 700;
+.nav a.active{
+    background:#12344a;
+    font-weight:700;
 }
 
-.nav a.active::before {
-    content: "";
-
-    position: absolute;
-    left: -9px;
-    top: 0;
-    bottom: 0;
-
-    width: 8px;
-
-    border-radius: 0 6px 6px 0;
-
-    background: #20e69b;
+.nav a.active::before{
+    content:"";
+    position:absolute;
+    left:-9px;
+    top:0;
+    bottom:0;
+    width:8px;
+    border-radius:0 6px 6px 0;
+    background:#20e69b;
 }
 
-.nav a.active i {
-    color: #29e9a0;
+.nav a.active i{
+    color:#29e9a0;
 }
 
 /* =========================
 PREMIUM
 ========================= */
 
-.premium {
-    margin: auto 15px 0;
-
-    border: 1px solid #1d4158;
-    background: rgba(10, 40, 57, .7);
-
-    border-radius: 12px;
-
-    padding: 14px 16px 13px;
+.premium{
+    margin:auto 15px 0;
+    border:1px solid #1d4158;
+    background:rgba(10,40,57,.7);
+    border-radius:12px;
+    padding:14px 16px 13px;
 }
 
-.premium-title {
-    display: flex;
-    align-items: center;
-
-    gap: 10px;
-
-    color: #ffd21f;
-    font-weight: 800;
-    font-size: 15px;
-
-    margin-bottom: 12px;
+.premium-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#ffd21f;
+    font-weight:800;
+    font-size:15px;
+    margin-bottom:12px;
 }
 
-.premium-feature {
-    font-size: 12px;
-    margin: 8px 0;
-
-    color: #dce8ee;
-
-    display: flex;
-    gap: 10px;
-
-    align-items: center;
+.premium-feature{
+    font-size:12px;
+    margin:8px 0;
+    color:#dce8ee;
+    display:flex;
+    gap:10px;
+    align-items:center;
 }
 
-.premium-feature i {
-    width: 15px;
-    color: #24e8a0;
+.premium-feature i{
+    width:15px;
+    color:#24e8a0;
 }
 
-.premium button {
-    width: 100%;
-    height: 43px;
-
-    margin-top: 8px;
-
-    border: 0;
-    border-radius: 12px;
-
-    background: linear-gradient(
-        90deg,
-        #1ce79a,
-        #2ce9a0
-    );
-
-    color: #03251a;
-
-    font-size: 16px;
-    font-weight: 800;
-
-    cursor: pointer;
+.premium button{
+    width:100%;
+    height:43px;
+    margin-top:8px;
+    border:0;
+    border-radius:12px;
+    background:linear-gradient(90deg,#1ce79a,#2ce9a0);
+    color:#03251a;
+    font-size:16px;
+    font-weight:800;
+    cursor:pointer;
 }
 
 /* =========================
 MAIN
 ========================= */
 
-.main {
-    margin-left: 0;
-    width: auto;
-    flex: 1;
-    min-width: 0;
-
-    height: 100vh;
-    max-height: 100vh;
-
-    padding: 25px 30px 35px;
-
-    overflow-y: auto;
-    overflow-x: hidden;
+.main{
+    margin-left:0;
+    width:auto;
+    flex:1;
+    min-width:0;
+    height:100vh;
+    max-height:100vh;
+    padding:25px 30px 35px;
+    overflow-y:auto;
+    overflow-x:hidden;
 }
 
 /* =========================
 TOP BAR
 ========================= */
 
-.topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    margin-bottom: 22px;
+.topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:22px;
 }
 
-.page-title h1 {
-    font-size: 28px;
-    margin-bottom: 6px;
+.page-title h1{
+    font-size:28px;
+    margin-bottom:6px;
 }
 
-.page-title p {
-    color: #718096;
-    font-size: 13px;
+.page-title p{
+    color:#718096;
+    font-size:13px;
 }
 
-.top-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.top-actions{
+    display:flex;
+    align-items:center;
+    gap:20px;
 }
 
-.notification {
-    width: 42px;
-    height: 42px;
-
-    border-radius: 50%;
-
-    background: white;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    box-shadow: 0 3px 12px rgba(7, 24, 59, .08);
-
-    color: #07183b;
-    font-size: 18px;
+.notification{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 3px 12px rgba(7,24,59,.08);
+    color:#07183b;
+    font-size:18px;
 }
 
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.profile{
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
-.profile-circle {
-    width: 42px;
-    height: 42px;
-
-    border-radius: 50%;
-
-    background: #263c4a;
-    color: white;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-weight: bold;
+.profile-circle{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#263c4a;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
 }
 
-.profile-text strong {
-    display: block;
-    font-size: 14px;
+.profile-text strong{
+    display:block;
+    font-size:14px;
 }
 
-.profile-text span {
-    color: #718096;
-    font-size: 12px;
+.profile-text span{
+    color:#718096;
+    font-size:12px;
 }
 
 /* =========================
 STATS
 ========================= */
 
-.stats {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 15px;
-
-    margin-bottom: 20px;
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:20px;
 }
 
-.stat {
-    background: white;
-
-    border: 1px solid #e4ebf0;
-
-    border-radius: 14px;
-
-    padding: 18px;
-
-    box-shadow:
-        0 3px 12px rgba(7, 24, 59, .05);
+.stat{
+    background:white;
+    border:1px solid #e4ebf0;
+    border-radius:14px;
+    padding:18px;
+    box-shadow:0 3px 12px rgba(7,24,59,.05);
 }
 
-.stat-top {
-    display: flex;
-    align-items: center;
-
-    gap: 12px;
-
-    margin-bottom: 12px;
+.stat-top{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:12px;
 }
 
-.stat-icon {
-    width: 43px;
-    height: 43px;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 18px;
+.stat-icon{
+    width:43px;
+    height:43px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
 }
 
-.green {
-    background: #dff8ed;
-    color: #0bb77b;
+.green{
+    background:#dff8ed;
+    color:#0bb77b;
 }
 
-.purple {
-    background: #eee2ff;
-    color: #7c4ce5;
+.purple{
+    background:#eee2ff;
+    color:#7c4ce5;
 }
 
-.pink {
-    background: #ffe0e8;
-    color: #ef4565;
+.pink{
+    background:#ffe0e8;
+    color:#ef4565;
 }
 
-.blue {
-    background: #dff1ff;
-    color: #179fe4;
+.blue{
+    background:#dff1ff;
+    color:#179fe4;
 }
 
-.stat h3 {
-    font-size: 22px;
-    margin-bottom: 3px;
+.stat h3{
+    font-size:22px;
+    margin-bottom:3px;
 }
 
-.stat p {
-    color: #718096;
-    font-size: 12px;
+.stat p{
+    color:#718096;
+    font-size:12px;
 }
 
 /* =========================
 CONTENT
 ========================= */
 
-.content-grid {
-    display: grid;
-
-    grid-template-columns:
-        1.5fr
-        1fr;
-
-    gap: 18px;
+.content-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:18px;
 }
 
-.panel {
-    background: white;
-
-    border: 1px solid #e4ebf0;
-
-    border-radius: 15px;
-
-    padding: 20px;
-
-    box-shadow:
-        0 3px 12px rgba(7, 24, 59, .05);
+.panel{
+    background:white;
+    border:1px solid #e4ebf0;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 3px 12px rgba(7,24,59,.05);
 }
 
-.panel-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    margin-bottom: 18px;
+.panel-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:18px;
 }
 
-.panel-header h2 {
-    font-size: 18px;
+.panel-header h2{
+    font-size:18px;
 }
 
 /* =========================
 ADD BUTTON
 ========================= */
 
-.add-workout {
-    border: none;
-
-    background: #20e69b;
-
-    color: #05291e;
-
-    font-weight: 800;
-
-    padding: 11px 18px;
-
-    border-radius: 9px;
-
-    cursor: pointer;
-
-    font-size: 12px;
-
-    transition: .2s;
+.add-workout{
+    border:none;
+    background:#20e69b;
+    color:#05291e;
+    font-weight:800;
+    padding:11px 18px;
+    border-radius:9px;
+    cursor:pointer;
+    font-size:12px;
+    transition:.2s;
 }
 
-.add-workout:hover {
-    background: #19d88f;
-    transform: translateY(-1px);
+.add-workout:hover{
+    background:#19d88f;
+    transform:translateY(-1px);
 }
 
 /* =========================
 WORKOUT ROW
 ========================= */
 
-.workout-row {
-    display: flex;
-    align-items: center;
-
-    padding: 14px 0;
-
-    border-bottom: 1px solid #edf1f4;
+.workout-row{
+    display:flex;
+    align-items:center;
+    padding:14px 0;
+    border-bottom:1px solid #edf1f4;
 }
 
-.workout-row:last-child {
-    border-bottom: none;
+.workout-row:last-child{
+    border-bottom:none;
 }
 
-.workout-icon {
-    width: 46px;
-    height: 46px;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-right: 13px;
-
-    font-size: 18px;
+.workout-icon{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-right:13px;
+    font-size:18px;
 }
 
-.workout-info {
-    flex: 1;
+.workout-info{
+    flex:1;
 }
 
-.workout-info strong {
-    display: block;
-
-    font-size: 14px;
-
-    margin-bottom: 4px;
+.workout-info strong{
+    display:block;
+    font-size:14px;
+    margin-bottom:4px;
 }
 
-.workout-info span {
-    color: #718096;
-    font-size: 12px;
+.workout-info span{
+    color:#718096;
+    font-size:12px;
 }
 
-.workout-date {
-    color: #718096;
-    font-size: 12px;
+.workout-date{
+    color:#718096;
+    font-size:12px;
 }
 
-.workout-delete {
-    width: 32px;
-    height: 32px;
-
-    border: none;
-    border-radius: 8px;
-
-    background: #fff0f2;
-    color: #ef4565;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-
-    margin-left: 12px;
-
-    font-size: 14px;
-
-    transition: .2s;
+.workout-delete,
+.workout-edit{
+    width:32px;
+    height:32px;
+    border:none;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    margin-left:12px;
+    font-size:14px;
+    transition:.2s;
 }
 
-.workout-delete:hover {
-    background: #ffe0e5;
-    transform: scale(1.05);
+.workout-delete{
+    background:#fff0f2;
+    color:#ef4565;
 }
 
-.workout-edit {
-    width: 32px;
-    height: 32px;
-
-    border: none;
-    border-radius: 8px;
-
-    background: #eef5ff;
-    color: #2196f3;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-
-    margin-left: 12px;
-
-    font-size: 14px;
-
-    transition: .2s;
+.workout-delete:hover{
+    background:#ffe0e5;
+    transform:scale(1.05);
 }
 
-.workout-edit:hover {
-    background: #dcecff;
-    transform: scale(1.05);
+.workout-edit{
+    background:#eef5ff;
+    color:#2196f3;
 }
 
+.workout-edit:hover{
+    background:#dcecff;
+    transform:scale(1.05);
+}
+
+/* EMPTY STATE */
+
+.empty-workouts{
+    text-align:center;
+    padding:45px 15px;
+    color:#718096;
+}
+
+.empty-workouts i{
+    font-size:40px;
+    margin-bottom:12px;
+    color:#cbd5df;
+}
+
+.empty-workouts strong{
+    display:block;
+    color:#526174;
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.empty-workouts span{
+    font-size:12px;
+}
 
 /* =========================
 WORKOUT TYPES
 ========================= */
 
-.type-card {
-    display: flex;
-    align-items: center;
-
-    gap: 14px;
-
-    padding: 15px;
-
-    border: 1px solid #edf1f4;
-
-    border-radius: 12px;
-
-    margin-bottom: 12px;
+.type-card{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:15px;
+    border:1px solid #edf1f4;
+    border-radius:12px;
+    margin-bottom:12px;
 }
 
-.type-icon {
-    width: 42px;
-    height: 42px;
-
-    border-radius: 11px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 17px;
+.type-icon{
+    width:42px;
+    height:42px;
+    border-radius:11px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:17px;
 }
 
-.type-card strong {
-    display: block;
-
-    font-size: 14px;
-
-    margin-bottom: 3px;
+.type-card strong{
+    display:block;
+    font-size:14px;
+    margin-bottom:3px;
 }
 
-.type-card span {
-    color: #718096;
-    font-size: 11px;
+.type-card span{
+    color:#718096;
+    font-size:11px;
 }
 
 /* =========================
 MODAL
 ========================= */
 
-.modal {
-    position: fixed;
-
-    inset: 0;
-
-    background: rgba(3, 20, 32, .55);
-
-    display: none;
-
-    align-items: center;
-    justify-content: center;
-
-    z-index: 1000;
-
-    padding: 20px;
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(3,20,32,.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:1000;
+    padding:20px;
 }
 
-.modal.show {
-    display: flex;
+.modal.show{
+    display:flex;
 }
 
-.modal-box {
-    width: 430px;
-    max-width: 100%;
-
-    background: white;
-
-    border-radius: 18px;
-
-    padding: 25px;
-
-    box-shadow:
-        0 25px 70px rgba(0, 0, 0, .22);
-
-    animation: popup .2s ease;
+.modal-box{
+    width:430px;
+    max-width:100%;
+    background:white;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 25px 70px rgba(0,0,0,.22);
+    animation:popup .2s ease;
 }
 
-@keyframes popup {
-
-    from {
-        opacity: 0;
-        transform: translateY(15px) scale(.97);
+@keyframes popup{
+    from{
+        opacity:0;
+        transform:translateY(15px) scale(.97);
     }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
     }
-
 }
 
-.modal-header {
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    margin-bottom: 22px;
+.modal-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:22px;
 }
 
-.modal-header h2 {
-    font-size: 21px;
+.modal-header h2{
+    font-size:21px;
 }
 
-.close-btn {
-    width: 34px;
-    height: 34px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: #f1f5f8;
-
-    color: #526174;
-
-    cursor: pointer;
-
-    font-size: 16px;
+.close-btn{
+    width:34px;
+    height:34px;
+    border:none;
+    border-radius:50%;
+    background:#f1f5f8;
+    color:#526174;
+    cursor:pointer;
+    font-size:16px;
 }
 
-.close-btn:hover {
-    background: #e7edf2;
+.close-btn:hover{
+    background:#e7edf2;
 }
 
 /* =========================
 FORM
 ========================= */
 
-.form-group {
-    margin-bottom: 17px;
+.form-group{
+    margin-bottom:17px;
 }
 
-.form-group label {
-    display: block;
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    margin-bottom: 7px;
+.form-group label{
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:7px;
 }
 
 .form-group input,
-.form-group select {
-    width: 100%;
-
-    height: 46px;
-
-    border: 1px solid #dfe7ee;
-
-    border-radius: 9px;
-
-    background: #f8fafc;
-
-    padding: 0 13px;
-
-    outline: none;
-
-    color: #07183b;
-
-    font-size: 14px;
+.form-group select{
+    width:100%;
+    height:46px;
+    border:1px solid #dfe7ee;
+    border-radius:9px;
+    background:#f8fafc;
+    padding:0 13px;
+    outline:none;
+    color:#07183b;
+    font-size:14px;
 }
 
 .form-group input:focus,
-.form-group select:focus {
-    border-color: #20d997;
-
-    background: white;
-
-    box-shadow:
-        0 0 0 3px rgba(32, 217, 151, .10);
+.form-group select:focus{
+    border-color:#20d997;
+    background:white;
+    box-shadow:0 0 0 3px rgba(32,217,151,.10);
 }
 
-.form-row {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 13px;
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:13px;
 }
 
 /* =========================
-POPUP BUTTONS
+BUTTONS
 ========================= */
 
-.modal-buttons {
-    display: flex;
-
-    justify-content: flex-end;
-
-    gap: 10px;
-
-    margin-top: 23px;
+.modal-buttons{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+    margin-top:23px;
 }
 
 .cancel-btn,
-.save-btn {
-    height: 43px;
-
-    padding: 0 18px;
-
-    border-radius: 9px;
-
-    cursor: pointer;
-
-    font-size: 13px;
-
-    font-weight: 700;
+.save-btn{
+    height:43px;
+    padding:0 18px;
+    border-radius:9px;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:700;
 }
 
-.cancel-btn {
-    border: 1px solid #dfe7ee;
-
-    background: white;
-
-    color: #526174;
+.cancel-btn{
+    border:1px solid #dfe7ee;
+    background:white;
+    color:#526174;
 }
 
-.save-btn {
-    border: none;
-
-    background: #20e69b;
-
-    color: #05291e;
+.save-btn{
+    border:none;
+    background:#20e69b;
+    color:#05291e;
 }
 
-.save-btn:hover {
-    background: #19d88f;
+.save-btn:hover{
+    background:#19d88f;
 }
 
 /* =========================
 MOBILE
 ========================= */
 
-@media (max-width: 900px) {
+@media(max-width:900px){
 
-    .sidebar {
-        width: 190px;
+    .sidebar{
+        width:190px;
+        flex-basis:190px;
     }
 
-    .main {
-        margin-left: 190px;
-        width: calc(100% - 190px);
+    .main{
+        width:calc(100% - 190px);
     }
 
-    .stats {
-        grid-template-columns: repeat(2, 1fr);
+    .stats{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .content-grid {
-        grid-template-columns: 1fr;
+    .content-grid{
+        grid-template-columns:1fr;
     }
 }
 
-/* =====================================================
-SAME SIDEBAR
-===================================================== */
+@media(max-height:850px){
 
-@media (max-height: 850px) {
-
-    .sidebar {
-        padding-top: 10px !important;
+    .sidebar{
+        padding-top:10px!important;
     }
 
-    .brand {
-        height: 82px !important;
-        flex-basis: 82px !important;
-        margin-bottom: 2px !important;
+    .brand{
+        height:82px!important;
+        flex-basis:82px!important;
+        margin-bottom:2px!important;
     }
 
-    .brand img {
-        width: 184px !important;
+    .brand img{
+        width:184px!important;
     }
 
-    .nav a {
-        height: 43px !important;
-        flex-basis: 43px !important;
-        font-size: 14px !important;
+    .nav a{
+        height:43px!important;
+        flex-basis:43px!important;
+        font-size:14px!important;
     }
 
-    .nav a i {
-        font-size: 19px !important;
+    .nav a i{
+        font-size:19px!important;
     }
 
-    .premium {
-        padding: 10px 13px !important;
+    .premium{
+        padding:10px 13px!important;
     }
 
-    .premium-feature {
-        margin: 5px 0 !important;
-        font-size: 11px !important;
+    .premium-feature{
+        margin:5px 0!important;
+        font-size:11px!important;
     }
 
-    .premium button {
-        height: 37px !important;
+    .premium button{
+        height:37px!important;
     }
 }
 
@@ -896,94 +737,94 @@ SIDEBAR
 
 <aside class="sidebar">
 
-<div class="brand">
-<img src="assets/logo.png" alt="FitTrack">
-</div>
+    <div class="brand">
+        <img src="assets/logo.png" alt="FitTrack">
+    </div>
 
-<nav class="nav">
+    <nav class="nav">
 
-<a href="index.html">
-<i class="fa-solid fa-house"></i>
-<span>Dashboard</span>
-</a>
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </a>
 
-<a href="workouts.html" class="active">
-<i class="fa-solid fa-dumbbell"></i>
-<span>Workouts</span>
-</a>
+        <a href="workouts.html" class="active">
+            <i class="fa-solid fa-dumbbell"></i>
+            <span>Workouts</span>
+        </a>
 
-<a href="nutrition.html">
-<i class="fa-solid fa-apple-whole"></i>
-<span>Nutrition</span>
-</a>
+        <a href="nutrition.html">
+            <i class="fa-solid fa-apple-whole"></i>
+            <span>Nutrition</span>
+        </a>
 
-<a href="steps.html">
-<i class="fa-solid fa-person-walking"></i>
-<span>Steps</span>
-</a>
+        <a href="steps.html">
+            <i class="fa-solid fa-person-walking"></i>
+            <span>Steps</span>
+        </a>
 
-<a href="sleep.html">
-    <i class="fa-solid fa-moon"></i>
-    <span>Sleep</span>
-</a>
+        <a href="sleep.html">
+            <i class="fa-solid fa-moon"></i>
+            <span>Sleep</span>
+        </a>
 
-<a href="heart-rate.html">
-<i class="fa-regular fa-heart"></i>
-<span>Heart Rate</span>
-</a>
+        <a href="heart-rate.html">
+            <i class="fa-regular fa-heart"></i>
+            <span>Heart Rate</span>
+        </a>
 
-<a href="goals.html">
-<i class="fa-solid fa-bullseye"></i>
-<span>Goals</span>
-</a>
+        <a href="goals.html">
+            <i class="fa-solid fa-bullseye"></i>
+            <span>Goals</span>
+        </a>
 
-<a href="progress.html">
-<i class="fa-solid fa-chart-column"></i>
-<span>Progress</span>
-</a>
+        <a href="progress.html">
+            <i class="fa-solid fa-chart-column"></i>
+            <span>Progress</span>
+        </a>
 
-<a href="reports.html">
-<i class="fa-regular fa-file-lines"></i>
-<span>Reports</span>
-</a>
+        <a href="reports.html">
+            <i class="fa-regular fa-file-lines"></i>
+            <span>Reports</span>
+        </a>
 
-<a href="profile.html">
-<i class="fa-regular fa-user"></i>
-<span>Profile</span>
-</a>
+        <a href="profile.html">
+            <i class="fa-regular fa-user"></i>
+            <span>Profile</span>
+        </a>
 
-<a href="settings.html">
-<i class="fa-solid fa-gear"></i>
-<span>Settings</span>
-</a>
+        <a href="settings.html">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+        </a>
 
-</nav>
+    </nav>
 
-<div class="premium">
+    <div class="premium">
 
-<div class="premium-title">
-<i class="fa-solid fa-crown"></i>
-<span>Go Premium</span>
-</div>
+        <div class="premium-title">
+            <i class="fa-solid fa-crown"></i>
+            <span>Go Premium</span>
+        </div>
 
-<div class="premium-feature">
-<i class="fa-solid fa-chart-line"></i>
-Advanced Insights
-</div>
+        <div class="premium-feature">
+            <i class="fa-solid fa-chart-line"></i>
+            Advanced Insights
+        </div>
 
-<div class="premium-feature">
-<i class="fa-solid fa-plus"></i>
-Personalized Plans
-</div>
+        <div class="premium-feature">
+            <i class="fa-solid fa-plus"></i>
+            Personalized Plans
+        </div>
 
-<div class="premium-feature">
-<i class="fa-solid fa-shield-heart"></i>
-Ad-Free Experience
-</div>
+        <div class="premium-feature">
+            <i class="fa-solid fa-shield-heart"></i>
+            Ad-Free Experience
+        </div>
 
-<button>Upgrade Now</button>
+        <button>Upgrade Now</button>
 
-</div>
+    </div>
 
 </aside>
 
@@ -994,481 +835,492 @@ MAIN
 
 <main class="main">
 
-<div class="topbar">
+    <div class="topbar">
 
-<div class="page-title">
+        <div class="page-title">
+            <h1>Workouts</h1>
+            <p>Track your workouts and stay consistent.</p>
+        </div>
 
-<h1>Workouts</h1>
+        <div class="top-actions">
 
-<p>Track your workouts and stay consistent.</p>
+            <div class="notification">
+                <i class="fa-regular fa-bell"></i>
+            </div>
 
-</div>
+            <div class="profile">
 
-<div class="top-actions">
+                <div class="profile-circle" id="profileInitial">
+                    U
+                </div>
 
-<div class="notification">
-<i class="fa-regular fa-bell"></i>
-</div>
+                <div class="profile-text">
+                    <strong id="profileName">User</strong>
+                    <span>Stay Consistent!</span>
+                </div>
 
-<div class="profile">
+            </div>
 
-<div class="profile-circle">
-R
-</div>
+        </div>
 
-<div class="profile-text">
+    </div>
 
-<strong>Ramu</strong>
 
-<span>Stay Consistent!</span>
+    <!-- =========================
+    STATS
+    ========================= -->
 
-</div>
+    <section class="stats">
 
-</div>
+        <div class="stat">
 
-</div>
+            <div class="stat-top">
 
-</div>
+                <div class="stat-icon green">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
 
+                <div>
+                    <p>Total Workouts</p>
+                    <h3 id="totalWorkouts">0</h3>
+                </div>
 
-<!-- =========================
-STATS
-========================= -->
+            </div>
 
-<section class="stats">
+            <p>This week</p>
 
-<div class="stat">
+        </div>
 
-<div class="stat-top">
 
-<div class="stat-icon green">
-<i class="fa-solid fa-dumbbell"></i>
-</div>
+        <div class="stat">
 
-<div>
+            <div class="stat-top">
 
-<p>Total Workouts</p>
+                <div class="stat-icon purple">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
 
-<h3 id="totalWorkouts">3</h3>
+                <div>
+                    <p>Total Time</p>
+                    <h3 id="totalTime">0 min</h3>
+                </div>
 
-</div>
+            </div>
 
-</div>
+            <p>This week</p>
 
-<p>This week</p>
+        </div>
 
-</div>
 
+        <div class="stat">
 
-<div class="stat">
+            <div class="stat-top">
 
-<div class="stat-top">
+                <div class="stat-icon pink">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
 
-<div class="stat-icon purple">
-<i class="fa-solid fa-clock"></i>
-</div>
+                <div>
+                    <p>Calories Burned</p>
+                    <h3 id="totalCalories">0</h3>
+                </div>
 
-<div>
+            </div>
 
-<p>Total Time</p>
+            <p>This week</p>
 
-<h3 id="totalTime">115 min</h3>
+        </div>
 
-</div>
 
-</div>
+        <div class="stat">
 
-<p>This week</p>
+            <div class="stat-top">
 
-</div>
+                <div class="stat-icon blue">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
 
+                <div>
+                    <p>Average Workout</p>
+                    <h3 id="averageWorkout">0 min</h3>
+                </div>
 
-<div class="stat">
+            </div>
 
-<div class="stat-top">
+            <p>Per workout</p>
 
-<div class="stat-icon pink">
-<i class="fa-solid fa-fire"></i>
-</div>
+        </div>
 
-<div>
+    </section>
 
-<p>Calories Burned</p>
 
-<h3 id="totalCalories">810</h3>
+    <!-- =========================
+    CONTENT
+    ========================= -->
 
-</div>
+    <div class="content-grid">
 
-</div>
 
-<p>This week</p>
+        <!-- RECENT WORKOUTS -->
 
-</div>
+        <section class="panel">
 
+            <div class="panel-header">
 
-<div class="stat">
+                <h2>Recent Workouts</h2>
 
-<div class="stat-top">
+                <button
+                    class="add-workout"
+                    id="openWorkout"
+                    type="button">
 
-<div class="stat-icon blue">
-<i class="fa-solid fa-chart-line"></i>
-</div>
+                    <i class="fa-solid fa-plus"></i>
+                    Add Workout
 
-<div>
+                </button>
 
-<p>Average Workout</p>
+            </div>
 
-<h3 id="averageWorkout">38 min</h3>
 
-</div>
+            <div id="workoutList"></div>
 
-</div>
+        </section>
 
-<p>Per workout</p>
 
-</div>
+        <!-- WORKOUT TYPES -->
 
-</section>
+        <section class="panel">
 
+            <div class="panel-header">
+                <h2>Workout Types</h2>
+            </div>
 
-<!-- =========================
-CONTENT
-========================= -->
 
-<div class="content-grid">
+            <div class="type-card">
 
+                <div class="type-icon green">
+                    <i class="fa-solid fa-person-running"></i>
+                </div>
 
-<!-- RECENT WORKOUTS -->
+                <div>
+                    <strong>Running</strong>
+                    <span>Cardio & endurance</span>
+                </div>
 
-<section class="panel">
+            </div>
 
-<div class="panel-header">
 
-<h2>Recent Workouts</h2>
+            <div class="type-card">
 
-<button
-class="add-workout"
-id="openWorkout">
+                <div class="type-icon purple">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
 
-<i class="fa-solid fa-plus"></i>
-Add Workout
+                <div>
+                    <strong>Strength Training</strong>
+                    <span>Build strength & muscle</span>
+                </div>
 
-</button>
+            </div>
 
-</div>
 
+            <div class="type-card">
 
-<div id="workoutList">
+                <div class="type-icon blue">
+                    <i class="fa-solid fa-person-swimming"></i>
+                </div>
 
-<div class="workout-row">
+                <div>
+                    <strong>Swimming</strong>
+                    <span>Full body cardio</span>
+                </div>
 
-<div class="workout-icon green">
-<i class="fa-solid fa-person-running"></i>
-</div>
+            </div>
 
-<div class="workout-info">
 
-<strong>Running</strong>
+            <div class="type-card">
 
-<span>30 min &nbsp; • &nbsp; 280 kcal</span>
+                <div class="type-icon pink">
+                    <i class="fa-solid fa-person-walking"></i>
+                </div>
 
-</div>
+                <div>
+                    <strong>Walking</strong>
+                    <span>Light cardio</span>
+                </div>
 
-<div class="workout-date">
-16 Sep
-</div>
+            </div>
 
-</div>
+        </section>
 
-
-<div class="workout-row">
-
-<div class="workout-icon blue">
-<i class="fa-solid fa-heart-pulse"></i>
-</div>
-
-<div class="workout-info">
-
-<strong>Chest Workout</strong>
-
-<span>45 min &nbsp; • &nbsp; 220 kcal</span>
-
-</div>
-
-<div class="workout-date">
-15 Sep
-</div>
-
-</div>
-
-
-<div class="workout-row">
-
-<div class="workout-icon blue">
-<i class="fa-solid fa-person-swimming"></i>
-</div>
-
-<div class="workout-info">
-
-<strong>Swimming</strong>
-
-<span>40 min &nbsp; • &nbsp; 310 kcal</span>
-
-</div>
-
-<div class="workout-date">
-14 Sep
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- WORKOUT TYPES -->
-
-<section class="panel">
-
-<div class="panel-header">
-
-<h2>Workout Types</h2>
-
-</div>
-
-<div class="type-card">
-
-<div class="type-icon green">
-<i class="fa-solid fa-person-running"></i>
-</div>
-
-<div>
-
-<strong>Running</strong>
-<span>Cardio & endurance</span>
-
-</div>
-
-</div>
-
-
-<div class="type-card">
-
-<div class="type-icon purple">
-<i class="fa-solid fa-dumbbell"></i>
-</div>
-
-<div>
-
-<strong>Strength Training</strong>
-<span>Build strength & muscle</span>
-
-</div>
-
-</div>
-
-
-<div class="type-card">
-
-<div class="type-icon blue">
-<i class="fa-solid fa-person-swimming"></i>
-</div>
-
-<div>
-
-<strong>Swimming</strong>
-<span>Full body cardio</span>
-
-</div>
-
-</div>
-
-
-<div class="type-card">
-
-<div class="type-icon pink">
-<i class="fa-solid fa-person-walking"></i>
-</div>
-
-<div>
-
-<strong>Walking</strong>
-<span>Light cardio</span>
-
-</div>
-
-</div>
-
-</section>
-
-</div>
+    </div>
 
 </main>
 
 </div>
 
 
-<!-- ==================================================
+<!-- =========================
 ADD WORKOUT MODAL
-================================================== -->
+========================= -->
 
-<div
-class="modal"
-id="workoutModal"
->
+<div class="modal" id="workoutModal">
 
-<div class="modal-box">
+    <div class="modal-box">
 
-<div class="modal-header">
+        <div class="modal-header">
 
-<h2>Add Workout</h2>
+            <h2>Add Workout</h2>
 
-<button
-class="close-btn"
-id="closeWorkout"
-type="button"
->
+            <button
+                class="close-btn"
+                id="closeWorkout"
+                type="button">
 
-<i class="fa-solid fa-xmark"></i>
+                <i class="fa-solid fa-xmark"></i>
 
-</button>
+            </button>
 
-</div>
+        </div>
 
 
-<form id="workoutForm">
+        <form id="workoutForm">
 
-<div class="form-group">
+            <div class="form-group">
 
-<label for="workoutType">
-Workout Type
-</label>
+                <label for="workoutType">
+                    Workout Type
+                </label>
 
-<select id="workoutType" required>
+                <select id="workoutType" required>
 
-<option value="">
-Select workout
-</option>
+                    <option value="">
+                        Select workout
+                    </option>
 
-<option value="Running">
-Running
-</option>
+                    <option value="Running">
+                        Running
+                    </option>
 
-<option value="Walking">
-Walking
-</option>
+                    <option value="Walking">
+                        Walking
+                    </option>
 
-<option value="Swimming">
-Swimming
-</option>
+                    <option value="Swimming">
+                        Swimming
+                    </option>
 
-<option value="Cycling">
-Cycling
-</option>
+                    <option value="Cycling">
+                        Cycling
+                    </option>
 
-<option value="Chest Workout">
-Chest Workout
-</option>
+                    <option value="Chest Workout">
+                        Chest Workout
+                    </option>
 
-<option value="Strength Training">
-Strength Training
-</option>
+                    <option value="Strength Training">
+                        Strength Training
+                    </option>
 
-<option value="Other">
-Other
-</option>
+                    <option value="Other">
+                        Other
+                    </option>
 
-</select>
+                </select>
 
-</div>
-
-
-<div
-class="form-group"
-id="otherWorkoutGroup"
-style="display:none;"
->
-
-<label for="otherWorkout">
-Workout Name
-</label>
-
-<input
-type="text"
-id="otherWorkout"
-placeholder="Enter workout name"
->
-
-</div>
+            </div>
 
 
-<div class="form-row">
+            <div
+                class="form-group"
+                id="otherWorkoutGroup"
+                style="display:none;">
 
-<div class="form-group">
+                <label for="otherWorkout">
+                    Workout Name
+                </label>
 
-<label for="duration">
-Duration
-</label>
+                <input
+                    type="text"
+                    id="otherWorkout"
+                    placeholder="Enter workout name">
 
-<input
-type="number"
-id="duration"
-placeholder="30"
-min="1"
-required
->
-
-</div>
+            </div>
 
 
-<div class="form-group">
+            <div class="form-row">
 
-<label for="calories">
-Calories Burned
-</label>
+                <div class="form-group">
 
-<input
-type="number"
-id="calories"
-placeholder="280"
-min="0"
-required
->
+                    <label for="duration">
+                        Duration
+                    </label>
 
-</div>
+                    <input
+                        type="number"
+                        id="duration"
+                        placeholder="30"
+                        min="1"
+                        required>
 
-</div>
+                </div>
 
 
-<div class="modal-buttons">
+                <div class="form-group">
 
-<button
-type="button"
-class="cancel-btn"
-id="cancelWorkout"
->
-Cancel
-</button>
+                    <label for="calories">
+                        Calories Burned
+                    </label>
 
-<button
-type="submit"
-class="save-btn"
->
-<i class="fa-solid fa-check"></i>
-Add Workout
-</button>
+                    <input
+                        type="number"
+                        id="calories"
+                        placeholder="280"
+                        min="0"
+                        required>
 
-</div>
+                </div>
 
-</form>
+            </div>
 
-</div>
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelWorkout">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="save-btn">
+
+                    <i class="fa-solid fa-check"></i>
+                    Add Workout
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
 
 </div>
 
 
 <script>
+
+/* ==========================================
+LOGIN PROTECTION
+========================================== */
+
+if(
+    localStorage.getItem("fittrackLoggedIn") !== "true"
+){
+    window.location.href = "login.html";
+}
+
+
+/* ==========================================
+CURRENT USER
+========================================== */
+
+const currentUser =
+    JSON.parse(
+        localStorage.getItem("fittrackCurrentUser")
+    );
+
+if(
+    !currentUser ||
+    !currentUser.email
+){
+    localStorage.removeItem("fittrackLoggedIn");
+    window.location.href = "login.html";
+}
+
+
+/* ==========================================
+USER DATA
+========================================== */
+
+let allUserData =
+    JSON.parse(
+        localStorage.getItem("fittrackUserData")
+    ) || {};
+
+
+/* ==========================================
+CREATE USER DATA IF MISSING
+========================================== */
+
+if(
+    !allUserData[currentUser.email]
+){
+
+    allUserData[currentUser.email] = {
+
+        workouts: [],
+
+        meals: [],
+
+        steps: 0,
+
+        sleep: [],
+
+        heartRate: [],
+
+        goals: {},
+
+        profile:{
+            name:currentUser.name || "",
+            email:currentUser.email
+        },
+
+        settings:{}
+
+    };
+
+    localStorage.setItem(
+        "fittrackUserData",
+        JSON.stringify(allUserData)
+    );
+}
+
+
+/* ==========================================
+CURRENT USER WORKOUTS
+========================================== */
+
+let savedWorkouts =
+    Array.isArray(
+        allUserData[currentUser.email].workouts
+    )
+    ? allUserData[currentUser.email].workouts
+    : [];
+
+
+/* ==========================================
+PROFILE DISPLAY
+========================================== */
+
+const displayName =
+    currentUser.name ||
+    "User";
+
+document.getElementById(
+    "profileName"
+).textContent = displayName;
+
+document.getElementById(
+    "profileInitial"
+).textContent =
+    displayName.charAt(0).toUpperCase();
+
 
 /* ==========================================
 ELEMENTS
@@ -1501,53 +1353,21 @@ const otherWorkout =
 const workoutList =
     document.getElementById("workoutList");
 
-
-/* ==========================================
-SAVED WORKOUTS
-========================================== */
-
-let savedWorkouts =
-    JSON.parse(
-        localStorage.getItem("fittrackWorkouts")
-    );
-
-    let editingWorkout = null;
+let editingWorkout = null;
 
 
 /* ==========================================
-FIRST TIME SETUP
+SAVE USER DATA
 ========================================== */
 
-if (!savedWorkouts) {
+function saveUserWorkouts(){
 
-    savedWorkouts = [
-
-        {
-            name: "Running",
-            duration: 30,
-            calories: 280,
-            date: "16 Sep"
-        },
-
-        {
-            name: "Chest Workout",
-            duration: 45,
-            calories: 220,
-            date: "15 Sep"
-        },
-
-        {
-            name: "Swimming",
-            duration: 40,
-            calories: 310,
-            date: "14 Sep"
-        }
-
-    ];
+    allUserData[currentUser.email].workouts =
+        savedWorkouts;
 
     localStorage.setItem(
-        "fittrackWorkouts",
-        JSON.stringify(savedWorkouts)
+        "fittrackUserData",
+        JSON.stringify(allUserData)
     );
 }
 
@@ -1556,7 +1376,7 @@ if (!savedWorkouts) {
 CREATE WORKOUT ROW
 ========================================== */
 
-function createWorkoutRow(workout) {
+function createWorkoutRow(workout){
 
     const row =
         document.createElement("div");
@@ -1567,47 +1387,41 @@ function createWorkoutRow(workout) {
     const icon =
         document.createElement("div");
 
-
     let iconClass = "fa-dumbbell";
     let iconColor = "green";
 
 
-    if (workout.name === "Running") {
+    if(workout.name === "Running"){
 
         iconClass = "fa-person-running";
         iconColor = "green";
 
     }
-
-    else if (workout.name === "Walking") {
+    else if(workout.name === "Walking"){
 
         iconClass = "fa-person-walking";
         iconColor = "pink";
 
     }
-
-    else if (workout.name === "Swimming") {
+    else if(workout.name === "Swimming"){
 
         iconClass = "fa-person-swimming";
         iconColor = "blue";
 
     }
-
-    else if (workout.name === "Cycling") {
+    else if(workout.name === "Cycling"){
 
         iconClass = "fa-bicycle";
         iconColor = "purple";
 
     }
-
-    else if (workout.name === "Chest Workout") {
+    else if(workout.name === "Chest Workout"){
 
         iconClass = "fa-heart-pulse";
         iconColor = "blue";
 
     }
-
-    else if (workout.name === "Strength Training") {
+    else if(workout.name === "Strength Training"){
 
         iconClass = "fa-dumbbell";
         iconColor = "purple";
@@ -1649,7 +1463,6 @@ function createWorkoutRow(workout) {
 
 
     info.appendChild(title);
-
     info.appendChild(details);
 
 
@@ -1663,132 +1476,144 @@ function createWorkoutRow(workout) {
         workout.date;
 
 
- 
+    /* ==========================================
+    EDIT BUTTON
+    ========================================== */
 
-/* EDIT BUTTON */
+    const editButton =
+        document.createElement("button");
 
-const editButton =
-    document.createElement("button");
+    editButton.className =
+        "workout-edit";
 
-editButton.className =
-    "workout-edit";
+    editButton.type = "button";
 
-editButton.innerHTML =
-    '<i class="fa-solid fa-pen"></i>';
+    editButton.innerHTML =
+        '<i class="fa-solid fa-pen"></i>';
 
-editButton.title =
-    "Edit workout";
-
-
-editButton.addEventListener(
-    "click",
-    function() {
-
-        editingWorkout = workout;
-
-        document.getElementById("workoutModal")
-            .classList.add("show");
+    editButton.title =
+        "Edit workout";
 
 
-        document.getElementById("workoutModal")
-            .querySelector("h2")
-            .textContent = "Edit Workout";
+    editButton.addEventListener(
+        "click",
+        function(){
+
+            editingWorkout =
+                workout;
+
+            modal.classList.add("show");
+
+            document
+                .querySelector(".modal-header h2")
+                .textContent =
+                "Edit Workout";
+
+            document
+                .querySelector(".save-btn")
+                .innerHTML =
+                '<i class="fa-solid fa-check"></i> Save Changes';
 
 
-        document.querySelector(".save-btn")
-            .innerHTML =
-            '<i class="fa-solid fa-check"></i> Save Changes';
+            const standardTypes = [
+                "Running",
+                "Walking",
+                "Swimming",
+                "Cycling",
+                "Chest Workout",
+                "Strength Training"
+            ];
 
 
-        workoutType.value =
-            workout.name;
+            if(
+                standardTypes.includes(
+                    workout.name
+                )
+            ){
+
+                workoutType.value =
+                    workout.name;
+
+                otherWorkoutGroup.style.display =
+                    "none";
+
+                otherWorkout.required =
+                    false;
+
+            }
+            else{
+
+                workoutType.value =
+                    "Other";
+
+                otherWorkoutGroup.style.display =
+                    "block";
+
+                otherWorkout.required =
+                    true;
+
+                otherWorkout.value =
+                    workout.name;
+            }
 
 
-        if (
-            workout.name !== "Running" &&
-            workout.name !== "Walking" &&
-            workout.name !== "Swimming" &&
-            workout.name !== "Cycling" &&
-            workout.name !== "Chest Workout" &&
-            workout.name !== "Strength Training"
-        ) {
+            document.getElementById(
+                "duration"
+            ).value =
+                workout.duration;
 
-            workoutType.value = "Other";
-
-            otherWorkoutGroup.style.display =
-                "block";
-
-            otherWorkout.required =
-                true;
-
-            otherWorkout.value =
-                workout.name;
+            document.getElementById(
+                "calories"
+            ).value =
+                workout.calories;
 
         }
+    );
 
 
-        document.getElementById("duration")
-            .value =
-            workout.duration;
+    /* ==========================================
+    DELETE BUTTON
+    ========================================== */
+
+    const deleteButton =
+        document.createElement("button");
+
+    deleteButton.className =
+        "workout-delete";
+
+    deleteButton.type = "button";
+
+    deleteButton.innerHTML =
+        '<i class="fa-solid fa-trash"></i>';
+
+    deleteButton.title =
+        "Delete workout";
 
 
-        document.getElementById("calories")
-            .value =
-            workout.calories;
+    deleteButton.addEventListener(
+        "click",
+        function(){
 
-    }
-);
+            savedWorkouts =
+                savedWorkouts.filter(
+                    function(item){
+                        return item !== workout;
+                    }
+                );
 
+            saveUserWorkouts();
 
-/* DELETE BUTTON */
+            renderWorkouts();
 
-const deleteButton =
-    document.createElement("button");
-
-deleteButton.className =
-    "workout-delete";
-
-deleteButton.innerHTML =
-    '<i class="fa-solid fa-trash"></i>';
-
-deleteButton.title =
-    "Delete workout";
+        }
+    );
 
 
-deleteButton.addEventListener(
-    "click",
-    function() {
-
-        savedWorkouts =
-            savedWorkouts.filter(
-                function(item) {
-
-                    return item !== workout;
-
-                }
-            );
-
-
-        localStorage.setItem(
-            "fittrackWorkouts",
-            JSON.stringify(savedWorkouts)
-        );
-
-
-        renderWorkouts();
-
-    }
-);
-
-row.appendChild(icon);
-
-row.appendChild(info);
-
-row.appendChild(date);
-
-row.appendChild(editButton);
-
-row.appendChild(deleteButton);
+    row.appendChild(icon);
+    row.appendChild(info);
+    row.appendChild(date);
+    row.appendChild(editButton);
+    row.appendChild(deleteButton);
 
 
     return row;
@@ -1799,17 +1624,42 @@ row.appendChild(deleteButton);
 RENDER WORKOUTS
 ========================================== */
 
-function renderWorkouts() {
+function renderWorkouts(){
 
     workoutList.innerHTML = "";
 
-    savedWorkouts.forEach(function(workout) {
 
-        workoutList.appendChild(
-            createWorkoutRow(workout)
+    if(savedWorkouts.length === 0){
+
+        const empty =
+            document.createElement("div");
+
+        empty.className =
+            "empty-workouts";
+
+        empty.innerHTML = `
+            <i class="fa-solid fa-dumbbell"></i>
+            <strong>No workouts yet</strong>
+            <span>Click "Add Workout" to record your first workout.</span>
+        `;
+
+        workoutList.appendChild(empty);
+
+    }
+    else{
+
+        savedWorkouts.forEach(
+            function(workout){
+
+                workoutList.appendChild(
+                    createWorkoutRow(workout)
+                );
+
+            }
         );
 
-    });
+    }
+
 
     updateTotals();
 }
@@ -1819,19 +1669,27 @@ function renderWorkouts() {
 UPDATE TOTALS
 ========================================== */
 
-function updateTotals() {
+function updateTotals(){
 
     const totalWorkouts =
-        document.getElementById("totalWorkouts");
+        document.getElementById(
+            "totalWorkouts"
+        );
 
     const totalTime =
-        document.getElementById("totalTime");
+        document.getElementById(
+            "totalTime"
+        );
 
     const totalCalories =
-        document.getElementById("totalCalories");
+        document.getElementById(
+            "totalCalories"
+        );
 
     const averageWorkout =
-        document.getElementById("averageWorkout");
+        document.getElementById(
+            "averageWorkout"
+        );
 
 
     const count =
@@ -1840,10 +1698,12 @@ function updateTotals() {
 
     const time =
         savedWorkouts.reduce(
-            function(sum, workout) {
+            function(sum,workout){
 
                 return sum +
-                    Number(workout.duration);
+                    Number(
+                        workout.duration
+                    );
 
             },
             0
@@ -1852,10 +1712,12 @@ function updateTotals() {
 
     const calories =
         savedWorkouts.reduce(
-            function(sum, workout) {
+            function(sum,workout){
 
                 return sum +
-                    Number(workout.calories);
+                    Number(
+                        workout.calories
+                    );
 
             },
             0
@@ -1864,8 +1726,8 @@ function updateTotals() {
 
     const average =
         count > 0
-            ? Math.round(time / count)
-            : 0;
+        ? Math.round(time / count)
+        : 0;
 
 
     totalWorkouts.textContent =
@@ -1888,7 +1750,7 @@ OPEN MODAL
 
 openButton.addEventListener(
     "click",
-    function() {
+    function(){
 
         modal.classList.add("show");
 
@@ -1902,7 +1764,7 @@ openButton.addEventListener(
 CLOSE MODAL
 ========================================== */
 
-function closeModal() {
+function closeModal(){
 
     modal.classList.remove("show");
 
@@ -1911,15 +1773,22 @@ function closeModal() {
     otherWorkoutGroup.style.display =
         "none";
 
+    otherWorkout.required =
+        false;
+
     editingWorkout = null;
 
-    document.querySelector(".modal-header h2")
-        .textContent = "Add Workout";
 
-    document.querySelector(".save-btn")
+    document
+        .querySelector(".modal-header h2")
+        .textContent =
+        "Add Workout";
+
+
+    document
+        .querySelector(".save-btn")
         .innerHTML =
         '<i class="fa-solid fa-check"></i> Add Workout';
-
 }
 
 
@@ -1927,7 +1796,6 @@ closeButton.addEventListener(
     "click",
     closeModal
 );
-
 
 cancelButton.addEventListener(
     "click",
@@ -1941,11 +1809,11 @@ SHOW OTHER WORKOUT
 
 workoutType.addEventListener(
     "change",
-    function() {
+    function(){
 
-        if (
+        if(
             workoutType.value === "Other"
-        ) {
+        ){
 
             otherWorkoutGroup.style.display =
                 "block";
@@ -1953,13 +1821,17 @@ workoutType.addEventListener(
             otherWorkout.required =
                 true;
 
-        } else {
+        }
+        else{
 
             otherWorkoutGroup.style.display =
                 "none";
 
             otherWorkout.required =
                 false;
+
+            otherWorkout.value =
+                "";
 
         }
 
@@ -1968,12 +1840,12 @@ workoutType.addEventListener(
 
 
 /* ==========================================
-ADD WORKOUT
+ADD / EDIT WORKOUT
 ========================================== */
 
 workoutForm.addEventListener(
     "submit",
-    function(event) {
+    function(event){
 
         event.preventDefault();
 
@@ -1982,9 +1854,9 @@ workoutForm.addEventListener(
             workoutType.value;
 
 
-        if (
+        if(
             workoutType.value === "Other"
-        ) {
+        ){
 
             name =
                 otherWorkout.value.trim();
@@ -1994,55 +1866,57 @@ workoutForm.addEventListener(
 
         const duration =
             Number(
-                document
-                .getElementById("duration")
-                .value
+                document.getElementById(
+                    "duration"
+                ).value
             );
 
 
         const calories =
             Number(
-                document
-                .getElementById("calories")
-                .value
+                document.getElementById(
+                    "calories"
+                ).value
             );
 
 
-        if (
+        if(
             name === "" ||
             duration <= 0 ||
             calories < 0
-        ) {
+        ){
 
             return;
 
         }
 
 
+        /* ==================================
+        DATE
+        ================================== */
+
         const today =
             new Date();
 
-
         const day =
             today.getDate();
-
 
         const month =
             today.toLocaleString(
                 "en-US",
                 {
-                    month: "short"
+                    month:"short"
                 }
             );
 
 
         const workout = {
 
-            name: name,
+            name:name,
 
-            duration: duration,
+            duration:duration,
 
-            calories: calories,
+            calories:calories,
 
             date:
                 day + " " + month
@@ -2050,49 +1924,46 @@ workoutForm.addEventListener(
         };
 
 
-        /* SAVE */
+        /* ==================================
+        SAVE OR UPDATE
+        ================================== */
 
-        /* SAVE OR UPDATE */
+        if(editingWorkout){
 
-if (editingWorkout) {
+            editingWorkout.name =
+                workout.name;
 
-    editingWorkout.name =
-        workout.name;
+            editingWorkout.duration =
+                workout.duration;
 
-    editingWorkout.duration =
-        workout.duration;
+            editingWorkout.calories =
+                workout.calories;
 
-    editingWorkout.calories =
-        workout.calories;
+            editingWorkout.date =
+                workout.date;
 
-} else {
+        }
+        else{
 
-    savedWorkouts.unshift(
-        workout
-    );
+            savedWorkouts.unshift(
+                workout
+            );
 
-}
-
-
-/* SAVE TO LOCAL STORAGE */
-
-localStorage.setItem(
-    "fittrackWorkouts",
-    JSON.stringify(savedWorkouts)
-);
+        }
 
 
-/* RESET EDIT MODE */
+        /* ==================================
+        SAVE TO CURRENT USER
+        ================================== */
 
-editingWorkout = null;
+        saveUserWorkouts();
 
 
-        /* SHOW */
+        editingWorkout =
+            null;
+
 
         renderWorkouts();
-
-
-        /* CLOSE */
 
         closeModal();
 
@@ -2106,11 +1977,11 @@ CLICK OUTSIDE MODAL
 
 modal.addEventListener(
     "click",
-    function(event) {
+    function(event){
 
-        if (
+        if(
             event.target === modal
-        ) {
+        ){
 
             closeModal();
 
@@ -2126,12 +1997,12 @@ ESC KEY
 
 document.addEventListener(
     "keydown",
-    function(event) {
+    function(event){
 
-        if (
+        if(
             event.key === "Escape" &&
             modal.classList.contains("show")
-        ) {
+        ){
 
             closeModal();
 
@@ -2142,17 +2013,11 @@ document.addEventListener(
 
 
 /* ==========================================
-LOAD SAVED WORKOUTS
+LOAD USER WORKOUTS
 ========================================== */
 
 renderWorkouts();
 
-</script>
-
-<script>
-    if (localStorage.getItem("fittrackLoggedIn") !== "true") {
-        window.location.href = "login.html";
-    }
 </script>
 
 </body>
