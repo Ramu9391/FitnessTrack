@@ -855,15 +855,17 @@ LAPTOP
 /* =========================
 PRINT
 ========================= */
-
 @media print{
+
+    *{
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
 
     body{
         overflow:visible;
-
         background:white;
     }
-
 
     .sidebar,
     .top-actions,
@@ -871,21 +873,29 @@ PRINT
         display:none !important;
     }
 
-
     .main{
         width:100%;
-
         height:auto;
-
         overflow:visible;
-
         padding:20px;
     }
-
 
     .panel,
     .stat{
         box-shadow:none;
+    }
+
+    /* KEEP WEEKLY ACTIVITY BARS IN PRINT */
+    .week-bar{
+        background:#e8eef2 !important;
+    }
+
+    .steps-fill{
+        background:#20d99a !important;
+    }
+
+    .calorie-fill{
+        background:#f54867 !important;
     }
 
 }

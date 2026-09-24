@@ -2168,56 +2168,6 @@ function displayValue(
 
 
 /* ==========================================
-HEART RATE
-========================================== */
-
-function getLatestHeartRate(){
-
-    if(
-        !Array.isArray(
-            userData.heartRate
-        )
-    ){
-
-        return null;
-
-    }
-
-
-    const validReadings =
-
-        userData.heartRate.filter(
-
-            function(
-                reading
-            ){
-
-                return Number(
-                    reading.bpm || 0
-                ) > 0;
-
-            }
-
-        );
-
-
-    if(
-        validReadings.length === 0
-    ){
-
-        return null;
-
-    }
-
-
-    return validReadings[
-        validReadings.length - 1
-    ];
-
-}
-
-
-/* ==========================================
 RENDER PROFILE
 ========================================== */
 
@@ -2420,20 +2370,26 @@ function renderProfile(){
             : "Goal not set";
 
 
-    const latestHeartRate =
-        getLatestHeartRate();
+    const heartRateData =
+    Array.isArray(userData.heartRate)
+        ? userData.heartRate
+        : [];
+
+const latestHeartRate =
+    heartRateData.length > 0
+        ? Number(
+            heartRateData[0].rate
+        )
+        : 0;
 
 
-    document.getElementById(
-        "heartRateDisplay"
-    ).textContent =
+document.getElementById(
+    "heartRateDisplay"
+).textContent =
 
-        latestHeartRate
-            ? Number(
-                latestHeartRate.bpm
-              ) +
-              " BPM"
-            : "No reading";
+    latestHeartRate
+        ? latestHeartRate + " BPM"
+        : "No reading";
 
 }
 

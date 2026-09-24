@@ -860,30 +860,6 @@ if (!allUserData[user.email]) {
 
 
     // --------------------------------------
-    // MIGRATE OLD WORKOUTS
-    // Only if old shared workouts exist
-    // --------------------------------------
-
-    const oldWorkouts =
-        JSON.parse(
-            localStorage.getItem(
-                "fittrackWorkouts"
-            )
-        );
-
-
-    if (
-        Array.isArray(oldWorkouts) &&
-        oldWorkouts.length > 0
-    ) {
-
-        allUserData[user.email].workouts =
-            oldWorkouts;
-
-    }
-
-
-    // --------------------------------------
     // SAVE USER DATA
     // --------------------------------------
 

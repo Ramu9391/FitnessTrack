@@ -668,6 +668,22 @@ GOAL CARDS
 
 }
 
+.update-weight-btn{
+    margin-top:14px;
+    border:0;
+    background:#e8f8f2;
+    color:#08a875;
+    border-radius:8px;
+    padding:8px 12px;
+    font-size:11px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.update-weight-btn:hover{
+    background:#d8f5e9;
+}
+
 
 /* ==========================================
 WEIGHT FULL WIDTH
@@ -1254,7 +1270,16 @@ Not set
 kg
 </div>
 
+<button
+    class="update-weight-btn"
+    id="updateWeightBtn"
+>
+    <i class="fa-solid fa-rotate"></i>
+    Update Weight
+</button>
+
 </div>
+
 
 
 <!-- TARGET WEIGHT -->
@@ -1605,6 +1630,79 @@ Save Goals
 
 
 </form>
+
+</div>
+
+</div>
+
+
+<!-- ==========================================
+UPDATE WEIGHT MODAL
+========================================== -->
+
+<div
+class="modal"
+id="weightModal"
+>
+
+<div class="modal-box">
+
+<div class="modal-header">
+
+<h2>
+Update Current Weight
+</h2>
+
+<button
+class="close-btn"
+id="closeWeightModal"
+type="button"
+>
+×
+</button>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Current Weight (kg)
+</label>
+
+<input
+type="number"
+id="updateWeightInput"
+step="0.1"
+min="1"
+max="300"
+placeholder="Enter current weight"
+required
+>
+
+</div>
+
+
+<div class="modal-buttons">
+
+<button
+type="button"
+class="cancel-btn"
+id="cancelWeightUpdate"
+>
+Cancel
+</button>
+
+<button
+type="button"
+class="save-btn"
+id="saveWeightUpdate"
+>
+<i class="fa-solid fa-check"></i>
+Update Weight
+</button>
+
+</div>
 
 </div>
 
@@ -2040,6 +2138,125 @@ document.addEventListener(
 
     }
 );
+
+/* ==========================================
+UPDATE CURRENT WEIGHT
+========================================== */
+
+const updateWeightBtn =
+    document.getElementById(
+        "updateWeightBtn"
+    );
+
+const weightModal =
+    document.getElementById(
+        "weightModal"
+    );
+
+const updateWeightInput =
+    document.getElementById(
+        "updateWeightInput"
+    );
+
+
+updateWeightBtn.onclick =
+function(){
+
+    updateWeightInput.value =
+        goals.currentWeight || "";
+
+    weightModal.classList.add(
+        "show"
+    );
+
+};
+
+
+function closeWeightModal(){
+
+    weightModal.classList.remove(
+        "show"
+    );
+
+}
+
+
+document.getElementById(
+    "closeWeightModal"
+).onclick =
+closeWeightModal;
+
+
+document.getElementById(
+    "cancelWeightUpdate"
+).onclick =
+closeWeightModal;
+
+
+weightModal.onclick =
+function(event){
+
+    if(
+        event.target ===
+        weightModal
+    ){
+
+        closeWeightModal();
+
+    }
+
+};
+
+
+document.getElementById(
+    "saveWeightUpdate"
+).onclick =
+function(){
+
+    const newWeight =
+        Number(
+            updateWeightInput.value
+        );
+
+
+    if(
+        !newWeight ||
+        newWeight <= 0
+    ){
+
+        alert(
+            "Please enter a valid weight."
+        );
+
+        return;
+
+    }
+
+
+    /* SAVE STARTING WEIGHT ONLY ONCE */
+
+    if(
+        !goals.startingWeight
+    ){
+
+        goals.startingWeight =
+            goals.currentWeight ||
+            newWeight;
+
+    }
+
+
+    goals.currentWeight =
+        newWeight;
+
+
+    saveGoals();
+
+    displayGoals();
+
+    closeWeightModal();
+
+};
 
 
 /* ==========================================
